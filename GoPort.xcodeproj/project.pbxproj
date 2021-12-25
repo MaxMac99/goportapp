@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77C0785D2777BE87007CD533 /* GoPortApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0785C2777BE87007CD533 /* GoPortApp.swift */; };
+		77C0785F2777BE87007CD533 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0785E2777BE87007CD533 /* ContentView.swift */; };
+		77C078612777BE89007CD533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C078602777BE89007CD533 /* Assets.xcassets */; };
+		77C078642777BE89007CD533 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C078632777BE89007CD533 /* Preview Assets.xcassets */; };
+		77C078662777BE89007CD533 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078652777BE89007CD533 /* Persistence.swift */; };
+		77C078692777BE89007CD533 /* GoPort.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77C078672777BE89007CD533 /* GoPort.xcdatamodeld */; };
+		77C078732777BE89007CD533 /* GoPortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078722777BE89007CD533 /* GoPortTests.swift */; };
+		77C0787D2777BE89007CD533 /* GoPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0787C2777BE89007CD533 /* GoPortUITests.swift */; };
+		77C0787F2777BE89007CD533 /* GoPortUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0787E2777BE89007CD533 /* GoPortUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77C0786F2777BE89007CD533 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77C078512777BE87007CD533 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77C078582777BE87007CD533;
+			remoteInfo = GoPort;
+		};
+		77C078792777BE89007CD533 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77C078512777BE87007CD533 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77C078582777BE87007CD533;
+			remoteInfo = GoPort;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		77C078592777BE87007CD533 /* GoPort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoPort.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C0785C2777BE87007CD533 /* GoPortApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortApp.swift; sourceTree = "<group>"; };
+		77C0785E2777BE87007CD533 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		77C078602777BE89007CD533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77C078632777BE89007CD533 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		77C078652777BE89007CD533 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		77C078682777BE89007CD533 /* GoPort.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoPort.xcdatamodel; sourceTree = "<group>"; };
+		77C0786E2777BE89007CD533 /* GoPortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoPortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C078722777BE89007CD533 /* GoPortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortTests.swift; sourceTree = "<group>"; };
+		77C078782777BE89007CD533 /* GoPortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoPortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C0787C2777BE89007CD533 /* GoPortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortUITests.swift; sourceTree = "<group>"; };
+		77C0787E2777BE89007CD533 /* GoPortUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77C078562777BE87007CD533 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77C0786B2777BE89007CD533 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77C078752777BE89007CD533 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77C078502777BE87007CD533 = {
+			isa = PBXGroup;
+			children = (
+				77C0785B2777BE87007CD533 /* GoPort */,
+				77C078712777BE89007CD533 /* GoPortTests */,
+				77C0787B2777BE89007CD533 /* GoPortUITests */,
+				77C0785A2777BE87007CD533 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77C0785A2777BE87007CD533 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77C078592777BE87007CD533 /* GoPort.app */,
+				77C0786E2777BE89007CD533 /* GoPortTests.xctest */,
+				77C078782777BE89007CD533 /* GoPortUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77C0785B2777BE87007CD533 /* GoPort */ = {
+			isa = PBXGroup;
+			children = (
+				77C0785C2777BE87007CD533 /* GoPortApp.swift */,
+				77C0785E2777BE87007CD533 /* ContentView.swift */,
+				77C078602777BE89007CD533 /* Assets.xcassets */,
+				77C078652777BE89007CD533 /* Persistence.swift */,
+				77C078672777BE89007CD533 /* GoPort.xcdatamodeld */,
+				77C078622777BE89007CD533 /* Preview Content */,
+			);
+			path = GoPort;
+			sourceTree = "<group>";
+		};
+		77C078622777BE89007CD533 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				77C078632777BE89007CD533 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		77C078712777BE89007CD533 /* GoPortTests */ = {
+			isa = PBXGroup;
+			children = (
+				77C078722777BE89007CD533 /* GoPortTests.swift */,
+			);
+			path = GoPortTests;
+			sourceTree = "<group>";
+		};
+		77C0787B2777BE89007CD533 /* GoPortUITests */ = {
+			isa = PBXGroup;
+			children = (
+				77C0787C2777BE89007CD533 /* GoPortUITests.swift */,
+				77C0787E2777BE89007CD533 /* GoPortUITestsLaunchTests.swift */,
+			);
+			path = GoPortUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77C078582777BE87007CD533 /* GoPort */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77C078822777BE89007CD533 /* Build configuration list for PBXNativeTarget "GoPort" */;
+			buildPhases = (
+				77C078552777BE87007CD533 /* Sources */,
+				77C078562777BE87007CD533 /* Frameworks */,
+				77C078572777BE87007CD533 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoPort;
+			productName = GoPort;
+			productReference = 77C078592777BE87007CD533 /* GoPort.app */;
+			productType = "com.apple.product-type.application";
+		};
+		77C0786D2777BE89007CD533 /* GoPortTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77C078852777BE89007CD533 /* Build configuration list for PBXNativeTarget "GoPortTests" */;
+			buildPhases = (
+				77C0786A2777BE89007CD533 /* Sources */,
+				77C0786B2777BE89007CD533 /* Frameworks */,
+				77C0786C2777BE89007CD533 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77C078702777BE89007CD533 /* PBXTargetDependency */,
+			);
+			name = GoPortTests;
+			productName = GoPortTests;
+			productReference = 77C0786E2777BE89007CD533 /* GoPortTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		77C078772777BE89007CD533 /* GoPortUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77C078882777BE89007CD533 /* Build configuration list for PBXNativeTarget "GoPortUITests" */;
+			buildPhases = (
+				77C078742777BE89007CD533 /* Sources */,
+				77C078752777BE89007CD533 /* Frameworks */,
+				77C078762777BE89007CD533 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77C0787A2777BE89007CD533 /* PBXTargetDependency */,
+			);
+			name = GoPortUITests;
+			productName = GoPortUITests;
+			productReference = 77C078782777BE89007CD533 /* GoPortUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77C078512777BE87007CD533 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					77C078582777BE87007CD533 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					77C0786D2777BE89007CD533 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 77C078582777BE87007CD533;
+					};
+					77C078772777BE89007CD533 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 77C078582777BE87007CD533;
+					};
+				};
+			};
+			buildConfigurationList = 77C078542777BE87007CD533 /* Build configuration list for PBXProject "GoPort" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77C078502777BE87007CD533;
+			productRefGroup = 77C0785A2777BE87007CD533 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77C078582777BE87007CD533 /* GoPort */,
+				77C0786D2777BE89007CD533 /* GoPortTests */,
+				77C078772777BE89007CD533 /* GoPortUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77C078572777BE87007CD533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77C078642777BE89007CD533 /* Preview Assets.xcassets in Resources */,
+				77C078612777BE89007CD533 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77C0786C2777BE89007CD533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77C078762777BE89007CD533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77C078552777BE87007CD533 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77C078662777BE89007CD533 /* Persistence.swift in Sources */,
+				77C0785F2777BE87007CD533 /* ContentView.swift in Sources */,
+				77C078692777BE89007CD533 /* GoPort.xcdatamodeld in Sources */,
+				77C0785D2777BE87007CD533 /* GoPortApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77C0786A2777BE89007CD533 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77C078732777BE89007CD533 /* GoPortTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77C078742777BE89007CD533 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77C0787D2777BE89007CD533 /* GoPortUITests.swift in Sources */,
+				77C0787F2777BE89007CD533 /* GoPortUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77C078702777BE89007CD533 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77C078582777BE87007CD533 /* GoPort */;
+			targetProxy = 77C0786F2777BE89007CD533 /* PBXContainerItemProxy */;
+		};
+		77C0787A2777BE89007CD533 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77C078582777BE87007CD533 /* GoPort */;
+			targetProxy = 77C078792777BE89007CD533 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		77C078802777BE89007CD533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		77C078812777BE89007CD533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77C078832777BE89007CD533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoPort/Preview Content\"";
+				DEVELOPMENT_TEAM = SXU3PZ2ZWL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.maxmac.GoPort;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77C078842777BE89007CD533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoPort/Preview Content\"";
+				DEVELOPMENT_TEAM = SXU3PZ2ZWL;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.maxmac.GoPort;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		77C078862777BE89007CD533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXU3PZ2ZWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.maxmac.GoPortTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoPort.app/GoPort";
+			};
+			name = Debug;
+		};
+		77C078872777BE89007CD533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXU3PZ2ZWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.maxmac.GoPortTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoPort.app/GoPort";
+			};
+			name = Release;
+		};
+		77C078892777BE89007CD533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXU3PZ2ZWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.maxmac.GoPortUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoPort;
+			};
+			name = Debug;
+		};
+		77C0788A2777BE89007CD533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SXU3PZ2ZWL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.maxmac.GoPortUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GoPort;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77C078542777BE87007CD533 /* Build configuration list for PBXProject "GoPort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77C078802777BE89007CD533 /* Debug */,
+				77C078812777BE89007CD533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77C078822777BE89007CD533 /* Build configuration list for PBXNativeTarget "GoPort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77C078832777BE89007CD533 /* Debug */,
+				77C078842777BE89007CD533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77C078852777BE89007CD533 /* Build configuration list for PBXNativeTarget "GoPortTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77C078862777BE89007CD533 /* Debug */,
+				77C078872777BE89007CD533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77C078882777BE89007CD533 /* Build configuration list for PBXNativeTarget "GoPortUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77C078892777BE89007CD533 /* Debug */,
+				77C0788A2777BE89007CD533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		77C078672777BE89007CD533 /* GoPort.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				77C078682777BE89007CD533 /* GoPort.xcdatamodel */,
+			);
+			currentVersion = 77C078682777BE89007CD533 /* GoPort.xcdatamodel */;
+			path = GoPort.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 77C078512777BE87007CD533 /* Project object */;
+}
