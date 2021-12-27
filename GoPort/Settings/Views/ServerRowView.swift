@@ -35,7 +35,7 @@ struct ServerRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
             ServerRowView(server: Server.preview.first!)
-            ServerRowView(server: Server.preview[2], isSelected: true)
+            ServerRowView(server: Server.preview[1], isSelected: true)
         }
     }
 }

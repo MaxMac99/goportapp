@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var serverService = ServerService()
+    @ObservedObject var serverService: ServerService
     
     var body: some View {
         NavigationView {

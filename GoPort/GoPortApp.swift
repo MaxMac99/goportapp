@@ -12,7 +12,7 @@ struct GoPortApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SettingsView()
+            GoPortMainView()
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771D3191277A2E67005BFCF3 /* GoPortMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771D3190277A2E67005BFCF3 /* GoPortMainView.swift */; };
 		77C0785D2777BE87007CD533 /* GoPortApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0785C2777BE87007CD533 /* GoPortApp.swift */; };
 		77C078612777BE89007CD533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C078602777BE89007CD533 /* Assets.xcassets */; };
 		77C078642777BE89007CD533 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C078632777BE89007CD533 /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		771D3190277A2E67005BFCF3 /* GoPortMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoPortMainView.swift; sourceTree = "<group>"; };
 		77C078592777BE87007CD533 /* GoPort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoPort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C0785C2777BE87007CD533 /* GoPortApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortApp.swift; sourceTree = "<group>"; };
 		77C078602777BE89007CD533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				77C0785C2777BE87007CD533 /* GoPortApp.swift */,
+				771D3190277A2E67005BFCF3 /* GoPortMainView.swift */,
 				77C078912777C9E8007CD533 /* Settings */,
 				77C0789D2777D3BF007CD533 /* Services */,
 				77C078A02777D506007CD533 /* Common */,
@@ -313,6 +316,7 @@
 				77C078A22777D52C007CD533 /* JsonDecodingHelper.swift in Sources */,
 				77C0789F2777D3D4007CD533 /* ServerService.swift in Sources */,
 				77C078982777CB3A007CD533 /* SettingsView.swift in Sources */,
+				771D3191277A2E67005BFCF3 /* GoPortMainView.swift in Sources */,
 				77C078962777CA15007CD533 /* Server.swift in Sources */,
 				77C0789C2777CBF3007CD533 /* ServerRowView.swift in Sources */,
 				77C0785D2777BE87007CD533 /* GoPortApp.swift in Sources */,
