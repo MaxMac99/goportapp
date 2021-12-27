@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		77C0785D2777BE87007CD533 /* GoPortApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0785C2777BE87007CD533 /* GoPortApp.swift */; };
-		77C0785F2777BE87007CD533 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0785E2777BE87007CD533 /* ContentView.swift */; };
 		77C078612777BE89007CD533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C078602777BE89007CD533 /* Assets.xcassets */; };
 		77C078642777BE89007CD533 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77C078632777BE89007CD533 /* Preview Assets.xcassets */; };
-		77C078662777BE89007CD533 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078652777BE89007CD533 /* Persistence.swift */; };
-		77C078692777BE89007CD533 /* GoPort.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77C078672777BE89007CD533 /* GoPort.xcdatamodeld */; };
 		77C078732777BE89007CD533 /* GoPortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078722777BE89007CD533 /* GoPortTests.swift */; };
 		77C0787D2777BE89007CD533 /* GoPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0787C2777BE89007CD533 /* GoPortUITests.swift */; };
 		77C0787F2777BE89007CD533 /* GoPortUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0787E2777BE89007CD533 /* GoPortUITestsLaunchTests.swift */; };
+		77C078962777CA15007CD533 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078952777CA15007CD533 /* Server.swift */; };
+		77C078982777CB3A007CD533 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078972777CB3A007CD533 /* SettingsView.swift */; };
+		77C0789C2777CBF3007CD533 /* ServerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0789B2777CBF3007CD533 /* ServerRowView.swift */; };
+		77C0789F2777D3D4007CD533 /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0789E2777D3D4007CD533 /* ServerService.swift */; };
+		77C078A22777D52C007CD533 /* JsonDecodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078A12777D52C007CD533 /* JsonDecodingHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,16 +40,18 @@
 /* Begin PBXFileReference section */
 		77C078592777BE87007CD533 /* GoPort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoPort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C0785C2777BE87007CD533 /* GoPortApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortApp.swift; sourceTree = "<group>"; };
-		77C0785E2777BE87007CD533 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		77C078602777BE89007CD533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77C078632777BE89007CD533 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		77C078652777BE89007CD533 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		77C078682777BE89007CD533 /* GoPort.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoPort.xcdatamodel; sourceTree = "<group>"; };
 		77C0786E2777BE89007CD533 /* GoPortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoPortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C078722777BE89007CD533 /* GoPortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortTests.swift; sourceTree = "<group>"; };
 		77C078782777BE89007CD533 /* GoPortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoPortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C0787C2777BE89007CD533 /* GoPortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortUITests.swift; sourceTree = "<group>"; };
 		77C0787E2777BE89007CD533 /* GoPortUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		77C078952777CA15007CD533 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		77C078972777CB3A007CD533 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		77C0789B2777CBF3007CD533 /* ServerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRowView.swift; sourceTree = "<group>"; };
+		77C0789E2777D3D4007CD533 /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
+		77C078A12777D52C007CD533 /* JsonDecodingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodingHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 				77C0785A2777BE87007CD533 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		77C0785A2777BE87007CD533 /* Products */ = {
 			isa = PBXGroup;
@@ -99,10 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				77C0785C2777BE87007CD533 /* GoPortApp.swift */,
-				77C0785E2777BE87007CD533 /* ContentView.swift */,
+				77C078912777C9E8007CD533 /* Settings */,
+				77C0789D2777D3BF007CD533 /* Services */,
+				77C078A02777D506007CD533 /* Common */,
 				77C078602777BE89007CD533 /* Assets.xcassets */,
-				77C078652777BE89007CD533 /* Persistence.swift */,
-				77C078672777BE89007CD533 /* GoPort.xcdatamodeld */,
 				77C078622777BE89007CD533 /* Preview Content */,
 			);
 			path = GoPort;
@@ -131,6 +136,48 @@
 				77C0787E2777BE89007CD533 /* GoPortUITestsLaunchTests.swift */,
 			);
 			path = GoPortUITests;
+			sourceTree = "<group>";
+		};
+		77C078912777C9E8007CD533 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				77C078922777C9F2007CD533 /* Views */,
+				77C078942777C9FD007CD533 /* Models */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		77C078922777C9F2007CD533 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77C078972777CB3A007CD533 /* SettingsView.swift */,
+				77C0789B2777CBF3007CD533 /* ServerRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		77C078942777C9FD007CD533 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				77C078952777CA15007CD533 /* Server.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		77C0789D2777D3BF007CD533 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				77C0789E2777D3D4007CD533 /* ServerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		77C078A02777D506007CD533 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				77C078A12777D52C007CD533 /* JsonDecodingHelper.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77C078662777BE89007CD533 /* Persistence.swift in Sources */,
-				77C0785F2777BE87007CD533 /* ContentView.swift in Sources */,
-				77C078692777BE89007CD533 /* GoPort.xcdatamodeld in Sources */,
+				77C078A22777D52C007CD533 /* JsonDecodingHelper.swift in Sources */,
+				77C0789F2777D3D4007CD533 /* ServerService.swift in Sources */,
+				77C078982777CB3A007CD533 /* SettingsView.swift in Sources */,
+				77C078962777CA15007CD533 /* Server.swift in Sources */,
+				77C0789C2777CBF3007CD533 /* ServerRowView.swift in Sources */,
 				77C0785D2777BE87007CD533 /* GoPortApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,19 +642,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		77C078672777BE89007CD533 /* GoPort.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				77C078682777BE89007CD533 /* GoPort.xcdatamodel */,
-			);
-			currentVersion = 77C078682777BE89007CD533 /* GoPort.xcdatamodel */;
-			path = GoPort.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 77C078512777BE87007CD533 /* Project object */;
 }
