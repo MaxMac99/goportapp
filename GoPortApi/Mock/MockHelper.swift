@@ -7,7 +7,6 @@
 
 import Foundation
 
-#if DEBUG
 internal enum MockError: Error {
     case fileNotFound
 }
@@ -22,4 +21,3 @@ internal class MockHelper {
         return decoded
     }
 }
-#endif
