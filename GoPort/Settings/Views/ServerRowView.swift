@@ -12,21 +12,23 @@ struct ServerRowView: View {
     var isSelected: Bool = false
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 5) {
-                Text(server.name)
-                    .font(.headline)
-                Text(server.host.relativeString)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+        NavigationLink(destination: ServerDetailView(server: server)) {
+            HStack {
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(server.name)
+                        .font(.headline)
+                    Text(server.host.relativeString)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+                if isSelected {
+                    Image(systemName: "checkmark")
+                        .foregroundColor(Color.accentColor)
+                }
             }
-            Spacer()
-            if isSelected {
-                Image(systemName: "checkmark")
-                    .foregroundColor(Color.accentColor)
-            }
+            .padding(.vertical, 5)
         }
-        .padding(.vertical, 5)
     }
 }
 

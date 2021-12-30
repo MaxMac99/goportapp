@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GoPortMainView: View {
-    @StateObject var serverService = ServerService()
+    @StateObject var serverService = ServerService.preview
     
     var body: some View {
         TabView {

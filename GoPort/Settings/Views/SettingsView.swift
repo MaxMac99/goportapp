@@ -14,7 +14,7 @@ struct SettingsView: View {
         NavigationView {
             List {
                 Section("Servers") {
-                    ForEach(serverService.servers, id: \.name) { server in
+                    ForEach(serverService.servers) { server in
                         ServerRowView(server: server)
                     }
                     .onDelete { offsets in

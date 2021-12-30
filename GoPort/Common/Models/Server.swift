@@ -12,6 +12,12 @@ struct Server: Codable {
     var host: URL
 }
 
+extension Server: Identifiable {
+    var id: String {
+        return name
+    }
+}
+
 enum ServerError: Error {
     case alreadyExists
 }
@@ -20,11 +26,11 @@ enum ServerError: Error {
 extension Server {
     static var preview: [Server] {
         [
+            Server(name: "localhost", host: URL(string: "localhost:9212")!),
             Server(name: "Server1", host: URL(string: "192.168.178.10")!),
-            Server(name: "Server2", host: URL(string: "192.168.178.20")!),
-            Server(name: "Server3", host: URL(string: "192.168.178.30")!),
-            Server(name: "Server4", host: URL(string: "192.168.178.40")!),
-            Server(name: "Server5", host: URL(string: "192.168.178.50")!)
+            Server(name: "Server2", host: URL(string: "192.168.178.30")!),
+            Server(name: "Server3", host: URL(string: "192.168.178.40")!),
+            Server(name: "Server4", host: URL(string: "192.168.178.50")!)
         ]
     }
 }
