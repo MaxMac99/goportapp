@@ -1,0 +1,27 @@
+{
+    "Name": "default",
+    "Metadata": {
+        "Name": "default",
+        "Metadata": {
+            "StackOrchestrator": "swarm",
+            "Description": "Central Server",
+            "Type": "local"
+        },
+        "Endpoints": {
+            "docker": {
+                "Host": "unix:///var/run/docker.sock",
+                "SkipTLSVerify": false
+            }
+        }
+    },
+    "Endpoints": {
+        "docker": {
+            "Host": "unix:///var/run/docker.sock",
+            "SkipTLSVerify": false
+        }
+    },
+    "Storage": {
+        "MetadataPath": "<IN MEMORY>",
+        "TLSPath": "<IN MEMORY>"
+    }
+}

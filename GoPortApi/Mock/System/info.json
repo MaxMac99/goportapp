@@ -1,0 +1,149 @@
+{
+    "default": {
+        "ID": "HARP:XNQX:UFW5:QMYN:S2CA:T6JS:DEM7:DSPB:KQON:PZLG:Y2YU:AJFY",
+        "Containers": 4,
+        "ContainersRunning": 0,
+        "ContainersPaused": 0,
+        "ContainersStopped": 4,
+        "Images": 20,
+        "Driver": "overlay2",
+        "DriverStatus": [
+            [
+                "Backing Filesystem",
+                "extfs"
+            ],
+            [
+                "Supports d_type",
+                "true"
+            ],
+            [
+                "Native Overlay Diff",
+                "true"
+            ],
+            [
+                "userxattr",
+                "false"
+            ]
+        ],
+        "Plugins": {
+            "Volume": [
+                "local"
+            ],
+            "Network": [
+                "bridge",
+                "host",
+                "ipvlan",
+                "macvlan",
+                "null",
+                "overlay"
+            ],
+            "Authorization": null,
+            "Log": [
+                "awslogs",
+                "fluentd",
+                "gcplogs",
+                "gelf",
+                "journald",
+                "json-file",
+                "local",
+                "logentries",
+                "splunk",
+                "syslog"
+            ]
+        },
+        "MemoryLimit": true,
+        "SwapLimit": true,
+        "KernelMemory": false,
+        "KernelMemoryTCP": false,
+        "CpuCfsPeriod": true,
+        "CpuCfsQuota": true,
+        "CPUShares": true,
+        "CPUSet": true,
+        "PidsLimit": true,
+        "IPv4Forwarding": true,
+        "BridgeNfIptables": true,
+        "BridgeNfIp6tables": true,
+        "Debug": false,
+        "NFd": 43,
+        "OomKillDisable": false,
+        "NGoroutines": 44,
+        "SystemTime": "2021-12-30T22:57:57.4077443Z",
+        "LoggingDriver": "json-file",
+        "CgroupDriver": "cgroupfs",
+        "CgroupVersion": "2",
+        "NEventsListener": 3,
+        "KernelVersion": "5.10.76-linuxkit",
+        "OperatingSystem": "Docker Desktop",
+        "OSVersion": "",
+        "OSType": "linux",
+        "Architecture": "x86_64",
+        "IndexServerAddress": "https://index.docker.io/v1/",
+        "RegistryConfig": {
+            "AllowNondistributableArtifactsCIDRs": [],
+            "AllowNondistributableArtifactsHostnames": [],
+            "InsecureRegistryCIDRs": [
+                "127.0.0.0/8"
+            ],
+            "IndexConfigs": {
+                "docker.io": {
+                    "Name": "docker.io",
+                    "Mirrors": [],
+                    "Secure": true,
+                    "Official": true
+                }
+            },
+            "Mirrors": []
+        },
+        "NCPU": 8,
+        "MemTotal": 8346161152,
+        "GenericResources": null,
+        "DockerRootDir": "/var/lib/docker",
+        "HttpProxy": "http.docker.internal:3128",
+        "HttpsProxy": "http.docker.internal:3128",
+        "NoProxy": "",
+        "Name": "docker-desktop",
+        "Labels": [],
+        "ExperimentalBuild": false,
+        "ServerVersion": "20.10.11",
+        "Runtimes": {
+            "io.containerd.runc.v2": {
+                "path": "runc"
+            },
+            "io.containerd.runtime.v1.linux": {
+                "path": "runc"
+            },
+            "runc": {
+                "path": "runc"
+            }
+        },
+        "DefaultRuntime": "runc",
+        "Swarm": {
+            "NodeID": "",
+            "NodeAddr": "",
+            "LocalNodeState": "inactive",
+            "ControlAvailable": false,
+            "Error": "",
+            "RemoteManagers": null
+        },
+        "LiveRestoreEnabled": false,
+        "Isolation": "",
+        "InitBinary": "docker-init",
+        "ContainerdCommit": {
+            "ID": "7b11cfaabd73bb80907dd23182b9347b4245eb5d",
+            "Expected": "7b11cfaabd73bb80907dd23182b9347b4245eb5d"
+        },
+        "RuncCommit": {
+            "ID": "v1.0.2-0-g52b36a2",
+            "Expected": "v1.0.2-0-g52b36a2"
+        },
+        "InitCommit": {
+            "ID": "de40ad0",
+            "Expected": "de40ad0"
+        },
+        "SecurityOptions": [
+            "name=seccomp,profile=default",
+            "name=cgroupns"
+        ],
+        "Warnings": null
+    }
+}

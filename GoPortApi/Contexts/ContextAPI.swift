@@ -12,17 +12,15 @@ open class ContextAPI {
     /**
      Create a context
      - POST /contexts/create
+     - parameter name: (path) Assign the specified name to the context. Must match &#x60;/?[a-zA-Z0-9][a-zA-Z0-9_.-]+&#x60;.
      - parameter body: (body) Context to create
-     - parameter name: (query) Assign the specified name to the context. Must match &#x60;/?[a-zA-Z0-9][a-zA-Z0-9_.-]+&#x60;.  (optional)
      - returns: String
      */
-    open class func contextCreate(host: URL, body: ContextConfig, name: String? = nil, session: NetworkingSessionProtocol = NetworkingSession.shared) async throws -> String {
-        let localPath = "/contexts/create"
-        let queryItems = APIHelper.mapValuesToQueryItems([
-            "name": name,
-        ])
+    open class func contextCreate(host: URL, name: String, body: ContextConfig, session: NetworkingSession = NetworkingSession.shared) async throws {
+        var localPath = "/contexts/{name}"
+        localPath = localPath.replacingOccurrences(of: "{name}", with: APIHelper.mapToPathItem(name), options: .literal, range: nil)
         
-        return try await session.load(from: host, on: localPath, via: .POST, with: queryItems, item: body)
+        try await session.run(from: host, on: localPath, via: .POST, item: body)
     }
     
     /**
@@ -32,14 +30,14 @@ open class ContextAPI {
      - parameter force: (query) If the context is in use, force to remove it. (optional, default to false)
      
      */
-    open class func contextDelete(host: URL, name: String, force: Bool? = nil, session: NetworkingSessionProtocol = NetworkingSession.shared) async throws {
+    open class func contextDelete(host: URL, name: String, force: Bool = false, session: NetworkingSession = NetworkingSession.shared) async throws {
         var localPath = "/contexts/{name}"
         localPath = localPath.replacingOccurrences(of: "{name}", with: APIHelper.mapToPathItem(name), options: .literal, range: nil)
         let queryItems = APIHelper.mapValuesToQueryItems([
             "force": force,
         ])
         
-        return try await session.load(from: host, on: localPath, via: .DELETE, with: queryItems)
+        try await session.run(from: host, on: localPath, via: .DELETE, with: queryItems)
     }
     
     /**
@@ -49,7 +47,7 @@ open class ContextAPI {
      - parameter name: (path) Name of the context
      - returns: ContextInspectResponse
      */
-    open class func contextInspect(host: URL, name: String, session: NetworkingSessionProtocol = NetworkingSession.shared) async throws -> ContextInspectResponse {
+    open class func contextInspect(host: URL, name: String, session: NetworkingSession = NetworkingSession.shared) async throws -> ContextInspectResponse {
         var localPath = "/contexts/{name}/json"
         localPath = localPath.replacingOccurrences(of: "{name}", with: APIHelper.mapToPathItem(name), options: .literal, range: nil)
         
@@ -62,7 +60,7 @@ open class ContextAPI {
      - Returns a list of contexts. For details on the format, see the [inspect endpoint](#operation/ContextInspect).  Note that it uses a different, smaller representation of a context than inspecting a single context.
      - returns: [ContextSummary]
      */
-    open class func contextList(host: URL, session: NetworkingSessionProtocol = NetworkingSession.shared) async throws -> [ContextSummary] {
+    open class func contextList(host: URL, session: NetworkingSession = NetworkingSession.shared) async throws -> [ContextSummary] {
         let localPath = "/contexts/json"
         
         return try await session.load(from: host, on: localPath, via: .GET)
@@ -76,10 +74,10 @@ open class ContextAPI {
      - parameter update: (body)
      
      */
-    open class func contextUpdate(host: URL, name: String, update: ContextUpdateBody, session: NetworkingSessionProtocol = NetworkingSession.shared) async throws {
+    open class func contextUpdate(host: URL, name: String, update: ContextUpdateBody, session: NetworkingSession = NetworkingSession.shared) async throws {
         var localPath = "/contexts/{name}/update"
         localPath = localPath.replacingOccurrences(of: "{name}", with: APIHelper.mapToPathItem(name), options: .literal, range: nil)
         
-        return try await session.load(from: host, on: localPath, via: .POST, item: update)
+        try await session.run(from: host, on: localPath, via: .POST, item: update)
     }
 }

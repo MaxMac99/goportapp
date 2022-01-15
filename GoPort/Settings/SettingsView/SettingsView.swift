@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var serverService: ServerService
+    @EnvironmentObject var serverService: ServerService
+    @StateObject var viewModel = SettingsViewModel()
     
     var body: some View {
         NavigationView {
             List {
                 Section("Servers") {
                     ForEach(serverService.servers) { server in
-                        ServerRowView(server: server)
+                        ServerRowView(server: server, status: viewModel.serverStatus[server])
+                            .task {
+                                if viewModel.serverStatus[server] == nil {
+                                    await viewModel.pingServer(server)
+                                }
+                            }
                     }
                     .onDelete { offsets in
                         serverService.removeServer(at: offsets)
@@ -41,7 +47,8 @@ struct SettingsView: View {
 #if DEBUG
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(serverService: ServerService.preview)
+        SettingsView(viewModel: SettingsViewModel.preview)
+            .environmentObject(ServerService.preview)
     }
 }
 #endif

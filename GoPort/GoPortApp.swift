@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct GoPortApp: App {
+    @StateObject private var serverService = ServerService.preview
 
     var body: some Scene {
         WindowGroup {
             GoPortMainView()
+                .environmentObject(serverService)
         }
     }
 }

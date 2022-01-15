@@ -1,0 +1,25 @@
+{
+    "borkenpi4": {
+        "ApiVersion": "1.41",
+        "OSType": "linux"
+    },
+    "default": {
+        "ApiVersion": "1.41",
+        "BuilderVersion": "2",
+        "OSType": "linux"
+    },
+    "desktop-linux": {
+        "ApiVersion": "1.41",
+        "BuilderVersion": "2",
+        "OSType": "linux"
+    },
+    "docker-maxdata": {
+        "ApiVersion": "1.41",
+        "OSType": "linux"
+    },
+    "local": {
+        "ApiVersion": "1.41",
+        "BuilderVersion": "2",
+        "OSType": "linux"
+    }
+}

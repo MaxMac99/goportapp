@@ -8,6 +8,6 @@
 import Foundation
 
 public enum APIError: Error {
-    case invalidURLError(String)
+    case invalidURL(String)
     case noHTTPResponse
 }

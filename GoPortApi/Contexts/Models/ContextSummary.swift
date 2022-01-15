@@ -34,11 +34,3 @@ extension ContextSummary: Identifiable {
         return name
     }
 }
-
-#if DEBUG
-public extension ContextSummary {
-    static var preview: [ContextSummary] {
-        try! MockHelper.load("contextsList")
-    }
-}
-#endif

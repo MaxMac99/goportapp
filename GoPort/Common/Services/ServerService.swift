@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GoPortApi
 
 class ServerService: ObservableObject {
     
@@ -20,14 +21,17 @@ class ServerService: ObservableObject {
         }
     }
     
-    func validateServer(_ server: Server) throws {
-        if servers.contains(where: {$0.name == server.name || $0.host == server.host}) {
+    func addServer(name: String, host: URL) async throws {
+        if servers.contains(where: {$0.name == name || $0.host == host}) {
             throw ServerError.alreadyExists
         }
-    }
-    
-    func addServer(_ server: Server) throws {
-        try validateServer(server)
+        
+        let response = try await SystemAPI.systemPing(host: host)
+        guard let goportVersion = response.goportVersion, GoPort.supportedGoPortVersions.contains(goportVersion) else {
+            throw ServerError.notSupported
+        }
+        
+        let server = Server(name: name, host: host.appendingPathComponent(goportVersion))
         servers.append(server)
         if selectedServer == nil && !servers.isEmpty {
             selectedServer = servers.first
@@ -41,6 +45,11 @@ class ServerService: ObservableObject {
             selectedServer = servers.first
         }
     }
+}
+
+enum ServerError: Error {
+    case alreadyExists
+    case notSupported
 }
 
 fileprivate extension UserDefaults {

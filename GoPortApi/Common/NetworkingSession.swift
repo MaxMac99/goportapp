@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class NetworkingSession: NSObject, URLSessionDataDelegate, NetworkingSessionProtocol {
+public class NetworkingSession: NSObject, URLSessionDataDelegate {
     public static let shared = NetworkingSession()
     
     private var session: URLSession! = nil
@@ -30,12 +30,13 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate, NetworkingSess
         self.streamSession = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
     }
     
-    // MARK: - Default Networking Operations
+    // MARK: - Loading Implementation
     
-    public func load(from host: URL, on path: String, via method: HTTPMethod, with query: [URLQueryItem], body: Data?) async throws -> (data: Data, response: HTTPURLResponse) {
+    internal func load(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], body: Data? = nil) async throws -> (data: Data, response: HTTPURLResponse) {
         guard let request = createRequest(from: host, on: path, via: method, with: query, body: body) else {
-            throw APIError.invalidURLError(host.absoluteString + path)
+            throw APIError.invalidURL(host.absoluteString + path)
         }
+        print("Request: \(request)")
         let (data, response) = try await session.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.noHTTPResponse
@@ -43,9 +44,55 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate, NetworkingSess
         return (data, httpResponse)
     }
     
-    public func stream(from host: URL, on path: String, via method: HTTPMethod, hasJSONResponse: Bool, convertArray: Bool, with query: [URLQueryItem], body: Data?) async throws -> (stream: AsyncThrowingStream<Data, Error>, response: HTTPURLResponse) {
+    internal func run(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], body: Data? = nil) async throws {
+        let (_, _) = try await load(from: host, on: path, via: method, with: query, body: body)
+    }
+    
+    internal func load(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], body: Data? = nil) async throws -> HTTPURLResponse {
+        try await load(from: host, on: path, via: method, with: query, body: body).response
+    }
+    
+    internal func load<Response: Decodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], body: Data? = nil) async throws -> (item: Response, response: HTTPURLResponse) {
+        let (data, response) = try await load(from: host, on: path, via: method, with: query, body: body)
+        print("Response<\(Response.self)>: \(String(data: data, encoding: .utf8)!)")
+        return (try dockerDecoder.decode(Response.self, from: data), response)
+    }
+    
+    internal func load<Response: Decodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], body: Data? = nil) async throws -> Response {
+        try await load(from: host, on: path, via: method, with: query, body: body).item
+    }
+    
+    // Same with Request item
+    internal func load<Request: Encodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], item: Request? = nil) async throws -> (data: Data, response: HTTPURLResponse) {
+        let body = try dockerEncoder.encode(item)
+        return try await load(from: host, on: path, via: method, with: query, body: body)
+    }
+    
+    internal func run<Request: Encodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], item: Request? = nil) async throws {
+        let (_, _) = try await load(from: host, on: path, via: method, with: query, item: item)
+    }
+    
+    internal func load<Request: Encodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], item: Request? = nil) async throws -> HTTPURLResponse {
+        let body = try dockerEncoder.encode(item)
+        return try await load(from: host, on: path, via: method, with: query, body: body)
+    }
+    
+    internal func load<Request: Encodable, Response: Decodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], item: Request? = nil) async throws -> (item: Response, response: HTTPURLResponse) {
+        let body = try dockerEncoder.encode(item)
+        return try await load(from: host, on: path, via: method, with: query, body: body)
+    }
+    
+    internal func load<Request: Encodable, Response: Decodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], item: Request? = nil) async throws -> Response {
+        let body = try dockerEncoder.encode(item)
+        return try await load(from: host, on: path, via: method, with: query, body: body)
+    }
+    
+    
+    // MARK: - Stream Implementation
+    
+    internal func stream(from host: URL, on path: String, via method: HTTPMethod = .GET, hasJSONResponse: Bool, convertArray: Bool = false, with query: [URLQueryItem] = [], body: Data? = nil) async throws -> (stream: AsyncThrowingStream<Data, Error>, response: HTTPURLResponse) {
         guard let request = createRequest(from: host, on: path, via: method, with: query, body: body) else {
-            throw APIError.invalidURLError(host.absoluteString + path)
+            throw APIError.invalidURL(host.absoluteString + path)
         }
         let task = streamSession.dataTask(with: request)
         streamData[task] = StreamData(cacheEnabled: hasJSONResponse, convertArray: convertArray)
@@ -57,6 +104,55 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate, NetworkingSess
             streamData[task]?.response = continuation
         })
         return (stream, response)
+    }
+    
+    internal func stream<Response: Decodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, hasJSONResponse: Bool = true, convertArray: Bool = false, with query: [URLQueryItem] = [], body: Data? = nil) async throws -> (stream: AsyncThrowingMapSequence<AsyncThrowingStream<Data, Error>, Response>, response: HTTPURLResponse) {
+        let (stream, response) = try await stream(from: host, on: path, via: method, hasJSONResponse: hasJSONResponse, convertArray: convertArray, with: query, body: body)
+        return (stream.map({ data in
+            return try dockerDecoder.decode(Response.self, from: data)
+        }), response)
+    }
+    
+    internal func stream<Response: Decodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, hasJSONResponse: Bool = true, convertArray: Bool = false, with query: [URLQueryItem] = [], body: Data? = nil) async throws -> AsyncThrowingMapSequence<AsyncThrowingStream<Data, Error>, Response> {
+        try await stream(from: host, on: path, via: method, hasJSONResponse: hasJSONResponse, convertArray: convertArray, with: query, body: body).stream
+    }
+    
+    // Same with Request item
+    
+    internal func stream<Request: Encodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, hasJSONResponse: Bool = true, convertArray: Bool = false, with query: [URLQueryItem] = [], item: Request? = nil) async throws -> (stream: AsyncThrowingStream<Data, Error>, response: HTTPURLResponse) {
+        let body = try dockerEncoder.encode(item)
+        return try await stream(from: host, on: path, via: method, hasJSONResponse: hasJSONResponse, convertArray: convertArray, with: query, body: body)
+    }
+    
+    internal func stream<Request: Encodable, Response: Decodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, hasJSONResponse: Bool = true, convertArray: Bool = false, with query: [URLQueryItem] = [], item: Request? = nil) async throws -> (stream: AsyncThrowingMapSequence<AsyncThrowingStream<Data, Error>, Response>, response: HTTPURLResponse) {
+        let body = try dockerEncoder.encode(item)
+        return try await stream(from: host, on: path, via: method, hasJSONResponse: hasJSONResponse, convertArray: convertArray, with: query, body: body)
+    }
+    
+    internal func stream<Request: Encodable, Response: Decodable>(from host: URL, on path: String, via method: HTTPMethod = .GET, hasJSONResponse: Bool = true, convertArray: Bool = false, with query: [URLQueryItem] = [], item: Request? = nil) async throws -> AsyncThrowingMapSequence<AsyncThrowingStream<Data, Error>, Response> {
+        let body = try dockerEncoder.encode(item)
+        return try await stream(from: host, on: path, via: method, hasJSONResponse: hasJSONResponse, convertArray: convertArray, with: query, body: body).stream
+    }
+    
+    // MARK: - Helper
+    
+    internal func createRequest(from host: URL, on path: String, via method: HTTPMethod = .GET, with query: [URLQueryItem] = [], body: Data? = nil) -> URLRequest? {
+        var fullHost = host
+        if host.scheme != "http" || host.scheme != "https" {
+            guard let tempFullHost = URL(string: "http://\(host.absoluteString)") else { return nil }
+            fullHost = tempFullHost
+        }
+        let hostWithComp = fullHost.appendingPathComponent(path)
+        guard var urlComponents = URLComponents(url: hostWithComp, resolvingAgainstBaseURL: true) else { return nil }
+        urlComponents.queryItems = query
+        if hostWithComp.port == nil {
+            urlComponents.port = GoPort.DEFAULT_PORT
+        }
+        guard let url = urlComponents.url else { return nil }
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.httpBody = body
+        return request
     }
     
     // MARK: - URL Session Delegate

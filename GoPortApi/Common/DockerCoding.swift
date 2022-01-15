@@ -49,6 +49,11 @@ internal let dockerDecoder: JSONDecoder = {
                 return date
             }
             
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSSZ"
+            if let date = formatter.date(from: dateStr) {
+                return date
+            }
+            
             formatter.dateFormat = "yyyy-MM-dd"
             if let date = formatter.date(from: dateStr) {
                 return date

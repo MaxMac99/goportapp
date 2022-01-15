@@ -6,18 +6,44 @@
 //
 
 import Foundation
+import AnyCodable
 
 public struct ContextInspectResponse: Codable, Hashable {
 
     /** The name of the context */
     public var name: String? = nil
     /** The metadata of the context */
-    public var metadata: String? = nil
+    public var metadata: [String:AnyCodable]? = nil
     /** The endpoint configuration of the context */
-    public var endpoints: [String: String]? = nil
+    public var endpoints: [String: [String:AnyCodable]]? = nil
     /** The materials for the TLS configuration of the endpoints */
     public var tLSMaterial: [String: [String]]? = nil
     public var storage: ContextInspectResponseStorage? = nil
+    
+    public var stackOrchestrator: String? {
+        guard let metadata = metadata?["Metadata"]?.value as? [String:String], let orchestrator = metadata["StackOrchestrator"] else {
+            return nil
+        }
+        return orchestrator
+    }
+    
+    public var dockerHost: String? {
+        guard let dockerHost = endpoints?["docker"]?["Host"]?.value as? String else {
+            return nil
+        }
+        return dockerHost
+    }
+    
+    public var description: String? {
+        guard let metadata = metadata?["Metadata"]?.value as? [String:String], let description = metadata["Description"] else {
+            return nil
+        }
+        return description
+    }
+    
+    public var local: Bool {
+        (metadata?["Metadata"]?.value as? [String:String])?["Type"] == "local"
+    }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case name = "Name"
@@ -27,4 +53,3 @@ public struct ContextInspectResponse: Codable, Hashable {
         case storage = "Storage"
     }
 }
-

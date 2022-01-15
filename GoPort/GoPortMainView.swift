@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct GoPortMainView: View {
-    @StateObject var serverService = ServerService.preview
+    @EnvironmentObject var serverService: ServerService
     
     var body: some View {
         TabView {
-            SettingsView(serverService: serverService)
+            SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
@@ -23,6 +23,7 @@ struct GoPortMainView: View {
 
 struct GoPortMainView_Previews: PreviewProvider {
     static var previews: some View {
-        GoPortMainView(serverService: ServerService.preview)
+        GoPortMainView()
+            .environmentObject(ServerService.preview)
     }
 }
