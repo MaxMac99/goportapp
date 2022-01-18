@@ -24,17 +24,6 @@ fileprivate struct LowercasedCodingKey: CodingKey {
 
 internal let dockerDecoder: JSONDecoder = {
     let decoder = JSONDecoder()
-//    decoder.keyDecodingStrategy = .custom({ keys in
-//        let lastKey = keys.last!
-//        if lastKey.intValue != nil {
-//            return lastKey
-//        }
-//        
-//        let firstLetter = lastKey.stringValue.prefix(1).lowercased()
-//        let modifiedKey = firstLetter + lastKey.stringValue.dropFirst()
-//        
-//        return LowercasedCodingKey(stringValue: modifiedKey)!
-//    })
     decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
         let container = try decoder.singleValueContainer()
         if let dateStr = try? container.decode(String.self) {

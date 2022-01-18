@@ -207,3 +207,9 @@ public struct SystemInfoResponseItem: Codable, Hashable {
         case warnings = "Warnings"
     }
 }
+
+#if DEBUG
+extension SystemInfoResponseItem: FilePreviewableAsDict {
+    public static var previewFilename: String { "info" }
+}
+#endif

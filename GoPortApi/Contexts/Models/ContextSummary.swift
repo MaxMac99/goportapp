@@ -34,3 +34,9 @@ extension ContextSummary: Identifiable {
         return name
     }
 }
+
+#if DEBUG
+extension ContextSummary : FilePreviewableAsArray {
+    public static var previewFilename: String { "contextsList" }
+}
+#endif

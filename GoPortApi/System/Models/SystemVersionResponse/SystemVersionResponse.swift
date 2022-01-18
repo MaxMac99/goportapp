@@ -49,3 +49,9 @@ public struct SystemVersionResponse: Codable, Hashable {
         case buildTime = "BuildTime"
     }
 }
+
+#if DEBUG
+extension SystemVersionResponse: FilePreviewable {
+    public static var previewFilename: String { "version" }
+}
+#endif

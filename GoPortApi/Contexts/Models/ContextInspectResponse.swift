@@ -53,3 +53,9 @@ public struct ContextInspectResponse: Codable, Hashable {
         case storage = "Storage"
     }
 }
+
+#if DEBUG
+extension ContextInspectResponse: FilePreviewable {
+    public static var previewFilename: String { "contextInspect" }
+}
+#endif

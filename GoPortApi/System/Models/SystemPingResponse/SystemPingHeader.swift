@@ -25,3 +25,14 @@ public struct SystemPingHeader: Codable, Hashable {
         self = try JSONDecoder().decode(SystemPingHeader.self, from: JSONSerialization.data(withJSONObject: headers))
     }
 }
+
+#if DEBUG
+extension SystemPingHeader {
+    internal static var previewFilename: String { "ping.header" }
+    public static var preview: SystemPingHeader {
+        get throws {
+            try SystemPingHeader(try MockHelper.loadHeaders(previewFilename))
+        }
+    }
+}
+#endif

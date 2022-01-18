@@ -25,3 +25,9 @@ public struct SystemDataUsageResponseItem: Codable, Hashable {
         case buildCache = "BuildCache"
     }
 }
+
+#if DEBUG
+extension SystemDataUsageResponseItem: FilePreviewableAsDict {
+    public static var previewFilename: String { "dataUsage" }
+}
+#endif

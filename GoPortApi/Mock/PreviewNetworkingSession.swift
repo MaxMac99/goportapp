@@ -7,52 +7,48 @@
 
 import Foundation
 
-public class PreviewNetworkingSession: NetworkingSession {
-    internal override func load(from host: URL, on path: String, via method: HTTPMethod, with query: [URLQueryItem], body: Data?) async throws -> (data: Data, response: HTTPURLResponse) {
-        guard let request = createRequest(from: host, on: path, via: method, with: query, body: body), let url = request.url else {
-            throw APIError.invalidURL(host.absoluteString + path)
-        }
-        var headerFields: [String: String]?
-        if path == "/_ping" {
-            if method == .HEAD {
-                headerFields = try! JSONDecoder().decode([String:String].self, from: try! JSONEncoder().encode(SystemPingHeader.preview))
-            } else {
-                headerFields = ["Goport-Version": "v1"]
-            }
-        }
-        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: "2.0", headerFields: headerFields)!
-        return (data: try dataForPath(path, with: method), response: response)
+internal class PreviewNetworkingSession: NetworkingSession {
+    func successfulHTTPURLResponse<Body>(for request: APIRequest<Body>) throws -> HTTPURLResponse {
+        let urlRequest = try request.createURLRequest()
+        let headerFields = ["Goport-Version":"v1"]
+        return HTTPURLResponse(url: urlRequest.url!, statusCode: 200, httpVersion: nil, headerFields: headerFields)!
     }
     
-    internal override func stream(from host: URL, on path: String, via method: HTTPMethod, hasJSONResponse: Bool, convertArray: Bool, with query: [URLQueryItem], body: Data?) async throws -> (stream: AsyncThrowingStream<Data, Error>, response: HTTPURLResponse) {
-        guard let request = createRequest(from: host, on: path, via: method, with: query, body: body), let url = request.url else {
-            throw APIError.invalidURL(host.absoluteString + path)
+    override func load<Body, Content>(_ request: APIRequest<Body>) async throws -> APIResponse<Content> where Body : Encodable {
+        guard Content.self is Previewable.Type else {
+            throw PreviewNetworkingError.notImplemented
         }
-        let stream = AsyncThrowingStream<Data, Error> { continuation in
-            continuation.finish(throwing: nil)
-        }
-        return (stream: stream, response: HTTPURLResponse(url: url, statusCode: 200, httpVersion: "2.0", headerFields: nil)!)
+        let type = Content.self as! Previewable.Type
+        let preview = type.preview as! Content
+        return APIResponse(content: preview, response: try successfulHTTPURLResponse(for: request))
     }
     
-    private func dataForPath(_ path: String, with method: HTTPMethod) throws -> Data {
-        print("\(method) for path \(path)")
-        let components = Array(path.components(separatedBy: "/").dropFirst())
-        switch components.first {
-        case "contexts":
-            if let mockData = try ContextsMockData.mockDataForPath(components: Array(components.dropFirst()), with: dockerEncoder, method: method) {
-                return mockData
-            }
-        default:
-            if let mockData = try SystemMockData.mockDataForPath(components: components, with: dockerEncoder, method: method) {
-                return mockData
-            }
+    override func stream<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body : Encodable, Content : Decodable {
+        guard Content.self is Previewable.Type else {
+            throw PreviewNetworkingError.notImplemented
         }
-        return Data()
+        
+        let type = Content.self as! Previewable.Type
+        let preview = try type.preview.asData
+        let response = APIStreamResponse<Content>(response: try successfulHTTPURLResponse(for: request), convertToArray: convertToArray, onTermination: nil)
+        
+        Task { [weak response] in
+            for _ in 0..<5 {
+                try await Task.sleep(nanoseconds: 200000)
+                response?.received(preview + "\n".utf8)
+            }
+            response?.complete(withError: nil)
+        }
+        return response
     }
 }
 
+internal enum PreviewNetworkingError: Error {
+    case notImplemented
+}
+
 public extension NetworkingSession {
-    static var preview: PreviewNetworkingSession {
+    static var preview: NetworkingSession {
         PreviewNetworkingSession()
     }
 }

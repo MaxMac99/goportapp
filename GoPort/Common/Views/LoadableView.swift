@@ -41,7 +41,7 @@ struct LoadableView_Previews: PreviewProvider {
             } contentView: { item in
                 Text(item)
             }
-            LoadableView(loadable: Loadable<String>.error(APIError.noHTTPResponse)) { error in
+            LoadableView(loadable: Loadable<String>.error(APIResponseError.unknown(nil))) { error in
                 Text("\(error.localizedDescription)")
                     .foregroundColor(.red)
             } contentView: { item in

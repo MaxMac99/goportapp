@@ -29,3 +29,9 @@ public struct SystemEventsResponseItem: Codable, Hashable {
         case timeNano
     }
 }
+
+#if DEBUG
+extension SystemEventsResponseItem: FilePreviewableAsDict {
+    public static var previewFilename: String { "events" }
+}
+#endif

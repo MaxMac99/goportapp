@@ -13,3 +13,15 @@ public struct SystemPingResponseSummary {
     public var goportVersion: String?
     public var contexts: SystemPingResponse
 }
+
+#if DEBUG
+extension SystemPingResponseItem: FilePreviewableAsDict {
+    public static var previewFilename: String { "info" }
+}
+
+extension SystemPingResponseSummary: Previewable {
+    public static var preview: SystemPingResponseSummary {
+        return SystemPingResponseSummary(goportVersion: "v1", contexts: SystemPingResponse.preview)
+    }
+}
+#endif
