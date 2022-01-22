@@ -55,7 +55,7 @@ internal struct APIRequest<Body: Encodable> {
         }
         urlComponents.queryItems = queryArgs
         if hostWithComp.port == nil {
-            urlComponents.port = GoPort.DEFAULT_PORT
+            urlComponents.port = GoPortAPI.defaultPort
         }
         guard let url = urlComponents.url else {
             throw APIRequestError.invalidURL(hostWithComp.absoluteString)

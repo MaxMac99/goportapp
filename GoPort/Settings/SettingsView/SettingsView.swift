@@ -11,36 +11,48 @@ struct SettingsView: View {
     @EnvironmentObject var serverService: ServerService
     @StateObject var viewModel = SettingsViewModel()
     
+    @State private var showAddServer = false
+    
     var body: some View {
         NavigationView {
             List {
+                if serverService.servers.isEmpty {
+                    Button {
+                         showAddServer = true
+                    } label: {
+                        Label("Add Server", systemImage: "plus.circle")
+                    }
+                }
                 Section("Servers") {
                     ForEach(serverService.servers) { server in
-                        ServerRowView(server: server, status: viewModel.serverStatus[server])
+                        ServerRowView(server: server, status: viewModel.serverStatus[server]?.status ?? .connecting, isSelected: serverService.selectedServer == server)
                             .task {
                                 if viewModel.serverStatus[server] == nil {
                                     await viewModel.pingServer(server)
                                 }
                             }
-                    }
-                    .onDelete { offsets in
-                        serverService.removeServer(at: offsets)
+                        if let contexts = viewModel.serverStatus[serverService.servers.first!]?.contexts {
+                            ForEach(contexts, id: \.context) { contextName, status in
+                                ServerContextRowView(server: server, contextName: contextName, status: status)
+                            }
+                        }
                     }
                 }
             }
             .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showAddServer = true
+                    } label: {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
             }
             .navigationTitle("Settings")
         }
-    }
-    
-    func addItem() {
-        // TODO: Open view to add servers
+        .sheet(isPresented: $showAddServer) {
+            AddServerView()
+        }
     }
 }
 

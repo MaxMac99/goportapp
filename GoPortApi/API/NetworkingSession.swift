@@ -8,8 +8,6 @@
 import Foundation
 
 public class NetworkingSession: NSObject, URLSessionDataDelegate {
-    public static let shared = NetworkingSession()
-    
     private var session: URLSession! = nil
     private var streamSession: URLSession! = nil
     private var streamData: [URLSessionTask:StreamData] = [:]
@@ -92,4 +90,8 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate {
             streamData[task]?.responseContinuation = nil
         }
     }
+}
+
+public extension NetworkingSession {
+    static let shared: NetworkingSession = PreviewNetworkingSession()
 }

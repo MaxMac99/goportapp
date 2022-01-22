@@ -9,9 +9,11 @@ import SwiftUI
 import GoPortApi
 
 struct ContextDetailView: View {
-    @StateObject var viewModel: ContextDetailViewModel
+    var server: Server
+    var contextName: String? = nil
+    @StateObject var viewModel = ContextDetailViewModel()
     
-    var dateFormatter: DateFormatter {
+    private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .medium
@@ -25,24 +27,45 @@ struct ContextDetailView: View {
             contextSection
         }
         .task {
+            viewModel.setup(server: server, contextName: contextName)
             await viewModel.load()
+        }
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Menu {
+                    Button {
+                        
+                    } label: {
+                        Label("Use this server", systemImage: "checkmark")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
+                } label: {
+                    Label("Menu", systemImage: "ellipsis.circle")
+                }
+            }
         }
         .navigationTitle(viewModel.title)
     }
     
-    var dockPortSection: some View {
+    private var dockPortSection: some View {
         Section("DockPort Server") {
-            DetailRowView(label: "Name", detail: viewModel.server.name)
-            DetailRowView(label: "URL", detail: viewModel.server.host.absoluteString)
+            DetailRowView(label: "Name", detail: server.name)
+            DetailRowView(label: "URL", detail: server.host.absoluteString)
+            if let content = viewModel.pingInformation.content {
+                DetailRowView(label: "GoPort Version", detail: content.goportVersion)
+            }
+            
             if viewModel.pingInformation.isLoading {
                 ProgressView()
-            } else if let content = viewModel.pingInformation.content {
-                DetailRowView(label: "GoPort Version", detail: content.goportVersion)
             }
         }
     }
     
-    var contextHostSection: some View {
+    private var contextHostSection: some View {
         Section("Context Host") {
             if let contextName = viewModel.contextName {
                 DetailRowView(label: "Name", detail: contextName)
@@ -89,7 +112,7 @@ struct ContextDetailView: View {
     }
     
     @ViewBuilder
-    var contextSection: some View {
+    private var contextSection: some View {
         if let info = viewModel.systemInfo.content {
             Section("Context Information") {
                 if let running = info.containersRunning, let paused = info.containersPaused, let stopped = info.containersStopped {
@@ -133,7 +156,7 @@ struct ContextDetailView: View {
 struct ContextDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ContextDetailView(viewModel: ContextDetailViewModel.preview)
+            ContextDetailView(server: Server.preview.first!, contextName: "default", viewModel: ContextDetailViewModel.preview)
         }
     }
 }

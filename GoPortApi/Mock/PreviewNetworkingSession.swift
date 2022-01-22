@@ -48,7 +48,5 @@ internal enum PreviewNetworkingError: Error {
 }
 
 public extension NetworkingSession {
-    static var preview: NetworkingSession {
-        PreviewNetworkingSession()
-    }
+    static let preview: NetworkingSession = PreviewNetworkingSession()
 }

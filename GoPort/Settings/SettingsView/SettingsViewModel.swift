@@ -40,25 +40,25 @@ class SettingsViewModel: ObservableObject {
 
 #if DEBUG
 extension SettingsViewModel {
-    static var preview: SettingsViewModel {
+    static let preview: SettingsViewModel = {
         let viewModel = SettingsViewModel(session: NetworkingSession.preview)
         viewModel.serverStatus = Dictionary(uniqueKeysWithValues: Server.preview.enumerated()
             .map({ index, server in
-            let status: ConnectionStatus
-            switch index % 3 {
-            case 0:
-                status = .connected
-            case 1:
-                status = .connecting
-            default:
-                status = .disconnected
-            }
-            return (server, ServerStatus(status: status, contexts: [
-                ("default", .connected),
-                ("remote", .disconnected)
-            ]))
+                let status: ConnectionStatus
+                switch index % 3 {
+                case 0:
+                    status = .connected
+                case 1:
+                    status = .connecting
+                default:
+                    status = .disconnected
+                }
+                return (server, ServerStatus(status: status, contexts: [
+                    ("default", .connected),
+                    ("remote", .disconnected)
+                ]))
             }))
         return viewModel
-    }
+    }()
 }
 #endif

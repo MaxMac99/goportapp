@@ -9,6 +9,14 @@ import Foundation
 import GoPortApi
 
 class ServerService: ObservableObject {
+    static let shared = ServerService()
+    
+    private init() {}
+    
+    enum SaveServerError: Error {
+        case notCheckedURL
+        case nameAlreadyExists
+    }
     
     @Published fileprivate(set) var servers: [Server] = UserDefaults.standard.servers {
         didSet {
@@ -27,7 +35,7 @@ class ServerService: ObservableObject {
         }
         
         let response = try await SystemAPI.systemPing(host: host)
-        guard let goportVersion = response.goportVersion, GoPort.supportedGoPortVersions.contains(goportVersion) else {
+        guard let goportVersion = response.goportVersion, GoPortAPI.supportedGoPortVersions.contains(goportVersion) else {
             throw ServerError.notSupported
         }
         
@@ -38,12 +46,27 @@ class ServerService: ObservableObject {
         }
     }
     
-    func removeServer(at offsets: IndexSet) {
-        let serversToRemove = offsets.map { servers[$0].name }
-        servers.remove(atOffsets: offsets)
-        if serversToRemove.contains(where: {$0 == selectedServer?.name}) {
-            selectedServer = servers.first
+    func save(url: String, name: String) throws {
+        guard !servers.contains(where: { $0.name == name }) else {
+            throw SaveServerError.nameAlreadyExists
         }
+        let server = Server(name: name, host: URL(string: url)!)
+        servers.append(server)
+        selectedServer = server
+    }
+    
+    func select(_ server: Server) {
+        guard servers.contains(server) else {
+            return
+        }
+        selectedServer = server
+    }
+    
+    func remove(_ server: Server) {
+        guard let index = servers.firstIndex(of: server) else {
+            return
+        }
+        servers.remove(at: index)
     }
 }
 
@@ -61,14 +84,6 @@ fileprivate extension UserDefaults {
             set(newValue, forKey: "Servers")
         }
     }
-    var servers: [Server] {
-        get {
-            return serversData.jsonDecoded([Server].self) ?? []
-        }
-        set {
-            serversData = try? JSONEncoder().encode(newValue)
-        }
-    }
     
     @objc private var selectedServerData: Data? {
         get {
@@ -78,7 +93,18 @@ fileprivate extension UserDefaults {
             set(newValue, forKey: "SelectedServer")
         }
     }
-    var selectedServer: Server? {
+}
+
+extension UserDefaults {
+    fileprivate(set) var servers: [Server] {
+        get {
+            return serversData.jsonDecoded([Server].self) ?? []
+        }
+        set {
+            serversData = try? JSONEncoder().encode(newValue)
+        }
+    }
+    fileprivate(set) var selectedServer: Server? {
         get {
             return selectedServerData.jsonDecoded(Server.self)
         }
@@ -90,11 +116,11 @@ fileprivate extension UserDefaults {
 
 #if DEBUG
 extension ServerService {
-    static var preview: ServerService {
+    static let preview: ServerService = {
         let viewModel = ServerService()
-        viewModel.servers = Server.preview
+        //viewModel.servers = Server.preview
         viewModel.selectedServer = viewModel.servers.first!
         return viewModel
-    }
+    }()
 }
 #endif
