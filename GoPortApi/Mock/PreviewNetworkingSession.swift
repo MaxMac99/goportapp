@@ -16,7 +16,7 @@ internal class PreviewNetworkingSession: NetworkingSession {
     
     override func load<Body, Content>(_ request: APIRequest<Body>) async throws -> APIResponse<Content> where Body : Encodable {
         guard Content.self is Previewable.Type else {
-            throw PreviewNetworkingError.notImplemented
+            return try await handleExceptions(request)
         }
         let type = Content.self as! Previewable.Type
         let preview = type.preview as! Content
@@ -68,6 +68,15 @@ internal class PreviewNetworkingSession: NetworkingSession {
             response?.complete(withError: nil)
         }
         return response
+    }
+    
+    private func handleExceptions<Body, Content>(_ request: APIRequest<Body>) async throws -> APIResponse<Content> where Body: Encodable {
+        switch request.path {
+        case NetworkAPI.NetworkAPIPath.networkList:
+            return APIResponse(content: NetworkListResponse.preview as! Content, response: try successfulHTTPURLResponse(for: request))
+        default:
+            throw PreviewNetworkingError.notImplemented
+        }
     }
 }
 

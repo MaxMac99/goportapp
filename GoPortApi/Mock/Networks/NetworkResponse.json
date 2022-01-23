@@ -1,0 +1,23 @@
+{
+    "Name": "host",
+    "Id": "225bc73cff772e7b5db158aede92a2bfb092a6bddd9e13b33b6642826ba7369c",
+    "Created": "2021-10-17T14:05:43.785519248Z",
+    "Scope": "local",
+    "Driver": "host",
+    "EnableIPv6": false,
+    "IPAM": {
+        "Driver": "default",
+        "Options": null,
+        "Config": []
+    },
+    "Internal": false,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+        "Network": ""
+    },
+    "ConfigOnly": false,
+    "Containers": {},
+    "Options": {},
+    "Labels": {}
+}

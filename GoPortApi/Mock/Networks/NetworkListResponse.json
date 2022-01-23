@@ -1,0 +1,70 @@
+{
+    "default": [
+        {
+            "Name": "host",
+            "Id": "225bc73cff772e7b5db158aede92a2bfb092a6bddd9e13b33b6642826ba7369c",
+            "Created": "2021-10-17 14:05:43.785519248 +0000 UTC",
+            "Scope": "local",
+            "Driver": "host",
+            "IPAM": {
+                "Driver": "default"
+            }
+        },
+        {
+            "Name": "test_default",
+            "Id": "2a5b6a165029bb92d138986c4cc8b6a850cd46dd788d19b06262897bd32379eb",
+            "Created": "2021-12-04 16:07:16.8350284 +0000 UTC",
+            "Scope": "local",
+            "Driver": "bridge",
+            "IPAM": {
+                "Driver": "default",
+                "Config": [
+                    {
+                        "Subnet": "172.19.0.0/16",
+                        "Gateway": "172.19.0.1"
+                    }
+                ]
+            },
+            "Attachable": true,
+            "Labels": {
+                "com.docker.compose.network": "default",
+                "com.docker.compose.project": "test",
+                "com.docker.compose.version": "1.29.2"
+            }
+        },
+        {
+            "Name": "bridge",
+            "Id": "a93e6883820c4b84f37c0a880fc64222c1730078e0fd83e2ce6f9b9651d1a78e",
+            "Created": "2022-01-22 22:37:23.538941109 +0000 UTC",
+            "Scope": "local",
+            "Driver": "bridge",
+            "IPAM": {
+                "Driver": "default",
+                "Config": [
+                    {
+                        "Subnet": "172.17.0.0/16",
+                        "Gateway": "172.17.0.1"
+                    }
+                ]
+            },
+            "Options": {
+                "com.docker.network.bridge.default_bridge": "true",
+                "com.docker.network.bridge.enable_icc": "true",
+                "com.docker.network.bridge.enable_ip_masquerade": "true",
+                "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+                "com.docker.network.bridge.name": "docker0",
+                "com.docker.network.driver.mtu": "1500"
+            }
+        },
+        {
+            "Name": "none",
+            "Id": "ed87db7c1e1debd697af43ebfc4785d576a98c48760d636795e90f5261fbbaaa",
+            "Created": "2021-10-17 14:05:43.773051722 +0000 UTC",
+            "Scope": "local",
+            "Driver": "null",
+            "IPAM": {
+                "Driver": "default"
+            }
+        }
+    ]
+}
