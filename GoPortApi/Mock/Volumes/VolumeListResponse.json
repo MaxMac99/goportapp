@@ -1,0 +1,389 @@
+{
+    "default": {
+        "Volumes": [
+            {
+                "Name": "f8da31217ec5551a32b5029843e2ea564d3667c3028dd4901d8c0f15f55d2e63",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/f8da31217ec5551a32b5029843e2ea564d3667c3028dd4901d8c0f15f55d2e63/_data",
+                "CreatedAt": "2021-10-22T09:39:53Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "3740abc4212bf29c33d7d7a39c4c0c34e0cac35b1ecde028a31bc95a916c42e8",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/3740abc4212bf29c33d7d7a39c4c0c34e0cac35b1ecde028a31bc95a916c42e8/_data",
+                "CreatedAt": "2021-10-21T22:06:18Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "482d89877bb9b08bcd8c636e00dfad089bbdb94a4838228dad1af1004cb77f98",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/482d89877bb9b08bcd8c636e00dfad089bbdb94a4838228dad1af1004cb77f98/_data",
+                "CreatedAt": "2021-11-10T20:07:33Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "a24098ef2898d5adc0681dfa03012559d2cab9c5ca1eb424be4436fe036a8067",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/a24098ef2898d5adc0681dfa03012559d2cab9c5ca1eb424be4436fe036a8067/_data",
+                "CreatedAt": "2022-01-21T07:48:59Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "c8e047ae1c4714f99add880e580e3e9c65bb79bd82902affa0ef0f20061c9008",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/c8e047ae1c4714f99add880e580e3e9c65bb79bd82902affa0ef0f20061c9008/_data",
+                "CreatedAt": "2021-10-21T22:09:21Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "d37c122321979982f8feee1f31da179265ea75599a621e1702f518cc2a35ed6a",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/d37c122321979982f8feee1f31da179265ea75599a621e1702f518cc2a35ed6a/_data",
+                "CreatedAt": "2021-10-22T09:55:34Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "ece8cda0090c971c82d5e9ea8e64ee0f0e4e9984ecae60f0ad37ef8277e4945a",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/ece8cda0090c971c82d5e9ea8e64ee0f0e4e9984ecae60f0ad37ef8277e4945a/_data",
+                "CreatedAt": "2021-10-22T11:23:44Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "07761c16fc6b199e161f1eef74cbb5dd18ff3978b6a3fb5f2588e7cc555c6ffd",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/07761c16fc6b199e161f1eef74cbb5dd18ff3978b6a3fb5f2588e7cc555c6ffd/_data",
+                "CreatedAt": "2021-10-23T13:55:33Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "5d1d35914063dd2baace0463c45819a742a0318ac086a1392de4729c2d35c733",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/5d1d35914063dd2baace0463c45819a742a0318ac086a1392de4729c2d35c733/_data",
+                "CreatedAt": "2021-10-21T23:01:06Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "7a23d03c2e1def584e3bb4e677fe84fe542970bd625f29d5b5bb879fe9a87c89",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/7a23d03c2e1def584e3bb4e677fe84fe542970bd625f29d5b5bb879fe9a87c89/_data",
+                "CreatedAt": "2021-10-22T09:41:07Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "d6f9018f599ad5ac277b2531755bc391bb342969f39624d4f5b33f514275a6f2",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/d6f9018f599ad5ac277b2531755bc391bb342969f39624d4f5b33f514275a6f2/_data",
+                "CreatedAt": "2021-10-23T13:10:12Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "ddaabe26ff44e1b36b7ab82d34264537494ba3c79c7daad19d9553d1bcb02ab4",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/ddaabe26ff44e1b36b7ab82d34264537494ba3c79c7daad19d9553d1bcb02ab4/_data",
+                "CreatedAt": "2021-10-22T08:56:55Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "4fede5e03bcabda8aaa19be0dc7f81a7329c6edde735a7a7440c99dd85846a38",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/4fede5e03bcabda8aaa19be0dc7f81a7329c6edde735a7a7440c99dd85846a38/_data",
+                "CreatedAt": "2021-10-22T09:20:33Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "64edd3b84602352d4e9bb9cd252b17017ec3ac6249e1b4ed884b0a82fd142d41",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/64edd3b84602352d4e9bb9cd252b17017ec3ac6249e1b4ed884b0a82fd142d41/_data",
+                "CreatedAt": "2021-10-22T08:55:38Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "cd78a170e54ebcbb27587fb09f58eac3651ea4c74374a28d68ad723aacf0e823",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/cd78a170e54ebcbb27587fb09f58eac3651ea4c74374a28d68ad723aacf0e823/_data",
+                "CreatedAt": "2022-01-19T16:54:43Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "18db21498764c494b20d5899341e7613189a54019e5ef0c9c8f06715e7a7abb2",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/18db21498764c494b20d5899341e7613189a54019e5ef0c9c8f06715e7a7abb2/_data",
+                "CreatedAt": "2021-10-22T09:23:05Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "b8464e7890006d8f040058744a039bc83492aeee09639fe3c7f4459af4816951",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/b8464e7890006d8f040058744a039bc83492aeee09639fe3c7f4459af4816951/_data",
+                "CreatedAt": "2021-10-22T11:01:53Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "ea8eb56e3e2d28f34518097ae88b8ad72760d44143577146559bc84f3bc4855a",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/ea8eb56e3e2d28f34518097ae88b8ad72760d44143577146559bc84f3bc4855a/_data",
+                "CreatedAt": "2021-10-22T06:32:51Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "f761f6f85caaf020626eebf9b865b87b14debda2274dd9235c6069f40f6c2225",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/f761f6f85caaf020626eebf9b865b87b14debda2274dd9235c6069f40f6c2225/_data",
+                "CreatedAt": "2021-11-19T07:29:42Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "a75114341c713cc1c681875ac57610ff40f051c9498a1483dd0b3c9c80af5123",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/a75114341c713cc1c681875ac57610ff40f051c9498a1483dd0b3c9c80af5123/_data",
+                "CreatedAt": "2021-10-21T22:02:48Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "f1f761e5d8c267053ec718890c87300aff05b01fcd517959521739812c42dbfc",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/f1f761e5d8c267053ec718890c87300aff05b01fcd517959521739812c42dbfc/_data",
+                "CreatedAt": "2021-11-03T20:15:00Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "30cefc5d083820c390aa81448ad54ea011bfde5629dceecda8859650ecc9a48d",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/30cefc5d083820c390aa81448ad54ea011bfde5629dceecda8859650ecc9a48d/_data",
+                "CreatedAt": "2021-10-23T13:11:25Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "334027d893836e0e3ce497e6c9b86933112a72c4b070124c10cfe8aca8b0f051",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/334027d893836e0e3ce497e6c9b86933112a72c4b070124c10cfe8aca8b0f051/_data",
+                "CreatedAt": "2021-10-23T14:41:36Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "68e03422f69e13981f5f7dae92f6ea8b2d8f09ee3e5cb4ff5b7dfb5318e4e557",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/68e03422f69e13981f5f7dae92f6ea8b2d8f09ee3e5cb4ff5b7dfb5318e4e557/_data",
+                "CreatedAt": "2021-10-21T23:15:00Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "7c6a65756b1eab48c0930c34e9e28bf0e5853b03c66153b30b00adab2fa5b585",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/7c6a65756b1eab48c0930c34e9e28bf0e5853b03c66153b30b00adab2fa5b585/_data",
+                "CreatedAt": "2021-10-23T12:31:05Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "88114729ce1cc3de5773cfce16abe61205ea00c6f09d2c5c51d7c8ae5abf22a8",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/88114729ce1cc3de5773cfce16abe61205ea00c6f09d2c5c51d7c8ae5abf22a8/_data",
+                "CreatedAt": "2021-10-23T13:06:35Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "1f90e4d346b1c550f19f51c554735ee1e5c16407fa1ad6ff69fe046ee7783493",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/1f90e4d346b1c550f19f51c554735ee1e5c16407fa1ad6ff69fe046ee7783493/_data",
+                "CreatedAt": "2021-10-23T13:24:32Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "561aaee8bd66637bac30bec68e53c1729987200c6770c112870086e60f7682e6",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/561aaee8bd66637bac30bec68e53c1729987200c6770c112870086e60f7682e6/_data",
+                "CreatedAt": "2021-12-01T17:10:24Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "81a27e43c138270435b2d1372bd56744c7b3a6e61d40e05ebe16050a91f04d7c",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/81a27e43c138270435b2d1372bd56744c7b3a6e61d40e05ebe16050a91f04d7c/_data",
+                "CreatedAt": "2022-01-19T16:33:16Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "b7459ce719021cb78e5e13b363338a863df935430785dcb09bf7fe105bc1d981",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/b7459ce719021cb78e5e13b363338a863df935430785dcb09bf7fe105bc1d981/_data",
+                "CreatedAt": "2021-10-21T21:52:36Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "324b539384afdf8cb74ebf8fb870a8c57bdc721892f62130b1c0dde0997cc0b3",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/324b539384afdf8cb74ebf8fb870a8c57bdc721892f62130b1c0dde0997cc0b3/_data",
+                "CreatedAt": "2021-10-22T11:27:37Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "4bdad94cc7550d94723fabb9e9b0000e55390f1f7178ae67db7ab36a2e1b217b",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/4bdad94cc7550d94723fabb9e9b0000e55390f1f7178ae67db7ab36a2e1b217b/_data",
+                "CreatedAt": "2022-01-19T16:48:10Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "e672b414c0d915863c8e0c0f99414c2a540728c527eabfa9245765372fd1a73f",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/e672b414c0d915863c8e0c0f99414c2a540728c527eabfa9245765372fd1a73f/_data",
+                "CreatedAt": "2021-10-21T22:12:18Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "f98a4db5d9738ca80fc32cfe51a24623046f1f0f1308ccd285fc74565c12850b",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/f98a4db5d9738ca80fc32cfe51a24623046f1f0f1308ccd285fc74565c12850b/_data",
+                "CreatedAt": "2021-10-21T22:23:01Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "vscode",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/vscode/_data",
+                "CreatedAt": "2021-10-17T14:08:41Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "936a5b11827bc3196d7bb2c64d967ec187e4c34e850f7560cdca8e84e121cc64",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/936a5b11827bc3196d7bb2c64d967ec187e4c34e850f7560cdca8e84e121cc64/_data",
+                "CreatedAt": "2021-11-10T18:00:39Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "praktikum1_db2",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/praktikum1_db2/_data",
+                "CreatedAt": "2021-10-21T21:51:06Z",
+                "Labels": {
+                    "com.docker.compose.project": "praktikum1",
+                    "com.docker.compose.version": "1.29.2",
+                    "com.docker.compose.volume": "db2"
+                },
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "2f65b872fdd280488b9c1df3230d9139f269d67dac339d3d71bf3bcdfd28dd8e",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/2f65b872fdd280488b9c1df3230d9139f269d67dac339d3d71bf3bcdfd28dd8e/_data",
+                "CreatedAt": "2021-10-23T12:32:48Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "50e6c17191e6d38d679bb568d633d8425e46bde98bfe386c0d77cdeaf60ab315",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/50e6c17191e6d38d679bb568d633d8425e46bde98bfe386c0d77cdeaf60ab315/_data",
+                "CreatedAt": "2021-10-22T08:00:07Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "625e64c04366b99a689b9263c0c8c49426e4496b2121e8640bd9f97b7d2ffc54",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/625e64c04366b99a689b9263c0c8c49426e4496b2121e8640bd9f97b7d2ffc54/_data",
+                "CreatedAt": "2021-11-10T19:55:08Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "6ca8d5b69bf796a8903d379cce6b3c5edde102b6333d85d104b46f0e5e543267",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/6ca8d5b69bf796a8903d379cce6b3c5edde102b6333d85d104b46f0e5e543267/_data",
+                "CreatedAt": "2021-10-22T06:36:31Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            },
+            {
+                "Name": "712556e327418950ab0b585212d3bd3a01f0fd2e94f9bf618e7158e1f1eef8da",
+                "Driver": "local",
+                "Mountpoint": "/var/lib/docker/volumes/712556e327418950ab0b585212d3bd3a01f0fd2e94f9bf618e7158e1f1eef8da/_data",
+                "CreatedAt": "2021-10-23T14:03:16Z",
+                "Labels": {},
+                "Scope": "local",
+                "Options": {}
+            }
+        ],
+        "Warnings": []
+    }
+}

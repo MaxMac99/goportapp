@@ -1,0 +1,9 @@
+{
+    "Name": "f8da31217ec5551a32b5029843e2ea564d3667c3028dd4901d8c0f15f55d2e63",
+    "Driver": "local",
+    "Mountpoint": "/var/lib/docker/volumes/f8da31217ec5551a32b5029843e2ea564d3667c3028dd4901d8c0f15f55d2e63/_data",
+    "CreatedAt": "2021-10-22T09:39:53Z",
+    "Labels": {},
+    "Scope": "local",
+    "Options": {}
+}

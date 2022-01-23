@@ -14,7 +14,7 @@ public struct SystemDataUsageResponseItem: Codable, Hashable {
     public var layersSize: Int64? = nil
     public var images: [ImageSummary]? = nil
     public var containers: [ContainerSummary]? = nil
-    public var volumes: [Volume]? = nil
+    public var volumes: [VolumeResponse]? = nil
     public var buildCache: [BuildCache]? = nil
 
     public enum CodingKeys: String, CodingKey, CaseIterable {

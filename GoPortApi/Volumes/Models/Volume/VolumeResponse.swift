@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Volume: Codable, Hashable {
+public struct VolumeResponse: Codable, Hashable {
 
     public enum Scope: String, Codable, CaseIterable {
         case local = "local"
@@ -44,3 +44,8 @@ public struct Volume: Codable, Hashable {
     }
 }
 
+#if DEBUG
+extension VolumeResponse: FilePreviewable {
+    public static var previewFilename: String { "VolumeResponse" }
+}
+#endif
