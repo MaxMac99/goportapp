@@ -1,0 +1,59 @@
+[
+    {
+        "description": "Hello World! (an example of minimal Dockerization)",
+        "is_official": true,
+        "name": "hello-world",
+        "star_count": 1624
+    },
+    {
+        "description": "Image to test docker deployments. Has Apache with a 'Hello World' page listening in port 80.",
+        "is_automated": true,
+        "name": "tutum/hello-world",
+        "star_count": 87
+    },
+    {
+        "description": "An APB which deploys a sample Hello World! app",
+        "is_automated": true,
+        "name": "ansibleplaybookbundle/hello-world-apb",
+        "star_count": 1
+    },
+    {
+        "description": "An APB which deploys a sample Hello World! app backed with a persistent database.",
+        "is_automated": true,
+        "name": "ansibleplaybookbundle/hello-world-db-apb",
+        "star_count": 1
+    },
+    {
+        "description": "Hello World!",
+        "is_automated": true,
+        "name": "dockercloud/hello-world",
+        "star_count": 19
+    },
+    {
+        "description": "This project is a REST hello-world API to build a docker image we can test behind an API Gateway",
+        "name": "thomaspoignant/hello-world-rest-json",
+        "star_count": 1
+    },
+    {
+        "description": "Hello World web server in under 2.5 MB",
+        "is_automated": true,
+        "name": "crccheck/hello-world",
+        "star_count": 15
+    },
+    {
+        "description": "A light-weight nginx container that demonstrates the features of Kitematic",
+        "name": "kitematic/hello-world-nginx",
+        "star_count": 151
+    },
+    {
+        "description": "Simple hello-world Spring Boot service for testing purposes",
+        "is_automated": true,
+        "name": "garystafford/hello-world"
+    },
+    {
+        "description": "A tiny \"Hello World\" web server with a health check endpoint.",
+        "is_automated": true,
+        "name": "infrastructureascode/hello-world",
+        "star_count": 1
+    }
+]

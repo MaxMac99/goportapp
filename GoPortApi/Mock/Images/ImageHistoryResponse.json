@@ -1,0 +1,36 @@
+[
+    {
+        "Id": "sha256:0ed6cc16db71fe88a719ffa7c0dd4f255b3257d729c11b336e8a3063f5637444",
+        "Created": 1640307340,
+        "CreatedBy": "CMD [\"./main\"]",
+        "Tags": [
+            "goport:latest"
+        ],
+        "Size": 0,
+        "Comment": "buildkit.dockerfile.v0"
+    },
+    {
+        "Id": "<missing>",
+        "Created": 1640307340,
+        "CreatedBy": "EXPOSE map[9212/tcp:{}]",
+        "Tags": [],
+        "Size": 0,
+        "Comment": "buildkit.dockerfile.v0"
+    },
+    {
+        "Id": "<missing>",
+        "Created": 1640307340,
+        "CreatedBy": "COPY /go/src/main ./ # buildkit",
+        "Tags": [],
+        "Size": 39005657,
+        "Comment": "buildkit.dockerfile.v0"
+    },
+    {
+        "Id": "<missing>",
+        "Created": 1640307340,
+        "CreatedBy": "ENV GIN_MODE=release",
+        "Tags": [],
+        "Size": 0,
+        "Comment": "buildkit.dockerfile.v0"
+    }
+]

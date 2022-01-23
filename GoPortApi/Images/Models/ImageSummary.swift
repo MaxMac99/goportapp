@@ -34,3 +34,8 @@ public struct ImageSummary: Codable, Hashable {
     }
 }
 
+#if DEBUG
+extension ImageSummary: FilePreviewableAsArray {
+    public static var previewFilename: String { "ImageListResponse" }
+}
+#endif

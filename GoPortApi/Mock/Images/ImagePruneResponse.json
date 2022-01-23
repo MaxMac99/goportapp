@@ -1,0 +1,82 @@
+{
+    "default": {
+        "ImagesDeleted": [
+            {
+                "Deleted": "sha256:45316be44675bbfdc206faa4051f23fad21bd2195cec174510d0c908e8400c8f"
+            },
+            {
+                "Deleted": "sha256:301a833693d2e80cbadf55d66f0faa3baded34b7bb0e5236c5d5f3cbd99ccd1a"
+            },
+            {
+                "Deleted": "sha256:1e7830801ec7944e3dc2e9c7bfe5a65c213782e76fb81ab4b9391c713627fc1a"
+            },
+            {
+                "Deleted": "sha256:54b5e2b53cf2ad50dd4869a7e7814bf62eb5484735bc39aa7aea08af3bfc9c89"
+            },
+            {
+                "Deleted": "sha256:d8f24756dab7d7be4bd55818fcd235f6bf78c4f9090fd089ff22bab2b297c6fe"
+            },
+            {
+                "Deleted": "sha256:36a24d225aba5236d2184222f4ac300f367d63e0cfebaa4557c8620097f70df9"
+            },
+            {
+                "Deleted": "sha256:5f4d1ecf81a40cb1b916ca7b8db86646581384a7a828da7bf7f190d13220db44"
+            },
+            {
+                "Deleted": "sha256:b384b52fedc3dee4b5a080ba2df58913e6066c97995cf98b3c0d4429e9b82e7e"
+            },
+            {
+                "Deleted": "sha256:aaa815bad73da5e2e4755af639df12a96c80de7bebd05effdbb207468184f507"
+            },
+            {
+                "Deleted": "sha256:b5a1694a7efd7d3220a13e0fa25831c00561b9fdf8b5a7de00cb912512a22ad6"
+            },
+            {
+                "Deleted": "sha256:9c9866fdd987ca498d1a774277c65598e6f10aca2ecd6dcbb0f608a12957bc87"
+            },
+            {
+                "Deleted": "sha256:732893d39e63212f307339ceda4bc98d0c14d455c6da1bfb8cf9ff738de0f912"
+            },
+            {
+                "Deleted": "sha256:456616e85589747c1e76c8eba7a80b751d59727ce10ec56b35fdfffb8f37529e"
+            },
+            {
+                "Deleted": "sha256:d4dcb908459aeab0e09e278d420ab7435c039c7f9cd8c71795055bfee8d79749"
+            },
+            {
+                "Deleted": "sha256:b982149e59bd7b10db30922b4ad3d2a42293569f619c324ef3aac83d0d4935d4"
+            },
+            {
+                "Deleted": "sha256:a2a7ef3ce3cb9f6699839429d4630bf55f21dae57010df94f2bb6c1771a883bb"
+            },
+            {
+                "Deleted": "sha256:14a17e07459d361a09b89f638bdcd0fd80731af7ad27532a9184d47ae6a2a87e"
+            },
+            {
+                "Deleted": "sha256:055a4e7b03730f70d9ca2e994b7785205400c6ca6f568bed1c13f344ab9b6ec3"
+            },
+            {
+                "Deleted": "sha256:1d4274633a382e3b179adadf7ea103704edca4e530a02e3e05bddb8232e36029"
+            },
+            {
+                "Deleted": "sha256:80804d4bf0258bb608e9b80856b8f9879f9d071893ef7f9440c6ce2260f021d4"
+            },
+            {
+                "Deleted": "sha256:f83d6440cefbfb36bbf5f351bcc139c2a6ef4d076db01fa6ecdd9cb20e4edd5a"
+            },
+            {
+                "Deleted": "sha256:6e4e9e842968431771949503a6cfc7b6fa4d837d5f33e505874d33a077e463b7"
+            },
+            {
+                "Deleted": "sha256:ccb4b73b5e49a2b66370b59ea99764c8121e1806094a30826e655709a5ee945f"
+            },
+            {
+                "Deleted": "sha256:e9c2c5bb95e69feab95a29d1fb88fd1dabe9a96e4d92ff658c744e2a939e1ae1"
+            },
+            {
+                "Deleted": "sha256:9cf79e59166c21d31bdbb78b7bed274f520547762136a6549e2b1f8719ba69cc"
+            }
+        ],
+        "SpaceReclaimed": 1885111433
+    }
+}

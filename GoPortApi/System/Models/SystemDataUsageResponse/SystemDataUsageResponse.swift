@@ -28,6 +28,6 @@ public struct SystemDataUsageResponseItem: Codable, Hashable {
 
 #if DEBUG
 extension SystemDataUsageResponseItem: FilePreviewableAsDict {
-    public static var previewFilename: String { "dataUsage" }
+    public static var previewFilename: String { "SystemDataUsageResponse" }
 }
 #endif

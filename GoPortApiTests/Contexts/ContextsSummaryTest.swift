@@ -8,7 +8,7 @@
 import XCTest
 @testable import GoPortApi
 
-class ContextSummaryDecodingTest: XCTestCase {
+class ContextSummaryTest: XCTestCase {
 
     func testContextSummaryDecoding() throws {
         let contexts: [ContextSummary] = try MockHelper.load(ContextSummary.previewFilename)

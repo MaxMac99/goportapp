@@ -24,6 +24,16 @@ internal class PreviewNetworkingSession: NetworkingSession {
     }
     
     override func stream<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body : Encodable, Content : Decodable {
+        if Content.self is StreamPreviewable.Type {
+            return try await streamStreamPreviewable(request, convertToArray: convertToArray)
+        }
+        if Content.self is Previewable.Type {
+            return try await streamPreviewable(request, convertToArray: convertToArray)
+        }
+        throw PreviewNetworkingError.notImplemented
+    }
+    
+    private func streamPreviewable<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body : Encodable, Content : Decodable {
         guard Content.self is Previewable.Type else {
             throw PreviewNetworkingError.notImplemented
         }
@@ -34,8 +44,26 @@ internal class PreviewNetworkingSession: NetworkingSession {
         
         Task { [weak response] in
             for _ in 0..<5 {
-                try await Task.sleep(nanoseconds: 200000)
+                try await Task.sleep(nanoseconds: 200_000)
                 response?.received(preview + "\n".utf8)
+            }
+            response?.complete(withError: nil)
+        }
+        return response
+    }
+    
+    private func streamStreamPreviewable<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body : Encodable, Content : Decodable {
+        guard Content.self is StreamPreviewable.Type else {
+            throw PreviewNetworkingError.notImplemented
+        }
+        
+        let type = Content.self as! StreamPreviewable.Type
+        let response = APIStreamResponse<Content>(response: try successfulHTTPURLResponse(for: request), convertToArray: convertToArray, onTermination: nil)
+        
+        Task { [weak response] in
+            for preview in type.previews {
+                try await Task.sleep(nanoseconds: 200_000)
+                response?.received(try preview.asData + "\n".utf8)
             }
             response?.complete(withError: nil)
         }

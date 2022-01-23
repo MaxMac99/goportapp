@@ -37,6 +37,32 @@ public protocol FilePreviewableAsArray: Codable {
     static var previewFilename: String { get }
 }
 
+public protocol StreamPreviewable: Codable {
+    static var previews: [Self] { get }
+}
+
+extension StreamPreviewable {
+    var asData: Data {
+        get throws {
+            try dockerEncoder.encode(self)
+        }
+    }
+}
+
+public protocol FileStreamPreviewable: StreamPreviewable {
+    static var previewFilename: String { get }
+}
+
+public extension FileStreamPreviewable {
+    static var previews: [Self] {
+        try! MockHelper.stream(previewFilename)
+    }
+}
+
+public protocol FileStreamPreviewableAsDict: Codable {
+    static var previewFilename: String { get }
+}
+
 extension Dictionary: Previewable where Key == String, Value: FilePreviewableAsDict {
     public static var preview: Self {
         try! MockHelper.load(previewFilename)
@@ -50,6 +76,18 @@ extension Dictionary: FilePreviewable where Key == String, Value: FilePreviewabl
 }
 
 extension Dictionary: FilePreviewableAsArray where Key == String, Value: FilePreviewableAsDict {
+}
+
+extension Dictionary: StreamPreviewable where Key == String, Value: FileStreamPreviewableAsDict {
+    public static var previews: [Self] {
+        try! MockHelper.stream(previewFilename)
+    }
+}
+
+extension Dictionary: FileStreamPreviewable where Key == String, Value: FileStreamPreviewableAsDict {
+    public static var previewFilename: String {
+        Value.previewFilename
+    }
 }
 
 extension Array: Previewable where Element: FilePreviewableAsArray {

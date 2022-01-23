@@ -1,0 +1,23 @@
+[
+    {
+        "Name": "borkenpi4",
+        "Docker": "ssh://borkenpi4"
+    },
+    {
+        "Name": "desktop-linux",
+        "Docker": "unix:///Users/maxvissing/.docker/run/docker.sock"
+    },
+    {
+        "Name": "docker-maxdata",
+        "Docker": "ssh://maxdata"
+    },
+    {
+        "Name": "local"
+    },
+    {
+        "Name": "default",
+        "Description": "Current DOCKER_HOST based configuration",
+        "Docker": "unix:///var/run/docker.sock",
+        "Orchestrator": "swarm"
+    }
+]

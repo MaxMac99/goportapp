@@ -1,0 +1,81 @@
+{
+    "Id": "sha256:0ed6cc16db71fe88a719ffa7c0dd4f255b3257d729c11b336e8a3063f5637444",
+    "RepoTags": [
+        "goport:latest"
+    ],
+    "RepoDigests": [],
+    "Parent": "",
+    "Comment": "buildkit.dockerfile.v0",
+    "Created": "2021-12-24T00:55:40.5101953Z",
+    "Container": "",
+    "ContainerConfig": {
+        "Hostname": "",
+        "Domainname": "",
+        "User": "",
+        "AttachStdin": false,
+        "AttachStdout": false,
+        "AttachStderr": false,
+        "Tty": false,
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "Env": null,
+        "Cmd": null,
+        "Image": "",
+        "Volumes": null,
+        "WorkingDir": "",
+        "Entrypoint": null,
+        "OnBuild": null,
+        "Labels": null
+    },
+    "DockerVersion": "",
+    "Author": "",
+    "Config": {
+        "Hostname": "",
+        "Domainname": "",
+        "User": "",
+        "AttachStdin": false,
+        "AttachStdout": false,
+        "AttachStderr": false,
+        "ExposedPorts": {
+            "9212/tcp": {}
+        },
+        "Tty": false,
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "Env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "GIN_MODE=release"
+        ],
+        "Cmd": [
+            "./main"
+        ],
+        "ArgsEscaped": true,
+        "Image": "",
+        "Volumes": null,
+        "WorkingDir": "/",
+        "Entrypoint": null,
+        "OnBuild": null,
+        "Labels": null
+    },
+    "Architecture": "amd64",
+    "Os": "linux",
+    "Size": 39005657,
+    "VirtualSize": 39005657,
+    "GraphDriver": {
+        "Data": {
+            "MergedDir": "/var/lib/docker/overlay2/j28v96vi1ad8ktsw7fb65d5nu/merged",
+            "UpperDir": "/var/lib/docker/overlay2/j28v96vi1ad8ktsw7fb65d5nu/diff",
+            "WorkDir": "/var/lib/docker/overlay2/j28v96vi1ad8ktsw7fb65d5nu/work"
+        },
+        "Name": "overlay2"
+    },
+    "RootFS": {
+        "Type": "layers",
+        "Layers": [
+            "sha256:545a55ed10f6cde8c0589cd57772ec8707ab41085f7b6b903958d38d9ee6fba1"
+        ]
+    },
+    "Metadata": {
+        "LastTagTime": "2021-12-24T00:55:40.6906513Z"
+    }
+}

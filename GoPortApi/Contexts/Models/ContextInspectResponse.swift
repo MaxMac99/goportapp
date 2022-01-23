@@ -56,6 +56,6 @@ public struct ContextInspectResponse: Codable, Hashable {
 
 #if DEBUG
 extension ContextInspectResponse: FilePreviewable {
-    public static var previewFilename: String { "contextInspect" }
+    public static var previewFilename: String { "ContextInspect" }
 }
 #endif

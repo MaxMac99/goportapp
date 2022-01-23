@@ -37,6 +37,6 @@ extension ContextSummary: Identifiable {
 
 #if DEBUG
 extension ContextSummary : FilePreviewableAsArray {
-    public static var previewFilename: String { "contextsList" }
+    public static var previewFilename: String { "ContextsList" }
 }
 #endif

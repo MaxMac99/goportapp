@@ -210,6 +210,6 @@ public struct SystemInfoResponseItem: Codable, Hashable {
 
 #if DEBUG
 extension SystemInfoResponseItem: FilePreviewableAsDict {
-    public static var previewFilename: String { "info" }
+    public static var previewFilename: String { "SystemInfoResponse" }
 }
 #endif

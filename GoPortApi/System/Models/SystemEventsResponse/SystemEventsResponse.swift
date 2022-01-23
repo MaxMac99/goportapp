@@ -31,7 +31,7 @@ public struct SystemEventsResponseItem: Codable, Hashable {
 }
 
 #if DEBUG
-extension SystemEventsResponseItem: FilePreviewableAsDict {
-    public static var previewFilename: String { "events" }
+extension SystemEventsResponseItem: FileStreamPreviewableAsDict {
+    public static var previewFilename: String { "SystemEventsStream" }
 }
 #endif

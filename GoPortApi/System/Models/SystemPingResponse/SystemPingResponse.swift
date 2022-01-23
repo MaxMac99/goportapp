@@ -16,7 +16,7 @@ public struct SystemPingResponseSummary {
 
 #if DEBUG
 extension SystemPingResponseItem: FilePreviewableAsDict {
-    public static var previewFilename: String { "info" }
+    public static var previewFilename: String { "SystemPingResponse" }
 }
 
 extension SystemPingResponseSummary: Previewable {

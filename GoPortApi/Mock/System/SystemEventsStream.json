@@ -1,0 +1,181 @@
+{
+    "default": {
+        "status": "destroy",
+        "id": "b470d659f8839a974a7cd835098c23302fafbc9e0cb00a6503fcb8a85b130190",
+        "from": "jarkt/docker-remote-api",
+        "Type": "container",
+        "Action": "destroy",
+        "Actor": {
+            "ID": "b470d659f8839a974a7cd835098c23302fafbc9e0cb00a6503fcb8a85b130190",
+            "Attributes": {
+                "desktop.docker.io/binds/0/Source": "/var/run/docker.sock",
+                "desktop.docker.io/binds/0/SourceKind": "dockerSocketProxied",
+                "desktop.docker.io/binds/0/Target": "/var/run/docker.sock",
+                "image": "jarkt/docker-remote-api",
+                "name": "nervous_dewdney"
+            }
+        },
+        "scope": "local",
+        "time": 1642939788,
+        "timeNano": 1642939788609492300,
+        "error": {
+            "message": ""
+        }
+    }
+}
+
+{
+    "default": {
+        "status": "pull",
+        "id": "hello-world:latest",
+        "Type": "image",
+        "Action": "pull",
+        "Actor": {
+            "ID": "hello-world:latest",
+            "Attributes": {
+                "name": "hello-world"
+            }
+        },
+        "scope": "local",
+        "time": 1642940501,
+        "timeNano": 1642940501964911800,
+        "error": {
+            "message": ""
+        }
+    }
+}
+
+{
+    "default": {
+        "status": "create",
+        "id": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+        "from": "hello-world",
+        "Type": "container",
+        "Action": "create",
+        "Actor": {
+            "ID": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+            "Attributes": {
+                "image": "hello-world",
+                "name": "mystifying_bassi"
+            }
+        },
+        "scope": "local",
+        "time": 1642940502,
+        "timeNano": 1642940502015220200,
+        "error": {
+            "message": ""
+        }
+    }
+}
+
+{
+    "default": {
+        "status": "attach",
+        "id": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+        "from": "hello-world",
+        "Type": "container",
+        "Action": "attach",
+        "Actor": {
+            "ID": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+            "Attributes": {
+                "image": "hello-world",
+                "name": "mystifying_bassi"
+            }
+        },
+        "scope": "local",
+        "time": 1642940502,
+        "timeNano": 1642940502018717100,
+        "error": {
+            "message": ""
+        }
+    }
+}
+
+{
+    "default": {
+        "Type": "network",
+        "Action": "connect",
+        "Actor": {
+            "ID": "a93e6883820c4b84f37c0a880fc64222c1730078e0fd83e2ce6f9b9651d1a78e",
+            "Attributes": {
+                "container": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+                "name": "bridge",
+                "type": "bridge"
+            }
+        },
+        "scope": "local",
+        "time": 1642940502,
+        "timeNano": 1642940502071943400,
+        "error": {
+            "message": ""
+        }
+    }
+}
+
+{
+    "default": {
+        "status": "start",
+        "id": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+        "from": "hello-world",
+        "Type": "container",
+        "Action": "start",
+        "Actor": {
+            "ID": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+            "Attributes": {
+                "image": "hello-world",
+                "name": "mystifying_bassi"
+            }
+        },
+        "scope": "local",
+        "time": 1642940502,
+        "timeNano": 1642940502313261800,
+        "error": {
+            "message": ""
+        }
+    }
+}
+
+{
+    "default": {
+        "status": "die",
+        "id": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+        "from": "hello-world",
+        "Type": "container",
+        "Action": "die",
+        "Actor": {
+            "ID": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+            "Attributes": {
+                "exitCode": "0",
+                "image": "hello-world",
+                "name": "mystifying_bassi"
+            }
+        },
+        "scope": "local",
+        "time": 1642940502,
+        "timeNano": 1642940502329481900,
+        "error": {
+            "message": ""
+        }
+    }
+}
+
+{
+    "default": {
+        "Type": "network",
+        "Action": "disconnect",
+        "Actor": {
+            "ID": "a93e6883820c4b84f37c0a880fc64222c1730078e0fd83e2ce6f9b9651d1a78e",
+            "Attributes": {
+                "container": "2d366e0f3502357d074023bb25d2d9110412fb1c5dfdfc9e846f42127bd5fb28",
+                "name": "bridge",
+                "type": "bridge"
+            }
+        },
+        "scope": "local",
+        "time": 1642940502,
+        "timeNano": 1642940502387287100,
+        "error": {
+            "message": ""
+        }
+    }
+}

@@ -52,6 +52,6 @@ public struct SystemVersionResponse: Codable, Hashable {
 
 #if DEBUG
 extension SystemVersionResponse: FilePreviewable {
-    public static var previewFilename: String { "version" }
+    public static var previewFilename: String { "SystemVersionResponse" }
 }
 #endif

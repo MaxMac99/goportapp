@@ -1,0 +1,14 @@
+[
+    {
+        "Untagged": "hello-world:latest"
+    },
+    {
+        "Untagged": "hello-world@sha256:975f4b14f326b05db86e16de00144f9c12257553bba9484fed41f9b6f2257800"
+    },
+    {
+        "Deleted": "sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412"
+    },
+    {
+        "Deleted": "sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359"
+    }
+]
