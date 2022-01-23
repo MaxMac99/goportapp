@@ -192,8 +192,8 @@ public struct ImageAPI {
      - parameter imagesTarball: (body) Tar archive containing images (optional)
      
      */
-    public static func imageLoad(host: URL, context: String? = nil, quiet: Bool? = nil, imagesTarball: URL? = nil, session: NetworkingSession = NetworkingSession.shared) async throws {
-        try await session.load(APIRequest(method: .POST, host: host, path: ImageAPIPath.imageLoad, query: [
+    public static func imageLoad(host: URL, context: String? = nil, quiet: Bool? = nil, imagesTarball: URL? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> APIStreamResponse<ProgressResponse> {
+        try await session.stream(APIRequest(method: .POST, host: host, path: ImageAPIPath.imageLoad, query: [
             "context": context,
             "quiet": quiet,
         ], body: imagesTarball))
@@ -223,9 +223,9 @@ public struct ImageAPI {
      - parameter tag: (query) The tag to associate with the image on the registry. (optional)
      
      */
-    public static func imagePush(host: URL, name: String, xRegistryAuth: String, context: String? = nil, tag: String? = nil, session: NetworkingSession = NetworkingSession.shared) async throws {
+    public static func imagePush(host: URL, name: String, xRegistryAuth: String, context: String? = nil, tag: String? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> APIStreamResponse<ProgressResponse> {
         let headers = ["X-Registry-Auth": xRegistryAuth]
-        return try await session.load(APIRequest(method: .POST, host: host, path: ImageAPIPath.imagePush(name: name), query: [
+        return try await session.stream(APIRequest(method: .POST, host: host, path: ImageAPIPath.imagePush(name: name), query: [
             "context": context,
             "tag": tag,
         ], header: headers))
