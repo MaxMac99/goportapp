@@ -101,12 +101,12 @@ public struct ImageAPI {
      - parameter inputImage: (body) Image content if the value &#x60;-&#x60; has been specified in fromSrc query parameter (optional)
      
      */
-    public static func imageCreate(host: URL, context: String? = nil, fromImage: String? = nil, fromSrc: String? = nil, repo: String? = nil, tag: String? = nil, message: String? = nil, xRegistryAuth: String? = nil, platform: String? = nil, quiet: Bool? = nil, inputImage: String? = nil, session: NetworkingSession = NetworkingSession.shared) async throws {
+    public static func imageCreate(host: URL, context: String? = nil, fromImage: String? = nil, fromSrc: String? = nil, repo: String? = nil, tag: String? = nil, message: String? = nil, xRegistryAuth: String? = nil, platform: String? = nil, quiet: Bool? = nil, inputImage: String? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> APIStreamResponse<ProgressResponse> {
         var headers = [String:String]()
         if let xRegistryAuth = xRegistryAuth {
             headers["X-Registry-Auth"] = xRegistryAuth
         }
-        return try await session.load(APIRequest(method: .POST, host: host, path: ImageAPIPath.imageCreate, query: [
+        return try await session.stream(APIRequest(method: .POST, host: host, path: ImageAPIPath.imageCreate, query: [
             "context": context,
             "fromImage": fromImage,
             "fromSrc": fromSrc,

@@ -127,6 +127,8 @@
 		77E49CB9279DA38F006032C3 /* ImagePruneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49CB8279DA38F006032C3 /* ImagePruneTest.swift */; };
 		77E49CBB279DA3DF006032C3 /* ImageSearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49CBA279DA3DF006032C3 /* ImageSearchTest.swift */; };
 		77E49CBD279DA42D006032C3 /* SystemInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49CBC279DA42D006032C3 /* SystemInfoTest.swift */; };
+		77E49CBF279DA954006032C3 /* ProgressStream.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49CBE279DA954006032C3 /* ProgressStream.json */; };
+		77E49CC1279DAACF006032C3 /* ImageCreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49CC0279DAACF006032C3 /* ImageCreateTest.swift */; };
 		77F1926F279626A100D86ACD /* SystemDataUsageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1926E279626A100D86ACD /* SystemDataUsageTest.swift */; };
 		77F1927127973BCD00D86ACD /* SystemEventsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1927027973BCD00D86ACD /* SystemEventsTest.swift */; };
 		77F19273279748F500D86ACD /* AddServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F19272279748F500D86ACD /* AddServerView.swift */; };
@@ -306,6 +308,8 @@
 		77E49CB8279DA38F006032C3 /* ImagePruneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePruneTest.swift; sourceTree = "<group>"; };
 		77E49CBA279DA3DF006032C3 /* ImageSearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchTest.swift; sourceTree = "<group>"; };
 		77E49CBC279DA42D006032C3 /* SystemInfoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfoTest.swift; sourceTree = "<group>"; };
+		77E49CBE279DA954006032C3 /* ProgressStream.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProgressStream.json; sourceTree = "<group>"; };
+		77E49CC0279DAACF006032C3 /* ImageCreateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCreateTest.swift; sourceTree = "<group>"; };
 		77F1926E279626A100D86ACD /* SystemDataUsageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDataUsageTest.swift; sourceTree = "<group>"; };
 		77F1927027973BCD00D86ACD /* SystemEventsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsTest.swift; sourceTree = "<group>"; };
 		77F19272279748F500D86ACD /* AddServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServerView.swift; sourceTree = "<group>"; };
@@ -802,6 +806,7 @@
 				77E49CAA279D9BC4006032C3 /* ImageListResponse.json */,
 				77E49CAC279D9D8F006032C3 /* ImagePruneResponse.json */,
 				77E49CB0279D9ED8006032C3 /* ImageSearchResponse.json */,
+				77E49CBE279DA954006032C3 /* ProgressStream.json */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -816,6 +821,7 @@
 				77E49CB6279DA288006032C3 /* ImageListTest.swift */,
 				77E49CB8279DA38F006032C3 /* ImagePruneTest.swift */,
 				77E49CBA279DA3DF006032C3 /* ImageSearchTest.swift */,
+				77E49CC0279DAACF006032C3 /* ImageCreateTest.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1012,6 +1018,7 @@
 				773E8EB027920F5C00BFF140 /* SystemPingResponse.json in Resources */,
 				773E5BBA278B87130048E205 /* ping.header.txt in Resources */,
 				77E49CAB279D9BC4006032C3 /* ImageListResponse.json in Resources */,
+				77E49CBF279DA954006032C3 /* ProgressStream.json in Resources */,
 				773E8EC42792E13E00BFF140 /* ContextInspect.json in Resources */,
 				773E5BB0277E70DB0048E205 /* SystemInfoResponse.json in Resources */,
 				77E49CA7279D9A95006032C3 /* ImageHistoryResponse.json in Resources */,
@@ -1132,6 +1139,7 @@
 				77F1926F279626A100D86ACD /* SystemDataUsageTest.swift in Sources */,
 				773E8EE62794962300BFF140 /* MockNetworkingSession.swift in Sources */,
 				773E8EE52794958E00BFF140 /* SystemVersionTest.swift in Sources */,
+				77E49CC1279DAACF006032C3 /* ImageCreateTest.swift in Sources */,
 				77E49CB5279DA234006032C3 /* ImageTest.swift in Sources */,
 				77E49CBB279DA3DF006032C3 /* ImageSearchTest.swift in Sources */,
 				77E49CB3279DA02E006032C3 /* ImageHistoryTest.swift in Sources */,

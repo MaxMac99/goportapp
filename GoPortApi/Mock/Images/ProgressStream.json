@@ -1,0 +1,76 @@
+{
+    "status": "Pulling from library/hello-world",
+    "id": "latest"
+}
+
+{
+    "status": "Pulling fs layer",
+    "progressDetail": {},
+    "id": "2db29710123e"
+}
+
+{
+    "status": "Downloading",
+    "progressDetail": {
+        "current": 657,
+        "total": 2479
+    },
+    "progress": "[=============\u003e                                     ]     657B/2.479kB",
+    "id": "2db29710123e"
+}
+
+{
+    "status": "Downloading",
+    "progressDetail": {
+        "current": 2479,
+        "total": 2479
+    },
+    "progress": "[==================================================\u003e]  2.479kB/2.479kB",
+    "id": "2db29710123e"
+}
+
+{
+    "status": "Verifying Checksum",
+    "progressDetail": {},
+    "id": "2db29710123e"
+}
+
+{
+    "status": "Download complete",
+    "progressDetail": {},
+    "id": "2db29710123e"
+}
+
+{
+    "status": "Extracting",
+    "progressDetail": {
+        "current": 2479,
+        "total": 2479
+    },
+    "progress": "[==================================================\u003e]  2.479kB/2.479kB",
+    "id": "2db29710123e"
+}
+
+{
+    "status": "Extracting",
+    "progressDetail": {
+        "current": 2479,
+        "total": 2479
+    },
+    "progress": "[==================================================\u003e]  2.479kB/2.479kB",
+    "id": "2db29710123e"
+}
+
+{
+    "status": "Pull complete",
+    "progressDetail": {},
+    "id": "2db29710123e"
+}
+
+{
+    "status": "Digest: sha256:975f4b14f326b05db86e16de00144f9c12257553bba9484fed41f9b6f2257800"
+}
+
+{
+    "status": "Status: Downloaded newer image for hello-world:latest"
+}

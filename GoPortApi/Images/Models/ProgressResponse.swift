@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct ProgressResponse: Codable, Hashable, Identifiable {
+public struct ProgressResponse: Codable, Hashable {
     
-    public var id: String
+    public var id: String? = nil
     public var status: String? = nil
     public var progress: ProgressItem? = nil
     public var stream: String? = nil
@@ -52,3 +52,9 @@ public struct ProgressError: Codable, Hashable {
     public var code: Int? = nil
     public var message: String? = nil
 }
+
+#if DEBUG
+extension ProgressResponse: FileStreamPreviewable {
+    public static var previewFilename: String { "ProgressStream" }
+}
+#endif
