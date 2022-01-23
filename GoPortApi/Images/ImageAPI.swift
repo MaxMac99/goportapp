@@ -59,6 +59,102 @@ public struct ImageAPI {
     }
     
     /**
+     Delete builder cache
+     - POST /build/prune
+     - parameter context: (query) The contexts to connect to. (optional)
+     - parameter keepStorage: (query) Amount of disk space in bytes to keep for cache (optional)
+     - parameter all: (query) Remove all types of build cache (optional)
+     - parameter filters: (query) A JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the list of build cache objects.  Available filters:  - &#x60;until&#x3D;&lt;duration&gt;&#x60;: duration relative to daemon&#39;s time, during which build cache was not used, in Go&#39;s duration format (e.g., &#39;24h&#39;) - &#x60;id&#x3D;&lt;id&gt;&#x60; - &#x60;parent&#x3D;&lt;id&gt;&#x60; - &#x60;type&#x3D;&lt;string&gt;&#x60; - &#x60;description&#x3D;&lt;string&gt;&#x60; - &#x60;inuse&#x60; - &#x60;shared&#x60; - &#x60;private&#x60;  (optional)
+     - returns: BuildPruneResponse
+     */
+    public static func buildPrune(host: URL, context: [String]? = nil, keepStorage: Int64? = nil, all: Bool? = nil, filters: String? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> BuildPruneResponse {
+        try await session.load(APIRequest(method: .POST, host: host, path: ImageAPIPath.buildPrune, query: [
+            "context": context,
+            "keepStorage": keepStorage,
+            "all": all,
+            "filters": filters,
+        ]))
+    }
+    
+    /**
+     * enum for parameter contentType
+     */
+    public enum ContentType_imageBuild: String, CaseIterable {
+        case applicationXTar = "application/x-tar"
+    }
+    
+    /**
+     Build an image
+     - POST /build
+     - Build an image from a tar archive with a `Dockerfile` in it.  The `Dockerfile` specifies how the image is built from the tar archive. It is typically in the archive's root, but can be at a different path or have a different name by specifying the `dockerfile` parameter. [See the `Dockerfile` reference for more information](/engine/reference/builder/).  The Docker daemon performs a preliminary validation of the `Dockerfile` before starting the build, and returns an error if the syntax is incorrect. After that, each instruction is run one-by-one until the ID of the new image is output.  The build is canceled if the client drops the connection by quitting or being killed.
+     - parameter context: (query) The context to connect to. (optional)
+     - parameter dockerfile: (query) Path within the build context to the &#x60;Dockerfile&#x60;. This is ignored if &#x60;remote&#x60; is specified and points to an external &#x60;Dockerfile&#x60;. (optional, default to "Dockerfile")
+     - parameter tags: (query) A name and optional tag to apply to the image in the &#x60;name:tag&#x60; format. If you omit the tag the default &#x60;latest&#x60; value is assumed. You can provide several &#x60;t&#x60; parameters. (optional)
+     - parameter extrahosts: (query) Extra hosts to add to /etc/hosts (optional)
+     - parameter remote: (query) A Git repository URI or HTTP/HTTPS context URI. If the URI points to a single text file, the file’s contents are placed into a file called &#x60;Dockerfile&#x60; and the image is built from that file. If the URI points to a tarball, the file is downloaded by the daemon and the contents therein used as the context for the build. If the URI points to a tarball and the &#x60;dockerfile&#x60; parameter is also specified, there must be a file with the corresponding path inside the tarball. (optional)
+     - parameter quiet: (query) Suppress verbose build output. (optional, default to false)
+     - parameter nocache: (query) Do not use the cache when building the image. (optional, default to false)
+     - parameter cachefrom: (query) JSON array of images used for build cache resolution. (optional)
+     - parameter pull: (query) Attempt to pull the image even if an older image exists locally. (optional)
+     - parameter remove: (query) Remove intermediate containers after a successful build. (optional, default to true)
+     - parameter forceremove: (query) Always remove intermediate containers, even upon failure. (optional, default to false)
+     - parameter memory: (query) Set memory limit for build. (optional)
+     - parameter memswap: (query) Total memory (memory + swap). Set as &#x60;-1&#x60; to disable swap. (optional)
+     - parameter cpushares: (query) CPU shares (relative weight). (optional)
+     - parameter cpusetcpus: (query) CPUs in which to allow execution (e.g., &#x60;0-3&#x60;, &#x60;0,1&#x60;). (optional)
+     - parameter cpuperiod: (query) The length of a CPU period in microseconds. (optional)
+     - parameter cpuquota: (query) Microseconds of CPU time that the container can get in a CPU period. (optional)
+     - parameter buildargs: (query) JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the &#x60;Dockerfile&#x60; RUN instruction, or for variable expansion in other &#x60;Dockerfile&#x60; instructions. This is not meant for passing secret values.  For example, the build arg &#x60;FOO&#x3D;bar&#x60; would become &#x60;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60; in JSON. This would result in the query parameter &#x60;buildargs&#x3D;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60;. Note that &#x60;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60; should be URI component encoded.  [Read more about the buildargs instruction.](/engine/reference/builder/#arg)  (optional)
+     - parameter shmsize: (query) Size of &#x60;/dev/shm&#x60; in bytes. The size must be greater than 0. If omitted the system uses 64MB. (optional)
+     - parameter squash: (query) Squash the resulting images layers into a single layer. *(Experimental release only.)* (optional)
+     - parameter labels: (query) Arbitrary key/value labels to set on the image, as a JSON map of string pairs. (optional)
+     - parameter networkmode: (query) Sets the networking mode for the run commands during build. Supported standard values are: &#x60;bridge&#x60;, &#x60;host&#x60;, &#x60;none&#x60;, and &#x60;container:&lt;name|id&gt;&#x60;. Any other value is taken as a custom network&#39;s name or ID to which this container should connect to.  (optional)
+     - parameter contentType: (header)  (optional, default to .applicationXTar)
+     - parameter xRegistryConfig: (header) This is a base64-encoded JSON object with auth configurations for multiple registries that a build may refer to.  The key is a registry URL, and the value is an auth configuration object, [as described in the authentication section](#section/Authentication). For example:  &#x60;&#x60;&#x60; {   \&quot;docker.example.com\&quot;: {     \&quot;username\&quot;: \&quot;janedoe\&quot;,     \&quot;password\&quot;: \&quot;hunter2\&quot;   },   \&quot;https://index.docker.io/v1/\&quot;: {     \&quot;username\&quot;: \&quot;mobydock\&quot;,     \&quot;password\&quot;: \&quot;conta1n3rize14\&quot;   } } &#x60;&#x60;&#x60;  Only the registry domain name (and port if not the default 443) are required. However, for legacy reasons, the Docker Hub registry must be specified with both a &#x60;https://&#x60; prefix and a &#x60;/v1/&#x60; suffix even though Docker will prefer to use the v2 registry API.  (optional)
+     - parameter platform: (query) Platform in the format os[/arch[/variant]] (optional)
+     - parameter target: (query) Target build stage (optional)
+     - parameter outputs: (query) BuildKit output configuration (optional)
+     - parameter inputStream: (body) A tar archive compressed with one of the following algorithms: identity (no compression), gzip, bzip2, xz. (optional)
+     
+     */
+    public static func imageBuild(host: URL, context: String? = nil, dockerfile: String? = nil, tags: [String]? = nil, extrahosts: [String]? = nil, remote: String? = nil, quiet: Bool? = nil, nocache: Bool? = nil, cachefrom: [String]? = nil, pull: Bool? = nil, remove: Bool? = nil, forceremove: Bool? = nil, memory: Int64? = nil, memswap: Int64? = nil, cpushares: Int64? = nil, cpusetcpus: String? = nil, cpuperiod: Int64? = nil, cpuquota: Int64? = nil, buildargs: String? = nil, shmsize: Int64? = nil, squash: Bool? = nil, labels: String? = nil, networkmode: String? = nil, contentType: ContentType_imageBuild? = nil, xRegistryConfig: String? = nil, platform: String? = nil, target: String? = nil, outputs: String? = nil, inputStream: URL? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> APIStreamResponse<ProgressResponse> {
+        var headers = [String:String]()
+        if let contentType = contentType {
+            headers["Content-type"] = contentType.rawValue
+        }
+        if let xRegistryConfig = xRegistryConfig {
+            headers["X-Registry-Config"] = xRegistryConfig
+        }
+        return try await session.stream(APIRequest(method: .POST, host: host, path: ImageAPIPath.imageBuild, query: [
+            "context": context,
+            "dockerfile": dockerfile,
+            "tags": tags,
+            "extrahosts": extrahosts,
+            "remote": remote,
+            "quiet": quiet,
+            "nocache": nocache,
+            "cachefrom": cachefrom,
+            "pull": pull,
+            "remove": remove,
+            "forceremove": forceremove,
+            "memory": memory,
+            "memswap": memswap,
+            "cpushares": cpushares,
+            "cpusetcpus": cpusetcpus,
+            "cpuperiod": cpuperiod,
+            "cpuquota": cpuquota,
+            "buildargs": buildargs,
+            "shmsize": shmsize,
+            "squash": squash,
+            "labels": labels,
+            "networkmode": networkmode,
+            "platform": platform,
+            "target": target,
+            "outputs": outputs,
+        ], header: headers, body: inputStream))
+    }
+    
+    /**
      Create a new image from a container
      - POST /commit
      - parameter context: (query) The context to connect to. (optional)

@@ -129,6 +129,10 @@
 		77E49CBD279DA42D006032C3 /* SystemInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49CBC279DA42D006032C3 /* SystemInfoTest.swift */; };
 		77E49CBF279DA954006032C3 /* ProgressStream.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49CBE279DA954006032C3 /* ProgressStream.json */; };
 		77E49CC1279DAACF006032C3 /* ImageCreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49CC0279DAACF006032C3 /* ImageCreateTest.swift */; };
+		77E49CC3279DE8E8006032C3 /* BuildPruneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49CC2279DE8E8006032C3 /* BuildPruneResponse.swift */; };
+		77E49CC5279DE996006032C3 /* BuildPruneResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49CC4279DE996006032C3 /* BuildPruneResponse.json */; };
+		77E49CC7279DE9AE006032C3 /* BuildPruneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49CC6279DE9AE006032C3 /* BuildPruneTest.swift */; };
+		77E49CCB279E0092006032C3 /* ProgressStreamBuild.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49CCA279E0092006032C3 /* ProgressStreamBuild.json */; };
 		77F1926F279626A100D86ACD /* SystemDataUsageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1926E279626A100D86ACD /* SystemDataUsageTest.swift */; };
 		77F1927127973BCD00D86ACD /* SystemEventsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1927027973BCD00D86ACD /* SystemEventsTest.swift */; };
 		77F19273279748F500D86ACD /* AddServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F19272279748F500D86ACD /* AddServerView.swift */; };
@@ -310,6 +314,10 @@
 		77E49CBC279DA42D006032C3 /* SystemInfoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfoTest.swift; sourceTree = "<group>"; };
 		77E49CBE279DA954006032C3 /* ProgressStream.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProgressStream.json; sourceTree = "<group>"; };
 		77E49CC0279DAACF006032C3 /* ImageCreateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCreateTest.swift; sourceTree = "<group>"; };
+		77E49CC2279DE8E8006032C3 /* BuildPruneResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildPruneResponse.swift; sourceTree = "<group>"; };
+		77E49CC4279DE996006032C3 /* BuildPruneResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BuildPruneResponse.json; sourceTree = "<group>"; };
+		77E49CC6279DE9AE006032C3 /* BuildPruneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildPruneTest.swift; sourceTree = "<group>"; };
+		77E49CCA279E0092006032C3 /* ProgressStreamBuild.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProgressStreamBuild.json; sourceTree = "<group>"; };
 		77F1926E279626A100D86ACD /* SystemDataUsageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDataUsageTest.swift; sourceTree = "<group>"; };
 		77F1927027973BCD00D86ACD /* SystemEventsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsTest.swift; sourceTree = "<group>"; };
 		77F19272279748F500D86ACD /* AddServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServerView.swift; sourceTree = "<group>"; };
@@ -457,6 +465,7 @@
 			children = (
 				77E49C86279C5245006032C3 /* Common */,
 				77E49C7E279C51A8006032C3 /* IdResponse.swift */,
+				77E49CC2279DE8E8006032C3 /* BuildPruneResponse.swift */,
 				773E5B7A277E655E0048E205 /* ImageSummary.swift */,
 				77E49C87279C525D006032C3 /* Image */,
 				77E49C82279C51E7006032C3 /* ImageDeleteResponse.swift */,
@@ -807,6 +816,8 @@
 				77E49CAC279D9D8F006032C3 /* ImagePruneResponse.json */,
 				77E49CB0279D9ED8006032C3 /* ImageSearchResponse.json */,
 				77E49CBE279DA954006032C3 /* ProgressStream.json */,
+				77E49CC4279DE996006032C3 /* BuildPruneResponse.json */,
+				77E49CCA279E0092006032C3 /* ProgressStreamBuild.json */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -822,6 +833,7 @@
 				77E49CB8279DA38F006032C3 /* ImagePruneTest.swift */,
 				77E49CBA279DA3DF006032C3 /* ImageSearchTest.swift */,
 				77E49CC0279DAACF006032C3 /* ImageCreateTest.swift */,
+				77E49CC6279DE9AE006032C3 /* BuildPruneTest.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1011,6 +1023,7 @@
 				77E49CA3279D991A006032C3 /* ImageIdResponse.json in Resources */,
 				773E5BA9277E6A0A0048E205 /* SystemDataUsageResponse.json in Resources */,
 				773E5BB4277F05B60048E205 /* SystemEventsStream.json in Resources */,
+				77E49CCB279E0092006032C3 /* ProgressStreamBuild.json in Resources */,
 				77E49CA9279D9B61006032C3 /* ImageResponse.json in Resources */,
 				773E5BB2277E72030048E205 /* SystemVersionResponse.json in Resources */,
 				77E49CA5279D9947006032C3 /* ImageDeleteResponse.json in Resources */,
@@ -1019,6 +1032,7 @@
 				773E5BBA278B87130048E205 /* ping.header.txt in Resources */,
 				77E49CAB279D9BC4006032C3 /* ImageListResponse.json in Resources */,
 				77E49CBF279DA954006032C3 /* ProgressStream.json in Resources */,
+				77E49CC5279DE996006032C3 /* BuildPruneResponse.json in Resources */,
 				773E8EC42792E13E00BFF140 /* ContextInspect.json in Resources */,
 				773E5BB0277E70DB0048E205 /* SystemInfoResponse.json in Resources */,
 				77E49CA7279D9A95006032C3 /* ImageHistoryResponse.json in Resources */,
@@ -1123,6 +1137,7 @@
 				773E8EE3279484C300BFF140 /* Previewable.swift in Sources */,
 				773E5B95277E678A0048E205 /* GenericResourceDiscreteResourceSpec.swift in Sources */,
 				775F67C6277D1921006BAF7A /* EndpointIPAMConfig.swift in Sources */,
+				77E49CC3279DE8E8006032C3 /* BuildPruneResponse.swift in Sources */,
 				775F678F277B692E006BAF7A /* APIError.swift in Sources */,
 				773E5B72277E64E90048E205 /* BuildCache.swift in Sources */,
 				773E5BA6277E69890048E205 /* VolumeUsageData.swift in Sources */,
@@ -1138,6 +1153,7 @@
 				77E49C9F279D8A29006032C3 /* ImageDeleteTest.swift in Sources */,
 				77F1926F279626A100D86ACD /* SystemDataUsageTest.swift in Sources */,
 				773E8EE62794962300BFF140 /* MockNetworkingSession.swift in Sources */,
+				77E49CC7279DE9AE006032C3 /* BuildPruneTest.swift in Sources */,
 				773E8EE52794958E00BFF140 /* SystemVersionTest.swift in Sources */,
 				77E49CC1279DAACF006032C3 /* ImageCreateTest.swift in Sources */,
 				77E49CB5279DA234006032C3 /* ImageTest.swift in Sources */,
