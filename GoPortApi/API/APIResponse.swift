@@ -18,6 +18,10 @@ public class APIResponse<Content> {
         self.content = content
     }
     
+    internal convenience init(data: Data, response: HTTPURLResponse) throws {
+        throw DataConvertibleError.notImplemented
+    }
+    
     fileprivate static func checkStatusCode(_ statusCode: Int, data: Data) throws {
         guard statusCode >= 400 else { return }
         let description = String(data: data, encoding: .utf8)
@@ -25,29 +29,31 @@ public class APIResponse<Content> {
     }
 }
 
-public typealias APIEmptyResponse = APIResponse<Data>
+typealias APIEmptyResponse = APIResponse<Data>
 
-public extension APIResponse where Content: Decodable {
+extension APIResponse where Content == Data {
     convenience init(data: Data, response: HTTPURLResponse) throws {
-        try APIResponse.checkStatusCode(response.statusCode, data: data)
-        let content = try dockerDecoder.decode(Content.self, from: data)
-        self.init(content: content, response: response)
-    }
-}
-
-public extension APIResponse where Content == String {
-    convenience init(data: Data, response: HTTPURLResponse) throws {
-        try APIResponse.checkStatusCode(response.statusCode, data: data)
-        guard let content = String(data: data, encoding: .utf8) else {
-            throw APIResponseError.unknown(nil)
-        }
-        self.init(content: content, response: response)
-    }
-}
-
-public extension APIResponse where Content == Data {
-    convenience init(data: Data, response: HTTPURLResponse) throws {
-        try APIResponse.checkStatusCode(response.statusCode, data: data)
         self.init(content: data, response: response)
+    }
+}
+
+extension APIResponse where Content == String {
+    convenience init(data: Data, response: HTTPURLResponse) throws {
+        guard let string = String(data: data, encoding: .utf8) else {
+            throw DataConvertibleError.invalidResponse
+        }
+        self.init(content: string, response: response)
+    }
+}
+
+extension APIResponse where Content: Decodable {
+    convenience init(data: Data, response: HTTPURLResponse) throws {
+        self.init(content: try dockerDecoder.decode(Content.self, from: data), response: response)
+    }
+}
+
+extension APIResponse where Content: DataConvertible {
+    convenience init(data: Data, response: HTTPURLResponse) throws {
+        self.init(content: try Content.convert(data), response: response)
     }
 }

@@ -11,7 +11,7 @@ import XCTest
 class SystemEventsTest: GoPortApiBaseTest {
     
     func testSystemEventsResponseDecoding() throws {
-        let response: [SystemEventsResponse] = try MockHelper.stream(SystemEventsResponse.previewFilename)
+        let response: [SystemEventsResponse] = try MockHelper.stream(SystemEventsResponse.previewsFilename)
         
         XCTAssertEqual(response.first!["default"]!.actor!.id, "b470d659f8839a974a7cd835098c23302fafbc9e0cb00a6503fcb8a85b130190")
     }

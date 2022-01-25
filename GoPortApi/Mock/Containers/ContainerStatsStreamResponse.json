@@ -1,0 +1,657 @@
+{
+    "read": "2022-01-25T17:39:03.8763651Z",
+    "preread": "0001-01-01T00:00:00Z",
+    "pids_stats": {
+        "current": 107,
+        "limit": 18446744073709551615
+    },
+    "blkio_stats": {
+        "io_service_bytes_recursive": [{
+            "major": 254,
+            "minor": 0,
+            "op": "read",
+            "value": 1581056
+        }, {
+            "major": 254,
+            "minor": 0,
+            "op": "write",
+            "value": 765952
+        }],
+        "io_serviced_recursive": null,
+        "io_queue_recursive": null,
+        "io_service_time_recursive": null,
+        "io_wait_time_recursive": null,
+        "io_merged_recursive": null,
+        "io_time_recursive": null,
+        "sectors_recursive": null
+    },
+    "num_procs": 0,
+    "storage_stats": {},
+    "cpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157114319000,
+            "usage_in_kernelmode": 659580008000,
+            "usage_in_usermode": 1497534311000
+        },
+        "system_cpu_usage": 728762420000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "precpu_stats": {
+        "cpu_usage": {
+            "total_usage": 0,
+            "usage_in_kernelmode": 0,
+            "usage_in_usermode": 0
+        },
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "memory_stats": {
+        "usage": 1374978048,
+        "stats": {
+            "active_anon": 270336,
+            "active_file": 161931264,
+            "anon": 1123381248,
+            "anon_thp": 138412032,
+            "file": 200454144,
+            "file_dirty": 0,
+            "file_mapped": 540672,
+            "file_writeback": 0,
+            "inactive_anon": 1140043776,
+            "inactive_file": 38387712,
+            "kernel_stack": 1720320,
+            "pgactivate": 41613,
+            "pgdeactivate": 0,
+            "pgfault": 17451027,
+            "pglazyfree": 0,
+            "pglazyfreed": 0,
+            "pgmajfault": 990,
+            "pgrefill": 0,
+            "pgscan": 0,
+            "pgsteal": 0,
+            "shmem": 0,
+            "slab": 20832368,
+            "slab_reclaimable": 19171600,
+            "slab_unreclaimable": 1660768,
+            "sock": 8192,
+            "thp_collapse_alloc": 33,
+            "thp_fault_alloc": 66,
+            "unevictable": 0,
+            "workingset_activate": 0,
+            "workingset_nodereclaim": 0,
+            "workingset_refault": 0
+        },
+        "limit": 8346161152
+    },
+    "name": "/interesting_diffie",
+    "id": "33d75a667bfeda3242abea4465614b48f7b67cbdd59f14684e3ce5d0c7aca18e",
+    "networks": {
+        "eth0": {
+            "rx_bytes": 963572,
+            "rx_packets": 1475,
+            "rx_errors": 0,
+            "rx_dropped": 0,
+            "tx_bytes": 166460,
+            "tx_packets": 1240,
+            "tx_errors": 0,
+            "tx_dropped": 0
+        }
+    }
+}
+
+{
+    "read": "2022-01-25T17:39:04.8870656Z",
+    "preread": "2022-01-25T17:39:03.8763651Z",
+    "pids_stats": {
+        "current": 107,
+        "limit": 18446744073709551615
+    },
+    "blkio_stats": {
+        "io_service_bytes_recursive": [{
+            "major": 254,
+            "minor": 0,
+            "op": "read",
+            "value": 1581056
+        }, {
+            "major": 254,
+            "minor": 0,
+            "op": "write",
+            "value": 765952
+        }],
+        "io_serviced_recursive": null,
+        "io_queue_recursive": null,
+        "io_service_time_recursive": null,
+        "io_wait_time_recursive": null,
+        "io_merged_recursive": null,
+        "io_time_recursive": null,
+        "sectors_recursive": null
+    },
+    "num_procs": 0,
+    "storage_stats": {},
+    "cpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157120618000,
+            "usage_in_kernelmode": 659584523000,
+            "usage_in_usermode": 1497536094000
+        },
+        "system_cpu_usage": 728770440000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "precpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157114319000,
+            "usage_in_kernelmode": 659580008000,
+            "usage_in_usermode": 1497534311000
+        },
+        "system_cpu_usage": 728762420000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "memory_stats": {
+        "usage": 1374969856,
+        "stats": {
+            "active_anon": 270336,
+            "active_file": 161931264,
+            "anon": 1123381248,
+            "anon_thp": 138412032,
+            "file": 200454144,
+            "file_dirty": 0,
+            "file_mapped": 540672,
+            "file_writeback": 0,
+            "inactive_anon": 1140043776,
+            "inactive_file": 38387712,
+            "kernel_stack": 1720320,
+            "pgactivate": 41613,
+            "pgdeactivate": 0,
+            "pgfault": 17451225,
+            "pglazyfree": 0,
+            "pglazyfreed": 0,
+            "pgmajfault": 990,
+            "pgrefill": 0,
+            "pgscan": 0,
+            "pgsteal": 0,
+            "shmem": 0,
+            "slab": 20832368,
+            "slab_reclaimable": 19171600,
+            "slab_unreclaimable": 1660768,
+            "sock": 8192,
+            "thp_collapse_alloc": 33,
+            "thp_fault_alloc": 66,
+            "unevictable": 0,
+            "workingset_activate": 0,
+            "workingset_nodereclaim": 0,
+            "workingset_refault": 0
+        },
+        "limit": 8346161152
+    },
+    "name": "/interesting_diffie",
+    "id": "33d75a667bfeda3242abea4465614b48f7b67cbdd59f14684e3ce5d0c7aca18e",
+    "networks": {
+        "eth0": {
+            "rx_bytes": 963572,
+            "rx_packets": 1475,
+            "rx_errors": 0,
+            "rx_dropped": 0,
+            "tx_bytes": 166460,
+            "tx_packets": 1240,
+            "tx_errors": 0,
+            "tx_dropped": 0
+        }
+    }
+}
+
+{
+    "read": "2022-01-25T17:39:05.8911413Z",
+    "preread": "2022-01-25T17:39:04.8870656Z",
+    "pids_stats": {
+        "current": 107,
+        "limit": 18446744073709551615
+    },
+    "blkio_stats": {
+        "io_service_bytes_recursive": [{
+            "major": 254,
+            "minor": 0,
+            "op": "read",
+            "value": 1581056
+        }, {
+            "major": 254,
+            "minor": 0,
+            "op": "write",
+            "value": 765952
+        }],
+        "io_serviced_recursive": null,
+        "io_queue_recursive": null,
+        "io_service_time_recursive": null,
+        "io_wait_time_recursive": null,
+        "io_merged_recursive": null,
+        "io_time_recursive": null,
+        "sectors_recursive": null
+    },
+    "num_procs": 0,
+    "storage_stats": {},
+    "cpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157125113000,
+            "usage_in_kernelmode": 659587624000,
+            "usage_in_usermode": 1497537489000
+        },
+        "system_cpu_usage": 728778420000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "precpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157120618000,
+            "usage_in_kernelmode": 659584523000,
+            "usage_in_usermode": 1497536094000
+        },
+        "system_cpu_usage": 728770440000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "memory_stats": {
+        "usage": 1375002624,
+        "stats": {
+            "active_anon": 270336,
+            "active_file": 161931264,
+            "anon": 1123381248,
+            "anon_thp": 138412032,
+            "file": 200454144,
+            "file_dirty": 0,
+            "file_mapped": 540672,
+            "file_writeback": 0,
+            "inactive_anon": 1140043776,
+            "inactive_file": 38387712,
+            "kernel_stack": 1671168,
+            "pgactivate": 41613,
+            "pgdeactivate": 0,
+            "pgfault": 17451291,
+            "pglazyfree": 0,
+            "pglazyfreed": 0,
+            "pgmajfault": 990,
+            "pgrefill": 0,
+            "pgscan": 0,
+            "pgsteal": 0,
+            "shmem": 0,
+            "slab": 20832368,
+            "slab_reclaimable": 19171600,
+            "slab_unreclaimable": 1660768,
+            "sock": 8192,
+            "thp_collapse_alloc": 33,
+            "thp_fault_alloc": 66,
+            "unevictable": 0,
+            "workingset_activate": 0,
+            "workingset_nodereclaim": 0,
+            "workingset_refault": 0
+        },
+        "limit": 8346161152
+    },
+    "name": "/interesting_diffie",
+    "id": "33d75a667bfeda3242abea4465614b48f7b67cbdd59f14684e3ce5d0c7aca18e",
+    "networks": {
+        "eth0": {
+            "rx_bytes": 963572,
+            "rx_packets": 1475,
+            "rx_errors": 0,
+            "rx_dropped": 0,
+            "tx_bytes": 166460,
+            "tx_packets": 1240,
+            "tx_errors": 0,
+            "tx_dropped": 0
+        }
+    }
+}
+
+{
+    "read": "2022-01-25T17:39:06.8973628Z",
+    "preread": "2022-01-25T17:39:05.8911413Z",
+    "pids_stats": {
+        "current": 107,
+        "limit": 18446744073709551615
+    },
+    "blkio_stats": {
+        "io_service_bytes_recursive": [{
+            "major": 254,
+            "minor": 0,
+            "op": "read",
+            "value": 1581056
+        }, {
+            "major": 254,
+            "minor": 0,
+            "op": "write",
+            "value": 765952
+        }],
+        "io_serviced_recursive": null,
+        "io_queue_recursive": null,
+        "io_service_time_recursive": null,
+        "io_wait_time_recursive": null,
+        "io_merged_recursive": null,
+        "io_time_recursive": null,
+        "sectors_recursive": null
+    },
+    "num_procs": 0,
+    "storage_stats": {},
+    "cpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157128929000,
+            "usage_in_kernelmode": 659590136000,
+            "usage_in_usermode": 1497538792000
+        },
+        "system_cpu_usage": 728786440000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "precpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157125113000,
+            "usage_in_kernelmode": 659587624000,
+            "usage_in_usermode": 1497537489000
+        },
+        "system_cpu_usage": 728778420000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "memory_stats": {
+        "usage": 1375023104,
+        "stats": {
+            "active_anon": 270336,
+            "active_file": 161931264,
+            "anon": 1123381248,
+            "anon_thp": 138412032,
+            "file": 200454144,
+            "file_dirty": 0,
+            "file_mapped": 540672,
+            "file_writeback": 0,
+            "inactive_anon": 1140043776,
+            "inactive_file": 38387712,
+            "kernel_stack": 1671168,
+            "pgactivate": 41613,
+            "pgdeactivate": 0,
+            "pgfault": 17451390,
+            "pglazyfree": 0,
+            "pglazyfreed": 0,
+            "pgmajfault": 990,
+            "pgrefill": 0,
+            "pgscan": 0,
+            "pgsteal": 0,
+            "shmem": 0,
+            "slab": 20832368,
+            "slab_reclaimable": 19171600,
+            "slab_unreclaimable": 1660768,
+            "sock": 8192,
+            "thp_collapse_alloc": 33,
+            "thp_fault_alloc": 66,
+            "unevictable": 0,
+            "workingset_activate": 0,
+            "workingset_nodereclaim": 0,
+            "workingset_refault": 0
+        },
+        "limit": 8346161152
+    },
+    "name": "/interesting_diffie",
+    "id": "33d75a667bfeda3242abea4465614b48f7b67cbdd59f14684e3ce5d0c7aca18e",
+    "networks": {
+        "eth0": {
+            "rx_bytes": 963572,
+            "rx_packets": 1475,
+            "rx_errors": 0,
+            "rx_dropped": 0,
+            "tx_bytes": 166460,
+            "tx_packets": 1240,
+            "tx_errors": 0,
+            "tx_dropped": 0
+        }
+    }
+}
+
+{
+    "read": "2022-01-25T17:39:07.9057146Z",
+    "preread": "2022-01-25T17:39:06.8973628Z",
+    "pids_stats": {
+        "current": 107,
+        "limit": 18446744073709551615
+    },
+    "blkio_stats": {
+        "io_service_bytes_recursive": [{
+            "major": 254,
+            "minor": 0,
+            "op": "read",
+            "value": 1581056
+        }, {
+            "major": 254,
+            "minor": 0,
+            "op": "write",
+            "value": 765952
+        }],
+        "io_serviced_recursive": null,
+        "io_queue_recursive": null,
+        "io_service_time_recursive": null,
+        "io_wait_time_recursive": null,
+        "io_merged_recursive": null,
+        "io_time_recursive": null,
+        "sectors_recursive": null
+    },
+    "num_procs": 0,
+    "storage_stats": {},
+    "cpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157132851000,
+            "usage_in_kernelmode": 659592301000,
+            "usage_in_usermode": 1497540550000
+        },
+        "system_cpu_usage": 728794490000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "precpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157128929000,
+            "usage_in_kernelmode": 659590136000,
+            "usage_in_usermode": 1497538792000
+        },
+        "system_cpu_usage": 728786440000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "memory_stats": {
+        "usage": 1375162368,
+        "stats": {
+            "active_anon": 270336,
+            "active_file": 161931264,
+            "anon": 1123381248,
+            "anon_thp": 138412032,
+            "file": 200454144,
+            "file_dirty": 0,
+            "file_mapped": 540672,
+            "file_writeback": 0,
+            "inactive_anon": 1140043776,
+            "inactive_file": 38387712,
+            "kernel_stack": 1720320,
+            "pgactivate": 41613,
+            "pgdeactivate": 0,
+            "pgfault": 17451456,
+            "pglazyfree": 0,
+            "pglazyfreed": 0,
+            "pgmajfault": 990,
+            "pgrefill": 0,
+            "pgscan": 0,
+            "pgsteal": 0,
+            "shmem": 0,
+            "slab": 20832368,
+            "slab_reclaimable": 19171600,
+            "slab_unreclaimable": 1660768,
+            "sock": 8192,
+            "thp_collapse_alloc": 33,
+            "thp_fault_alloc": 66,
+            "unevictable": 0,
+            "workingset_activate": 0,
+            "workingset_nodereclaim": 0,
+            "workingset_refault": 0
+        },
+        "limit": 8346161152
+    },
+    "name": "/interesting_diffie",
+    "id": "33d75a667bfeda3242abea4465614b48f7b67cbdd59f14684e3ce5d0c7aca18e",
+    "networks": {
+        "eth0": {
+            "rx_bytes": 963572,
+            "rx_packets": 1475,
+            "rx_errors": 0,
+            "rx_dropped": 0,
+            "tx_bytes": 166460,
+            "tx_packets": 1240,
+            "tx_errors": 0,
+            "tx_dropped": 0
+        }
+    }
+}
+
+{
+    "read": "2022-01-25T17:39:08.9108468Z",
+    "preread": "2022-01-25T17:39:07.9057146Z",
+    "pids_stats": {
+        "current": 107,
+        "limit": 18446744073709551615
+    },
+    "blkio_stats": {
+        "io_service_bytes_recursive": [{
+            "major": 254,
+            "minor": 0,
+            "op": "read",
+            "value": 1581056
+        }, {
+            "major": 254,
+            "minor": 0,
+            "op": "write",
+            "value": 765952
+        }],
+        "io_serviced_recursive": null,
+        "io_queue_recursive": null,
+        "io_service_time_recursive": null,
+        "io_wait_time_recursive": null,
+        "io_merged_recursive": null,
+        "io_time_recursive": null,
+        "sectors_recursive": null
+    },
+    "num_procs": 0,
+    "storage_stats": {},
+    "cpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157138033000,
+            "usage_in_kernelmode": 659594852000,
+            "usage_in_usermode": 1497543181000
+        },
+        "system_cpu_usage": 728802520000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "precpu_stats": {
+        "cpu_usage": {
+            "total_usage": 2157132851000,
+            "usage_in_kernelmode": 659592301000,
+            "usage_in_usermode": 1497540550000
+        },
+        "system_cpu_usage": 728794490000000,
+        "online_cpus": 8,
+        "throttling_data": {
+            "periods": 0,
+            "throttled_periods": 0,
+            "throttled_time": 0
+        }
+    },
+    "memory_stats": {
+        "usage": 1375297536,
+        "stats": {
+            "active_anon": 270336,
+            "active_file": 161931264,
+            "anon": 1123381248,
+            "anon_thp": 138412032,
+            "file": 200454144,
+            "file_dirty": 0,
+            "file_mapped": 540672,
+            "file_writeback": 0,
+            "inactive_anon": 1140043776,
+            "inactive_file": 38387712,
+            "kernel_stack": 1720320,
+            "pgactivate": 41613,
+            "pgdeactivate": 0,
+            "pgfault": 17451588,
+            "pglazyfree": 0,
+            "pglazyfreed": 0,
+            "pgmajfault": 990,
+            "pgrefill": 0,
+            "pgscan": 0,
+            "pgsteal": 0,
+            "shmem": 0,
+            "slab": 20832368,
+            "slab_reclaimable": 19171600,
+            "slab_unreclaimable": 1660768,
+            "sock": 8192,
+            "thp_collapse_alloc": 33,
+            "thp_fault_alloc": 66,
+            "unevictable": 0,
+            "workingset_activate": 0,
+            "workingset_nodereclaim": 0,
+            "workingset_refault": 0
+        },
+        "limit": 8346161152
+    },
+    "name": "/interesting_diffie",
+    "id": "33d75a667bfeda3242abea4465614b48f7b67cbdd59f14684e3ce5d0c7aca18e",
+    "networks": {
+        "eth0": {
+            "rx_bytes": 963572,
+            "rx_packets": 1475,
+            "rx_errors": 0,
+            "rx_dropped": 0,
+            "tx_bytes": 166460,
+            "tx_packets": 1240,
+            "tx_errors": 0,
+            "tx_dropped": 0
+        }
+    }
+}

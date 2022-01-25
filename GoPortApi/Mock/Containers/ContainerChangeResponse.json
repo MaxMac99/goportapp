@@ -1,0 +1,14 @@
+[
+    {
+        "Path": "/var",
+        "Kind": 0
+    },
+    {
+        "Path": "/var/run",
+        "Kind": 0
+    },
+    {
+        "Path": "/var/run/docker.sock",
+        "Kind": 1
+    }
+]

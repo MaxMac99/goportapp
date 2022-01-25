@@ -1,0 +1,11 @@
+{
+    "default": {
+        "ContainersDeleted": [
+            "f155fbc1ae7ba0d0f01cac15ebc0c770e2682e1b3948f90d170b41be61098e15",
+            "d36502ca6370d70dc2ba59f3712656df252e7b17d5e2d064837f1b722edd12d7",
+            "edf66d0c334d1d8462675795edb71b1c4adaf5c8d85e4c7e87970281dd18b839",
+            "5986b5a16bc7de9065963d11d65285c4137bd395b14cb96cc0cbeae130f0b6f4"
+        ],
+        "SpaceReclaimed": 47103955
+    }
+}

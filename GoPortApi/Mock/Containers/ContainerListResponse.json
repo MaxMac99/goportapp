@@ -1,0 +1,259 @@
+{
+    "default": [
+        {
+            "Id": "d36502ca6370d70dc2ba59f3712656df252e7b17d5e2d064837f1b722edd12d7",
+            "Names": [
+                "/romantic_neumann"
+            ],
+            "Image": "hello-world",
+            "ImageID": "sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412",
+            "Command": "/hello",
+            "Created": 1643049214,
+            "State": "created",
+            "Status": "Created",
+            "HostConfig": {
+                "NetworkMode": "default"
+            },
+            "NetworkSettings": {
+                "Networks": {
+                    "bridge": {}
+                }
+            }
+        },
+        {
+            "Id": "046211ad0835679a73e9070e21ec2dc72f0841debdc842a609f7d7d50f53887e",
+            "Names": [
+                "/test_test_1"
+            ],
+            "Image": "sha256:f9dea5d009d43fe8de0b5ef1e5c421c451d01e56b61d66304bce46f87c0bc9ff",
+            "ImageID": "sha256:f9dea5d009d43fe8de0b5ef1e5c421c451d01e56b61d66304bce46f87c0bc9ff",
+            "Command": "./script.sh",
+            "Created": 1642982173,
+            "Labels": {
+                "com.docker.compose.config-hash": "245a6f60bcb13e37dc025d154525002d8d3ba4a82bb4f03626fb944a5720aa98",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "test",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/maxvissing/Git/GoPort/testdata/test",
+                "com.docker.compose.service": "test",
+                "com.docker.compose.version": "1.29.2"
+            },
+            "State": "exited",
+            "Status": "Exited (137) 20 hours ago",
+            "HostConfig": {
+                "NetworkMode": "test_default"
+            },
+            "NetworkSettings": {
+                "Networks": {
+                    "test_default": {
+                        "NetworkID": "4bbbaed51ba8327ee7ccfb773be1dfb82f85a9d8ae9b4275e305959c5cbc0cff"
+                    }
+                }
+            }
+        },
+        {
+            "Id": "0d4540d80c06ab5b06eda78ee10a94947bc2f3210abac46d5dd82ad72b08b890",
+            "Names": [
+                "/determined_lumiere"
+            ],
+            "Image": "jarkt/docker-remote-api",
+            "ImageID": "sha256:abd8bbdf149a4207a953fd50e12acf7ed785551aa518577e7ffa8c46bbd59d3c",
+            "Command": "/bin/sh -c 'socat TCP-LISTEN:2375,reuseaddr,fork UNIX-CLIENT:/var/run/docker.sock'",
+            "Created": 1642972626,
+            "Ports": [
+                {
+                    "IP": "0.0.0.0",
+                    "PrivatePort": 2375,
+                    "PublicPort": 80,
+                    "Type": "tcp"
+                }
+            ],
+            "Labels": {
+                "desktop.docker.io/binds/0/Source": "/var/run/docker.sock",
+                "desktop.docker.io/binds/0/SourceKind": "dockerSocketProxied",
+                "desktop.docker.io/binds/0/Target": "/var/run/docker.sock"
+            },
+            "State": "running",
+            "Status": "Up 23 hours",
+            "HostConfig": {
+                "NetworkMode": "default"
+            },
+            "NetworkSettings": {
+                "Networks": {
+                    "bridge": {
+                        "NetworkID": "a93e6883820c4b84f37c0a880fc64222c1730078e0fd83e2ce6f9b9651d1a78e",
+                        "EndpointID": "1ea215390552059681b3f8f68c0b89bac134bcfaca0219aa7570ef637980a836",
+                        "Gateway": "172.17.0.1",
+                        "IPAddress": "172.17.0.2",
+                        "IPPrefixLen": 16,
+                        "MacAddress": "02:42:ac:11:00:02"
+                    }
+                }
+            },
+            "Mounts": [
+                {
+                    "Type": "bind",
+                    "Source": "/run/host-services/docker.proxy.sock",
+                    "Destination": "/var/run/docker.sock",
+                    "RW": true,
+                    "Propagation": "rprivate"
+                }
+            ]
+        },
+        {
+            "Id": "edf66d0c334d1d8462675795edb71b1c4adaf5c8d85e4c7e87970281dd18b839",
+            "Names": [
+                "/serene_kare"
+            ],
+            "Image": "jarkt/docker-remote-api",
+            "ImageID": "sha256:abd8bbdf149a4207a953fd50e12acf7ed785551aa518577e7ffa8c46bbd59d3c",
+            "Command": "/bin/sh -c 'socat TCP-LISTEN:2375,reuseaddr,fork UNIX-CLIENT:/var/run/docker.sock'",
+            "Created": 1642892256,
+            "Labels": {
+                "desktop.docker.io/binds/0/Source": "/var/run/docker.sock",
+                "desktop.docker.io/binds/0/SourceKind": "dockerSocketProxied",
+                "desktop.docker.io/binds/0/Target": "/var/run/docker.sock"
+            },
+            "State": "exited",
+            "Status": "Exited (137) 23 hours ago",
+            "HostConfig": {
+                "NetworkMode": "default"
+            },
+            "NetworkSettings": {
+                "Networks": {
+                    "bridge": {
+                        "NetworkID": "a93e6883820c4b84f37c0a880fc64222c1730078e0fd83e2ce6f9b9651d1a78e"
+                    }
+                }
+            },
+            "Mounts": [
+                {
+                    "Type": "bind",
+                    "Source": "/run/host-services/docker.proxy.sock",
+                    "Destination": "/var/run/docker.sock",
+                    "RW": true,
+                    "Propagation": "rprivate"
+                }
+            ]
+        },
+        {
+            "Id": "5986b5a16bc7de9065963d11d65285c4137bd395b14cb96cc0cbeae130f0b6f4",
+            "Names": [
+                "/jovial_noyce"
+            ],
+            "Image": "vsc-cli-d7b8a1295c907b196a6d8bc3fffa55ae",
+            "ImageID": "sha256:c97935115113df65c6937f641125e48105b78593a237930a478484890e088576",
+            "Command": "/bin/sh -c 'echo Container started\ntrap \"exit 0\" 15\n\nwhile sleep 1 & wait $!; do :; done'",
+            "Created": 1634479718,
+            "Labels": {
+                "com.visualstudio.code.devcontainers.id": "go",
+                "com.visualstudio.code.devcontainers.release": "v0.195.0",
+                "com.visualstudio.code.devcontainers.source": "https://github.com/microsoft/vscode-dev-containers/",
+                "com.visualstudio.code.devcontainers.timestamp": "Tue, 14 Sep 2021 14:32:54 GMT",
+                "com.visualstudio.code.devcontainers.variant": "1.17-bullseye",
+                "desktop.docker.io/mounts/0/Source": "/Users/maxvissing/Git/cli",
+                "desktop.docker.io/mounts/0/SourceKind": "hostFile",
+                "desktop.docker.io/mounts/0/Target": "/go/src/github.com/docker/cli",
+                "version": "0.205.0",
+                "vsch.local.folder": "/Users/maxvissing/Git/cli",
+                "vsch.quality": "stable",
+                "vsch.remote.devPort": "0"
+            },
+            "State": "exited",
+            "Status": "Exited (255) 7 days ago",
+            "HostConfig": {
+                "NetworkMode": "default"
+            },
+            "NetworkSettings": {
+                "Networks": {
+                    "bridge": {
+                        "NetworkID": "1c687bf6df01dcbf3c4d7c32bb96b14e445b41cb057c8b4f941c6197eee9e6ce",
+                        "EndpointID": "172e2d7d1c65dab6ab614adf93834ccfcca0be82c2a3383279f5339acb5e02a1",
+                        "Gateway": "172.17.0.1",
+                        "IPAddress": "172.17.0.3",
+                        "IPPrefixLen": 16,
+                        "MacAddress": "02:42:ac:11:00:03"
+                    }
+                }
+            },
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Name": "vscode",
+                    "Source": "/var/lib/docker/volumes/vscode/_data",
+                    "Destination": "/vscode",
+                    "Driver": "local",
+                    "Mode": "z",
+                    "RW": true
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/host_mnt/Users/maxvissing/Git/cli",
+                    "Destination": "/go/src/github.com/docker/cli",
+                    "RW": true,
+                    "Propagation": "rprivate"
+                }
+            ]
+        },
+        {
+            "Id": "33d75a667bfeda3242abea4465614b48f7b67cbdd59f14684e3ce5d0c7aca18e",
+            "Names": [
+                "/interesting_diffie"
+            ],
+            "Image": "vsc-moby-79955fa7a5cb74cbaa2f20c2e63d2ed5",
+            "ImageID": "sha256:c97935115113df65c6937f641125e48105b78593a237930a478484890e088576",
+            "Command": "/bin/sh -c 'echo Container started\ntrap \"exit 0\" 15\n\nwhile sleep 1 & wait $!; do :; done'",
+            "Created": 1634479718,
+            "Labels": {
+                "com.visualstudio.code.devcontainers.id": "go",
+                "com.visualstudio.code.devcontainers.release": "v0.195.0",
+                "com.visualstudio.code.devcontainers.source": "https://github.com/microsoft/vscode-dev-containers/",
+                "com.visualstudio.code.devcontainers.timestamp": "Tue, 14 Sep 2021 14:32:54 GMT",
+                "com.visualstudio.code.devcontainers.variant": "1.17-bullseye",
+                "desktop.docker.io/mounts/0/Source": "/Users/maxvissing/Git/moby",
+                "desktop.docker.io/mounts/0/SourceKind": "hostFile",
+                "desktop.docker.io/mounts/0/Target": "/go/src/github.com/docker/docker",
+                "version": "0.205.0",
+                "vsch.local.folder": "/Users/maxvissing/Git/moby",
+                "vsch.quality": "stable",
+                "vsch.remote.devPort": "0"
+            },
+            "State": "running",
+            "Status": "Up 28 hours",
+            "HostConfig": {
+                "NetworkMode": "default"
+            },
+            "NetworkSettings": {
+                "Networks": {
+                    "bridge": {
+                        "NetworkID": "a93e6883820c4b84f37c0a880fc64222c1730078e0fd83e2ce6f9b9651d1a78e",
+                        "EndpointID": "58246c4d81e16f0ca812c4b3f65c6539ec8c15657326666cb2e721087a065482",
+                        "Gateway": "172.17.0.1",
+                        "IPAddress": "172.17.0.3",
+                        "IPPrefixLen": 16,
+                        "MacAddress": "02:42:ac:11:00:03"
+                    }
+                }
+            },
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Name": "vscode",
+                    "Source": "/var/lib/docker/volumes/vscode/_data",
+                    "Destination": "/vscode",
+                    "Driver": "local",
+                    "Mode": "z",
+                    "RW": true
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/host_mnt/Users/maxvissing/Git/moby",
+                    "Destination": "/go/src/github.com/docker/docker",
+                    "RW": true,
+                    "Propagation": "rprivate"
+                }
+            ]
+        }
+    ]
+}

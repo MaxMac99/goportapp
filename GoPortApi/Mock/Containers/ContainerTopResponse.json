@@ -1,0 +1,174 @@
+{
+    "Titles": [
+        "UID",
+        "PID",
+        "PPID",
+        "C",
+        "STIME",
+        "TTY",
+        "TIME",
+        "CMD"
+    ],
+    "Processes": [
+        [
+            "root",
+            "21503",
+            "21477",
+            "0",
+            "Jan24",
+            "?",
+            "00:00:05",
+            "/sbin/docker-init -- /bin/sh -c echo Container started trap \"exit 0\" 15 while sleep 1 & wait $!; do :; done"
+        ],
+        [
+            "root",
+            "21539",
+            "21503",
+            "0",
+            "Jan24",
+            "?",
+            "00:00:25",
+            "/bin/sh -c echo Container started trap \"exit 0\" 15 while sleep 1 & wait $!; do :; done"
+        ],
+        [
+            "1000",
+            "21550",
+            "21477",
+            "0",
+            "Jan24",
+            "?",
+            "00:00:00",
+            "/bin/sh"
+        ],
+        [
+            "root",
+            "21580",
+            "21477",
+            "0",
+            "Jan24",
+            "?",
+            "00:00:00",
+            "/bin/sh"
+        ],
+        [
+            "1000",
+            "21617",
+            "21477",
+            "0",
+            "Jan24",
+            "?",
+            "00:00:00",
+            "/bin/sh"
+        ],
+        [
+            "1000",
+            "21654",
+            "21617",
+            "0",
+            "Jan24",
+            "?",
+            "00:00:01",
+            "/home/vscode/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/node /tmp/vscode-remote-containers-server-d930dc61d997b61dcdcc940ff15bf8647f119faf.js"
+        ],
+        [
+            "1000",
+            "21675",
+            "21654",
+            "0",
+            "Jan24",
+            "?",
+            "00:00:00",
+            "sh /home/vscode/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/server.sh --log debug --force-disable-user-env --use-host-proxy --port 0 --extensions-download-dir /home/vscode/.vscode-server/extensionsCache --start-server --disable-websocket-compression"
+        ],
+        [
+            "1000",
+            "21678",
+            "21675",
+            "0",
+            "Jan24",
+            "?",
+            "00:01:05",
+            "/home/vscode/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/node /home/vscode/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/out/vs/server/main.js --log debug --force-disable-user-env --use-host-proxy --port 0 --extensions-download-dir /home/vscode/.vscode-server/extensionsCache --start-server --disable-websocket-compression"
+        ],
+        [
+            "1000",
+            "21763",
+            "21678",
+            "0",
+            "Jan24",
+            "?",
+            "00:01:04",
+            "/vscode/vscode-server/bin/linux-x64/899d46d82c4c95423fb7e10e68eba52050e30ba3/node /vscode/vscode-server/bin/linux-x64/899d46d82c4c95423fb7e10e68eba52050e30ba3/out/bootstrap-fork --type=ptyHost"
+        ],
+        [
+            "1000",
+            "21812",
+            "21678",
+            "0",
+            "Jan24",
+            "?",
+            "00:00:18",
+            "/vscode/vscode-server/bin/linux-x64/899d46d82c4c95423fb7e10e68eba52050e30ba3/node /vscode/vscode-server/bin/linux-x64/899d46d82c4c95423fb7e10e68eba52050e30ba3/out/bootstrap-fork --type=watcherServiceParcel"
+        ],
+        [
+            "1000",
+            "21853",
+            "21678",
+            "0",
+            "Jan24",
+            "?",
+            "00:06:55",
+            "/vscode/vscode-server/bin/linux-x64/899d46d82c4c95423fb7e10e68eba52050e30ba3/node /vscode/vscode-server/bin/linux-x64/899d46d82c4c95423fb7e10e68eba52050e30ba3/out/bootstrap-fork --type=extensionHost --uriTransformerPath=/vscode/vscode-server/bin/linux-x64/899d46d82c4c95423fb7e10e68eba52050e30ba3/out/vs/server/uriTransformer.js --useHostProxy="
+        ],
+        [
+            "1000",
+            "21902",
+            "21853",
+            "1",
+            "Jan24",
+            "?",
+            "00:20:48",
+            "/go/bin/gopls -mode=stdio"
+        ],
+        [
+            "1000",
+            "91051",
+            "21763",
+            "0",
+            "07:54",
+            "?",
+            "00:00:00",
+            "/bin/bash"
+        ],
+        [
+            "1000",
+            "26415",
+            "21477",
+            "0",
+            "16:07",
+            "?",
+            "00:00:01",
+            "/home/vscode/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/node -e ....const net = require('net'); ....process.stdin.pause(); ....const client = net.createConnection({ port: 34593 }, () => { .....client.pipe(process.stdout); .....process.stdin.pipe(client); ....}); ....client.on('close', function (hadError) { .....console.error(hadError ? 'Remote close with error' : 'Remote close'); .....process.exit(hadError ? 1 : 0); ....}); ....client.on('error', function (err) { .....process.stderr.write(err && (err.stack || err.message) || String(err)); ....}); ....process.stdin.on('close', function (hadError) { .....console.error(hadError ? 'Remote stdin close with error' : 'Remote stdin close'); .....process.exit(hadError ? 1 : 0); ....}); ..."
+        ],
+        [
+            "1000",
+            "26441",
+            "21477",
+            "0",
+            "16:07",
+            "?",
+            "00:00:00",
+            "/home/vscode/.vscode-server/bin/899d46d82c4c95423fb7e10e68eba52050e30ba3/node -e ....const net = require('net'); ....process.stdin.pause(); ....const client = net.createConnection({ port: 34593 }, () => { .....client.pipe(process.stdout); .....process.stdin.pipe(client); ....}); ....client.on('close', function (hadError) { .....console.error(hadError ? 'Remote close with error' : 'Remote close'); .....process.exit(hadError ? 1 : 0); ....}); ....client.on('error', function (err) { .....process.stderr.write(err && (err.stack || err.message) || String(err)); ....}); ....process.stdin.on('close', function (hadError) { .....console.error(hadError ? 'Remote stdin close with error' : 'Remote stdin close'); .....process.exit(hadError ? 1 : 0); ....}); ..."
+        ],
+        [
+            "root",
+            "33367",
+            "21539",
+            "0",
+            "17:49",
+            "?",
+            "00:00:00",
+            "sleep 1"
+        ]
+    ]
+}

@@ -9,7 +9,7 @@ import Foundation
 
 public typealias SystemPingResponse = [String: SystemPingResponseItem]
 
-public struct SystemPingResponseSummary {
+public struct SystemPingResponseSummary: Codable {
     public var goportVersion: String?
     public var contexts: SystemPingResponse
 }

@@ -13,21 +13,20 @@ internal enum MockError: Error {
 }
 
 internal class MockHelper {
-    internal static func load<T: Decodable>(_ filename: String) throws -> T {
-        guard let url = Bundle(for: self).url(forResource: filename, withExtension: "json") else {
+    internal static func loadFile(_ filename: String, withExtension: String = "json") throws -> Data {
+        guard let url = Bundle(for: self).url(forResource: filename, withExtension: withExtension) else {
             throw MockError.fileNotFound
         }
-        let data = try Data(contentsOf: url)
-        let decoded = try dockerDecoder.decode(T.self, from: data)
+        return try Data(contentsOf: url)
+    }
+    
+    internal static func load<T: Decodable>(_ filename: String) throws -> T {
+        let decoded = try dockerDecoder.decode(T.self, from: try loadFile(filename))
         return decoded
     }
     
     internal static func loadHeaders(_ filename: String) throws -> [AnyHashable: Any] {
-        guard let url = Bundle(for: self).url(forResource: filename, withExtension: "txt") else {
-            throw MockError.fileNotFound
-        }
-        let data = try Data(contentsOf: url)
-        let content = String(bytes: data, encoding: .ascii)
+        let content = String(bytes: try loadFile(filename, withExtension: "txt"), encoding: .ascii)
         var decoded = [String: String]()
         for line in content?.split(whereSeparator: \.isNewline) ?? [] {
             let split = line.split(separator: ":")
@@ -39,11 +38,7 @@ internal class MockHelper {
     }
     
     internal static func stream<T: Decodable>(_ filename: String) throws -> [T] {
-        guard let url = Bundle(for: self).url(forResource: filename, withExtension: "json") else {
-            throw MockError.fileNotFound
-        }
-        let data = try Data(contentsOf: url)
-        guard var string = String(data: data, encoding: .utf8) else {
+        guard var string = String(data: try loadFile(filename), encoding: .utf8) else {
             throw MockError.invalidEncoding
         }
         string = string.replacingOccurrences(of: "\r", with: "")

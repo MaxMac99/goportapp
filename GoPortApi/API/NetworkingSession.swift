@@ -34,7 +34,7 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate {
     
     // MARK: - Loading Implementation
     
-    internal func load<Body: Encodable, Content: Decodable>(_ request: APIRequest<Body>) async throws -> APIResponse<Content> {
+    internal func load<Body: Encodable, Content>(_ request: APIRequest<Body>) async throws -> APIResponse<Content> {
         let urlRequest = try request.createURLRequest()
         let (data, response) = try await session.data(for: urlRequest)
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -47,26 +47,53 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate {
         try await load(request).content
     }
     
+    internal func load<Body: Encodable, Content: DataConvertible>(_ request: APIRequest<Body>) async throws -> Content {
+        try await load(request).content
+    }
+    
     internal func load<Body: Encodable>(_ request: APIRequest<Body>) async throws {
-        try await load(request)
+        let _: APIResponse<Data> = try await load(request)
     }
     
     // MARK: - Stream Implementation
     
-    internal func stream<Body: Encodable, Content: Decodable>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> {
+    internal func stream<Body: Encodable, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false, isJSONObject: Bool = true, mapFunction: @escaping (Data) throws -> Content) async throws -> APIStreamResponse<Content> {
         let urlRequest = try request.createURLRequest()
         let task = streamSession.dataTask(with: urlRequest)
         streamData[task] = StreamData(convertToArray)
         let urlResponse = try await withCheckedThrowingContinuation({ continuation in
             streamData[task]?.responseContinuation = continuation
         })
-        let response = APIStreamResponse<Content>(response: urlResponse, convertToArray: convertToArray, onTermination: { @Sendable termination in
+        let response = APIStreamResponse<Content>(response: urlResponse, convertToArray: convertToArray, isJSONObject: isJSONObject, onTermination: { @Sendable termination in
             task.cancel()
             self.streamData.removeValue(forKey: task)
-        })
+        }, mapFunction: mapFunction)
         streamData[task]?.value = response
         task.resume()
         return response
+    }
+    
+    internal func stream<Body>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<String> where Body: Encodable {
+        try await stream(request, convertToArray: convertToArray, isJSONObject: false, mapFunction: {
+            guard let string = String(data: $0, encoding: .utf8) else {
+                throw DataConvertibleError.invalidResponse
+            }
+            return string
+        })
+    }
+    
+    internal func stream<Body>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Data> where Body: Encodable {
+        try await stream(request, convertToArray: convertToArray, isJSONObject: false, mapFunction: { $0 })
+    }
+    
+    internal func stream<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body: Encodable, Content: Decodable {
+        try await stream(request, convertToArray: convertToArray, isJSONObject: true, mapFunction: {
+            try dockerDecoder.decode(Content.self, from: $0)
+        })
+    }
+    
+    internal func stream<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body: Encodable, Content: DataConvertible {
+        try await stream(request, convertToArray: convertToArray, isJSONObject: false, mapFunction: { try Content.convert($0) })
     }
     
     // MARK: - URL Session Delegate

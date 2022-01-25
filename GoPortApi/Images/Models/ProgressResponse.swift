@@ -55,6 +55,6 @@ public struct ProgressError: Codable, Hashable {
 
 #if DEBUG
 extension ProgressResponse: FileStreamPreviewable {
-    public static var previewFilename: String { "ProgressStream" }
+    public static var previewsFilename: String { "ProgressStream" }
 }
 #endif

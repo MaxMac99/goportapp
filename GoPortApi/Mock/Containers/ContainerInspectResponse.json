@@ -1,0 +1,74 @@
+{
+    "Id": "d36502ca6370d70dc2ba59f3712656df252e7b17d5e2d064837f1b722edd12d7",
+    "Created": "2022-01-24T18:33:34.3642687Z",
+    "Path": "/hello",
+    "State": {
+        "Status": "created",
+        "StartedAt": "0001-01-01T00:00:00Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "Image": "sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412",
+    "Name": "/romantic_neumann",
+    "Driver": "overlay2",
+    "Platform": "linux",
+    "HostConfig": {
+        "OomKillDisable": false,
+        "LogConfig": {
+            "Type": "json-file"
+        },
+        "NetworkMode": "default",
+        "RestartPolicy": {},
+        "CgroupnsMode": "private",
+        "IpcMode": "private",
+        "ShmSize": 67108864,
+        "Runtime": "runc",
+        "ConsoleSize": [
+            0,
+            0
+        ],
+        "MaskedPaths": [
+            "/proc/asound",
+            "/proc/acpi",
+            "/proc/kcore",
+            "/proc/keys",
+            "/proc/latency_stats",
+            "/proc/timer_list",
+            "/proc/timer_stats",
+            "/proc/sched_debug",
+            "/proc/scsi",
+            "/sys/firmware"
+        ],
+        "ReadonlyPaths": [
+            "/proc/bus",
+            "/proc/fs",
+            "/proc/irq",
+            "/proc/sys",
+            "/proc/sysrq-trigger"
+        ]
+    },
+    "GraphDriver": {
+        "Name": "overlay2",
+        "Data": {
+            "LowerDir": "/var/lib/docker/overlay2/6b6719e558816c31ff03439d4404dc6e90358217376a8875870e431138af87c1-init/diff:/var/lib/docker/overlay2/31280cd2227c55538b8a7aa7cfa21640041d6f669554905a29e3a37f220a5093/diff",
+            "MergedDir": "/var/lib/docker/overlay2/6b6719e558816c31ff03439d4404dc6e90358217376a8875870e431138af87c1/merged",
+            "UpperDir": "/var/lib/docker/overlay2/6b6719e558816c31ff03439d4404dc6e90358217376a8875870e431138af87c1/diff",
+            "WorkDir": "/var/lib/docker/overlay2/6b6719e558816c31ff03439d4404dc6e90358217376a8875870e431138af87c1/work"
+        }
+    },
+    "Config": {
+        "Hostname": "d36502ca6370",
+        "Env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Cmd": [
+            "/hello"
+        ],
+        "Healthcheck": {},
+        "Image": "hello-world"
+    },
+    "NetworkSettings": {
+        "Networks": {
+            "bridge": {}
+        }
+    }
+}

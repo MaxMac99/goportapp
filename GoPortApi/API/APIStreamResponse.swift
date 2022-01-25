@@ -12,12 +12,12 @@ internal protocol StreamHandlingDelegate: AnyObject {
     func complete(withError error: Error?)
 }
 
-public class APIStreamResponse<Content: Decodable>: StreamHandlingDelegate {
+public class APIStreamResponse<Content>: StreamHandlingDelegate {
     public var statusCode: Int
     public var headers: [AnyHashable:Any]
     public private(set) var stream: AsyncThrowingMapSequence<AsyncThrowingStream<Data, Error>, Content>
 
-    internal var isJSONObject: Bool { true } // Should be overrideable by extensions
+    internal var isJSONObject: Bool
     
     private let convertToArray: Bool
     
@@ -25,20 +25,21 @@ public class APIStreamResponse<Content: Decodable>: StreamHandlingDelegate {
     private var cache: Data? = nil
     private var onTermination: (@Sendable (AsyncThrowingStream<Data, Error>.Continuation.Termination) -> Void)?
     
-    internal init(response: HTTPURLResponse, convertToArray: Bool = false, onTermination: (@Sendable (AsyncThrowingStream<Data, Error>.Continuation.Termination) -> Void)? = nil) {
+    internal init(response: HTTPURLResponse, convertToArray: Bool = false, isJSONObject: Bool = true, onTermination: (@Sendable (AsyncThrowingStream<Data, Error>.Continuation.Termination) -> Void)? = nil, mapFunction: @escaping (Data) throws -> Content) {
         self.statusCode = response.statusCode
         self.headers = response.allHeaderFields
         self.convertToArray = convertToArray
+        self.isJSONObject = isJSONObject
         self.onTermination = onTermination
         self.stream = AsyncThrowingStream<Data, Error> { _ in }
-        .map({ try APIStreamResponse<Content>.mapData($0) })
+        .map({ try mapFunction($0) })
         
         // Can reference to self in a closure only if everything is initialized. A little bit hacky but it works.
         self.stream = AsyncThrowingStream<Data, Error> { continuation in
             self.responseStreamContinuation = continuation
             self.responseStreamContinuation?.onTermination = onTermination
         }
-        .map({ try APIStreamResponse<Content>.mapData($0) })
+        .map({ try mapFunction($0) })
     }
     
     public func stop() {
@@ -79,26 +80,4 @@ public class APIStreamResponse<Content: Decodable>: StreamHandlingDelegate {
         responseStreamContinuation?.finish(throwing: error)
         responseStreamContinuation = nil
     }
-    
-    fileprivate static func mapData(_ data: Data) throws -> Content {
-        if Content.self is Data.Type {
-            return data as! Content
-        }
-        if Content.self is String.Type, let string = String(data: data, encoding: .utf8) {
-            return string as! Content
-        }
-        return try dockerDecoder.decode(Content.self, from: data)
-    }
-}
-
-public extension APIStreamResponse where Content == String {
-    var isJSONObject: Bool { false }
-}
-
-public extension APIStreamResponse where Content == Data {
-    convenience init(response: HTTPURLResponse, onTermination: (@Sendable (AsyncThrowingStream<Data, Error>.Continuation.Termination) -> Void)? = nil) {
-        self.init(response: response, convertToArray: false, onTermination: onTermination)
-    }
-    
-    var isJSONObject: Bool { false }
 }

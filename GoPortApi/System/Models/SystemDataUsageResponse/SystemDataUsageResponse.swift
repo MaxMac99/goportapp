@@ -13,7 +13,7 @@ public struct SystemDataUsageResponseItem: Codable, Hashable {
 
     public var layersSize: Int64? = nil
     public var images: [ImageSummary]? = nil
-    public var containers: [ContainerSummary]? = nil
+    public var containers: [ContainerSummaryResponseItem]? = nil
     public var volumes: [VolumeResponse]? = nil
     public var buildCache: [BuildCache]? = nil
 

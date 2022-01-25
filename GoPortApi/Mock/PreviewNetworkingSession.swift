@@ -23,24 +23,24 @@ internal class PreviewNetworkingSession: NetworkingSession {
         return APIResponse(content: preview, response: try successfulHTTPURLResponse(for: request))
     }
     
-    override func stream<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body : Encodable, Content : Decodable {
+    override func stream<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false, isJSONObject: Bool = true, mapFunction: @escaping (Data) throws -> Content) async throws -> APIStreamResponse<Content> where Body : Encodable {
         if Content.self is StreamPreviewable.Type {
-            return try await streamStreamPreviewable(request, convertToArray: convertToArray)
+            return try await streamStreamPreviewable(request, convertToArray: convertToArray, isJSONObject: isJSONObject, mapFunction: mapFunction)
         }
         if Content.self is Previewable.Type {
-            return try await streamPreviewable(request, convertToArray: convertToArray)
+            return try await streamPreviewable(request, convertToArray: convertToArray, isJSONObject: isJSONObject, mapFunction: mapFunction)
         }
         throw PreviewNetworkingError.notImplemented
     }
     
-    private func streamPreviewable<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body : Encodable, Content : Decodable {
+    private func streamPreviewable<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false, isJSONObject: Bool = true, mapFunction: @escaping (Data) throws -> Content) async throws -> APIStreamResponse<Content> where Body : Encodable {
         guard Content.self is Previewable.Type else {
             throw PreviewNetworkingError.notImplemented
         }
         
         let type = Content.self as! Previewable.Type
         let preview = try type.preview.asData
-        let response = APIStreamResponse<Content>(response: try successfulHTTPURLResponse(for: request), convertToArray: convertToArray, onTermination: nil)
+        let response = APIStreamResponse<Content>(response: try successfulHTTPURLResponse(for: request), convertToArray: convertToArray, isJSONObject: isJSONObject, onTermination: nil, mapFunction: mapFunction)
         
         Task { [weak response] in
             for _ in 0..<5 {
@@ -52,18 +52,18 @@ internal class PreviewNetworkingSession: NetworkingSession {
         return response
     }
     
-    private func streamStreamPreviewable<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body : Encodable, Content : Decodable {
+    private func streamStreamPreviewable<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false, isJSONObject: Bool = true, mapFunction: @escaping (Data) throws -> Content) async throws -> APIStreamResponse<Content> where Body : Encodable {
         guard Content.self is StreamPreviewable.Type else {
             throw PreviewNetworkingError.notImplemented
         }
         
         let type = Content.self as! StreamPreviewable.Type
-        let response = APIStreamResponse<Content>(response: try successfulHTTPURLResponse(for: request), convertToArray: convertToArray, onTermination: nil)
+        let response = APIStreamResponse<Content>(response: try successfulHTTPURLResponse(for: request), convertToArray: convertToArray, isJSONObject: isJSONObject, onTermination: nil, mapFunction: mapFunction)
         
         Task { [weak response] in
             for preview in type.previews {
                 try await Task.sleep(nanoseconds: 200_000)
-                response?.received(try preview.asData + "\n".utf8)
+                response?.received(try preview.asStreamData + "\n".utf8)
             }
             response?.complete(withError: nil)
         }
@@ -74,6 +74,10 @@ internal class PreviewNetworkingSession: NetworkingSession {
         switch request.path {
         case NetworkAPI.NetworkAPIPath.networkList:
             return APIResponse(content: NetworkListResponse.preview as! Content, response: try successfulHTTPURLResponse(for: request))
+        case ContainerAPI.ContainerAPIPath.containerLogs(id: _):
+            let data = try MockHelper.loadFile("ContainerLogs", withExtension: "bin")
+            let logs: [ContainerLogResponseItem] = ContainerLogResponseItem.convert(data)
+            return APIResponse(content: logs as! Content, response: try successfulHTTPURLResponse(for: request))
         default:
             throw PreviewNetworkingError.notImplemented
         }

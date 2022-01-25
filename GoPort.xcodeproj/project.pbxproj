@@ -14,6 +14,7 @@
 		771D31D7277A494F005BFCF3 /* GoPortApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 771D31C7277A494E005BFCF3 /* GoPortApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		771D31DA277A494F005BFCF3 /* GoPortApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771D31C5277A494E005BFCF3 /* GoPortApi.framework */; };
 		771D31DB277A494F005BFCF3 /* GoPortApi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 771D31C5277A494E005BFCF3 /* GoPortApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		772AC0E927A07C6500C1D348 /* DataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC0E827A07C6500C1D348 /* DataConvertible.swift */; };
 		773E5B64277E62E70048E205 /* SystemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B63277E62E70048E205 /* SystemAPI.swift */; };
 		773E5B67277E63350048E205 /* SystemDataUsageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B66277E63350048E205 /* SystemDataUsageResponse.swift */; };
 		773E5B69277E633F0048E205 /* SystemEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B68277E633F0048E205 /* SystemEventsResponse.swift */; };
@@ -21,7 +22,7 @@
 		773E5B6D277E635A0048E205 /* SystemVersionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B6C277E635A0048E205 /* SystemVersionResponse.swift */; };
 		773E5B72277E64E90048E205 /* BuildCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B71277E64E90048E205 /* BuildCache.swift */; };
 		773E5B75277E65170048E205 /* VolumeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B74277E65170048E205 /* VolumeResponse.swift */; };
-		773E5B79277E65500048E205 /* ContainerSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B78277E65500048E205 /* ContainerSummary.swift */; };
+		773E5B79277E65500048E205 /* ContainerSummaryResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B78277E65500048E205 /* ContainerSummaryResponseItem.swift */; };
 		773E5B7B277E655E0048E205 /* ImageSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B7A277E655E0048E205 /* ImageSummary.swift */; };
 		773E5B7D277E659D0048E205 /* EventsActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B7C277E659D0048E205 /* EventsActor.swift */; };
 		773E5B7F277E65DC0048E205 /* PluginsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B7E277E65DB0048E205 /* PluginsInfo.swift */; };
@@ -162,6 +163,69 @@
 		77E49D0C279E12B8006032C3 /* NetworkInspectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D0B279E12B8006032C3 /* NetworkInspectTest.swift */; };
 		77E49D0E279E12C4006032C3 /* NetworkListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D0D279E12C4006032C3 /* NetworkListTest.swift */; };
 		77E49D10279E12CF006032C3 /* NetworkPruneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D0F279E12CF006032C3 /* NetworkPruneTest.swift */; };
+		77E49D12279E147C006032C3 /* ContainerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D11279E147C006032C3 /* ContainerAPI.swift */; };
+		77E49D15279E14AC006032C3 /* ContainerChangeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D14279E14AC006032C3 /* ContainerChangeResponse.swift */; };
+		77E49D18279E14C8006032C3 /* ContainerCreateConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D17279E14C8006032C3 /* ContainerCreateConfig.swift */; };
+		77E49D1A279E14E4006032C3 /* HostConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D19279E14E4006032C3 /* HostConfig.swift */; };
+		77E49D1C279E1500006032C3 /* NetworkingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D1B279E1500006032C3 /* NetworkingConfig.swift */; };
+		77E49D1F279E152E006032C3 /* ResourcesBlkioWeightDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D1E279E152E006032C3 /* ResourcesBlkioWeightDevice.swift */; };
+		77E49D21279E1537006032C3 /* ThrottleDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D20279E1537006032C3 /* ThrottleDevice.swift */; };
+		77E49D23279E1546006032C3 /* DeviceMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D22279E1546006032C3 /* DeviceMapping.swift */; };
+		77E49D25279E1551006032C3 /* DeviceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D24279E1551006032C3 /* DeviceRequest.swift */; };
+		77E49D27279E1572006032C3 /* ResourcesUlimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D26279E1572006032C3 /* ResourcesUlimits.swift */; };
+		77E49D29279E157C006032C3 /* HostConfigAllOfLogConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D28279E157C006032C3 /* HostConfigAllOfLogConfig.swift */; };
+		77E49D2B279E158F006032C3 /* PortMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D2A279E158F006032C3 /* PortMap.swift */; };
+		77E49D2D279E1596006032C3 /* RestartPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D2C279E1596006032C3 /* RestartPolicy.swift */; };
+		77E49D2F279E159E006032C3 /* Mount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D2E279E159E006032C3 /* Mount.swift */; };
+		77E49D32279E15C2006032C3 /* PortBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D31279E15C2006032C3 /* PortBinding.swift */; };
+		77E49D37279E16A9006032C3 /* MountTmpfsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D34279E16A9006032C3 /* MountTmpfsOptions.swift */; };
+		77E49D38279E16A9006032C3 /* MountBindOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D35279E16A9006032C3 /* MountBindOptions.swift */; };
+		77E49D39279E16A9006032C3 /* MountVolumeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D36279E16A9006032C3 /* MountVolumeOptions.swift */; };
+		77E49D3B279E16B5006032C3 /* MountVolumeOptionsDriverConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D3A279E16B5006032C3 /* MountVolumeOptionsDriverConfig.swift */; };
+		77E49D3F279E1737006032C3 /* ContainerCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D3E279E1737006032C3 /* ContainerCreateResponse.swift */; };
+		77E49D41279E17A1006032C3 /* ContainerInspectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D40279E17A1006032C3 /* ContainerInspectResponse.swift */; };
+		77E49D44279E17BB006032C3 /* ContainerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D43279E17BB006032C3 /* ContainerState.swift */; };
+		77E49D46279E17C5006032C3 /* NetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D45279E17C5006032C3 /* NetworkSettings.swift */; };
+		77E49D49279E17DE006032C3 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D48279E17DE006032C3 /* Health.swift */; };
+		77E49D4B279E17E9006032C3 /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D4A279E17E9006032C3 /* HealthStatus.swift */; };
+		77E49D4D279E17F1006032C3 /* HealthcheckResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D4C279E17F0006032C3 /* HealthcheckResult.swift */; };
+		77E49D4F279E1807006032C3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D4E279E1807006032C3 /* Address.swift */; };
+		77E49D51279E189E006032C3 /* ContainerPruneResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D50279E189E006032C3 /* ContainerPruneResponse.swift */; };
+		77E49D53279E196D006032C3 /* ContainerStatsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D52279E196D006032C3 /* ContainerStatsResponse.swift */; };
+		77E49D55279E1995006032C3 /* ContainerTopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D54279E1995006032C3 /* ContainerTopResponse.swift */; };
+		77E49D58279E19AC006032C3 /* ContainersIdStatsPidsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D57279E19AC006032C3 /* ContainersIdStatsPidsStats.swift */; };
+		77E49D5A279E19AF006032C3 /* ContainersIdStatsNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D59279E19AF006032C3 /* ContainersIdStatsNetworks.swift */; };
+		77E49D5C279E19B6006032C3 /* BlkioStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D5B279E19B6006032C3 /* BlkioStats.swift */; };
+		77E49D5E279E19BC006032C3 /* CPUStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D5D279E19BC006032C3 /* CPUStats.swift */; };
+		77E49D60279E19C5006032C3 /* MemoryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D5F279E19C5006032C3 /* MemoryStats.swift */; };
+		77E49D63279E19DB006032C3 /* BlkioStatEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D62279E19DB006032C3 /* BlkioStatEntry.swift */; };
+		77E49D66279E19EE006032C3 /* CPUStatsCPUUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D65279E19EE006032C3 /* CPUStatsCPUUsage.swift */; };
+		77E49D68279E19F3006032C3 /* CPUStatsThrottlingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D67279E19F3006032C3 /* CPUStatsThrottlingData.swift */; };
+		77E49D6A279E1A13006032C3 /* ContainerUpdateConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D69279E1A13006032C3 /* ContainerUpdateConfig.swift */; };
+		77E49D6C279E1A21006032C3 /* ContainerUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D6B279E1A21006032C3 /* ContainerUpdateResponse.swift */; };
+		77E49D6E279E1A2E006032C3 /* ContainerWaitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D6D279E1A2E006032C3 /* ContainerWaitResponse.swift */; };
+		77E49D71279E1A3E006032C3 /* ContainerWaitResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D70279E1A3E006032C3 /* ContainerWaitResponseError.swift */; };
+		77E49D74279F278E006032C3 /* ContainerChangeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D73279F278E006032C3 /* ContainerChangeResponse.json */; };
+		77E49D76279F2814006032C3 /* ContainerCreateResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D75279F2814006032C3 /* ContainerCreateResponse.json */; };
+		77E49D7A279F2A36006032C3 /* ContainerInspectResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D79279F2A36006032C3 /* ContainerInspectResponse.json */; };
+		77E49D7C279F3A6A006032C3 /* ContainerListResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D7B279F3A6A006032C3 /* ContainerListResponse.json */; };
+		77E49D7E279F4F2F006032C3 /* ContainerLogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D7D279F4F2F006032C3 /* ContainerLogResponse.swift */; };
+		77E49D84279F55F1006032C3 /* ContainerLogsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D83279F55F1006032C3 /* ContainerLogsTest.swift */; };
+		77E49D87279F5989006032C3 /* ContainerLogsTimestamp.bin in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D86279F5989006032C3 /* ContainerLogsTimestamp.bin */; };
+		77E49D89279F59E3006032C3 /* ContainerLogs.bin in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D88279F59E3006032C3 /* ContainerLogs.bin */; };
+		77E49D8B279F756D006032C3 /* ContainerPruneResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D8A279F756D006032C3 /* ContainerPruneResponse.json */; };
+		77E49D8D27A06D67006032C3 /* ContainerStatsStreamResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D8C27A06D67006032C3 /* ContainerStatsStreamResponse.json */; };
+		77E49D8F27A06FC1006032C3 /* ContainerTopResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D8E27A06FC1006032C3 /* ContainerTopResponse.json */; };
+		77E49D9327A07196006032C3 /* ContainerWaitResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49D9227A07196006032C3 /* ContainerWaitResponse.json */; };
+		77E49D9527A071B3006032C3 /* ContainerChangeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D9427A071B3006032C3 /* ContainerChangeTest.swift */; };
+		77E49D9727A071E3006032C3 /* ContainerCreateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D9627A071E3006032C3 /* ContainerCreateTest.swift */; };
+		77E49D9927A0727C006032C3 /* ContainerInspectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D9827A0727C006032C3 /* ContainerInspectTest.swift */; };
+		77E49D9B27A072A9006032C3 /* ContainerListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D9A27A072A9006032C3 /* ContainerListTest.swift */; };
+		77E49D9D27A07322006032C3 /* ContainerPruneTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D9C27A07322006032C3 /* ContainerPruneTest.swift */; };
+		77E49D9F27A073A7006032C3 /* ContainerStatsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49D9E27A073A7006032C3 /* ContainerStatsTest.swift */; };
+		77E49DA127A073FB006032C3 /* ContainerStatsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E49DA027A073FB006032C3 /* ContainerStatsResponse.json */; };
+		77E49DA327A074E5006032C3 /* ContainerTopTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49DA227A074E5006032C3 /* ContainerTopTest.swift */; };
+		77E49DA527A07531006032C3 /* ContainerWaitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49DA427A07531006032C3 /* ContainerWaitTest.swift */; };
 		77F1926F279626A100D86ACD /* SystemDataUsageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1926E279626A100D86ACD /* SystemDataUsageTest.swift */; };
 		77F1927127973BCD00D86ACD /* SystemEventsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1927027973BCD00D86ACD /* SystemEventsTest.swift */; };
 		77F19273279748F500D86ACD /* AddServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F19272279748F500D86ACD /* AddServerView.swift */; };
@@ -227,6 +291,7 @@
 		771D31C8277A494E005BFCF3 /* GoPortApi.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GoPortApi.docc; sourceTree = "<group>"; };
 		771D31CE277A494F005BFCF3 /* GoPortApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoPortApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		771D31D5277A494F005BFCF3 /* GoPortApiBaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortApiBaseTest.swift; sourceTree = "<group>"; };
+		772AC0E827A07C6500C1D348 /* DataConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConvertible.swift; sourceTree = "<group>"; };
 		773E5B63277E62E70048E205 /* SystemAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAPI.swift; sourceTree = "<group>"; };
 		773E5B66277E63350048E205 /* SystemDataUsageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemDataUsageResponse.swift; sourceTree = "<group>"; };
 		773E5B68277E633F0048E205 /* SystemEventsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemEventsResponse.swift; sourceTree = "<group>"; };
@@ -234,7 +299,7 @@
 		773E5B6C277E635A0048E205 /* SystemVersionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemVersionResponse.swift; sourceTree = "<group>"; };
 		773E5B71277E64E90048E205 /* BuildCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildCache.swift; sourceTree = "<group>"; };
 		773E5B74277E65170048E205 /* VolumeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeResponse.swift; sourceTree = "<group>"; };
-		773E5B78277E65500048E205 /* ContainerSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerSummary.swift; sourceTree = "<group>"; };
+		773E5B78277E65500048E205 /* ContainerSummaryResponseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerSummaryResponseItem.swift; sourceTree = "<group>"; };
 		773E5B7A277E655E0048E205 /* ImageSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSummary.swift; sourceTree = "<group>"; };
 		773E5B7C277E659D0048E205 /* EventsActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsActor.swift; sourceTree = "<group>"; };
 		773E5B7E277E65DB0048E205 /* PluginsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PluginsInfo.swift; sourceTree = "<group>"; };
@@ -376,6 +441,69 @@
 		77E49D0B279E12B8006032C3 /* NetworkInspectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInspectTest.swift; sourceTree = "<group>"; };
 		77E49D0D279E12C4006032C3 /* NetworkListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkListTest.swift; sourceTree = "<group>"; };
 		77E49D0F279E12CF006032C3 /* NetworkPruneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPruneTest.swift; sourceTree = "<group>"; };
+		77E49D11279E147C006032C3 /* ContainerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerAPI.swift; sourceTree = "<group>"; };
+		77E49D14279E14AC006032C3 /* ContainerChangeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerChangeResponse.swift; sourceTree = "<group>"; };
+		77E49D17279E14C8006032C3 /* ContainerCreateConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerCreateConfig.swift; sourceTree = "<group>"; };
+		77E49D19279E14E4006032C3 /* HostConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostConfig.swift; sourceTree = "<group>"; };
+		77E49D1B279E1500006032C3 /* NetworkingConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingConfig.swift; sourceTree = "<group>"; };
+		77E49D1E279E152E006032C3 /* ResourcesBlkioWeightDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesBlkioWeightDevice.swift; sourceTree = "<group>"; };
+		77E49D20279E1537006032C3 /* ThrottleDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrottleDevice.swift; sourceTree = "<group>"; };
+		77E49D22279E1546006032C3 /* DeviceMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMapping.swift; sourceTree = "<group>"; };
+		77E49D24279E1551006032C3 /* DeviceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceRequest.swift; sourceTree = "<group>"; };
+		77E49D26279E1572006032C3 /* ResourcesUlimits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesUlimits.swift; sourceTree = "<group>"; };
+		77E49D28279E157C006032C3 /* HostConfigAllOfLogConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostConfigAllOfLogConfig.swift; sourceTree = "<group>"; };
+		77E49D2A279E158F006032C3 /* PortMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortMap.swift; sourceTree = "<group>"; };
+		77E49D2C279E1596006032C3 /* RestartPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartPolicy.swift; sourceTree = "<group>"; };
+		77E49D2E279E159E006032C3 /* Mount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mount.swift; sourceTree = "<group>"; };
+		77E49D31279E15C2006032C3 /* PortBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortBinding.swift; sourceTree = "<group>"; };
+		77E49D34279E16A9006032C3 /* MountTmpfsOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountTmpfsOptions.swift; sourceTree = "<group>"; };
+		77E49D35279E16A9006032C3 /* MountBindOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountBindOptions.swift; sourceTree = "<group>"; };
+		77E49D36279E16A9006032C3 /* MountVolumeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountVolumeOptions.swift; sourceTree = "<group>"; };
+		77E49D3A279E16B5006032C3 /* MountVolumeOptionsDriverConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountVolumeOptionsDriverConfig.swift; sourceTree = "<group>"; };
+		77E49D3E279E1737006032C3 /* ContainerCreateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerCreateResponse.swift; sourceTree = "<group>"; };
+		77E49D40279E17A1006032C3 /* ContainerInspectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerInspectResponse.swift; sourceTree = "<group>"; };
+		77E49D43279E17BB006032C3 /* ContainerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerState.swift; sourceTree = "<group>"; };
+		77E49D45279E17C5006032C3 /* NetworkSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSettings.swift; sourceTree = "<group>"; };
+		77E49D48279E17DE006032C3 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		77E49D4A279E17E9006032C3 /* HealthStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStatus.swift; sourceTree = "<group>"; };
+		77E49D4C279E17F0006032C3 /* HealthcheckResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthcheckResult.swift; sourceTree = "<group>"; };
+		77E49D4E279E1807006032C3 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		77E49D50279E189E006032C3 /* ContainerPruneResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerPruneResponse.swift; sourceTree = "<group>"; };
+		77E49D52279E196D006032C3 /* ContainerStatsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerStatsResponse.swift; sourceTree = "<group>"; };
+		77E49D54279E1995006032C3 /* ContainerTopResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTopResponse.swift; sourceTree = "<group>"; };
+		77E49D57279E19AC006032C3 /* ContainersIdStatsPidsStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainersIdStatsPidsStats.swift; sourceTree = "<group>"; };
+		77E49D59279E19AF006032C3 /* ContainersIdStatsNetworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainersIdStatsNetworks.swift; sourceTree = "<group>"; };
+		77E49D5B279E19B6006032C3 /* BlkioStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlkioStats.swift; sourceTree = "<group>"; };
+		77E49D5D279E19BC006032C3 /* CPUStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUStats.swift; sourceTree = "<group>"; };
+		77E49D5F279E19C5006032C3 /* MemoryStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryStats.swift; sourceTree = "<group>"; };
+		77E49D62279E19DB006032C3 /* BlkioStatEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlkioStatEntry.swift; sourceTree = "<group>"; };
+		77E49D65279E19EE006032C3 /* CPUStatsCPUUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUStatsCPUUsage.swift; sourceTree = "<group>"; };
+		77E49D67279E19F3006032C3 /* CPUStatsThrottlingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPUStatsThrottlingData.swift; sourceTree = "<group>"; };
+		77E49D69279E1A13006032C3 /* ContainerUpdateConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerUpdateConfig.swift; sourceTree = "<group>"; };
+		77E49D6B279E1A21006032C3 /* ContainerUpdateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerUpdateResponse.swift; sourceTree = "<group>"; };
+		77E49D6D279E1A2E006032C3 /* ContainerWaitResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerWaitResponse.swift; sourceTree = "<group>"; };
+		77E49D70279E1A3E006032C3 /* ContainerWaitResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerWaitResponseError.swift; sourceTree = "<group>"; };
+		77E49D73279F278E006032C3 /* ContainerChangeResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerChangeResponse.json; sourceTree = "<group>"; };
+		77E49D75279F2814006032C3 /* ContainerCreateResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerCreateResponse.json; sourceTree = "<group>"; };
+		77E49D79279F2A36006032C3 /* ContainerInspectResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerInspectResponse.json; sourceTree = "<group>"; };
+		77E49D7B279F3A6A006032C3 /* ContainerListResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerListResponse.json; sourceTree = "<group>"; };
+		77E49D7D279F4F2F006032C3 /* ContainerLogResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerLogResponse.swift; sourceTree = "<group>"; };
+		77E49D83279F55F1006032C3 /* ContainerLogsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerLogsTest.swift; sourceTree = "<group>"; };
+		77E49D86279F5989006032C3 /* ContainerLogsTimestamp.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = ContainerLogsTimestamp.bin; sourceTree = "<group>"; };
+		77E49D88279F59E3006032C3 /* ContainerLogs.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = ContainerLogs.bin; sourceTree = "<group>"; };
+		77E49D8A279F756D006032C3 /* ContainerPruneResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerPruneResponse.json; sourceTree = "<group>"; };
+		77E49D8C27A06D67006032C3 /* ContainerStatsStreamResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerStatsStreamResponse.json; sourceTree = "<group>"; };
+		77E49D8E27A06FC1006032C3 /* ContainerTopResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerTopResponse.json; sourceTree = "<group>"; };
+		77E49D9227A07196006032C3 /* ContainerWaitResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerWaitResponse.json; sourceTree = "<group>"; };
+		77E49D9427A071B3006032C3 /* ContainerChangeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerChangeTest.swift; sourceTree = "<group>"; };
+		77E49D9627A071E3006032C3 /* ContainerCreateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCreateTest.swift; sourceTree = "<group>"; };
+		77E49D9827A0727C006032C3 /* ContainerInspectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerInspectTest.swift; sourceTree = "<group>"; };
+		77E49D9A27A072A9006032C3 /* ContainerListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerListTest.swift; sourceTree = "<group>"; };
+		77E49D9C27A07322006032C3 /* ContainerPruneTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPruneTest.swift; sourceTree = "<group>"; };
+		77E49D9E27A073A7006032C3 /* ContainerStatsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStatsTest.swift; sourceTree = "<group>"; };
+		77E49DA027A073FB006032C3 /* ContainerStatsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContainerStatsResponse.json; sourceTree = "<group>"; };
+		77E49DA227A074E5006032C3 /* ContainerTopTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTopTest.swift; sourceTree = "<group>"; };
+		77E49DA427A07531006032C3 /* ContainerWaitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerWaitTest.swift; sourceTree = "<group>"; };
 		77F1926E279626A100D86ACD /* SystemDataUsageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDataUsageTest.swift; sourceTree = "<group>"; };
 		77F1927027973BCD00D86ACD /* SystemEventsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsTest.swift; sourceTree = "<group>"; };
 		77F19272279748F500D86ACD /* AddServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServerView.swift; sourceTree = "<group>"; };
@@ -447,6 +575,7 @@
 			children = (
 				773E8ED527932D7900BFF140 /* MockNetworkingSession.swift */,
 				771D31D5277A494F005BFCF3 /* GoPortApiBaseTest.swift */,
+				77E49D82279F55E1006032C3 /* Containers */,
 				77E49D08279E129A006032C3 /* Networks */,
 				77E49CDE279E09A9006032C3 /* Volumes */,
 				77784CA2277D1FE4002EC4A2 /* Contexts */,
@@ -489,6 +618,7 @@
 		773E5B6F277E64A30048E205 /* Containers */ = {
 			isa = PBXGroup;
 			children = (
+				77E49D11279E147C006032C3 /* ContainerAPI.swift */,
 				773E5B76277E653F0048E205 /* Models */,
 			);
 			path = Containers;
@@ -517,9 +647,17 @@
 		773E5B76277E653F0048E205 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				773E5B78277E65500048E205 /* ContainerSummary.swift */,
-				773E5BA1277E68E40048E205 /* ContainerSummaryHostConfig.swift */,
-				773E5BA2277E68E40048E205 /* ContainerSummaryNetworkSettings.swift */,
+				77E49D16279E14BC006032C3 /* Common */,
+				77E49D14279E14AC006032C3 /* ContainerChangeResponse.swift */,
+				77E49D3E279E1737006032C3 /* ContainerCreateResponse.swift */,
+				77E49D13279E1496006032C3 /* ContainerSummary */,
+				77E49D7D279F4F2F006032C3 /* ContainerLogResponse.swift */,
+				77E49D42279E17AD006032C3 /* ContainerInspectResponse */,
+				77E49D50279E189E006032C3 /* ContainerPruneResponse.swift */,
+				77E49D56279E199A006032C3 /* ContainerStatsResponse */,
+				77E49D54279E1995006032C3 /* ContainerTopResponse.swift */,
+				77E49D6B279E1A21006032C3 /* ContainerUpdateResponse.swift */,
+				77E49D6F279E1A33006032C3 /* ContainerWaitResponse */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -671,6 +809,7 @@
 				773E8ED9279376E400BFF140 /* APIPathProtocol.swift */,
 				773E8EDB279379F800BFF140 /* APIResponse.swift */,
 				773E8EE02794595400BFF140 /* APIStreamResponse.swift */,
+				772AC0E827A07C6500C1D348 /* DataConvertible.swift */,
 				775F678C277B68B5006BAF7A /* DockerCoding.swift */,
 			);
 			path = API;
@@ -703,6 +842,7 @@
 				775F67D3277D1D2A006BAF7A /* MockHelper.swift */,
 				773E8EE2279484C300BFF140 /* Previewable.swift */,
 				773E8E99279198E500BFF140 /* PreviewNetworkingSession.swift */,
+				77E49D72279F2772006032C3 /* Containers */,
 				77E49CFF279E100E006032C3 /* Networks */,
 				77E49C96279C55A4006032C3 /* Images */,
 				77E49CD7279E030D006032C3 /* Volumes */,
@@ -1005,6 +1145,162 @@
 			path = Networks;
 			sourceTree = "<group>";
 		};
+		77E49D13279E1496006032C3 /* ContainerSummary */ = {
+			isa = PBXGroup;
+			children = (
+				773E5B78277E65500048E205 /* ContainerSummaryResponseItem.swift */,
+				773E5BA1277E68E40048E205 /* ContainerSummaryHostConfig.swift */,
+				773E5BA2277E68E40048E205 /* ContainerSummaryNetworkSettings.swift */,
+			);
+			path = ContainerSummary;
+			sourceTree = "<group>";
+		};
+		77E49D16279E14BC006032C3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D17279E14C8006032C3 /* ContainerCreateConfig.swift */,
+				77E49D1D279E1511006032C3 /* HostConfig */,
+				77E49D1B279E1500006032C3 /* NetworkingConfig.swift */,
+				77E49D69279E1A13006032C3 /* ContainerUpdateConfig.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		77E49D1D279E1511006032C3 /* HostConfig */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D19279E14E4006032C3 /* HostConfig.swift */,
+				77E49D1E279E152E006032C3 /* ResourcesBlkioWeightDevice.swift */,
+				77E49D20279E1537006032C3 /* ThrottleDevice.swift */,
+				77E49D22279E1546006032C3 /* DeviceMapping.swift */,
+				77E49D24279E1551006032C3 /* DeviceRequest.swift */,
+				77E49D26279E1572006032C3 /* ResourcesUlimits.swift */,
+				77E49D28279E157C006032C3 /* HostConfigAllOfLogConfig.swift */,
+				77E49D30279E15B5006032C3 /* PortMap */,
+				77E49D2C279E1596006032C3 /* RestartPolicy.swift */,
+				77E49D33279E1695006032C3 /* Mount */,
+			);
+			path = HostConfig;
+			sourceTree = "<group>";
+		};
+		77E49D30279E15B5006032C3 /* PortMap */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D2A279E158F006032C3 /* PortMap.swift */,
+				77E49D31279E15C2006032C3 /* PortBinding.swift */,
+			);
+			path = PortMap;
+			sourceTree = "<group>";
+		};
+		77E49D33279E1695006032C3 /* Mount */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D2E279E159E006032C3 /* Mount.swift */,
+				77E49D35279E16A9006032C3 /* MountBindOptions.swift */,
+				77E49D34279E16A9006032C3 /* MountTmpfsOptions.swift */,
+				77E49D36279E16A9006032C3 /* MountVolumeOptions.swift */,
+				77E49D3A279E16B5006032C3 /* MountVolumeOptionsDriverConfig.swift */,
+			);
+			path = Mount;
+			sourceTree = "<group>";
+		};
+		77E49D42279E17AD006032C3 /* ContainerInspectResponse */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D40279E17A1006032C3 /* ContainerInspectResponse.swift */,
+				77E49D47279E17D0006032C3 /* ContainerState */,
+				77E49D45279E17C5006032C3 /* NetworkSettings.swift */,
+				77E49D4E279E1807006032C3 /* Address.swift */,
+			);
+			path = ContainerInspectResponse;
+			sourceTree = "<group>";
+		};
+		77E49D47279E17D0006032C3 /* ContainerState */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D43279E17BB006032C3 /* ContainerState.swift */,
+				77E49D48279E17DE006032C3 /* Health.swift */,
+				77E49D4A279E17E9006032C3 /* HealthStatus.swift */,
+				77E49D4C279E17F0006032C3 /* HealthcheckResult.swift */,
+			);
+			path = ContainerState;
+			sourceTree = "<group>";
+		};
+		77E49D56279E199A006032C3 /* ContainerStatsResponse */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D52279E196D006032C3 /* ContainerStatsResponse.swift */,
+				77E49D57279E19AC006032C3 /* ContainersIdStatsPidsStats.swift */,
+				77E49D59279E19AF006032C3 /* ContainersIdStatsNetworks.swift */,
+				77E49D61279E19CF006032C3 /* BlkioStats */,
+				77E49D64279E19E1006032C3 /* CPUStats */,
+				77E49D5F279E19C5006032C3 /* MemoryStats.swift */,
+			);
+			path = ContainerStatsResponse;
+			sourceTree = "<group>";
+		};
+		77E49D61279E19CF006032C3 /* BlkioStats */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D5B279E19B6006032C3 /* BlkioStats.swift */,
+				77E49D62279E19DB006032C3 /* BlkioStatEntry.swift */,
+			);
+			path = BlkioStats;
+			sourceTree = "<group>";
+		};
+		77E49D64279E19E1006032C3 /* CPUStats */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D5D279E19BC006032C3 /* CPUStats.swift */,
+				77E49D65279E19EE006032C3 /* CPUStatsCPUUsage.swift */,
+				77E49D67279E19F3006032C3 /* CPUStatsThrottlingData.swift */,
+			);
+			path = CPUStats;
+			sourceTree = "<group>";
+		};
+		77E49D6F279E1A33006032C3 /* ContainerWaitResponse */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D6D279E1A2E006032C3 /* ContainerWaitResponse.swift */,
+				77E49D70279E1A3E006032C3 /* ContainerWaitResponseError.swift */,
+			);
+			path = ContainerWaitResponse;
+			sourceTree = "<group>";
+		};
+		77E49D72279F2772006032C3 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D73279F278E006032C3 /* ContainerChangeResponse.json */,
+				77E49D75279F2814006032C3 /* ContainerCreateResponse.json */,
+				77E49D79279F2A36006032C3 /* ContainerInspectResponse.json */,
+				77E49D7B279F3A6A006032C3 /* ContainerListResponse.json */,
+				77E49D86279F5989006032C3 /* ContainerLogsTimestamp.bin */,
+				77E49D88279F59E3006032C3 /* ContainerLogs.bin */,
+				77E49D8A279F756D006032C3 /* ContainerPruneResponse.json */,
+				77E49DA027A073FB006032C3 /* ContainerStatsResponse.json */,
+				77E49D8C27A06D67006032C3 /* ContainerStatsStreamResponse.json */,
+				77E49D8E27A06FC1006032C3 /* ContainerTopResponse.json */,
+				77E49D9227A07196006032C3 /* ContainerWaitResponse.json */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		77E49D82279F55E1006032C3 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				77E49D9427A071B3006032C3 /* ContainerChangeTest.swift */,
+				77E49D9627A071E3006032C3 /* ContainerCreateTest.swift */,
+				77E49D9827A0727C006032C3 /* ContainerInspectTest.swift */,
+				77E49D9A27A072A9006032C3 /* ContainerListTest.swift */,
+				77E49D83279F55F1006032C3 /* ContainerLogsTest.swift */,
+				77E49D9C27A07322006032C3 /* ContainerPruneTest.swift */,
+				77E49D9E27A073A7006032C3 /* ContainerStatsTest.swift */,
+				77E49DA227A074E5006032C3 /* ContainerTopTest.swift */,
+				77E49DA427A07531006032C3 /* ContainerWaitTest.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
 		77F1927427974D2600D86ACD /* AddServerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1193,23 +1489,34 @@
 				773E5BA9277E6A0A0048E205 /* SystemDataUsageResponse.json in Resources */,
 				773E5BB4277F05B60048E205 /* SystemEventsStream.json in Resources */,
 				77E49D07279E1130006032C3 /* NetworkPruneResponse.json in Resources */,
+				77E49DA127A073FB006032C3 /* ContainerStatsResponse.json in Resources */,
 				77E49CCB279E0092006032C3 /* ProgressStreamBuild.json in Resources */,
 				77E49CA9279D9B61006032C3 /* ImageResponse.json in Resources */,
 				773E5BB2277E72030048E205 /* SystemVersionResponse.json in Resources */,
 				77E49CA5279D9947006032C3 /* ImageDeleteResponse.json in Resources */,
 				77E49CAD279D9D8F006032C3 /* ImagePruneResponse.json in Resources */,
 				77E49CDB279E081A006032C3 /* VolumeResponse.json in Resources */,
+				77E49D8D27A06D67006032C3 /* ContainerStatsStreamResponse.json in Resources */,
 				77E49D05279E111F006032C3 /* NetworkListResponse.json in Resources */,
 				773E8EB027920F5C00BFF140 /* SystemPingResponse.json in Resources */,
 				773E5BBA278B87130048E205 /* ping.header.txt in Resources */,
 				77E49CD9279E0336006032C3 /* VolumeListResponse.json in Resources */,
 				77E49CAB279D9BC4006032C3 /* ImageListResponse.json in Resources */,
+				77E49D76279F2814006032C3 /* ContainerCreateResponse.json in Resources */,
+				77E49D87279F5989006032C3 /* ContainerLogsTimestamp.bin in Resources */,
+				77E49D89279F59E3006032C3 /* ContainerLogs.bin in Resources */,
+				77E49D7C279F3A6A006032C3 /* ContainerListResponse.json in Resources */,
 				77E49CBF279DA954006032C3 /* ProgressStream.json in Resources */,
+				77E49D7A279F2A36006032C3 /* ContainerInspectResponse.json in Resources */,
+				77E49D74279F278E006032C3 /* ContainerChangeResponse.json in Resources */,
 				77E49CC5279DE996006032C3 /* BuildPruneResponse.json in Resources */,
+				77E49D9327A07196006032C3 /* ContainerWaitResponse.json in Resources */,
+				77E49D8F27A06FC1006032C3 /* ContainerTopResponse.json in Resources */,
 				77E49CDD279E0866006032C3 /* VolumePruneResponse.json in Resources */,
 				773E8EC42792E13E00BFF140 /* ContextInspect.json in Resources */,
 				773E5BB0277E70DB0048E205 /* SystemInfoResponse.json in Resources */,
 				77E49CA7279D9A95006032C3 /* ImageHistoryResponse.json in Resources */,
+				77E49D8B279F756D006032C3 /* ContainerPruneResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1254,15 +1561,24 @@
 				77E49CF3279E0C39006032C3 /* NetworkResponse.swift in Sources */,
 				77E49C95279C54A5006032C3 /* HealthConfig.swift in Sources */,
 				77E49C89279C5268006032C3 /* ImageRootFS.swift in Sources */,
+				77E49D29279E157C006032C3 /* HostConfigAllOfLogConfig.swift in Sources */,
+				77E49D4F279E1807006032C3 /* Address.swift in Sources */,
 				77E49CED279E0B9E006032C3 /* NetworkContainerConnectConfig.swift in Sources */,
+				77E49D39279E16A9006032C3 /* MountVolumeOptions.swift in Sources */,
 				775F67B1277BA496006BAF7A /* NetworkingSession.swift in Sources */,
 				773E5B69277E633F0048E205 /* SystemEventsResponse.swift in Sources */,
 				773E5BB8278B847A0048E205 /* SystemPingHeader.swift in Sources */,
 				77E49CFE279E0D77006032C3 /* NetworkPruneResponse.swift in Sources */,
+				772AC0E927A07C6500C1D348 /* DataConvertible.swift in Sources */,
+				77E49D27279E1572006032C3 /* ResourcesUlimits.swift in Sources */,
 				773E5B8C277E66700048E205 /* Commit.swift in Sources */,
 				775F67C7277D1921006BAF7A /* EndpointSettings.swift in Sources */,
 				775F67CF277D195D006BAF7A /* ContextSummary.swift in Sources */,
+				77E49D18279E14C8006032C3 /* ContainerCreateConfig.swift in Sources */,
+				77E49D4B279E17E9006032C3 /* HealthStatus.swift in Sources */,
+				77E49D66279E19EE006032C3 /* CPUStatsCPUUsage.swift in Sources */,
 				773E5BA4277E68E40048E205 /* ContainerSummaryNetworkSettings.swift in Sources */,
+				77E49D6C279E1A21006032C3 /* ContainerUpdateResponse.swift in Sources */,
 				773E5B7B277E655E0048E205 /* ImageSummary.swift in Sources */,
 				77E49CEB279E0B99006032C3 /* NetworkConfig.swift in Sources */,
 				77E49C78279C4E23006032C3 /* ImageAPI.swift in Sources */,
@@ -1275,61 +1591,96 @@
 				773E5B6B277E63480048E205 /* SystemInfoResponse.swift in Sources */,
 				773E5B85277E66070048E205 /* Runtime.swift in Sources */,
 				773E5B8A277E66670048E205 /* SystemInfoResponseDefaultAddressPools.swift in Sources */,
+				77E49D58279E19AC006032C3 /* ContainersIdStatsPidsStats.swift in Sources */,
+				77E49D68279E19F3006032C3 /* CPUStatsThrottlingData.swift in Sources */,
 				77E49C9A279D5D84006032C3 /* ProgressResponse.swift in Sources */,
+				77E49D60279E19C5006032C3 /* MemoryStats.swift in Sources */,
+				77E49D32279E15C2006032C3 /* PortBinding.swift in Sources */,
 				773E5B81277E65EB0048E205 /* RegistryServiceConfig.swift in Sources */,
 				77E49C93279C545E006032C3 /* ImageSearchResponseItem.swift in Sources */,
+				77E49D1A279E14E4006032C3 /* HostConfig.swift in Sources */,
 				773E8EDA279376E400BFF140 /* APIPathProtocol.swift in Sources */,
 				77E49C8F279C52CF006032C3 /* ImageListResponse.swift in Sources */,
+				77E49D5A279E19AF006032C3 /* ContainersIdStatsNetworks.swift in Sources */,
+				77E49D6A279E1A13006032C3 /* ContainerUpdateConfig.swift in Sources */,
 				77E49C83279C51E7006032C3 /* ImageDeleteResponse.swift in Sources */,
+				77E49D6E279E1A2E006032C3 /* ContainerWaitResponse.swift in Sources */,
 				773E5BA3277E68E40048E205 /* ContainerSummaryHostConfig.swift in Sources */,
 				773E8ECE2793000A00BFF140 /* GoPortAPI.swift in Sources */,
 				773E8EE12794595400BFF140 /* APIStreamResponse.swift in Sources */,
+				77E49D1F279E152E006032C3 /* ResourcesBlkioWeightDevice.swift in Sources */,
+				77E49D2B279E158F006032C3 /* PortMap.swift in Sources */,
+				77E49D46279E17C5006032C3 /* NetworkSettings.swift in Sources */,
 				773E5B75277E65170048E205 /* VolumeResponse.swift in Sources */,
+				77E49D5E279E19BC006032C3 /* CPUStats.swift in Sources */,
 				773E8EDC279379F800BFF140 /* APIResponse.swift in Sources */,
 				773E8ED8279372A500BFF140 /* APIRequest.swift in Sources */,
 				77E49CFC279E0CBA006032C3 /* NetworkListResponse.swift in Sources */,
 				77E49C7D279C519A006032C3 /* ContainerConfig.swift in Sources */,
+				77E49D38279E16A9006032C3 /* MountBindOptions.swift in Sources */,
 				773E8EAE27920DD300BFF140 /* SystemPingResponse.swift in Sources */,
+				77E49D63279E19DB006032C3 /* BlkioStatEntry.swift in Sources */,
 				773E5B9F277E689A0048E205 /* SystemVersionResponsePlatform.swift in Sources */,
 				77E49CCD279E016F006032C3 /* VolumeAPI.swift in Sources */,
 				773E5B6D277E635A0048E205 /* SystemVersionResponse.swift in Sources */,
-				773E5B79277E65500048E205 /* ContainerSummary.swift in Sources */,
+				773E5B79277E65500048E205 /* ContainerSummaryResponseItem.swift in Sources */,
+				77E49D44279E17BB006032C3 /* ContainerState.swift in Sources */,
+				77E49D3B279E16B5006032C3 /* MountVolumeOptionsDriverConfig.swift in Sources */,
 				77E49C81279C51D1006032C3 /* HistoryResponse.swift in Sources */,
 				77E49C7F279C51A8006032C3 /* IdResponse.swift in Sources */,
 				773E5B8E277E66A10048E205 /* IndexInfo.swift in Sources */,
+				77E49D49279E17DE006032C3 /* Health.swift in Sources */,
 				77E49CE7279E0B57006032C3 /* NetworkAPI.swift in Sources */,
+				77E49D23279E1546006032C3 /* DeviceMapping.swift in Sources */,
+				77E49D3F279E1737006032C3 /* ContainerCreateResponse.swift in Sources */,
 				77E49CD6279E0242006032C3 /* VolumePruneResponse.swift in Sources */,
+				77E49D7E279F4F2F006032C3 /* ContainerLogResponse.swift in Sources */,
 				775F67C1277D18D3006BAF7A /* Port.swift in Sources */,
 				775F67C3277D18E1006BAF7A /* MountPoint.swift in Sources */,
+				77E49D4D279E17F1006032C3 /* HealthcheckResult.swift in Sources */,
+				77E49D55279E1995006032C3 /* ContainerTopResponse.swift in Sources */,
 				775F67D0277D195D006BAF7A /* ContextConfig.swift in Sources */,
 				77E49CFA279E0C9C006032C3 /* IPAMConfig.swift in Sources */,
 				773E5B67277E63350048E205 /* SystemDataUsageResponse.swift in Sources */,
 				773E5B7D277E659D0048E205 /* EventsActor.swift in Sources */,
+				77E49D53279E196D006032C3 /* ContainerStatsResponse.swift in Sources */,
 				773E5BA0277E689A0048E205 /* SystemVersionResponseComponents.swift in Sources */,
 				77E49C91279C5420006032C3 /* ImagePruneResponse.swift in Sources */,
 				773E5B96277E678A0048E205 /* GenericResourceNamedResourceSpec.swift in Sources */,
+				77E49D41279E17A1006032C3 /* ContainerInspectResponse.swift in Sources */,
 				77E49C8D279C527B006032C3 /* GraphDriverData.swift in Sources */,
 				773E8EAC27920D8000BFF140 /* SystemPingResponseItem.swift in Sources */,
 				775F67CE277D195D006BAF7A /* ContextInspectResponse.swift in Sources */,
 				773E5B9B277E68670048E205 /* GenericResource.swift in Sources */,
+				77E49D37279E16A9006032C3 /* MountTmpfsOptions.swift in Sources */,
 				775F67C9277D1931006BAF7A /* ContextUpdateBody.swift in Sources */,
+				77E49D21279E1537006032C3 /* ThrottleDevice.swift in Sources */,
 				773E8E9A279198E500BFF140 /* PreviewNetworkingSession.swift in Sources */,
 				775F6782277B6261006BAF7A /* ContextAPI.swift in Sources */,
 				77E49CF5279E0C7C006032C3 /* IPAM.swift in Sources */,
 				775F67D1277D195D006BAF7A /* ContextInspectResponseStorage.swift in Sources */,
 				77E49C8B279C5271006032C3 /* ImageMetadata.swift in Sources */,
 				77E49C85279C5238006032C3 /* ImageResponse.swift in Sources */,
+				77E49D71279E1A3E006032C3 /* ContainerWaitResponseError.swift in Sources */,
 				773E8EE3279484C300BFF140 /* Previewable.swift in Sources */,
 				773E5B95277E678A0048E205 /* GenericResourceDiscreteResourceSpec.swift in Sources */,
 				775F67C6277D1921006BAF7A /* EndpointIPAMConfig.swift in Sources */,
+				77E49D15279E14AC006032C3 /* ContainerChangeResponse.swift in Sources */,
 				77E49CC3279DE8E8006032C3 /* BuildPruneResponse.swift in Sources */,
 				77E49CEF279E0BF7006032C3 /* NetworkCreateResponse.swift in Sources */,
+				77E49D51279E189E006032C3 /* ContainerPruneResponse.swift in Sources */,
+				77E49D2F279E159E006032C3 /* Mount.swift in Sources */,
+				77E49D25279E1551006032C3 /* DeviceRequest.swift in Sources */,
+				77E49D2D279E1596006032C3 /* RestartPolicy.swift in Sources */,
 				77E49CF8279E0C90006032C3 /* NetworkContainer.swift in Sources */,
+				77E49D12279E147C006032C3 /* ContainerAPI.swift in Sources */,
 				77E49CF1279E0C02006032C3 /* NetworkDisconnectConfig.swift in Sources */,
 				775F678F277B692E006BAF7A /* APIError.swift in Sources */,
+				77E49D5C279E19B6006032C3 /* BlkioStats.swift in Sources */,
 				773E5B72277E64E90048E205 /* BuildCache.swift in Sources */,
 				773E5BA6277E69890048E205 /* VolumeUsageData.swift in Sources */,
 				77E49CD4279E021A006032C3 /* VolumeListResponse.swift in Sources */,
+				77E49D1C279E1500006032C3 /* NetworkingConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1338,22 +1689,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				77E49CBD279DA42D006032C3 /* SystemInfoTest.swift in Sources */,
+				77E49D9527A071B3006032C3 /* ContainerChangeTest.swift in Sources */,
 				77E49CB9279DA38F006032C3 /* ImagePruneTest.swift in Sources */,
+				77E49D9B27A072A9006032C3 /* ContainerListTest.swift in Sources */,
 				77E49C9F279D8A29006032C3 /* ImageDeleteTest.swift in Sources */,
+				77E49D9F27A073A7006032C3 /* ContainerStatsTest.swift in Sources */,
 				77E49CE4279E0ABA006032C3 /* VolumePruneTest.swift in Sources */,
 				77F1926F279626A100D86ACD /* SystemDataUsageTest.swift in Sources */,
 				773E8EE62794962300BFF140 /* MockNetworkingSession.swift in Sources */,
 				77E49CC7279DE9AE006032C3 /* BuildPruneTest.swift in Sources */,
 				773E8EE52794958E00BFF140 /* SystemVersionTest.swift in Sources */,
+				77E49D9927A0727C006032C3 /* ContainerInspectTest.swift in Sources */,
+				77E49DA327A074E5006032C3 /* ContainerTopTest.swift in Sources */,
 				77E49D0A279E12AA006032C3 /* NetworkCreateTest.swift in Sources */,
 				77E49CC1279DAACF006032C3 /* ImageCreateTest.swift in Sources */,
 				77E49CE0279E09C8006032C3 /* VolumeListTest.swift in Sources */,
 				77E49D0C279E12B8006032C3 /* NetworkInspectTest.swift in Sources */,
 				77E49CB5279DA234006032C3 /* ImageTest.swift in Sources */,
 				77E49CBB279DA3DF006032C3 /* ImageSearchTest.swift in Sources */,
+				77E49D84279F55F1006032C3 /* ContainerLogsTest.swift in Sources */,
+				77E49D9D27A07322006032C3 /* ContainerPruneTest.swift in Sources */,
 				77E49CB3279DA02E006032C3 /* ImageHistoryTest.swift in Sources */,
 				77E49C9D279D8744006032C3 /* ImageCommitTest.swift in Sources */,
 				77F1927127973BCD00D86ACD /* SystemEventsTest.swift in Sources */,
+				77E49DA527A07531006032C3 /* ContainerWaitTest.swift in Sources */,
+				77E49D9727A071E3006032C3 /* ContainerCreateTest.swift in Sources */,
 				77E49D10279E12CF006032C3 /* NetworkPruneTest.swift in Sources */,
 				773E5BAE277E6A6B0048E205 /* SystemPingTest.swift in Sources */,
 				77784CA1277D1FC9002EC4A2 /* ContextsSummaryTest.swift in Sources */,
