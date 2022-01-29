@@ -48,7 +48,11 @@ internal let dockerDecoder: JSONDecoder = {
                 return date
             }
         } else if let dateInt = try? container.decode(UInt64.self) {
-            return Date(timeIntervalSince1970: Double(dateInt))
+            var time = Double(dateInt)
+            if dateInt > 100000000000 {
+                time /= 1000
+            }
+            return Date(timeIntervalSince1970: time)
         }
         
         throw DecodingError.dataCorruptedError(in: container, debugDescription: "Not supported date format")
@@ -58,20 +62,13 @@ internal let dockerDecoder: JSONDecoder = {
 
 internal let dockerEncoder: JSONEncoder = {
     let encoder = JSONEncoder()
-    encoder.keyEncodingStrategy = .custom({ keys in
-        let lastKey = keys.last!
-        if lastKey.intValue != nil {
-            return lastKey
-        }
-        
-        let firstLetter = lastKey.stringValue.prefix(1).uppercased()
-        let modifiedKey = firstLetter + lastKey.stringValue.dropFirst()
-        
-        return LowercasedCodingKey(stringValue: modifiedKey)!
-    })
     encoder.dateEncodingStrategy = .custom({ date, encoder in
         var container = encoder.singleValueContainer()
-        try container.encode(date.timeIntervalSince1970)
+        var timestamp = date.timeIntervalSince1970
+        if floor(timestamp) != timestamp { // has fraction
+            timestamp *= 1000
+        }
+        try container.encode(floor(timestamp))
     })
     return encoder
 }()

@@ -10,23 +10,36 @@ import Foundation
 public typealias SystemEventsResponse = [String:SystemEventsResponseItem]
 
 public struct SystemEventsResponseItem: Codable, Hashable {
+    
+    public var status: String? = nil
+    
+    public var id: String? = nil
+    
+    public var from: String? = nil
 
     /** The type of object emitting the event */
     public var type: String? = nil
     /** The type of event */
     public var action: String? = nil
     public var actor: EventsActor? = nil
+    public var scope: String? = nil
     /** Timestamp of event */
     public var time: Int? = nil
     /** Timestamp of event, with nanosecond accuracy */
     public var timeNano: Int64? = nil
+    public var error: ErrorMessage? = nil
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case status
+        case id
+        case from
         case type = "Type"
         case action = "Action"
         case actor = "Actor"
+        case scope
         case time
         case timeNano
+        case error
     }
 }
 

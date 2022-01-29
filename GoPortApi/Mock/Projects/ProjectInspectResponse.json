@@ -1,0 +1,20 @@
+{
+    "services": {
+        "test": {
+            "build": {
+                "context": "/Users/maxvissing/Git/GoPort/testdata/test",
+                "dockerfile": "Dockerfile"
+            },
+            "networks": {
+                "default": null
+            }
+        }
+    },
+    "networks": {
+        "default": {
+            "name": "test_default",
+            "ipam": {},
+            "external": false
+        }
+    }
+}

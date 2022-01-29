@@ -73,22 +73,19 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate {
         return response
     }
     
-    internal func stream<Body>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<String> where Body: Encodable {
-        try await stream(request, convertToArray: convertToArray, isJSONObject: false, mapFunction: {
-            guard let string = String(data: $0, encoding: .utf8) else {
-                throw DataConvertibleError.invalidResponse
-            }
-            return string
-        })
-    }
-    
-    internal func stream<Body>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Data> where Body: Encodable {
-        try await stream(request, convertToArray: convertToArray, isJSONObject: false, mapFunction: { $0 })
-    }
-    
     internal func stream<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false) async throws -> APIStreamResponse<Content> where Body: Encodable, Content: Decodable {
-        try await stream(request, convertToArray: convertToArray, isJSONObject: true, mapFunction: {
-            try dockerDecoder.decode(Content.self, from: $0)
+        var isJSONObject = true
+        if Content.self is Data.Type || Content.self is String.Type {
+            isJSONObject = false
+        }
+        return try await stream(request, convertToArray: convertToArray, isJSONObject: isJSONObject, mapFunction: {
+            if Content.self is Data.Type {
+                return $0 as! Content
+            }
+            if Content.self is String.Type, let string = String(data: $0, encoding: .utf8) {
+                return string as! Content
+            }
+            return try dockerDecoder.decode(Content.self, from: $0)
         })
     }
     

@@ -1,0 +1,10 @@
+test2 Pulling
+9b157615502d Pulling fs layer
+9b157615502d Downloading [===========>                                       ]     659B/2.993kB
+9b157615502d Downloading [==================================================>]  2.993kB/2.993kB
+9b157615502d Verifying Checksum
+9b157615502d Download complete
+9b157615502d Extracting [==================================================>]  2.993kB/2.993kB
+9b157615502d Extracting [==================================================>]  2.993kB/2.993kB
+9b157615502d Pull complete
+test2 Pulled 

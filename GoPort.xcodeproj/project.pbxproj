@@ -15,6 +15,110 @@
 		771D31DA277A494F005BFCF3 /* GoPortApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771D31C5277A494E005BFCF3 /* GoPortApi.framework */; };
 		771D31DB277A494F005BFCF3 /* GoPortApi.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 771D31C5277A494E005BFCF3 /* GoPortApi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		772AC0E927A07C6500C1D348 /* DataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC0E827A07C6500C1D348 /* DataConvertible.swift */; };
+		772AC0EC27A099BC00C1D348 /* ProjectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC0EB27A099BC00C1D348 /* ProjectAPI.swift */; };
+		772AC0EF27A0C15000C1D348 /* ProjectBuildResponse.txt in Resources */ = {isa = PBXBuildFile; fileRef = 772AC0EE27A0C15000C1D348 /* ProjectBuildResponse.txt */; };
+		772AC0F327A2062F00C1D348 /* ProjectEventsStreamResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC0F227A2062F00C1D348 /* ProjectEventsStreamResponse.json */; };
+		772AC0F727A2078300C1D348 /* ProjectImagesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC0F627A2078300C1D348 /* ProjectImagesResponse.json */; };
+		772AC0F927A2099E00C1D348 /* ProjectInspectResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC0F827A2099E00C1D348 /* ProjectInspectResponse.json */; };
+		772AC0FB27A2FD3100C1D348 /* ProjectListResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC0FA27A2FD3100C1D348 /* ProjectListResponse.json */; };
+		772AC0FF27A306A400C1D348 /* ProjectLogsStreamResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC0FE27A306A400C1D348 /* ProjectLogsStreamResponse.json */; };
+		772AC10127A3072E00C1D348 /* ProjectLogsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC10027A3072E00C1D348 /* ProjectLogsResponse.json */; };
+		772AC10527A308E600C1D348 /* ProjectPsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC10427A308E600C1D348 /* ProjectPsResponse.json */; };
+		772AC10727A312FC00C1D348 /* ProjectRunResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC10627A312FC00C1D348 /* ProjectRunResponse.json */; };
+		772AC10927A3259500C1D348 /* ProjectTopResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC10827A3259500C1D348 /* ProjectTopResponse.json */; };
+		772AC10B27A353AA00C1D348 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC10A27A353AA00C1D348 /* ErrorMessage.swift */; };
+		772AC10E27A3557F00C1D348 /* ProjectEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC10D27A3557F00C1D348 /* ProjectEventsResponse.swift */; };
+		772AC11027A35F5D00C1D348 /* ProjectImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC10F27A35F5D00C1D348 /* ProjectImagesResponse.swift */; };
+		772AC21C27A3EEE200C1D348 /* ProjectSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC21B27A3EEE200C1D348 /* ProjectSummary.swift */; };
+		772AC21E27A3F00A00C1D348 /* ProjectLogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC21D27A3F00A00C1D348 /* ProjectLogResponse.swift */; };
+		772AC22327A3F07300C1D348 /* ProjectLogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC22027A3F07300C1D348 /* ProjectLogMessage.swift */; };
+		772AC22427A3F07300C1D348 /* ProjectLogRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC22127A3F07300C1D348 /* ProjectLogRegister.swift */; };
+		772AC22527A3F07300C1D348 /* ProjectLogStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC22227A3F07300C1D348 /* ProjectLogStatus.swift */; };
+		772AC22727A3F0F100C1D348 /* ProjectContainerSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC22627A3F0F100C1D348 /* ProjectContainerSummary.swift */; };
+		772AC22927A3F13600C1D348 /* PortPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC22827A3F13600C1D348 /* PortPublisher.swift */; };
+		772AC22B27A3F20000C1D348 /* ProjectPullResponse.txt in Resources */ = {isa = PBXBuildFile; fileRef = 772AC22A27A3F20000C1D348 /* ProjectPullResponse.txt */; };
+		772AC22D27A3F30F00C1D348 /* ProjectRunStreamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC22C27A3F30F00C1D348 /* ProjectRunStreamResponse.swift */; };
+		772AC22F27A3F3E500C1D348 /* ProjectRunResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC22E27A3F3E500C1D348 /* ProjectRunResponse.swift */; };
+		772AC23227A3F5E400C1D348 /* ProjectRunBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC23127A3F5E400C1D348 /* ProjectRunBody.swift */; };
+		772AC23427A3F62400C1D348 /* ProjectTopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC23327A3F62400C1D348 /* ProjectTopResponse.swift */; };
+		772AC2FB27A3FB5100C1D348 /* ProjectFluffyExternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2B927A3FB4E00C1D348 /* ProjectFluffyExternal.swift */; };
+		772AC2FC27A3FB5100C1D348 /* ProjectIPAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2BA27A3FB4E00C1D348 /* ProjectIPAM.swift */; };
+		772AC2FD27A3FB5100C1D348 /* ProjectSecretElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2BB27A3FB4E00C1D348 /* ProjectSecretElement.swift */; };
+		772AC2FE27A3FB5100C1D348 /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2BC27A3FB4E00C1D348 /* JSONSchemaSupport.swift */; };
+		772AC2FF27A3FB5100C1D348 /* ProjectPortClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2BD27A3FB4E00C1D348 /* ProjectPortClass.swift */; };
+		772AC30027A3FB5100C1D348 /* ProjectConfigConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2BE27A3FB4E00C1D348 /* ProjectConfigConfig.swift */; };
+		772AC30127A3FB5100C1D348 /* ProjectRollbackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2BF27A3FB4E00C1D348 /* ProjectRollbackConfig.swift */; };
+		772AC30227A3FB5200C1D348 /* ProjectVolumeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C027A3FB4E00C1D348 /* ProjectVolumeElement.swift */; };
+		772AC30327A3FB5200C1D348 /* ProjectCPUPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C127A3FB4E00C1D348 /* ProjectCPUPeriod.swift */; };
+		772AC30427A3FB5200C1D348 /* ProjectVolumeExternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C227A3FB4E00C1D348 /* ProjectVolumeExternal.swift */; };
+		772AC30527A3FB5200C1D348 /* ProjectPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C327A3FB4E00C1D348 /* ProjectPlacement.swift */; };
+		772AC30627A3FB5200C1D348 /* ProjectStickyExternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C427A3FB4E00C1D348 /* ProjectStickyExternal.swift */; };
+		772AC30727A3FB5200C1D348 /* ProjectReservations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C527A3FB4E00C1D348 /* ProjectReservations.swift */; };
+		772AC30827A3FB5200C1D348 /* ProjectSecretValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C627A3FB4E00C1D348 /* ProjectSecretValue.swift */; };
+		772AC30927A3FB5200C1D348 /* ProjectDependsOnValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C727A3FB4E00C1D348 /* ProjectDependsOnValue.swift */; };
+		772AC30A27A3FB5200C1D348 /* ProjectBlkioWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C827A3FB4E00C1D348 /* ProjectBlkioWeight.swift */; };
+		772AC30B27A3FB5200C1D348 /* ProjectRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2C927A3FB4E00C1D348 /* ProjectRate.swift */; };
+		772AC30C27A3FB5200C1D348 /* ProjectHealthcheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2CA27A3FB4E00C1D348 /* ProjectHealthcheck.swift */; };
+		772AC30D27A3FB5200C1D348 /* ProjectPurpleVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2CB27A3FB4E00C1D348 /* ProjectPurpleVolume.swift */; };
+		772AC30E27A3FB5200C1D348 /* ProjectUlimitValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2CC27A3FB4F00C1D348 /* ProjectUlimitValue.swift */; };
+		772AC30F27A3FB5200C1D348 /* ProjectUlimitClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2CD27A3FB4F00C1D348 /* ProjectUlimitClass.swift */; };
+		772AC31027A3FB5200C1D348 /* ProjectUpdateConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2CE27A3FB4F00C1D348 /* ProjectUpdateConfig.swift */; };
+		772AC31127A3FB5200C1D348 /* ProjectPullPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2CF27A3FB4F00C1D348 /* ProjectPullPolicy.swift */; };
+		772AC31227A3FB5200C1D348 /* ProjectGenericResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D027A3FB4F00C1D348 /* ProjectGenericResource.swift */; };
+		772AC31327A3FB5200C1D348 /* ProjectNetworkNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D127A3FB4F00C1D348 /* ProjectNetworkNetwork.swift */; };
+		772AC31427A3FB5200C1D348 /* ProjectStringOrList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D227A3FB4F00C1D348 /* ProjectStringOrList.swift */; };
+		772AC31527A3FB5200C1D348 /* ProjectTmpfs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D327A3FB4F00C1D348 /* ProjectTmpfs.swift */; };
+		772AC31627A3FB5200C1D348 /* ProjectConfigValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D427A3FB4F00C1D348 /* ProjectConfigValue.swift */; };
+		772AC31727A3FB5200C1D348 /* ProjectConfigExternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D527A3FB4F00C1D348 /* ProjectConfigExternal.swift */; };
+		772AC31827A3FB5200C1D348 /* ProjectFluffyVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D627A3FB4F00C1D348 /* ProjectFluffyVolume.swift */; };
+		772AC31927A3FB5200C1D348 /* ProjectRestartPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D727A3FB4F00C1D348 /* ProjectRestartPolicy.swift */; };
+		772AC31A27A3FB5200C1D348 /* ProjectCredentialSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D827A3FB5000C1D348 /* ProjectCredentialSpec.swift */; };
+		772AC31B27A3FB5200C1D348 /* ProjectPurpleExternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2D927A3FB5000C1D348 /* ProjectPurpleExternal.swift */; };
+		772AC31C27A3FB5200C1D348 /* ProjectBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2DA27A3FB5000C1D348 /* ProjectBind.swift */; };
+		772AC31D27A3FB5200C1D348 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2DB27A3FB5000C1D348 /* ProjectService.swift */; };
+		772AC31E27A3FB5200C1D348 /* ProjectListOrDictValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2DC27A3FB5000C1D348 /* ProjectListOrDictValue.swift */; };
+		772AC31F27A3FB5200C1D348 /* ProjectSecretSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2DD27A3FB5000C1D348 /* ProjectSecretSecret.swift */; };
+		772AC32027A3FB5200C1D348 /* ProjectNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2DE27A3FB5000C1D348 /* ProjectNetworks.swift */; };
+		772AC32127A3FB5200C1D348 /* ProjectSecretExternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2DF27A3FB5000C1D348 /* ProjectSecretExternal.swift */; };
+		772AC32227A3FB5200C1D348 /* ProjectDeployment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E027A3FB5000C1D348 /* ProjectDeployment.swift */; };
+		772AC32327A3FB5200C1D348 /* ProjectTentacledVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E127A3FB5000C1D348 /* ProjectTentacledVolume.swift */; };
+		772AC32427A3FB5200C1D348 /* ProjectExtendsUnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E227A3FB5000C1D348 /* ProjectExtendsUnion.swift */; };
+		772AC32527A3FB5200C1D348 /* ProjectLimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E327A3FB5000C1D348 /* ProjectLimits.swift */; };
+		772AC32627A3FB5200C1D348 /* ProjectInspectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E427A3FB5000C1D348 /* ProjectInspectResponse.swift */; };
+		772AC32727A3FB5200C1D348 /* ProjectResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E527A3FB5000C1D348 /* ProjectResources.swift */; };
+		772AC32827A3FB5200C1D348 /* ProjectListOrDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E627A3FB5000C1D348 /* ProjectListOrDict.swift */; };
+		772AC32927A3FB5200C1D348 /* ProjectNetworkExternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E727A3FB5000C1D348 /* ProjectNetworkExternal.swift */; };
+		772AC32A27A3FB5200C1D348 /* ProjectConfigUnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E827A3FB5000C1D348 /* ProjectConfigUnion.swift */; };
+		772AC32B27A3FB5200C1D348 /* ProjectPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2E927A3FB5000C1D348 /* ProjectPreference.swift */; };
+		772AC32C27A3FB5200C1D348 /* ProjectIPAMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2EA27A3FB5100C1D348 /* ProjectIPAMConfig.swift */; };
+		772AC32D27A3FB5200C1D348 /* ProjectBuildUnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2EB27A3FB5100C1D348 /* ProjectBuildUnion.swift */; };
+		772AC32E27A3FB5200C1D348 /* ProjectDependsOnUnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2EC27A3FB5100C1D348 /* ProjectDependsOnUnion.swift */; };
+		772AC32F27A3FB5200C1D348 /* ProjectSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2ED27A3FB5100C1D348 /* ProjectSize.swift */; };
+		772AC33027A3FB5200C1D348 /* ProjectSelinux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2EE27A3FB5100C1D348 /* ProjectSelinux.swift */; };
+		772AC33127A3FB5200C1D348 /* ProjectCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2EF27A3FB5100C1D348 /* ProjectCondition.swift */; };
+		772AC33227A3FB5200C1D348 /* ProjectBuildClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F027A3FB5100C1D348 /* ProjectBuildClass.swift */; };
+		772AC33327A3FB5200C1D348 /* ProjectPortElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F127A3FB5100C1D348 /* ProjectPortElement.swift */; };
+		772AC33427A3FB5200C1D348 /* ProjectDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F227A3FB5100C1D348 /* ProjectDevice.swift */; };
+		772AC33527A3FB5200C1D348 /* ProjectTentacledExternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F327A3FB5100C1D348 /* ProjectTentacledExternal.swift */; };
+		772AC33627A3FB5200C1D348 /* ProjectExtendsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F427A3FB5100C1D348 /* ProjectExtendsClass.swift */; };
+		772AC33727A3FB5200C1D348 /* ProjectDiscreteResourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F527A3FB5100C1D348 /* ProjectDiscreteResourceSpec.swift */; };
+		772AC33827A3FB5200C1D348 /* ProjectBlkioLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F627A3FB5100C1D348 /* ProjectBlkioLimit.swift */; };
+		772AC33927A3FB5200C1D348 /* ProjectOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F727A3FB5100C1D348 /* ProjectOrder.swift */; };
+		772AC33A27A3FB5200C1D348 /* ProjectBlkioConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F827A3FB5100C1D348 /* ProjectBlkioConfig.swift */; };
+		772AC33B27A3FB5200C1D348 /* ProjectNetworksNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2F927A3FB5100C1D348 /* ProjectNetworksNetwork.swift */; };
+		772AC33C27A3FB5200C1D348 /* ProjectLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC2FA27A3FB5100C1D348 /* ProjectLogging.swift */; };
+		772AC33E27A49E9D00C1D348 /* ProjectRunStreamResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 772AC33D27A49E9D00C1D348 /* ProjectRunStreamResponse.json */; };
+		772AC34127A4ABF500C1D348 /* ProjectBuildTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC34027A4ABF500C1D348 /* ProjectBuildTest.swift */; };
+		772AC34327A4B05600C1D348 /* ProjectEventsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC34227A4B05600C1D348 /* ProjectEventsTest.swift */; };
+		772AC34527A4B93F00C1D348 /* ProjectImagesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC34427A4B93F00C1D348 /* ProjectImagesTest.swift */; };
+		772AC34927A4BAC100C1D348 /* ProjectListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC34827A4BAC100C1D348 /* ProjectListTest.swift */; };
+		772AC34B27A55F1800C1D348 /* ProjectLogsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC34A27A55F1800C1D348 /* ProjectLogsTest.swift */; };
+		772AC34D27A5602000C1D348 /* ProjectPsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC34C27A5602000C1D348 /* ProjectPsTest.swift */; };
+		772AC34F27A5606700C1D348 /* ProjectPullTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC34E27A5606700C1D348 /* ProjectPullTest.swift */; };
+		772AC35127A5610100C1D348 /* ProjectRunTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC35027A5610100C1D348 /* ProjectRunTest.swift */; };
+		772AC35327A5631300C1D348 /* ProjectTopTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC35227A5631300C1D348 /* ProjectTopTest.swift */; };
+		772AC35527A5635900C1D348 /* ProjectUpTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC35427A5635900C1D348 /* ProjectUpTest.swift */; };
+		772AC35727A5645900C1D348 /* ProjectInspectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC35627A5645900C1D348 /* ProjectInspectTest.swift */; };
 		773E5B64277E62E70048E205 /* SystemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B63277E62E70048E205 /* SystemAPI.swift */; };
 		773E5B67277E63350048E205 /* SystemDataUsageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B66277E63350048E205 /* SystemDataUsageResponse.swift */; };
 		773E5B69277E633F0048E205 /* SystemEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B68277E633F0048E205 /* SystemEventsResponse.swift */; };
@@ -292,6 +396,110 @@
 		771D31CE277A494F005BFCF3 /* GoPortApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoPortApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		771D31D5277A494F005BFCF3 /* GoPortApiBaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortApiBaseTest.swift; sourceTree = "<group>"; };
 		772AC0E827A07C6500C1D348 /* DataConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConvertible.swift; sourceTree = "<group>"; };
+		772AC0EB27A099BC00C1D348 /* ProjectAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAPI.swift; sourceTree = "<group>"; };
+		772AC0EE27A0C15000C1D348 /* ProjectBuildResponse.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ProjectBuildResponse.txt; sourceTree = "<group>"; };
+		772AC0F227A2062F00C1D348 /* ProjectEventsStreamResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectEventsStreamResponse.json; sourceTree = "<group>"; };
+		772AC0F627A2078300C1D348 /* ProjectImagesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectImagesResponse.json; sourceTree = "<group>"; };
+		772AC0F827A2099E00C1D348 /* ProjectInspectResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectInspectResponse.json; sourceTree = "<group>"; };
+		772AC0FA27A2FD3100C1D348 /* ProjectListResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectListResponse.json; sourceTree = "<group>"; };
+		772AC0FE27A306A400C1D348 /* ProjectLogsStreamResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectLogsStreamResponse.json; sourceTree = "<group>"; };
+		772AC10027A3072E00C1D348 /* ProjectLogsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectLogsResponse.json; sourceTree = "<group>"; };
+		772AC10427A308E600C1D348 /* ProjectPsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectPsResponse.json; sourceTree = "<group>"; };
+		772AC10627A312FC00C1D348 /* ProjectRunResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectRunResponse.json; sourceTree = "<group>"; };
+		772AC10827A3259500C1D348 /* ProjectTopResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectTopResponse.json; sourceTree = "<group>"; };
+		772AC10A27A353AA00C1D348 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		772AC10D27A3557F00C1D348 /* ProjectEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEventsResponse.swift; sourceTree = "<group>"; };
+		772AC10F27A35F5D00C1D348 /* ProjectImagesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectImagesResponse.swift; sourceTree = "<group>"; };
+		772AC21B27A3EEE200C1D348 /* ProjectSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummary.swift; sourceTree = "<group>"; };
+		772AC21D27A3F00A00C1D348 /* ProjectLogResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectLogResponse.swift; sourceTree = "<group>"; };
+		772AC22027A3F07300C1D348 /* ProjectLogMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectLogMessage.swift; sourceTree = "<group>"; };
+		772AC22127A3F07300C1D348 /* ProjectLogRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectLogRegister.swift; sourceTree = "<group>"; };
+		772AC22227A3F07300C1D348 /* ProjectLogStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectLogStatus.swift; sourceTree = "<group>"; };
+		772AC22627A3F0F100C1D348 /* ProjectContainerSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectContainerSummary.swift; sourceTree = "<group>"; };
+		772AC22827A3F13600C1D348 /* PortPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortPublisher.swift; sourceTree = "<group>"; };
+		772AC22A27A3F20000C1D348 /* ProjectPullResponse.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ProjectPullResponse.txt; sourceTree = "<group>"; };
+		772AC22C27A3F30F00C1D348 /* ProjectRunStreamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRunStreamResponse.swift; sourceTree = "<group>"; };
+		772AC22E27A3F3E500C1D348 /* ProjectRunResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRunResponse.swift; sourceTree = "<group>"; };
+		772AC23127A3F5E400C1D348 /* ProjectRunBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRunBody.swift; sourceTree = "<group>"; };
+		772AC23327A3F62400C1D348 /* ProjectTopResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTopResponse.swift; sourceTree = "<group>"; };
+		772AC2B927A3FB4E00C1D348 /* ProjectFluffyExternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectFluffyExternal.swift; sourceTree = "<group>"; };
+		772AC2BA27A3FB4E00C1D348 /* ProjectIPAM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectIPAM.swift; sourceTree = "<group>"; };
+		772AC2BB27A3FB4E00C1D348 /* ProjectSecretElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSecretElement.swift; sourceTree = "<group>"; };
+		772AC2BC27A3FB4E00C1D348 /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
+		772AC2BD27A3FB4E00C1D348 /* ProjectPortClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPortClass.swift; sourceTree = "<group>"; };
+		772AC2BE27A3FB4E00C1D348 /* ProjectConfigConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectConfigConfig.swift; sourceTree = "<group>"; };
+		772AC2BF27A3FB4E00C1D348 /* ProjectRollbackConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRollbackConfig.swift; sourceTree = "<group>"; };
+		772AC2C027A3FB4E00C1D348 /* ProjectVolumeElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectVolumeElement.swift; sourceTree = "<group>"; };
+		772AC2C127A3FB4E00C1D348 /* ProjectCPUPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCPUPeriod.swift; sourceTree = "<group>"; };
+		772AC2C227A3FB4E00C1D348 /* ProjectVolumeExternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectVolumeExternal.swift; sourceTree = "<group>"; };
+		772AC2C327A3FB4E00C1D348 /* ProjectPlacement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPlacement.swift; sourceTree = "<group>"; };
+		772AC2C427A3FB4E00C1D348 /* ProjectStickyExternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectStickyExternal.swift; sourceTree = "<group>"; };
+		772AC2C527A3FB4E00C1D348 /* ProjectReservations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectReservations.swift; sourceTree = "<group>"; };
+		772AC2C627A3FB4E00C1D348 /* ProjectSecretValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSecretValue.swift; sourceTree = "<group>"; };
+		772AC2C727A3FB4E00C1D348 /* ProjectDependsOnValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDependsOnValue.swift; sourceTree = "<group>"; };
+		772AC2C827A3FB4E00C1D348 /* ProjectBlkioWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectBlkioWeight.swift; sourceTree = "<group>"; };
+		772AC2C927A3FB4E00C1D348 /* ProjectRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRate.swift; sourceTree = "<group>"; };
+		772AC2CA27A3FB4E00C1D348 /* ProjectHealthcheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectHealthcheck.swift; sourceTree = "<group>"; };
+		772AC2CB27A3FB4E00C1D348 /* ProjectPurpleVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPurpleVolume.swift; sourceTree = "<group>"; };
+		772AC2CC27A3FB4F00C1D348 /* ProjectUlimitValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUlimitValue.swift; sourceTree = "<group>"; };
+		772AC2CD27A3FB4F00C1D348 /* ProjectUlimitClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUlimitClass.swift; sourceTree = "<group>"; };
+		772AC2CE27A3FB4F00C1D348 /* ProjectUpdateConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUpdateConfig.swift; sourceTree = "<group>"; };
+		772AC2CF27A3FB4F00C1D348 /* ProjectPullPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPullPolicy.swift; sourceTree = "<group>"; };
+		772AC2D027A3FB4F00C1D348 /* ProjectGenericResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectGenericResource.swift; sourceTree = "<group>"; };
+		772AC2D127A3FB4F00C1D348 /* ProjectNetworkNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectNetworkNetwork.swift; sourceTree = "<group>"; };
+		772AC2D227A3FB4F00C1D348 /* ProjectStringOrList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectStringOrList.swift; sourceTree = "<group>"; };
+		772AC2D327A3FB4F00C1D348 /* ProjectTmpfs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTmpfs.swift; sourceTree = "<group>"; };
+		772AC2D427A3FB4F00C1D348 /* ProjectConfigValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectConfigValue.swift; sourceTree = "<group>"; };
+		772AC2D527A3FB4F00C1D348 /* ProjectConfigExternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectConfigExternal.swift; sourceTree = "<group>"; };
+		772AC2D627A3FB4F00C1D348 /* ProjectFluffyVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectFluffyVolume.swift; sourceTree = "<group>"; };
+		772AC2D727A3FB4F00C1D348 /* ProjectRestartPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectRestartPolicy.swift; sourceTree = "<group>"; };
+		772AC2D827A3FB5000C1D348 /* ProjectCredentialSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCredentialSpec.swift; sourceTree = "<group>"; };
+		772AC2D927A3FB5000C1D348 /* ProjectPurpleExternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPurpleExternal.swift; sourceTree = "<group>"; };
+		772AC2DA27A3FB5000C1D348 /* ProjectBind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectBind.swift; sourceTree = "<group>"; };
+		772AC2DB27A3FB5000C1D348 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		772AC2DC27A3FB5000C1D348 /* ProjectListOrDictValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListOrDictValue.swift; sourceTree = "<group>"; };
+		772AC2DD27A3FB5000C1D348 /* ProjectSecretSecret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSecretSecret.swift; sourceTree = "<group>"; };
+		772AC2DE27A3FB5000C1D348 /* ProjectNetworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectNetworks.swift; sourceTree = "<group>"; };
+		772AC2DF27A3FB5000C1D348 /* ProjectSecretExternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSecretExternal.swift; sourceTree = "<group>"; };
+		772AC2E027A3FB5000C1D348 /* ProjectDeployment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDeployment.swift; sourceTree = "<group>"; };
+		772AC2E127A3FB5000C1D348 /* ProjectTentacledVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTentacledVolume.swift; sourceTree = "<group>"; };
+		772AC2E227A3FB5000C1D348 /* ProjectExtendsUnion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectExtendsUnion.swift; sourceTree = "<group>"; };
+		772AC2E327A3FB5000C1D348 /* ProjectLimits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectLimits.swift; sourceTree = "<group>"; };
+		772AC2E427A3FB5000C1D348 /* ProjectInspectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInspectResponse.swift; sourceTree = "<group>"; };
+		772AC2E527A3FB5000C1D348 /* ProjectResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectResources.swift; sourceTree = "<group>"; };
+		772AC2E627A3FB5000C1D348 /* ProjectListOrDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListOrDict.swift; sourceTree = "<group>"; };
+		772AC2E727A3FB5000C1D348 /* ProjectNetworkExternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectNetworkExternal.swift; sourceTree = "<group>"; };
+		772AC2E827A3FB5000C1D348 /* ProjectConfigUnion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectConfigUnion.swift; sourceTree = "<group>"; };
+		772AC2E927A3FB5000C1D348 /* ProjectPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPreference.swift; sourceTree = "<group>"; };
+		772AC2EA27A3FB5100C1D348 /* ProjectIPAMConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectIPAMConfig.swift; sourceTree = "<group>"; };
+		772AC2EB27A3FB5100C1D348 /* ProjectBuildUnion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectBuildUnion.swift; sourceTree = "<group>"; };
+		772AC2EC27A3FB5100C1D348 /* ProjectDependsOnUnion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDependsOnUnion.swift; sourceTree = "<group>"; };
+		772AC2ED27A3FB5100C1D348 /* ProjectSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSize.swift; sourceTree = "<group>"; };
+		772AC2EE27A3FB5100C1D348 /* ProjectSelinux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSelinux.swift; sourceTree = "<group>"; };
+		772AC2EF27A3FB5100C1D348 /* ProjectCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCondition.swift; sourceTree = "<group>"; };
+		772AC2F027A3FB5100C1D348 /* ProjectBuildClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectBuildClass.swift; sourceTree = "<group>"; };
+		772AC2F127A3FB5100C1D348 /* ProjectPortElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectPortElement.swift; sourceTree = "<group>"; };
+		772AC2F227A3FB5100C1D348 /* ProjectDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDevice.swift; sourceTree = "<group>"; };
+		772AC2F327A3FB5100C1D348 /* ProjectTentacledExternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTentacledExternal.swift; sourceTree = "<group>"; };
+		772AC2F427A3FB5100C1D348 /* ProjectExtendsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectExtendsClass.swift; sourceTree = "<group>"; };
+		772AC2F527A3FB5100C1D348 /* ProjectDiscreteResourceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDiscreteResourceSpec.swift; sourceTree = "<group>"; };
+		772AC2F627A3FB5100C1D348 /* ProjectBlkioLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectBlkioLimit.swift; sourceTree = "<group>"; };
+		772AC2F727A3FB5100C1D348 /* ProjectOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOrder.swift; sourceTree = "<group>"; };
+		772AC2F827A3FB5100C1D348 /* ProjectBlkioConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectBlkioConfig.swift; sourceTree = "<group>"; };
+		772AC2F927A3FB5100C1D348 /* ProjectNetworksNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectNetworksNetwork.swift; sourceTree = "<group>"; };
+		772AC2FA27A3FB5100C1D348 /* ProjectLogging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectLogging.swift; sourceTree = "<group>"; };
+		772AC33D27A49E9D00C1D348 /* ProjectRunStreamResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProjectRunStreamResponse.json; sourceTree = "<group>"; };
+		772AC34027A4ABF500C1D348 /* ProjectBuildTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectBuildTest.swift; sourceTree = "<group>"; };
+		772AC34227A4B05600C1D348 /* ProjectEventsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEventsTest.swift; sourceTree = "<group>"; };
+		772AC34427A4B93F00C1D348 /* ProjectImagesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectImagesTest.swift; sourceTree = "<group>"; };
+		772AC34827A4BAC100C1D348 /* ProjectListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListTest.swift; sourceTree = "<group>"; };
+		772AC34A27A55F1800C1D348 /* ProjectLogsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectLogsTest.swift; sourceTree = "<group>"; };
+		772AC34C27A5602000C1D348 /* ProjectPsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPsTest.swift; sourceTree = "<group>"; };
+		772AC34E27A5606700C1D348 /* ProjectPullTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPullTest.swift; sourceTree = "<group>"; };
+		772AC35027A5610100C1D348 /* ProjectRunTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRunTest.swift; sourceTree = "<group>"; };
+		772AC35227A5631300C1D348 /* ProjectTopTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTopTest.swift; sourceTree = "<group>"; };
+		772AC35427A5635900C1D348 /* ProjectUpTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUpTest.swift; sourceTree = "<group>"; };
+		772AC35627A5645900C1D348 /* ProjectInspectTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInspectTest.swift; sourceTree = "<group>"; };
 		773E5B63277E62E70048E205 /* SystemAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAPI.swift; sourceTree = "<group>"; };
 		773E5B66277E63350048E205 /* SystemDataUsageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemDataUsageResponse.swift; sourceTree = "<group>"; };
 		773E5B68277E633F0048E205 /* SystemEventsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemEventsResponse.swift; sourceTree = "<group>"; };
@@ -557,6 +765,7 @@
 			children = (
 				773E8EDF2794579700BFF140 /* API */,
 				7787CECA277B608B0011282C /* Common */,
+				772AC0EA27A0999300C1D348 /* Projects */,
 				775F6780277B6249006BAF7A /* Contexts */,
 				773E5B62277E62C80048E205 /* System */,
 				773E5B6F277E64A30048E205 /* Containers */,
@@ -575,6 +784,7 @@
 			children = (
 				773E8ED527932D7900BFF140 /* MockNetworkingSession.swift */,
 				771D31D5277A494F005BFCF3 /* GoPortApiBaseTest.swift */,
+				772AC33F27A4ABBA00C1D348 /* Projects */,
 				77E49D82279F55E1006032C3 /* Containers */,
 				77E49D08279E129A006032C3 /* Networks */,
 				77E49CDE279E09A9006032C3 /* Volumes */,
@@ -583,6 +793,161 @@
 				77E49C9B279D86D8006032C3 /* Images */,
 			);
 			path = GoPortApiTests;
+			sourceTree = "<group>";
+		};
+		772AC0EA27A0999300C1D348 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				772AC0EB27A099BC00C1D348 /* ProjectAPI.swift */,
+				772AC10C27A3556100C1D348 /* Models */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		772AC0ED27A0C13C00C1D348 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				772AC0EE27A0C15000C1D348 /* ProjectBuildResponse.txt */,
+				772AC0F227A2062F00C1D348 /* ProjectEventsStreamResponse.json */,
+				772AC0F627A2078300C1D348 /* ProjectImagesResponse.json */,
+				772AC0F827A2099E00C1D348 /* ProjectInspectResponse.json */,
+				772AC0FA27A2FD3100C1D348 /* ProjectListResponse.json */,
+				772AC0FE27A306A400C1D348 /* ProjectLogsStreamResponse.json */,
+				772AC10027A3072E00C1D348 /* ProjectLogsResponse.json */,
+				772AC10427A308E600C1D348 /* ProjectPsResponse.json */,
+				772AC22A27A3F20000C1D348 /* ProjectPullResponse.txt */,
+				772AC10627A312FC00C1D348 /* ProjectRunResponse.json */,
+				772AC33D27A49E9D00C1D348 /* ProjectRunStreamResponse.json */,
+				772AC10827A3259500C1D348 /* ProjectTopResponse.json */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		772AC10C27A3556100C1D348 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				772AC23027A3F5D300C1D348 /* Common */,
+				772AC10D27A3557F00C1D348 /* ProjectEventsResponse.swift */,
+				772AC10F27A35F5D00C1D348 /* ProjectImagesResponse.swift */,
+				772AC11127A3ECA400C1D348 /* ProjectInspectResponse */,
+				772AC21B27A3EEE200C1D348 /* ProjectSummary.swift */,
+				772AC21F27A3F04600C1D348 /* ProjectLogResponse */,
+				772AC22627A3F0F100C1D348 /* ProjectContainerSummary.swift */,
+				772AC22C27A3F30F00C1D348 /* ProjectRunStreamResponse.swift */,
+				772AC22E27A3F3E500C1D348 /* ProjectRunResponse.swift */,
+				772AC23327A3F62400C1D348 /* ProjectTopResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		772AC11127A3ECA400C1D348 /* ProjectInspectResponse */ = {
+			isa = PBXGroup;
+			children = (
+				772AC2E427A3FB5000C1D348 /* ProjectInspectResponse.swift */,
+				772AC2BC27A3FB4E00C1D348 /* JSONSchemaSupport.swift */,
+				772AC2DA27A3FB5000C1D348 /* ProjectBind.swift */,
+				772AC2F827A3FB5100C1D348 /* ProjectBlkioConfig.swift */,
+				772AC2F627A3FB5100C1D348 /* ProjectBlkioLimit.swift */,
+				772AC2C827A3FB4E00C1D348 /* ProjectBlkioWeight.swift */,
+				772AC2F027A3FB5100C1D348 /* ProjectBuildClass.swift */,
+				772AC2EB27A3FB5100C1D348 /* ProjectBuildUnion.swift */,
+				772AC2EF27A3FB5100C1D348 /* ProjectCondition.swift */,
+				772AC2BE27A3FB4E00C1D348 /* ProjectConfigConfig.swift */,
+				772AC2D527A3FB4F00C1D348 /* ProjectConfigExternal.swift */,
+				772AC2E827A3FB5000C1D348 /* ProjectConfigUnion.swift */,
+				772AC2D427A3FB4F00C1D348 /* ProjectConfigValue.swift */,
+				772AC2C127A3FB4E00C1D348 /* ProjectCPUPeriod.swift */,
+				772AC2D827A3FB5000C1D348 /* ProjectCredentialSpec.swift */,
+				772AC2EC27A3FB5100C1D348 /* ProjectDependsOnUnion.swift */,
+				772AC2C727A3FB4E00C1D348 /* ProjectDependsOnValue.swift */,
+				772AC2E027A3FB5000C1D348 /* ProjectDeployment.swift */,
+				772AC2F227A3FB5100C1D348 /* ProjectDevice.swift */,
+				772AC2F527A3FB5100C1D348 /* ProjectDiscreteResourceSpec.swift */,
+				772AC2F427A3FB5100C1D348 /* ProjectExtendsClass.swift */,
+				772AC2E227A3FB5000C1D348 /* ProjectExtendsUnion.swift */,
+				772AC2B927A3FB4E00C1D348 /* ProjectFluffyExternal.swift */,
+				772AC2D627A3FB4F00C1D348 /* ProjectFluffyVolume.swift */,
+				772AC2D027A3FB4F00C1D348 /* ProjectGenericResource.swift */,
+				772AC2CA27A3FB4E00C1D348 /* ProjectHealthcheck.swift */,
+				772AC2BA27A3FB4E00C1D348 /* ProjectIPAM.swift */,
+				772AC2EA27A3FB5100C1D348 /* ProjectIPAMConfig.swift */,
+				772AC2E327A3FB5000C1D348 /* ProjectLimits.swift */,
+				772AC2E627A3FB5000C1D348 /* ProjectListOrDict.swift */,
+				772AC2DC27A3FB5000C1D348 /* ProjectListOrDictValue.swift */,
+				772AC2FA27A3FB5100C1D348 /* ProjectLogging.swift */,
+				772AC2E727A3FB5000C1D348 /* ProjectNetworkExternal.swift */,
+				772AC2D127A3FB4F00C1D348 /* ProjectNetworkNetwork.swift */,
+				772AC2DE27A3FB5000C1D348 /* ProjectNetworks.swift */,
+				772AC2F927A3FB5100C1D348 /* ProjectNetworksNetwork.swift */,
+				772AC2F727A3FB5100C1D348 /* ProjectOrder.swift */,
+				772AC2C327A3FB4E00C1D348 /* ProjectPlacement.swift */,
+				772AC2BD27A3FB4E00C1D348 /* ProjectPortClass.swift */,
+				772AC2F127A3FB5100C1D348 /* ProjectPortElement.swift */,
+				772AC2E927A3FB5000C1D348 /* ProjectPreference.swift */,
+				772AC2CF27A3FB4F00C1D348 /* ProjectPullPolicy.swift */,
+				772AC2D927A3FB5000C1D348 /* ProjectPurpleExternal.swift */,
+				772AC2CB27A3FB4E00C1D348 /* ProjectPurpleVolume.swift */,
+				772AC2C927A3FB4E00C1D348 /* ProjectRate.swift */,
+				772AC2C527A3FB4E00C1D348 /* ProjectReservations.swift */,
+				772AC2E527A3FB5000C1D348 /* ProjectResources.swift */,
+				772AC2D727A3FB4F00C1D348 /* ProjectRestartPolicy.swift */,
+				772AC2BF27A3FB4E00C1D348 /* ProjectRollbackConfig.swift */,
+				772AC2BB27A3FB4E00C1D348 /* ProjectSecretElement.swift */,
+				772AC2DF27A3FB5000C1D348 /* ProjectSecretExternal.swift */,
+				772AC2DD27A3FB5000C1D348 /* ProjectSecretSecret.swift */,
+				772AC2C627A3FB4E00C1D348 /* ProjectSecretValue.swift */,
+				772AC2EE27A3FB5100C1D348 /* ProjectSelinux.swift */,
+				772AC2DB27A3FB5000C1D348 /* ProjectService.swift */,
+				772AC2ED27A3FB5100C1D348 /* ProjectSize.swift */,
+				772AC2C427A3FB4E00C1D348 /* ProjectStickyExternal.swift */,
+				772AC2D227A3FB4F00C1D348 /* ProjectStringOrList.swift */,
+				772AC2F327A3FB5100C1D348 /* ProjectTentacledExternal.swift */,
+				772AC2E127A3FB5000C1D348 /* ProjectTentacledVolume.swift */,
+				772AC2D327A3FB4F00C1D348 /* ProjectTmpfs.swift */,
+				772AC2CD27A3FB4F00C1D348 /* ProjectUlimitClass.swift */,
+				772AC2CC27A3FB4F00C1D348 /* ProjectUlimitValue.swift */,
+				772AC2CE27A3FB4F00C1D348 /* ProjectUpdateConfig.swift */,
+				772AC2C027A3FB4E00C1D348 /* ProjectVolumeElement.swift */,
+				772AC2C227A3FB4E00C1D348 /* ProjectVolumeExternal.swift */,
+			);
+			path = ProjectInspectResponse;
+			sourceTree = "<group>";
+		};
+		772AC21F27A3F04600C1D348 /* ProjectLogResponse */ = {
+			isa = PBXGroup;
+			children = (
+				772AC21D27A3F00A00C1D348 /* ProjectLogResponse.swift */,
+				772AC22027A3F07300C1D348 /* ProjectLogMessage.swift */,
+				772AC22127A3F07300C1D348 /* ProjectLogRegister.swift */,
+				772AC22227A3F07300C1D348 /* ProjectLogStatus.swift */,
+			);
+			path = ProjectLogResponse;
+			sourceTree = "<group>";
+		};
+		772AC23027A3F5D300C1D348 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				772AC23127A3F5E400C1D348 /* ProjectRunBody.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		772AC33F27A4ABBA00C1D348 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				772AC34027A4ABF500C1D348 /* ProjectBuildTest.swift */,
+				772AC34227A4B05600C1D348 /* ProjectEventsTest.swift */,
+				772AC34427A4B93F00C1D348 /* ProjectImagesTest.swift */,
+				772AC35627A5645900C1D348 /* ProjectInspectTest.swift */,
+				772AC34827A4BAC100C1D348 /* ProjectListTest.swift */,
+				772AC34A27A55F1800C1D348 /* ProjectLogsTest.swift */,
+				772AC34C27A5602000C1D348 /* ProjectPsTest.swift */,
+				772AC34E27A5606700C1D348 /* ProjectPullTest.swift */,
+				772AC35027A5610100C1D348 /* ProjectRunTest.swift */,
+				772AC35227A5631300C1D348 /* ProjectTopTest.swift */,
+				772AC35427A5635900C1D348 /* ProjectUpTest.swift */,
+			);
+			path = Projects;
 			sourceTree = "<group>";
 		};
 		773E5B62277E62C80048E205 /* System */ = {
@@ -842,6 +1207,7 @@
 				775F67D3277D1D2A006BAF7A /* MockHelper.swift */,
 				773E8EE2279484C300BFF140 /* Previewable.swift */,
 				773E8E99279198E500BFF140 /* PreviewNetworkingSession.swift */,
+				772AC0ED27A0C13C00C1D348 /* Projects */,
 				77E49D72279F2772006032C3 /* Containers */,
 				77E49CFF279E100E006032C3 /* Networks */,
 				77E49C96279C55A4006032C3 /* Images */,
@@ -885,6 +1251,8 @@
 				775F67C5277D1921006BAF7A /* EndpointSettings.swift */,
 				775F67C2277D18E1006BAF7A /* MountPoint.swift */,
 				775F67C0277D18D3006BAF7A /* Port.swift */,
+				772AC10A27A353AA00C1D348 /* ErrorMessage.swift */,
+				772AC22827A3F13600C1D348 /* PortPublisher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1481,10 +1849,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772AC10727A312FC00C1D348 /* ProjectRunResponse.json in Resources */,
 				77E49CB1279D9ED8006032C3 /* ImageSearchResponse.json in Resources */,
 				77784C9F277D1E00002EC4A2 /* ContextsList.json in Resources */,
 				77E49CA3279D991A006032C3 /* ImageIdResponse.json in Resources */,
 				77E49D01279E110B006032C3 /* NetworkCreateResponse.json in Resources */,
+				772AC0F327A2062F00C1D348 /* ProjectEventsStreamResponse.json in Resources */,
 				77E49D03279E1115006032C3 /* NetworkResponse.json in Resources */,
 				773E5BA9277E6A0A0048E205 /* SystemDataUsageResponse.json in Resources */,
 				773E5BB4277F05B60048E205 /* SystemEventsStream.json in Resources */,
@@ -1499,10 +1869,14 @@
 				77E49D8D27A06D67006032C3 /* ContainerStatsStreamResponse.json in Resources */,
 				77E49D05279E111F006032C3 /* NetworkListResponse.json in Resources */,
 				773E8EB027920F5C00BFF140 /* SystemPingResponse.json in Resources */,
+				772AC22B27A3F20000C1D348 /* ProjectPullResponse.txt in Resources */,
 				773E5BBA278B87130048E205 /* ping.header.txt in Resources */,
 				77E49CD9279E0336006032C3 /* VolumeListResponse.json in Resources */,
+				772AC0FF27A306A400C1D348 /* ProjectLogsStreamResponse.json in Resources */,
 				77E49CAB279D9BC4006032C3 /* ImageListResponse.json in Resources */,
+				772AC0FB27A2FD3100C1D348 /* ProjectListResponse.json in Resources */,
 				77E49D76279F2814006032C3 /* ContainerCreateResponse.json in Resources */,
+				772AC0F927A2099E00C1D348 /* ProjectInspectResponse.json in Resources */,
 				77E49D87279F5989006032C3 /* ContainerLogsTimestamp.bin in Resources */,
 				77E49D89279F59E3006032C3 /* ContainerLogs.bin in Resources */,
 				77E49D7C279F3A6A006032C3 /* ContainerListResponse.json in Resources */,
@@ -1510,10 +1884,16 @@
 				77E49D7A279F2A36006032C3 /* ContainerInspectResponse.json in Resources */,
 				77E49D74279F278E006032C3 /* ContainerChangeResponse.json in Resources */,
 				77E49CC5279DE996006032C3 /* BuildPruneResponse.json in Resources */,
+				772AC0EF27A0C15000C1D348 /* ProjectBuildResponse.txt in Resources */,
 				77E49D9327A07196006032C3 /* ContainerWaitResponse.json in Resources */,
 				77E49D8F27A06FC1006032C3 /* ContainerTopResponse.json in Resources */,
+				772AC10127A3072E00C1D348 /* ProjectLogsResponse.json in Resources */,
+				772AC0F727A2078300C1D348 /* ProjectImagesResponse.json in Resources */,
 				77E49CDD279E0866006032C3 /* VolumePruneResponse.json in Resources */,
+				772AC10927A3259500C1D348 /* ProjectTopResponse.json in Resources */,
+				772AC10527A308E600C1D348 /* ProjectPsResponse.json in Resources */,
 				773E8EC42792E13E00BFF140 /* ContextInspect.json in Resources */,
+				772AC33E27A49E9D00C1D348 /* ProjectRunStreamResponse.json in Resources */,
 				773E5BB0277E70DB0048E205 /* SystemInfoResponse.json in Resources */,
 				77E49CA7279D9A95006032C3 /* ImageHistoryResponse.json in Resources */,
 				77E49D8B279F756D006032C3 /* ContainerPruneResponse.json in Resources */,
@@ -1559,35 +1939,66 @@
 			buildActionMask = 2147483647;
 			files = (
 				77E49CF3279E0C39006032C3 /* NetworkResponse.swift in Sources */,
+				772AC30627A3FB5200C1D348 /* ProjectStickyExternal.swift in Sources */,
 				77E49C95279C54A5006032C3 /* HealthConfig.swift in Sources */,
 				77E49C89279C5268006032C3 /* ImageRootFS.swift in Sources */,
+				772AC32227A3FB5200C1D348 /* ProjectDeployment.swift in Sources */,
+				772AC32727A3FB5200C1D348 /* ProjectResources.swift in Sources */,
+				772AC33627A3FB5200C1D348 /* ProjectExtendsClass.swift in Sources */,
+				772AC30727A3FB5200C1D348 /* ProjectReservations.swift in Sources */,
 				77E49D29279E157C006032C3 /* HostConfigAllOfLogConfig.swift in Sources */,
+				772AC30927A3FB5200C1D348 /* ProjectDependsOnValue.swift in Sources */,
 				77E49D4F279E1807006032C3 /* Address.swift in Sources */,
+				772AC32127A3FB5200C1D348 /* ProjectSecretExternal.swift in Sources */,
 				77E49CED279E0B9E006032C3 /* NetworkContainerConnectConfig.swift in Sources */,
 				77E49D39279E16A9006032C3 /* MountVolumeOptions.swift in Sources */,
+				772AC31927A3FB5200C1D348 /* ProjectRestartPolicy.swift in Sources */,
 				775F67B1277BA496006BAF7A /* NetworkingSession.swift in Sources */,
 				773E5B69277E633F0048E205 /* SystemEventsResponse.swift in Sources */,
 				773E5BB8278B847A0048E205 /* SystemPingHeader.swift in Sources */,
 				77E49CFE279E0D77006032C3 /* NetworkPruneResponse.swift in Sources */,
 				772AC0E927A07C6500C1D348 /* DataConvertible.swift in Sources */,
+				772AC31627A3FB5200C1D348 /* ProjectConfigValue.swift in Sources */,
 				77E49D27279E1572006032C3 /* ResourcesUlimits.swift in Sources */,
+				772AC31527A3FB5200C1D348 /* ProjectTmpfs.swift in Sources */,
+				772AC31B27A3FB5200C1D348 /* ProjectPurpleExternal.swift in Sources */,
+				772AC31A27A3FB5200C1D348 /* ProjectCredentialSpec.swift in Sources */,
+				772AC31727A3FB5200C1D348 /* ProjectConfigExternal.swift in Sources */,
 				773E5B8C277E66700048E205 /* Commit.swift in Sources */,
 				775F67C7277D1921006BAF7A /* EndpointSettings.swift in Sources */,
 				775F67CF277D195D006BAF7A /* ContextSummary.swift in Sources */,
+				772AC33B27A3FB5200C1D348 /* ProjectNetworksNetwork.swift in Sources */,
+				772AC30E27A3FB5200C1D348 /* ProjectUlimitValue.swift in Sources */,
+				772AC33927A3FB5200C1D348 /* ProjectOrder.swift in Sources */,
+				772AC33227A3FB5200C1D348 /* ProjectBuildClass.swift in Sources */,
 				77E49D18279E14C8006032C3 /* ContainerCreateConfig.swift in Sources */,
+				772AC31D27A3FB5200C1D348 /* ProjectService.swift in Sources */,
+				772AC32A27A3FB5200C1D348 /* ProjectConfigUnion.swift in Sources */,
+				772AC30F27A3FB5200C1D348 /* ProjectUlimitClass.swift in Sources */,
 				77E49D4B279E17E9006032C3 /* HealthStatus.swift in Sources */,
 				77E49D66279E19EE006032C3 /* CPUStatsCPUUsage.swift in Sources */,
 				773E5BA4277E68E40048E205 /* ContainerSummaryNetworkSettings.swift in Sources */,
+				772AC33427A3FB5200C1D348 /* ProjectDevice.swift in Sources */,
+				772AC30327A3FB5200C1D348 /* ProjectCPUPeriod.swift in Sources */,
+				772AC21C27A3EEE200C1D348 /* ProjectSummary.swift in Sources */,
 				77E49D6C279E1A21006032C3 /* ContainerUpdateResponse.swift in Sources */,
 				773E5B7B277E655E0048E205 /* ImageSummary.swift in Sources */,
 				77E49CEB279E0B99006032C3 /* NetworkConfig.swift in Sources */,
+				772AC32527A3FB5200C1D348 /* ProjectLimits.swift in Sources */,
+				772AC2FF27A3FB5100C1D348 /* ProjectPortClass.swift in Sources */,
 				77E49C78279C4E23006032C3 /* ImageAPI.swift in Sources */,
 				773E5B64277E62E70048E205 /* SystemAPI.swift in Sources */,
 				775F678D277B68B5006BAF7A /* DockerCoding.swift in Sources */,
+				772AC32427A3FB5200C1D348 /* ProjectExtendsUnion.swift in Sources */,
+				772AC23227A3F5E400C1D348 /* ProjectRunBody.swift in Sources */,
+				772AC31427A3FB5200C1D348 /* ProjectStringOrList.swift in Sources */,
 				77E49CD2279E0203006032C3 /* VolumeConfig.swift in Sources */,
+				772AC31027A3FB5200C1D348 /* ProjectUpdateConfig.swift in Sources */,
 				773E5B7F277E65DC0048E205 /* PluginsInfo.swift in Sources */,
 				775F67D4277D1D2A006BAF7A /* MockHelper.swift in Sources */,
+				772AC22527A3F07300C1D348 /* ProjectLogStatus.swift in Sources */,
 				771D31C9277A494E005BFCF3 /* GoPortApi.docc in Sources */,
+				772AC30C27A3FB5200C1D348 /* ProjectHealthcheck.swift in Sources */,
 				773E5B6B277E63480048E205 /* SystemInfoResponse.swift in Sources */,
 				773E5B85277E66070048E205 /* Runtime.swift in Sources */,
 				773E5B8A277E66670048E205 /* SystemInfoResponseDefaultAddressPools.swift in Sources */,
@@ -1595,31 +2006,55 @@
 				77E49D68279E19F3006032C3 /* CPUStatsThrottlingData.swift in Sources */,
 				77E49C9A279D5D84006032C3 /* ProgressResponse.swift in Sources */,
 				77E49D60279E19C5006032C3 /* MemoryStats.swift in Sources */,
+				772AC30A27A3FB5200C1D348 /* ProjectBlkioWeight.swift in Sources */,
+				772AC30527A3FB5200C1D348 /* ProjectPlacement.swift in Sources */,
+				772AC2FD27A3FB5100C1D348 /* ProjectSecretElement.swift in Sources */,
+				772AC23427A3F62400C1D348 /* ProjectTopResponse.swift in Sources */,
 				77E49D32279E15C2006032C3 /* PortBinding.swift in Sources */,
 				773E5B81277E65EB0048E205 /* RegistryServiceConfig.swift in Sources */,
 				77E49C93279C545E006032C3 /* ImageSearchResponseItem.swift in Sources */,
 				77E49D1A279E14E4006032C3 /* HostConfig.swift in Sources */,
 				773E8EDA279376E400BFF140 /* APIPathProtocol.swift in Sources */,
+				772AC32B27A3FB5200C1D348 /* ProjectPreference.swift in Sources */,
 				77E49C8F279C52CF006032C3 /* ImageListResponse.swift in Sources */,
+				772AC33327A3FB5200C1D348 /* ProjectPortElement.swift in Sources */,
+				772AC32E27A3FB5200C1D348 /* ProjectDependsOnUnion.swift in Sources */,
 				77E49D5A279E19AF006032C3 /* ContainersIdStatsNetworks.swift in Sources */,
 				77E49D6A279E1A13006032C3 /* ContainerUpdateConfig.swift in Sources */,
+				772AC30127A3FB5100C1D348 /* ProjectRollbackConfig.swift in Sources */,
+				772AC31327A3FB5200C1D348 /* ProjectNetworkNetwork.swift in Sources */,
 				77E49C83279C51E7006032C3 /* ImageDeleteResponse.swift in Sources */,
 				77E49D6E279E1A2E006032C3 /* ContainerWaitResponse.swift in Sources */,
+				772AC22927A3F13600C1D348 /* PortPublisher.swift in Sources */,
 				773E5BA3277E68E40048E205 /* ContainerSummaryHostConfig.swift in Sources */,
+				772AC32C27A3FB5200C1D348 /* ProjectIPAMConfig.swift in Sources */,
 				773E8ECE2793000A00BFF140 /* GoPortAPI.swift in Sources */,
 				773E8EE12794595400BFF140 /* APIStreamResponse.swift in Sources */,
 				77E49D1F279E152E006032C3 /* ResourcesBlkioWeightDevice.swift in Sources */,
 				77E49D2B279E158F006032C3 /* PortMap.swift in Sources */,
 				77E49D46279E17C5006032C3 /* NetworkSettings.swift in Sources */,
+				772AC30D27A3FB5200C1D348 /* ProjectPurpleVolume.swift in Sources */,
 				773E5B75277E65170048E205 /* VolumeResponse.swift in Sources */,
 				77E49D5E279E19BC006032C3 /* CPUStats.swift in Sources */,
 				773E8EDC279379F800BFF140 /* APIResponse.swift in Sources */,
+				772AC32927A3FB5200C1D348 /* ProjectNetworkExternal.swift in Sources */,
+				772AC32027A3FB5200C1D348 /* ProjectNetworks.swift in Sources */,
+				772AC11027A35F5D00C1D348 /* ProjectImagesResponse.swift in Sources */,
+				772AC31C27A3FB5200C1D348 /* ProjectBind.swift in Sources */,
+				772AC30827A3FB5200C1D348 /* ProjectSecretValue.swift in Sources */,
+				772AC22727A3F0F100C1D348 /* ProjectContainerSummary.swift in Sources */,
 				773E8ED8279372A500BFF140 /* APIRequest.swift in Sources */,
 				77E49CFC279E0CBA006032C3 /* NetworkListResponse.swift in Sources */,
+				772AC30227A3FB5200C1D348 /* ProjectVolumeElement.swift in Sources */,
+				772AC22F27A3F3E500C1D348 /* ProjectRunResponse.swift in Sources */,
+				772AC22D27A3F30F00C1D348 /* ProjectRunStreamResponse.swift in Sources */,
 				77E49C7D279C519A006032C3 /* ContainerConfig.swift in Sources */,
+				772AC31E27A3FB5200C1D348 /* ProjectListOrDictValue.swift in Sources */,
+				772AC22327A3F07300C1D348 /* ProjectLogMessage.swift in Sources */,
 				77E49D38279E16A9006032C3 /* MountBindOptions.swift in Sources */,
 				773E8EAE27920DD300BFF140 /* SystemPingResponse.swift in Sources */,
 				77E49D63279E19DB006032C3 /* BlkioStatEntry.swift in Sources */,
+				772AC33027A3FB5200C1D348 /* ProjectSelinux.swift in Sources */,
 				773E5B9F277E689A0048E205 /* SystemVersionResponsePlatform.swift in Sources */,
 				77E49CCD279E016F006032C3 /* VolumeAPI.swift in Sources */,
 				773E5B6D277E635A0048E205 /* SystemVersionResponse.swift in Sources */,
@@ -1627,12 +2062,19 @@
 				77E49D44279E17BB006032C3 /* ContainerState.swift in Sources */,
 				77E49D3B279E16B5006032C3 /* MountVolumeOptionsDriverConfig.swift in Sources */,
 				77E49C81279C51D1006032C3 /* HistoryResponse.swift in Sources */,
+				772AC10E27A3557F00C1D348 /* ProjectEventsResponse.swift in Sources */,
+				772AC31127A3FB5200C1D348 /* ProjectPullPolicy.swift in Sources */,
 				77E49C7F279C51A8006032C3 /* IdResponse.swift in Sources */,
+				772AC2FB27A3FB5100C1D348 /* ProjectFluffyExternal.swift in Sources */,
 				773E5B8E277E66A10048E205 /* IndexInfo.swift in Sources */,
 				77E49D49279E17DE006032C3 /* Health.swift in Sources */,
 				77E49CE7279E0B57006032C3 /* NetworkAPI.swift in Sources */,
+				772AC22427A3F07300C1D348 /* ProjectLogRegister.swift in Sources */,
 				77E49D23279E1546006032C3 /* DeviceMapping.swift in Sources */,
+				772AC30427A3FB5200C1D348 /* ProjectVolumeExternal.swift in Sources */,
 				77E49D3F279E1737006032C3 /* ContainerCreateResponse.swift in Sources */,
+				772AC31827A3FB5200C1D348 /* ProjectFluffyVolume.swift in Sources */,
+				772AC32627A3FB5200C1D348 /* ProjectInspectResponse.swift in Sources */,
 				77E49CD6279E0242006032C3 /* VolumePruneResponse.swift in Sources */,
 				77E49D7E279F4F2F006032C3 /* ContainerLogResponse.swift in Sources */,
 				775F67C1277D18D3006BAF7A /* Port.swift in Sources */,
@@ -1640,16 +2082,24 @@
 				77E49D4D279E17F1006032C3 /* HealthcheckResult.swift in Sources */,
 				77E49D55279E1995006032C3 /* ContainerTopResponse.swift in Sources */,
 				775F67D0277D195D006BAF7A /* ContextConfig.swift in Sources */,
+				772AC31227A3FB5200C1D348 /* ProjectGenericResource.swift in Sources */,
+				772AC10B27A353AA00C1D348 /* ErrorMessage.swift in Sources */,
 				77E49CFA279E0C9C006032C3 /* IPAMConfig.swift in Sources */,
+				772AC31F27A3FB5200C1D348 /* ProjectSecretSecret.swift in Sources */,
 				773E5B67277E63350048E205 /* SystemDataUsageResponse.swift in Sources */,
 				773E5B7D277E659D0048E205 /* EventsActor.swift in Sources */,
 				77E49D53279E196D006032C3 /* ContainerStatsResponse.swift in Sources */,
 				773E5BA0277E689A0048E205 /* SystemVersionResponseComponents.swift in Sources */,
 				77E49C91279C5420006032C3 /* ImagePruneResponse.swift in Sources */,
 				773E5B96277E678A0048E205 /* GenericResourceNamedResourceSpec.swift in Sources */,
+				772AC21E27A3F00A00C1D348 /* ProjectLogResponse.swift in Sources */,
+				772AC33827A3FB5200C1D348 /* ProjectBlkioLimit.swift in Sources */,
+				772AC33A27A3FB5200C1D348 /* ProjectBlkioConfig.swift in Sources */,
 				77E49D41279E17A1006032C3 /* ContainerInspectResponse.swift in Sources */,
+				772AC32327A3FB5200C1D348 /* ProjectTentacledVolume.swift in Sources */,
 				77E49C8D279C527B006032C3 /* GraphDriverData.swift in Sources */,
 				773E8EAC27920D8000BFF140 /* SystemPingResponseItem.swift in Sources */,
+				772AC0EC27A099BC00C1D348 /* ProjectAPI.swift in Sources */,
 				775F67CE277D195D006BAF7A /* ContextInspectResponse.swift in Sources */,
 				773E5B9B277E68670048E205 /* GenericResource.swift in Sources */,
 				77E49D37279E16A9006032C3 /* MountTmpfsOptions.swift in Sources */,
@@ -1659,23 +2109,34 @@
 				775F6782277B6261006BAF7A /* ContextAPI.swift in Sources */,
 				77E49CF5279E0C7C006032C3 /* IPAM.swift in Sources */,
 				775F67D1277D195D006BAF7A /* ContextInspectResponseStorage.swift in Sources */,
+				772AC30027A3FB5100C1D348 /* ProjectConfigConfig.swift in Sources */,
+				772AC2FE27A3FB5100C1D348 /* JSONSchemaSupport.swift in Sources */,
 				77E49C8B279C5271006032C3 /* ImageMetadata.swift in Sources */,
 				77E49C85279C5238006032C3 /* ImageResponse.swift in Sources */,
+				772AC30B27A3FB5200C1D348 /* ProjectRate.swift in Sources */,
 				77E49D71279E1A3E006032C3 /* ContainerWaitResponseError.swift in Sources */,
+				772AC32D27A3FB5200C1D348 /* ProjectBuildUnion.swift in Sources */,
 				773E8EE3279484C300BFF140 /* Previewable.swift in Sources */,
 				773E5B95277E678A0048E205 /* GenericResourceDiscreteResourceSpec.swift in Sources */,
+				772AC33527A3FB5200C1D348 /* ProjectTentacledExternal.swift in Sources */,
 				775F67C6277D1921006BAF7A /* EndpointIPAMConfig.swift in Sources */,
 				77E49D15279E14AC006032C3 /* ContainerChangeResponse.swift in Sources */,
+				772AC32F27A3FB5200C1D348 /* ProjectSize.swift in Sources */,
 				77E49CC3279DE8E8006032C3 /* BuildPruneResponse.swift in Sources */,
+				772AC33C27A3FB5200C1D348 /* ProjectLogging.swift in Sources */,
 				77E49CEF279E0BF7006032C3 /* NetworkCreateResponse.swift in Sources */,
 				77E49D51279E189E006032C3 /* ContainerPruneResponse.swift in Sources */,
+				772AC32827A3FB5200C1D348 /* ProjectListOrDict.swift in Sources */,
 				77E49D2F279E159E006032C3 /* Mount.swift in Sources */,
+				772AC33127A3FB5200C1D348 /* ProjectCondition.swift in Sources */,
 				77E49D25279E1551006032C3 /* DeviceRequest.swift in Sources */,
 				77E49D2D279E1596006032C3 /* RestartPolicy.swift in Sources */,
 				77E49CF8279E0C90006032C3 /* NetworkContainer.swift in Sources */,
 				77E49D12279E147C006032C3 /* ContainerAPI.swift in Sources */,
 				77E49CF1279E0C02006032C3 /* NetworkDisconnectConfig.swift in Sources */,
 				775F678F277B692E006BAF7A /* APIError.swift in Sources */,
+				772AC2FC27A3FB5100C1D348 /* ProjectIPAM.swift in Sources */,
+				772AC33727A3FB5200C1D348 /* ProjectDiscreteResourceSpec.swift in Sources */,
 				77E49D5C279E19B6006032C3 /* BlkioStats.swift in Sources */,
 				773E5B72277E64E90048E205 /* BuildCache.swift in Sources */,
 				773E5BA6277E69890048E205 /* VolumeUsageData.swift in Sources */,
@@ -1692,13 +2153,16 @@
 				77E49D9527A071B3006032C3 /* ContainerChangeTest.swift in Sources */,
 				77E49CB9279DA38F006032C3 /* ImagePruneTest.swift in Sources */,
 				77E49D9B27A072A9006032C3 /* ContainerListTest.swift in Sources */,
+				772AC34F27A5606700C1D348 /* ProjectPullTest.swift in Sources */,
 				77E49C9F279D8A29006032C3 /* ImageDeleteTest.swift in Sources */,
 				77E49D9F27A073A7006032C3 /* ContainerStatsTest.swift in Sources */,
+				772AC34527A4B93F00C1D348 /* ProjectImagesTest.swift in Sources */,
 				77E49CE4279E0ABA006032C3 /* VolumePruneTest.swift in Sources */,
 				77F1926F279626A100D86ACD /* SystemDataUsageTest.swift in Sources */,
 				773E8EE62794962300BFF140 /* MockNetworkingSession.swift in Sources */,
 				77E49CC7279DE9AE006032C3 /* BuildPruneTest.swift in Sources */,
 				773E8EE52794958E00BFF140 /* SystemVersionTest.swift in Sources */,
+				772AC34B27A55F1800C1D348 /* ProjectLogsTest.swift in Sources */,
 				77E49D9927A0727C006032C3 /* ContainerInspectTest.swift in Sources */,
 				77E49DA327A074E5006032C3 /* ContainerTopTest.swift in Sources */,
 				77E49D0A279E12AA006032C3 /* NetworkCreateTest.swift in Sources */,
@@ -1709,10 +2173,14 @@
 				77E49CBB279DA3DF006032C3 /* ImageSearchTest.swift in Sources */,
 				77E49D84279F55F1006032C3 /* ContainerLogsTest.swift in Sources */,
 				77E49D9D27A07322006032C3 /* ContainerPruneTest.swift in Sources */,
+				772AC35327A5631300C1D348 /* ProjectTopTest.swift in Sources */,
+				772AC34927A4BAC100C1D348 /* ProjectListTest.swift in Sources */,
 				77E49CB3279DA02E006032C3 /* ImageHistoryTest.swift in Sources */,
+				772AC35127A5610100C1D348 /* ProjectRunTest.swift in Sources */,
 				77E49C9D279D8744006032C3 /* ImageCommitTest.swift in Sources */,
 				77F1927127973BCD00D86ACD /* SystemEventsTest.swift in Sources */,
 				77E49DA527A07531006032C3 /* ContainerWaitTest.swift in Sources */,
+				772AC35527A5635900C1D348 /* ProjectUpTest.swift in Sources */,
 				77E49D9727A071E3006032C3 /* ContainerCreateTest.swift in Sources */,
 				77E49D10279E12CF006032C3 /* NetworkPruneTest.swift in Sources */,
 				773E5BAE277E6A6B0048E205 /* SystemPingTest.swift in Sources */,
@@ -1721,6 +2189,10 @@
 				77E49CB7279DA288006032C3 /* ImageListTest.swift in Sources */,
 				773E8ED427932CD000BFF140 /* ContextInspectTest.swift in Sources */,
 				77E49D0E279E12C4006032C3 /* NetworkListTest.swift in Sources */,
+				772AC34127A4ABF500C1D348 /* ProjectBuildTest.swift in Sources */,
+				772AC34327A4B05600C1D348 /* ProjectEventsTest.swift in Sources */,
+				772AC35727A5645900C1D348 /* ProjectInspectTest.swift in Sources */,
+				772AC34D27A5602000C1D348 /* ProjectPsTest.swift in Sources */,
 				771D31D6277A494F005BFCF3 /* GoPortApiBaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

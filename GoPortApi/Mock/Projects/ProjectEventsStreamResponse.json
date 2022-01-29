@@ -1,0 +1,57 @@
+{
+    "timestamp": 1643235983668,
+    "service": "test",
+    "container": "a3fa9a69dede61c0e9b8f45523fbb296e4b7d9b7b4fd4a5e7b22a7d9a3b89267",
+    "status": "kill",
+    "attributes": {
+        "image": "test_test",
+        "name": "test_test_1",
+        "signal": "15"
+    }
+}
+
+{
+    "timestamp": 1643235993687,
+    "service": "test",
+    "container": "a3fa9a69dede61c0e9b8f45523fbb296e4b7d9b7b4fd4a5e7b22a7d9a3b89267",
+    "status": "kill",
+    "attributes": {
+        "image": "test_test",
+        "name": "test_test_1",
+        "signal": "9"
+    }
+}
+
+{
+    "timestamp": 1643235993704,
+    "service": "test",
+    "container": "a3fa9a69dede61c0e9b8f45523fbb296e4b7d9b7b4fd4a5e7b22a7d9a3b89267",
+    "status": "die",
+    "attributes": {
+        "exitCode": "137",
+        "image": "test_test",
+        "name": "test_test_1"
+    }
+}
+
+{
+    "timestamp": 1643235993776,
+    "service": "test",
+    "container": "a3fa9a69dede61c0e9b8f45523fbb296e4b7d9b7b4fd4a5e7b22a7d9a3b89267",
+    "status": "stop",
+    "attributes": {
+        "image": "test_test",
+        "name": "test_test_1"
+    }
+}
+
+{
+    "timestamp": 1643235993817,
+    "service": "test",
+    "container": "a3fa9a69dede61c0e9b8f45523fbb296e4b7d9b7b4fd4a5e7b22a7d9a3b89267",
+    "status": "destroy",
+    "attributes": {
+        "image": "test_test",
+        "name": "test_test_1"
+    }
+}

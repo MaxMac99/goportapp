@@ -11,12 +11,12 @@ import Foundation
 public struct Commit: Codable, Hashable {
 
     /** Actual commit ID of external tool. */
-    public var ID: String? = nil
+    public var id: String? = nil
     /** Commit ID of external tool expected by dockerd as set at build time.  */
     public var expected: String? = nil
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
-        case ID
+        case id = "ID"
         case expected = "Expected"
     }
 }

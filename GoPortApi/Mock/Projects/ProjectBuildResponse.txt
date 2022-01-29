@@ -1,0 +1,31 @@
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 31B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/alpine:latest
+#3 DONE 0.5s
+
+#4 [1/3] FROM docker.io/library/alpine@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 30B done
+#5 DONE 0.0s
+
+#6 [2/3] ADD script.sh .
+#6 CACHED
+
+#7 [3/3] RUN ./script.sh
+#7 CACHED
+
+#8 exporting to image
+#8 exporting layers done
+#8 writing image sha256:8f49ae59d073c4263f2c3b2263d3b5b9b68d70ad0338058dc1ac1f7caacce91c done
+#8 naming to docker.io/library/test_test done
+#8 DONE 0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them

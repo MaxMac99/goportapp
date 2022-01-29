@@ -1,0 +1,9 @@
+[
+    {
+        "ID": "sha256:dcbd72bdd6a28708b829bdf06e127ea9bf74e45888f23daf6acffc008367f775",
+        "ContainerName": "test_test_1",
+        "Repository": "test_test",
+        "Tag": "latest",
+        "Size": 5585874
+    }
+]

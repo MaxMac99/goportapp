@@ -30,7 +30,7 @@ internal class PreviewNetworkingSession: NetworkingSession {
         if Content.self is Previewable.Type {
             return try await streamPreviewable(request, convertToArray: convertToArray, isJSONObject: isJSONObject, mapFunction: mapFunction)
         }
-        throw PreviewNetworkingError.notImplemented
+        return try await handleStreamExceptions(request, convertToArray: convertToArray, isJSONObject: isJSONObject, mapFunction: mapFunction)
     }
     
     private func streamPreviewable<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false, isJSONObject: Bool = true, mapFunction: @escaping (Data) throws -> Content) async throws -> APIStreamResponse<Content> where Body : Encodable {
@@ -78,6 +78,45 @@ internal class PreviewNetworkingSession: NetworkingSession {
             let data = try MockHelper.loadFile("ContainerLogs", withExtension: "bin")
             let logs: [ContainerLogResponseItem] = ContainerLogResponseItem.convert(data)
             return APIResponse(content: logs as! Content, response: try successfulHTTPURLResponse(for: request))
+        case ProjectAPI.ProjectAPIPath.projectPull(name: _):
+            let data = try MockHelper.loadFile("ProjectPullResponse", withExtension: "txt")
+            let content = String(data: data, encoding: .utf8)!
+            return APIResponse(content: content as! Content, response: try successfulHTTPURLResponse(for: request))
+        default:
+            throw PreviewNetworkingError.notImplemented
+        }
+    }
+    
+    private func handleStreamExceptions<Body, Content>(_ request: APIRequest<Body>, convertToArray: Bool = false, isJSONObject: Bool = true, mapFunction: @escaping (Data) throws -> Content) async throws -> APIStreamResponse<Content> {
+        switch request.path {
+        case ProjectAPI.ProjectAPIPath.projectBuild(name: _):
+            let data = try MockHelper.loadFile("ProjectBuildResponse", withExtension: "txt")
+            let content = String(data: data, encoding: .utf8)!
+            let response = APIStreamResponse<Content>(response: try successfulHTTPURLResponse(for: request), convertToArray: convertToArray, isJSONObject: isJSONObject, onTermination: nil, mapFunction: mapFunction)
+            
+            Task { [weak response] in
+                for line in content.components(separatedBy: .newlines) {
+                    try await Task.sleep(nanoseconds: 200_000)
+                    let content = line + "\n"
+                    response?.received(content.data(using: .utf8)!)
+                }
+                response?.complete(withError: nil)
+            }
+            return response
+        case ProjectAPI.ProjectAPIPath.projectPull(name: _):
+            let data = try MockHelper.loadFile("ProjectPullResponse", withExtension: "txt")
+            let content = String(data: data, encoding: .utf8)!
+            let response = APIStreamResponse<Content>(response: try successfulHTTPURLResponse(for: request), convertToArray: convertToArray, isJSONObject: isJSONObject, onTermination: nil, mapFunction: mapFunction)
+            
+            Task { [weak response] in
+                for line in content.components(separatedBy: .newlines) {
+                    try await Task.sleep(nanoseconds: 200_000)
+                    let content = line + "\n"
+                    response?.received(content.data(using: .utf8)!)
+                }
+                response?.complete(withError: nil)
+            }
+            return response
         default:
             throw PreviewNetworkingError.notImplemented
         }
