@@ -34,25 +34,37 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate {
     
     // MARK: - Loading Implementation
     
-    internal func load<Body: Encodable, Content>(_ request: APIRequest<Body>) async throws -> APIResponse<Content> {
+    internal func loadResponse<Body: Encodable, Content>(_ request: APIRequest<Body>, mapFunction: @escaping (Data) throws -> Content) async throws -> APIResponse<Content> {
         let urlRequest = try request.createURLRequest()
         let (data, response) = try await session.data(for: urlRequest)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIResponseError.unknown(nil)
         }
-        return try APIResponse(data: data, response: httpResponse)
+        return try APIResponse(data: data, response: httpResponse, mapFunction: mapFunction)
+    }
+    
+    internal func loadResponse<Body: Encodable, Content: Decodable>(_ request: APIRequest<Body>) async throws -> APIResponse<Content> {
+        try await loadResponse(request) { data in
+            if Content.self is Data.Type {
+                return data as! Content
+            }
+            if Content.self is String.Type, let string = String(data: data, encoding: .utf8) {
+                return string as! Content
+            }
+            return try dockerDecoder.decode(Content.self, from: data)
+        }
     }
     
     internal func load<Body: Encodable, Content: Decodable>(_ request: APIRequest<Body>) async throws -> Content {
-        try await load(request).content
+        try await loadResponse(request).content
     }
     
     internal func load<Body: Encodable, Content: DataConvertible>(_ request: APIRequest<Body>) async throws -> Content {
-        try await load(request).content
+        try await loadResponse(request, mapFunction: { try Content.convert($0) }).content
     }
     
     internal func load<Body: Encodable>(_ request: APIRequest<Body>) async throws {
-        let _: APIResponse<Data> = try await load(request)
+        let _: APIResponse<Data> = try await loadResponse(request)
     }
     
     // MARK: - Stream Implementation
@@ -117,5 +129,5 @@ public class NetworkingSession: NSObject, URLSessionDataDelegate {
 }
 
 public extension NetworkingSession {
-    static let shared: NetworkingSession = PreviewNetworkingSession()
+    static let shared: NetworkingSession = NetworkingSession()
 }

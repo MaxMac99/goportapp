@@ -14,7 +14,7 @@ internal class PreviewNetworkingSession: NetworkingSession {
         return HTTPURLResponse(url: urlRequest.url!, statusCode: 200, httpVersion: nil, headerFields: headerFields)!
     }
     
-    override func load<Body, Content>(_ request: APIRequest<Body>) async throws -> APIResponse<Content> where Body : Encodable {
+    override func loadResponse<Body, Content>(_ request: APIRequest<Body>, mapFunction: @escaping (Data) throws -> Content) async throws -> APIResponse<Content> where Body : Encodable {
         guard Content.self is Previewable.Type else {
             return try await handleExceptions(request)
         }

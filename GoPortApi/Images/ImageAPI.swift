@@ -117,7 +117,7 @@ public struct ImageAPI {
      - parameter inputStream: (body) A tar archive compressed with one of the following algorithms: identity (no compression), gzip, bzip2, xz. (optional)
      
      */
-    public static func imageBuild(host: URL, context: String? = nil, dockerfile: String? = nil, tags: [String]? = nil, extrahosts: [String]? = nil, remote: String? = nil, quiet: Bool? = nil, nocache: Bool? = nil, cachefrom: [String]? = nil, pull: Bool? = nil, remove: Bool? = nil, forceremove: Bool? = nil, memory: Int64? = nil, memswap: Int64? = nil, cpushares: Int64? = nil, cpusetcpus: String? = nil, cpuperiod: Int64? = nil, cpuquota: Int64? = nil, buildargs: String? = nil, shmsize: Int64? = nil, squash: Bool? = nil, labels: String? = nil, networkmode: String? = nil, contentType: ContentType_imageBuild? = nil, xRegistryConfig: String? = nil, platform: String? = nil, target: String? = nil, outputs: String? = nil, inputStream: URL? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> APIStreamResponse<ProgressResponse> {
+    public static func imageBuild(host: URL, context: String? = nil, dockerfile: String? = nil, tags: [String]? = nil, extrahosts: [String]? = nil, remote: String? = nil, quiet: Bool? = nil, nocache: Bool? = nil, cachefrom: [String]? = nil, pull: Bool? = nil, remove: Bool? = nil, forceremove: Bool? = nil, memory: Int64? = nil, memswap: Int64? = nil, cpushares: Int64? = nil, cpusetcpus: String? = nil, cpuperiod: Int64? = nil, cpuquota: Int64? = nil, buildargs: String? = nil, shmsize: Int64? = nil, squash: Bool? = nil, labels: String? = nil, networkmode: String? = nil, contentType: ContentType_imageBuild? = nil, xRegistryConfig: String? = nil, platform: String? = nil, target: String? = nil, outputs: String? = nil, inputStream: Data? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> APIStreamResponse<ProgressResponse> {
         var headers = [String:String]()
         if let contentType = contentType {
             headers["Content-type"] = contentType.rawValue
@@ -288,7 +288,7 @@ public struct ImageAPI {
      - parameter imagesTarball: (body) Tar archive containing images (optional)
      
      */
-    public static func imageLoad(host: URL, context: String? = nil, quiet: Bool? = nil, imagesTarball: URL? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> APIStreamResponse<ProgressResponse> {
+    public static func imageLoad(host: URL, context: String? = nil, quiet: Bool? = nil, imagesTarball: Data? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> APIStreamResponse<ProgressResponse> {
         try await session.stream(APIRequest(method: .POST, host: host, path: ImageAPIPath.imageLoad, query: [
             "context": context,
             "quiet": quiet,

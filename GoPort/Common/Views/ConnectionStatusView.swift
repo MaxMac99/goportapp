@@ -28,6 +28,7 @@ struct ConnectionStatusView: View {
                 .frame(width: 20, height: 20)
         default:
             ProgressView()
+                .frame(width: 20, height: 20)
         }
     }
 }

@@ -49,18 +49,22 @@ class AddServerViewModel: ObservableObject {
         lastCheckedURL = url
     }
     
-    func save() throws {
+    func save() async throws {
         guard url == lastCheckedURL else {
             throw ServerService.SaveServerError.notCheckedURL
         }
-        try ServerService.shared.save(url: url, name: name)
+        try await ServerService.shared.addServer(name: name, url: url)
     }
     
     private func createURL() -> URL? {
         guard url != "" else {
             return nil
         }
-        guard var fullHost = URL(string: url) else {
+        var urlString = url
+        if urlString.last == "/" {
+            urlString = String(urlString.dropLast())
+        }
+        guard var fullHost = URL(string: urlString) else {
             return nil
         }
         if fullHost.scheme != "http" && fullHost.scheme != "https" {

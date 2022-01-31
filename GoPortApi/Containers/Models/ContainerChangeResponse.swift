@@ -15,11 +15,17 @@ public struct ContainerChangeResponseItem: Codable, Hashable {
     /** Path to file that has changed */
     public var path: String
     /** Kind of change */
-    public var kind: Int
+    public var kind: Kind
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case path = "Path"
         case kind = "Kind"
+    }
+    
+    public enum Kind: Int, Codable {
+        case modified = 0
+        case added = 1
+        case deleted = 2
     }
 }
 

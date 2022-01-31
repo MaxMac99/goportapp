@@ -8,18 +8,39 @@
 import Foundation
 import GoPortApi
 
+@MainActor
 class ServerService: ObservableObject {
     static let shared = ServerService()
     
     private init() {}
     
-    enum SaveServerError: Error {
-        case notCheckedURL
-        case nameAlreadyExists
+    fileprivate init(servers: [Server], selectedServer: Server?) {
+        self.servers = servers
+        self.selectedServer = selectedServer
     }
     
-    @Published fileprivate(set) var servers: [Server] = UserDefaults.standard.servers {
+    enum SaveServerError: Error {
+        case invalidURL
+        case notCheckedURL
+        case nameAlreadyExists
+        case notSupported
+    }
+    
+    @Published var servers: [Server] = UserDefaults.standard.servers {
         didSet {
+            if let selectedServer = selectedServer {
+                if servers.difference(from: oldValue).removals.map({ change -> Server? in
+                    switch change {
+                    case .remove(offset: _, element: let server, associatedWith: _):
+                        return server
+                    default:
+                        break
+                    }
+                    return nil
+                }).contains(selectedServer) {
+                    self.selectedServer = nil
+                }
+            }
             UserDefaults.standard.servers = servers
         }
     }
@@ -29,37 +50,33 @@ class ServerService: ObservableObject {
         }
     }
     
-    func addServer(name: String, host: URL) async throws {
-        if servers.contains(where: {$0.name == name || $0.host == host}) {
-            throw ServerError.alreadyExists
+    func addServer(name: String, url: String) async throws {
+        guard let host = URL(string: url) else {
+            throw SaveServerError.notCheckedURL
+        }
+        guard !servers.contains(where: {$0.name == name || $0.host == host}) else {
+            throw SaveServerError.nameAlreadyExists
         }
         
-        let response = try await SystemAPI.systemPing(host: host)
+        var server = Server(name: name, host: host)
+        let response = try await server.pingAll()
         guard let goportVersion = response.goportVersion, GoPortAPI.supportedGoPortVersions.contains(goportVersion) else {
-            throw ServerError.notSupported
+            throw SaveServerError.notSupported
         }
         
-        let server = Server(name: name, host: host.appendingPathComponent(goportVersion))
         servers.append(server)
-        if selectedServer == nil && !servers.isEmpty {
+        if selectedServer == nil {
             selectedServer = servers.first
         }
     }
     
-    func save(url: String, name: String) throws {
-        guard !servers.contains(where: { $0.name == name }) else {
-            throw SaveServerError.nameAlreadyExists
+    func select(context: GoPortContext, on server: Server) {
+        guard let index = servers.firstIndex(of: server) else { return }
+        if selectedServer != server {
+            selectedServer = server
+        } else {
+            servers[index].toggle(context: context)
         }
-        let server = Server(name: name, host: URL(string: url)!)
-        servers.append(server)
-        selectedServer = server
-    }
-    
-    func select(_ server: Server) {
-        guard servers.contains(server) else {
-            return
-        }
-        selectedServer = server
     }
     
     func remove(_ server: Server) {
@@ -68,11 +85,6 @@ class ServerService: ObservableObject {
         }
         servers.remove(at: index)
     }
-}
-
-enum ServerError: Error {
-    case alreadyExists
-    case notSupported
 }
 
 fileprivate extension UserDefaults {
@@ -117,10 +129,7 @@ extension UserDefaults {
 #if DEBUG
 extension ServerService {
     static let preview: ServerService = {
-        let viewModel = ServerService()
-        //viewModel.servers = Server.preview
-        viewModel.selectedServer = viewModel.servers.first!
-        return viewModel
+        ServerService(servers: Server.preview, selectedServer: Server.preview.first!)
     }()
 }
 #endif

@@ -18,8 +18,8 @@ public class APIResponse<Content> {
         self.content = content
     }
     
-    internal convenience init(data: Data, response: HTTPURLResponse) throws {
-        throw DataConvertibleError.notImplemented
+    internal convenience init(data: Data, response: HTTPURLResponse, mapFunction: @escaping (Data) throws -> Content) throws {
+        self.init(content: try mapFunction(data), response: response)
     }
     
     fileprivate static func checkStatusCode(_ statusCode: Int, data: Data) throws {
@@ -30,30 +30,3 @@ public class APIResponse<Content> {
 }
 
 typealias APIEmptyResponse = APIResponse<Data>
-
-extension APIResponse where Content == Data {
-    convenience init(data: Data, response: HTTPURLResponse) throws {
-        self.init(content: data, response: response)
-    }
-}
-
-extension APIResponse where Content == String {
-    convenience init(data: Data, response: HTTPURLResponse) throws {
-        guard let string = String(data: data, encoding: .utf8) else {
-            throw DataConvertibleError.invalidResponse
-        }
-        self.init(content: string, response: response)
-    }
-}
-
-extension APIResponse where Content: Decodable {
-    convenience init(data: Data, response: HTTPURLResponse) throws {
-        self.init(content: try dockerDecoder.decode(Content.self, from: data), response: response)
-    }
-}
-
-extension APIResponse where Content: DataConvertible {
-    convenience init(data: Data, response: HTTPURLResponse) throws {
-        self.init(content: try Content.convert(data), response: response)
-    }
-}

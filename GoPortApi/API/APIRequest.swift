@@ -42,7 +42,7 @@ internal struct APIRequest<Body: Encodable> {
     
     func createURLRequest() throws -> URLRequest {
         var fullHost = host
-        if host.scheme != "http" || host.scheme != "https" {
+        if host.scheme != "http" && host.scheme != "https" {
             let fullURLString = "http://\(host.absoluteString)"
             guard let tempFullHost = URL(string: fullURLString) else {
                 throw APIRequestError.invalidURL(fullURLString)

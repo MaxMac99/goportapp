@@ -10,15 +10,14 @@ import GoPortApi
 
 @MainActor
 class ContextDetailViewModel: ObservableObject {
-    private(set) var server: Server?
-    private(set) var contextName: String?
-    @Published fileprivate(set) var context: Loadable<ContextInspectResponse> = .loading
-    @Published fileprivate(set) var pingInformation: Loadable<SystemPingResponseSummary> = .loading
+    private(set) var context: GoPortContext?
+    @Published fileprivate(set) var contextInfo: Loadable<ContextInspectResponse> = .loading
+    @Published fileprivate(set) var goportVersion: Loadable<String?> = .loading
     @Published fileprivate(set) var versionInformation: Loadable<SystemVersionResponse> = .loading
     @Published fileprivate(set) var systemInfo: Loadable<SystemInfoResponseItem> = .loading
     
     var title: String {
-        contextName ?? server?.name ?? ""
+        context?.name ?? ""
     }
     
     enum ContextLoadingError: Error {
@@ -26,38 +25,18 @@ class ContextDetailViewModel: ObservableObject {
         case noContext
     }
     
-    private var session: NetworkingSession
-    
-    init(session: NetworkingSession = .shared) {
-        self.session = session
-    }
-    
-    func setup(server: Server, contextName: String? = nil) {
-        guard self.server == nil else {
+    func setup(context: GoPortContext) {
+        guard self.context == nil else {
             return
         }
-        self.server = server
-        self.contextName = contextName
+        self.context = context
     }
     
     func load() async {
-        guard let _ = server else {
-            return
-        }
+        guard let _ = context else { return }
         await withTaskGroup(of: Void.self) { group in
-            if contextName == nil {
-                group.addTask {
-                    await self.loadPingInformation()
-                    await self.loadContext()
-                }
-            } else {
-                group.addTask {
-                    await self.loadPingInformation()
-                }
-                group.addTask {
-                    await self.loadContext()
-                }
-            }
+            group.addTask { await self.loadPingInformation() }
+            group.addTask { await self.loadContext() }
             group.addTask { await self.loadVersionInformation() }
             group.addTask { await self.loadInfo() }
             
@@ -66,70 +45,32 @@ class ContextDetailViewModel: ObservableObject {
     }
     
     func loadPingInformation() async {
-        guard let server = server else {
-            return
-        }
-        pingInformation = await Loadable { try await SystemAPI.systemPing(host: server.host, context: contextName.array, session: session) }
-        if let defaultContext = pingInformation.content?.contexts.first?.key, contextName == nil {
-            self.contextName = defaultContext
-        }
+        guard let context = context else { return }
+        goportVersion = await Loadable { try await context.ping().goportVersion }
     }
     
     func loadVersionInformation() async {
-        guard let server = server else {
-            return
-        }
-        versionInformation = await Loadable { try await SystemAPI.systemVersion(host: server.host, context: contextName, session: session) }
+        guard let context = context else { return }
+        versionInformation = await Loadable { try await context.version() }
     }
     
     func loadInfo() async {
-        guard let server = server else {
-            return
-        }
-        systemInfo = await Loadable {
-            let infoDict = try await SystemAPI.systemInfo(host: server.host, context: contextName.array, session: session)
-            if let contextName = contextName, let info = infoDict[contextName] {
-                return info
-            } else if let info = infoDict.first?.value {
-                return info
-            } else {
-                throw ContextLoadingError.invalidResponse
-            }
-        }
+        guard let context = context else { return }
+        systemInfo = await Loadable { try await context.info() }
     }
     
     func loadContext() async {
-        guard let server = server else {
-            return
-        }
-        guard let contextName = contextName else {
-            context = .error(ContextLoadingError.noContext)
-            return
-        }
-        context = await Loadable { try await ContextAPI.contextInspect(host: server.host, name: contextName, session: session) }
-    }
-    
-    func useThisServer() {
-        guard let server = server else {
-            return
-        }
-        ServerService.shared.select(server)
-    }
-    
-    func deleteServer() {
-        guard let server = server else {
-            return
-        }
-        ServerService.shared.remove(server)
+        guard let context = context else { return }
+        contextInfo = await Loadable { try await context.inspect() }
     }
 }
 
 #if DEBUG
 extension ContextDetailViewModel {
     static let preview: ContextDetailViewModel = {
-        let viewModel = ContextDetailViewModel(session: .preview)
-        viewModel.pingInformation = .loaded(SystemPingResponseSummary.preview)
-        viewModel.context = .loaded(ContextInspectResponse.preview)
+        let viewModel = ContextDetailViewModel()
+        viewModel.goportVersion = .loaded(SystemPingResponseSummary.preview.goportVersion)
+        viewModel.contextInfo = .loaded(ContextInspectResponse.preview)
         viewModel.versionInformation = .loaded(SystemVersionResponse.preview)
         viewModel.systemInfo = .loaded(SystemInfoResponse.preview["default"]!)
         return viewModel

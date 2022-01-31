@@ -20,7 +20,7 @@ struct AddServerView: View {
     
     var body: some View {
         NavigationView {
-            Form {
+            List {
                 Section {
                     VStack(alignment: .trailing) {
                         RespondableTextField(title: "URL", text: $viewModel.url, isActive: !showNext, keyboardType: .URL, autocorrectionType: .no, autocapitalizationType: .none, returnKeyType: .go) {
@@ -150,32 +150,26 @@ struct AddServerView: View {
         guard viewModel.isURLValid else { return }
         Task {
             do {
-                withAnimation {
-                    isConnecting = true
-                }
+                isConnecting = true
                 try await viewModel.connect()
-                withAnimation {
-                    showNext = true
-                }
+                showNext = true
             } catch {
-                withAnimation {
-                    connectionError = error
-                }
+                connectionError = error
             }
-            withAnimation {
-                isConnecting = false
-            }
+            isConnecting = false
         }
     }
     
     func save() {
-        do {
-            try viewModel.save()
-            presentationMode.wrappedValue.dismiss()
-        } catch {
-            withAnimation {
+        Task {
+            do {
+                isConnecting = true
+                try await viewModel.save()
+                presentationMode.wrappedValue.dismiss()
+            } catch {
                 savingError = error
             }
+            isConnecting = false
         }
     }
 }

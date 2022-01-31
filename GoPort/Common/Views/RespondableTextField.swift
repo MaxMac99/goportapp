@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct RespondableTextField: UIViewRepresentable {
-    
     class Coordinator: NSObject, UITextFieldDelegate {
         
         @Binding var text: String

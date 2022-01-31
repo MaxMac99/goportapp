@@ -6,28 +6,48 @@
 //
 
 import SwiftUI
+import GoPortApi
 
 struct ServerContextRowView: View {
-    var server: Server
-    var contextName: String
+    var context: GoPortContext
     var status: ConnectionStatus
+    @Binding var isSelected: Bool
+    
+    @State private var showDetail = false
     
     var body: some View {
-        NavigationLink(destination: ContextDetailView(server: server, contextName: contextName)) {
+        ZStack {
+            NavigationLink(destination: ContextDetailView(context: context), isActive: $showDetail) {
+                EmptyView()
+            }
+            .hidden()
             HStack {
-                Text(contextName)
+                Image(systemName: "checkmark")
+                    .foregroundColor(Color.accentColor)
+                    .opacity(isSelected ? 1 : 0)
+                Text(context.name)
                 Spacer()
                 ConnectionStatusView(status: status)
+                Button {
+                    showDetail = true
+                } label: {
+                    Image(systemName: "i.circle")
+                }
+                .buttonStyle(BorderlessButtonStyle())
             }
         }
-        .padding(.leading, 16)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            isSelected.toggle()
+        }
     }
 }
 
 struct ServerContextRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ServerContextRowView(server: Server.preview.first!, contextName: "default", status: .connected)
-        ServerContextRowView(server: Server.preview[1], contextName: "default", status: .connecting)
-        ServerContextRowView(server: Server.preview[2], contextName: "default", status: .disconnected)
+        List {
+            ServerContextRowView(context: Server.preview.first!.contexts.first!, status: .connected, isSelected: .constant(false))
+            ServerContextRowView(context: Server.preview[1].contexts.first!, status: .connecting, isSelected: .constant(true))
+        }
     }
 }

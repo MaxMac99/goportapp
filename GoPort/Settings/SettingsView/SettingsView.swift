@@ -16,26 +16,40 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                if serverService.servers.isEmpty {
-                    Button {
-                         showAddServer = true
-                    } label: {
-                        Label("Add Server", systemImage: "plus.circle")
-                    }
-                }
                 Section("Servers") {
+                    if serverService.servers.isEmpty {
+                        Button {
+                            showAddServer = true
+                        } label: {
+                            Label("Add Server", systemImage: "plus.circle")
+                        }
+                    }
                     ForEach(serverService.servers) { server in
-                        ServerRowView(server: server, status: viewModel.serverStatus[server]?.status ?? .connecting, isSelected: serverService.selectedServer == server)
+                        ServerRowView(server: server, status: viewModel.statusForServer(server))
                             .task {
-                                if viewModel.serverStatus[server] == nil {
-                                    await viewModel.pingServer(server)
-                                }
+                                await viewModel.pingServer(server)
                             }
-                        if let contexts = viewModel.serverStatus[serverService.servers.first!]?.contexts {
-                            ForEach(contexts, id: \.context) { contextName, status in
-                                ServerContextRowView(server: server, contextName: contextName, status: status)
+                        if let contexts = server.contexts, viewModel.statusForServer(server) != .disconnected {
+                            ForEach(contexts.sorted(by: {
+                                if $0.name == "default" {
+                                    return true
+                                }
+                                if $1.name == "default" {
+                                    return false
+                                }
+                                return $0.name < $1.name
+                            })) { context in
+                                ServerContextRowView(context: context, status: viewModel.statusForContext(context, in: server), isSelected: Binding(get: {
+                                    server == serverService.selectedServer && server.selectedContexts.contains(context)
+                                }, set: { _ in
+                                    serverService.select(context: context, on: server)
+                                }))
+                                    .deleteDisabled(true)
                             }
                         }
+                    }
+                    .onDelete { indexSet in
+                        serverService.servers.remove(atOffsets: indexSet)
                     }
                 }
             }

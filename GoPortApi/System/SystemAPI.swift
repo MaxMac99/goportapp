@@ -81,7 +81,7 @@ public struct SystemAPI {
      - returns: String
      */
     public static func systemPing(host: URL, context: [String]? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> SystemPingResponseSummary {
-        let response: APIResponse<SystemPingResponse> = try await session.load(APIRequest(method: .GET, host: host, path: SystemAPIPath.systemPing, query: [
+        let response: APIResponse<SystemPingResponse> = try await session.loadResponse(APIRequest(method: .GET, host: host, path: SystemAPIPath.systemPing, query: [
             "context": context,
         ]))
         
@@ -98,7 +98,7 @@ public struct SystemAPI {
      - returns: String
      */
     public static func systemPingHead(host: URL, context: String? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> SystemPingHeader {
-        let response: APIEmptyResponse = try await session.load(APIRequest(method: .HEAD, host: host, path: SystemAPIPath.systemPingHead, query: [
+        let response: APIEmptyResponse = try await session.loadResponse(APIRequest(method: .HEAD, host: host, path: SystemAPIPath.systemPingHead, query: [
             "context": context,
         ]))
         return try SystemPingHeader(response.headers)

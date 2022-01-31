@@ -9,9 +9,9 @@ import SwiftUI
 import GoPortApi
 
 struct ContextDetailView: View {
-    var server: Server
-    var contextName: String? = nil
+    var context: GoPortContext
     @StateObject var viewModel = ContextDetailViewModel()
+    @Environment(\.presentationMode) var presenationMode
     
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -27,39 +27,21 @@ struct ContextDetailView: View {
             contextSection
         }
         .task {
-            viewModel.setup(server: server, contextName: contextName)
+            viewModel.setup(context: context)
             await viewModel.load()
-        }
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Menu {
-                    Button {
-                        
-                    } label: {
-                        Label("Use this server", systemImage: "checkmark")
-                    }
-                    Button {
-                        
-                    } label: {
-                        Label("Delete", systemImage: "trash")
-                    }
-                } label: {
-                    Label("Menu", systemImage: "ellipsis.circle")
-                }
-            }
         }
         .navigationTitle(viewModel.title)
     }
     
     private var dockPortSection: some View {
         Section("DockPort Server") {
-            DetailRowView(label: "Name", detail: server.name)
-            DetailRowView(label: "URL", detail: server.host.absoluteString)
-            if let content = viewModel.pingInformation.content {
-                DetailRowView(label: "GoPort Version", detail: content.goportVersion)
+            DetailRowView(label: "Name", detail: context.server.name)
+            DetailRowView(label: "URL", detail: context.server.host.absoluteString)
+            if let content = viewModel.goportVersion.content, let version = content {
+                DetailRowView(label: "GoPort Version", detail: version)
             }
             
-            if viewModel.pingInformation.isLoading {
+            if viewModel.goportVersion.isLoading {
                 ProgressView()
             }
         }
@@ -67,10 +49,8 @@ struct ContextDetailView: View {
     
     private var contextHostSection: some View {
         Section("Context Host") {
-            if let contextName = viewModel.contextName {
-                DetailRowView(label: "Name", detail: contextName)
-            }
-            if let description = viewModel.context.content?.description {
+            DetailRowView(label: "Name", detail: context.name)
+            if let description = viewModel.contextInfo.content?.description {
                 DetailRowView(label: "Description", detail: description)
             }
             if let content = viewModel.versionInformation.content {
@@ -90,7 +70,7 @@ struct ContextDetailView: View {
                     DetailRowView(label: "Build Time", detail: dateFormatter.string(from: buildTime))
                 }
             }
-            if let context = viewModel.context.content {
+            if let context = viewModel.contextInfo.content {
                 if let orchestrator = context.stackOrchestrator {
                     DetailRowView(label: "Orchestrator", detail: orchestrator)
                 }
@@ -105,7 +85,7 @@ struct ContextDetailView: View {
                     }
                 }
             }
-            if viewModel.versionInformation.isLoading || viewModel.context.isLoading {
+            if viewModel.versionInformation.isLoading || viewModel.contextInfo.isLoading {
                 ProgressView()
             }
         }
@@ -156,7 +136,7 @@ struct ContextDetailView: View {
 struct ContextDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ContextDetailView(server: Server.preview.first!, contextName: "default", viewModel: ContextDetailViewModel.preview)
+            ContextDetailView(context: Server.preview.first!.contexts.first!, viewModel: ContextDetailViewModel.preview)
         }
     }
 }
