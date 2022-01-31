@@ -38,7 +38,7 @@ class ServerService: ObservableObject {
                     }
                     return nil
                 }).contains(selectedServer) {
-                    self.selectedServer = nil
+                    self.selectedServer = servers.first
                 }
             }
             UserDefaults.standard.servers = servers
