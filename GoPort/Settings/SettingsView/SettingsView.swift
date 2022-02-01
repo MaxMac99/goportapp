@@ -12,6 +12,7 @@ struct SettingsView: View {
     @StateObject var viewModel = SettingsViewModel()
     
     @State private var showAddServer = false
+    @Environment(\.editMode) var editMode
     
     var body: some View {
         NavigationView {
@@ -30,26 +31,27 @@ struct SettingsView: View {
                                 await viewModel.pingServer(server)
                             }
                         if let contexts = server.contexts, viewModel.statusForServer(server) != .disconnected {
-                            ForEach(contexts.sorted(by: {
-                                if $0.name == "default" {
-                                    return true
-                                }
-                                if $1.name == "default" {
-                                    return false
-                                }
-                                return $0.name < $1.name
-                            })) { context in
+                            ForEach(contexts) { context in
                                 ServerContextRowView(context: context, status: viewModel.statusForContext(context, in: server), isSelected: Binding(get: {
                                     server == serverService.selectedServer && server.selectedContexts.contains(context)
                                 }, set: { _ in
                                     serverService.select(context: context, on: server)
                                 }))
                                     .deleteDisabled(true)
+                                    .moveDisabled(contexts.count <= 1)
+                            }
+                            .onMove { indexSet, offset in
+                                serverService.moveContext(on: server, fromOffset: indexSet, toOffset: offset)
                             }
                         }
                     }
                     .onDelete { indexSet in
                         serverService.servers.remove(atOffsets: indexSet)
+                        if serverService.servers.isEmpty {
+                            withAnimation {
+                                editMode?.wrappedValue = .inactive
+                            }
+                        }
                     }
                 }
             }
@@ -60,6 +62,9 @@ struct SettingsView: View {
                     } label: {
                         Label("Add Item", systemImage: "plus")
                     }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
                 }
             }
             .navigationTitle("Settings")

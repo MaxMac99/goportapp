@@ -16,7 +16,7 @@ extension Server {
      - parameter all: (query) Filter output based on conditions provided. (optional, default to false)
      - returns: [String: Stacks]
      */
-    public func projects(all: Bool = false) async throws -> [GoPortContext:[ProjectSummary]] {
+    public func projects(all: Bool = false) async throws -> [(context: GoPortContext, response: [ProjectSummary])] {
         try stringToDockerContext(try await ProjectAPI.projectList(host: host, context: selectedContextsString, all: all, session: session))
     }
     

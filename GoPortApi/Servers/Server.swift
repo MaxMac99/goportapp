@@ -15,7 +15,7 @@ public struct Server {
     
     public let name: String
     public let host: URL
-    public internal(set) var contexts: [GoPortContext] = []
+    public private(set) var contexts: [GoPortContext] = []
     public private(set) var allContextsSelected: Bool = true
     public private(set) var selectedContexts: [GoPortContext] = []
     public var session: NetworkingSession = .shared
@@ -53,20 +53,19 @@ public struct Server {
                 return context
             })
             .compactMap({ $0 })
+            .sorted(by: selectedContextComparator)
         }
     }
     
     mutating internal func updateContexts(_ contexts: [String]) {
-        var newContexts: [GoPortContext] = []
-        if !self.contexts.isEmpty {
-            newContexts = contexts.filter({ context in
+        let newContexts: [GoPortContext] = contexts
+            .filter({ context in
                 !self.contexts.contains(where: { $0.name == context })
-            }).map({ context in
-                self.contexts.first(where: { $0.name == context })
             })
+            .map({ GoPortContext(name: $0, server: self) })
             .compactMap({ $0 })
-        }
-        self.contexts = contexts.map({ GoPortContext(name: $0, server: self) })
+            .sorted(by: contextComparator)
+        self.contexts.append(contentsOf: newContexts)
         if allContextsSelected {
             self.selectedContexts = self.contexts
         } else {
@@ -78,6 +77,7 @@ public struct Server {
             })
             .compactMap({ $0 })
             selectedContexts.append(contentsOf: newContexts)
+            selectedContexts = selectedContexts.sorted(by: selectedContextComparator)
         }
     }
     
@@ -96,19 +96,44 @@ public struct Server {
         } else {
             selectedContexts.append(context)
         }
+        selectedContexts = selectedContexts.sorted(by: selectedContextComparator)
         
         if selectedContexts == contexts {
             allContextsSelected = true
         }
     }
     
-    internal func stringToDockerContext<Values>(_ items: [String:Values]) throws -> [GoPortContext:Values] {
-        Dictionary(uniqueKeysWithValues: try items.map({ (key: String, value: Values) in
+    public mutating func moveContext(fromOffset: IndexSet, toOffset: Int) {
+        contexts.move(fromOffsets: fromOffset, toOffset: toOffset)
+        selectedContexts = selectedContexts.sorted(by: selectedContextComparator)
+    }
+    
+    private func contextComparator(left: GoPortContext, right: GoPortContext) -> Bool {
+        if left.name == "default" {
+            return true
+        }
+        if right.name == "default" {
+            return false
+        }
+        return left.name < right.name
+    }
+    
+    private func selectedContextComparator(left: GoPortContext, right: GoPortContext) -> Bool {
+        guard let indexL = contexts.firstIndex(of: left), let indexR = contexts.firstIndex(of: right) else {
+            return contextComparator(left: left, right: right)
+        }
+        return indexL < indexR
+    }
+    
+    internal func stringToDockerContext<Values>(_ items: [String:Values]) throws -> [(context: GoPortContext, response: Values)] {
+        try items.map({ (key: String, value: Values) in
             guard let context = contexts.first(where: { $0.name == key }) else {
                 throw ServerError.contextNotFound
             }
             return (context, value)
-        }))
+        }).sorted(by: {
+            selectedContextComparator(left: $0.0, right: $1.0)
+        })
     }
 }
 

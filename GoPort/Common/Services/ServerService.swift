@@ -16,7 +16,7 @@ class ServerService: ObservableObject {
     
     fileprivate init(servers: [Server], selectedServer: Server?) {
         self.servers = servers
-        self.selectedServer = selectedServer
+        self.selectedServerRef = selectedServer?.name
     }
     
     enum SaveServerError: Error {
@@ -38,15 +38,19 @@ class ServerService: ObservableObject {
                     }
                     return nil
                 }).contains(selectedServer) {
-                    self.selectedServer = servers.first
+                    self.selectedServerRef = servers.first?.name
                 }
             }
             UserDefaults.standard.servers = servers
         }
     }
-    @Published var selectedServer: Server? = UserDefaults.standard.selectedServer {
+    var selectedServer: Server? {
+        guard let ref = selectedServerRef else { return nil }
+        return servers.first(where: { $0.name == ref })
+    }
+    private var selectedServerRef: String? = UserDefaults.standard.selectedServerRef {
         didSet {
-            UserDefaults.standard.selectedServer = selectedServer
+            UserDefaults.standard.selectedServerRef = selectedServerRef
         }
     }
     
@@ -66,14 +70,14 @@ class ServerService: ObservableObject {
         
         servers.append(server)
         if selectedServer == nil {
-            selectedServer = servers.first
+            selectedServerRef = servers.first?.name
         }
     }
     
     func select(context: GoPortContext, on server: Server) {
         guard let index = servers.firstIndex(of: server) else { return }
         if selectedServer != server {
-            selectedServer = server
+            selectedServerRef = server.name
         } else {
             servers[index].toggle(context: context)
         }
@@ -85,6 +89,13 @@ class ServerService: ObservableObject {
         }
         servers.remove(at: index)
     }
+    
+    func moveContext(on server: Server, fromOffset: IndexSet, toOffset: Int) {
+        guard let index = servers.firstIndex(of: server) else {
+            return
+        }
+        servers[index].moveContext(fromOffset: fromOffset, toOffset: toOffset)
+    }
 }
 
 fileprivate extension UserDefaults {
@@ -94,15 +105,6 @@ fileprivate extension UserDefaults {
         }
         set {
             set(newValue, forKey: "Servers")
-        }
-    }
-    
-    @objc private var selectedServerData: Data? {
-        get {
-            return data(forKey: "SelectedServer")
-        }
-        set {
-            set(newValue, forKey: "SelectedServer")
         }
     }
 }
@@ -116,12 +118,12 @@ extension UserDefaults {
             serversData = try? JSONEncoder().encode(newValue)
         }
     }
-    fileprivate(set) var selectedServer: Server? {
+    fileprivate var selectedServerRef: String? {
         get {
-            return selectedServerData.jsonDecoded(Server.self)
+            return string(forKey: "SelectedServer")
         }
         set {
-            selectedServerData = try? JSONEncoder().encode(newValue)
+            set(newValue, forKey: "SelectedServer")
         }
     }
 }

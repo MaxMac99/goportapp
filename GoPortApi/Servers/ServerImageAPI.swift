@@ -16,7 +16,7 @@ extension Server {
      - parameter filters: (query) A JSON encoded value of the filters (a &#x60;map[string][]string&#x60;) to process on the list of build cache objects.  Available filters:  - &#x60;until&#x3D;&lt;duration&gt;&#x60;: duration relative to daemon&#39;s time, during which build cache was not used, in Go&#39;s duration format (e.g., &#39;24h&#39;) - &#x60;id&#x3D;&lt;id&gt;&#x60; - &#x60;parent&#x3D;&lt;id&gt;&#x60; - &#x60;type&#x3D;&lt;string&gt;&#x60; - &#x60;description&#x3D;&lt;string&gt;&#x60; - &#x60;inuse&#x60; - &#x60;shared&#x60; - &#x60;private&#x60;  (optional)
      - returns: BuildPruneResponse
      */
-    public func pruneBuild(keepStorage: Int64? = nil, all: Bool? = nil, filters: String? = nil) async throws -> [GoPortContext:BuildPruneResponseItem] {
+    public func pruneBuild(keepStorage: Int64? = nil, all: Bool? = nil, filters: String? = nil) async throws -> [(context: GoPortContext, response: BuildPruneResponseItem)] {
         try stringToDockerContext(try await ImageAPI.buildPrune(host: host, context: selectedContextsString, keepStorage: keepStorage, all: all, filters: filters, session: session))
     }
     
@@ -29,7 +29,7 @@ extension Server {
      - parameter digests: (query) Show digest information as a &#x60;RepoDigests&#x60; field on each image. (optional, default to false)
      - returns: [String: [ImageSummary]]
      */
-    public func images(all: Bool = false, filters: String? = nil, digests: Bool = false) async throws -> [GoPortContext:ImageListResponseItem] {
+    public func images(all: Bool = false, filters: String? = nil, digests: Bool = false) async throws -> [(context: GoPortContext, response: ImageListResponseItem)] {
         try stringToDockerContext(try await ImageAPI.imageList(host: host, context: selectedContextsString, all: all, filters: filters, digests: digests, session: session))
     }
     
@@ -39,7 +39,7 @@ extension Server {
      - parameter filters: (query) Filters to process on the prune list, encoded as JSON (a &#x60;map[string][]string&#x60;). Available filters:  - &#x60;dangling&#x3D;&lt;boolean&gt;&#x60; When set to &#x60;true&#x60; (or &#x60;1&#x60;), prune only    unused *and* untagged images. When set to &#x60;false&#x60;    (or &#x60;0&#x60;), all unused images are pruned. - &#x60;until&#x3D;&lt;string&gt;&#x60; Prune images created before this timestamp. The &#x60;&lt;timestamp&gt;&#x60; can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. &#x60;10m&#x60;, &#x60;1h30m&#x60;) computed relative to the daemon machine’s time. - &#x60;label&#x60; (&#x60;label&#x3D;&lt;key&gt;&#x60;, &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;, &#x60;label!&#x3D;&lt;key&gt;&#x60;, or &#x60;label!&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;) Prune images with (or without, in case &#x60;label!&#x3D;...&#x60; is used) the specified labels.  (optional)
      - returns: ImagePruneResponse
      */
-    public func pruneImages(filters: String? = nil) async throws -> [GoPortContext:ImagePruneResponseItem] {
+    public func pruneImages(filters: String? = nil) async throws -> [(context: GoPortContext, response: ImagePruneResponseItem)] {
         try stringToDockerContext(try await ImageAPI.imagePrune(host: host, context: selectedContextsString, filters: filters, session: session))
     }
     

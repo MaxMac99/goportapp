@@ -9,7 +9,7 @@ import Foundation
 
 public struct ServerPingResponse {
     public var goportVersion: String?
-    public var contexts: [GoPortContext:SystemPingResponseItem]
+    public var contexts: [(context: GoPortContext, response: SystemPingResponseItem)]
 }
 
 extension Server {
@@ -19,7 +19,7 @@ extension Server {
      - GET /system/df
      - returns: [GoPortContext: SystemDataUsageResponseItem]
      */
-    public func dataUsage() async throws -> [GoPortContext:SystemDataUsageResponseItem] {
+    public func dataUsage() async throws -> [(context: GoPortContext, response: SystemDataUsageResponseItem)] {
         try stringToDockerContext(try await SystemAPI.systemDataUsage(host: host, context: selectedContextsString, session: session))
     }
     
@@ -43,7 +43,7 @@ extension Server {
      - GET /info
      - returns: [GoPortContext: SystemInfoResponse]
      */
-    public func info() async throws -> [GoPortContext:SystemInfoResponseItem] {
+    public func info() async throws -> [(context: GoPortContext, response: SystemInfoResponseItem)] {
         try stringToDockerContext(try await SystemAPI.systemInfo(host: host, context: selectedContextsString, session: session))
     }
     

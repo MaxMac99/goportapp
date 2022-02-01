@@ -52,3 +52,11 @@ extension Dictionary where Key == String {
         return result
     }
 }
+
+#if DEBUG
+extension GoPortContext {
+    public static let preview: [GoPortContext] = {
+        Server.preview.first!.contexts
+    }()
+}
+#endif
