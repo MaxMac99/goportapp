@@ -11,18 +11,13 @@ import GoPortApi
 @MainActor
 class ContextDetailViewModel: ObservableObject {
     private(set) var context: GoPortContext?
-    @Published fileprivate(set) var contextInfo: Loadable<ContextInspectResponse> = .loading
-    @Published fileprivate(set) var goportVersion: Loadable<String?> = .loading
-    @Published fileprivate(set) var versionInformation: Loadable<SystemVersionResponse> = .loading
-    @Published fileprivate(set) var systemInfo: Loadable<SystemInfoResponseItem> = .loading
+    @Published fileprivate(set) var contextInfo: Loadable<ContextInspectResponse> = .notStarted
+    @Published fileprivate(set) var goportVersion: Loadable<String?> = .notStarted
+    @Published fileprivate(set) var versionInformation: Loadable<SystemVersionResponse> = .notStarted
+    @Published fileprivate(set) var systemInfo: Loadable<SystemInfoResponseItem> = .notStarted
     
     var title: String {
         context?.name ?? ""
-    }
-    
-    enum ContextLoadingError: Error {
-        case invalidResponse
-        case noContext
     }
     
     func setup(context: GoPortContext) {

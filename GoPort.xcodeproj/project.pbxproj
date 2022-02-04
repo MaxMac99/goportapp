@@ -122,6 +122,7 @@
 		772AC36327A5A91400C1D348 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC36227A5A91400C1D348 /* Server.swift */; };
 		772AC36527A5A9D500C1D348 /* GoPortContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC36427A5A9D500C1D348 /* GoPortContext.swift */; };
 		772AC36927A5B72700C1D348 /* ServerSystemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772AC36827A5B72700C1D348 /* ServerSystemAPI.swift */; };
+		77360DCA27AB274700E9604B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77360DC927AB274700E9604B /* LoadingView.swift */; };
 		773E5B64277E62E70048E205 /* SystemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B63277E62E70048E205 /* SystemAPI.swift */; };
 		773E5B67277E63350048E205 /* SystemDataUsageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B66277E63350048E205 /* SystemDataUsageResponse.swift */; };
 		773E5B69277E633F0048E205 /* SystemEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773E5B68277E633F0048E205 /* SystemEventsResponse.swift */; };
@@ -210,12 +211,14 @@
 		77C0789F2777D3D4007CD533 /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0789E2777D3D4007CD533 /* ServerService.swift */; };
 		77C078A22777D52C007CD533 /* JsonDecodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078A12777D52C007CD533 /* JsonDecodingHelper.swift */; };
 		77E0890D27A8834200430D55 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890C27A8834200430D55 /* Helper.swift */; };
-		77E0890F27A8855F00430D55 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890E27A8855F00430D55 /* Image.swift */; };
+		77E0890F27A8855F00430D55 /* GoPortImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890E27A8855F00430D55 /* GoPortImage.swift */; };
 		77E0891127A8868A00430D55 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0891027A8868A00430D55 /* Volume.swift */; };
 		77E0891327A8869200430D55 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0891227A8869200430D55 /* Network.swift */; };
 		77E0891527A886E700430D55 /* ServerImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0891427A886E700430D55 /* ServerImageAPI.swift */; };
 		77E0891727A895A800430D55 /* ServerVolumeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0891627A895A800430D55 /* ServerVolumeAPI.swift */; };
 		77E0891927A8986900430D55 /* ServerNetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0891827A8986900430D55 /* ServerNetworkAPI.swift */; };
+		77E0892527A9DD2B00430D55 /* ImagesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0892427A9DD2B00430D55 /* ImagesListViewModel.swift */; };
+		77E0892727A9DD3800430D55 /* ImagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0892627A9DD3800430D55 /* ImagesListView.swift */; };
 		77E49C76279A32A4006032C3 /* ServerContextRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49C75279A32A4006032C3 /* ServerContextRowView.swift */; };
 		77E49C78279C4E23006032C3 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49C77279C4E23006032C3 /* ImageAPI.swift */; };
 		77E49C7D279C519A006032C3 /* ContainerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E49C7C279C519A006032C3 /* ContainerConfig.swift */; };
@@ -348,6 +351,9 @@
 		77F1927127973BCD00D86ACD /* SystemEventsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1927027973BCD00D86ACD /* SystemEventsTest.swift */; };
 		77F19273279748F500D86ACD /* AddServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F19272279748F500D86ACD /* AddServerView.swift */; };
 		77F1927627974D3600D86ACD /* AddServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1927527974D3600D86ACD /* AddServerViewModel.swift */; };
+		77FF778127AC4A3600AD1AEE /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FF778027AC4A3600AD1AEE /* ImageDetailView.swift */; };
+		77FF778427AC4A7700AD1AEE /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FF778327AC4A7700AD1AEE /* ImageDetailViewModel.swift */; };
+		77FF778627AC689700AD1AEE /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FF778527AC689700AD1AEE /* FlexibleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,6 +523,7 @@
 		772AC36227A5A91400C1D348 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		772AC36427A5A9D500C1D348 /* GoPortContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortContext.swift; sourceTree = "<group>"; };
 		772AC36827A5B72700C1D348 /* ServerSystemAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSystemAPI.swift; sourceTree = "<group>"; };
+		77360DC927AB274700E9604B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		773E5B63277E62E70048E205 /* SystemAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAPI.swift; sourceTree = "<group>"; };
 		773E5B66277E63350048E205 /* SystemDataUsageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemDataUsageResponse.swift; sourceTree = "<group>"; };
 		773E5B68277E633F0048E205 /* SystemEventsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemEventsResponse.swift; sourceTree = "<group>"; };
@@ -606,12 +613,14 @@
 		77C0789E2777D3D4007CD533 /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		77C078A12777D52C007CD533 /* JsonDecodingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodingHelper.swift; sourceTree = "<group>"; };
 		77E0890C27A8834200430D55 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		77E0890E27A8855F00430D55 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		77E0890E27A8855F00430D55 /* GoPortImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortImage.swift; sourceTree = "<group>"; };
 		77E0891027A8868A00430D55 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		77E0891227A8869200430D55 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		77E0891427A886E700430D55 /* ServerImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerImageAPI.swift; sourceTree = "<group>"; };
 		77E0891627A895A800430D55 /* ServerVolumeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerVolumeAPI.swift; sourceTree = "<group>"; };
 		77E0891827A8986900430D55 /* ServerNetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerNetworkAPI.swift; sourceTree = "<group>"; };
+		77E0892427A9DD2B00430D55 /* ImagesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewModel.swift; sourceTree = "<group>"; };
+		77E0892627A9DD3800430D55 /* ImagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListView.swift; sourceTree = "<group>"; };
 		77E49C75279A32A4006032C3 /* ServerContextRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerContextRowView.swift; sourceTree = "<group>"; };
 		77E49C77279C4E23006032C3 /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		77E49C7C279C519A006032C3 /* ContainerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerConfig.swift; sourceTree = "<group>"; };
@@ -744,6 +753,9 @@
 		77F1927027973BCD00D86ACD /* SystemEventsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEventsTest.swift; sourceTree = "<group>"; };
 		77F19272279748F500D86ACD /* AddServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServerView.swift; sourceTree = "<group>"; };
 		77F1927527974D3600D86ACD /* AddServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServerViewModel.swift; sourceTree = "<group>"; };
+		77FF778027AC4A3600AD1AEE /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		77FF778327AC4A7700AD1AEE /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
+		77FF778527AC689700AD1AEE /* FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -986,7 +998,7 @@
 				772AC36427A5A9D500C1D348 /* GoPortContext.swift */,
 				776B553227A69A4200FE0759 /* Container.swift */,
 				776B553627A6B4BB00FE0759 /* Project.swift */,
-				77E0890E27A8855F00430D55 /* Image.swift */,
+				77E0890E27A8855F00430D55 /* GoPortImage.swift */,
 				77E0891027A8868A00430D55 /* Volume.swift */,
 				77E0891227A8869200430D55 /* Network.swift */,
 				772AC36827A5B72700C1D348 /* ServerSystemAPI.swift */,
@@ -1202,6 +1214,8 @@
 				773E8EBD2792453F00BFF140 /* DetailRowView.swift */,
 				773E8EC12792CD4E00BFF140 /* LoadableView.swift */,
 				774DA9BB27975B4700E26572 /* RespondableTextField.swift */,
+				77360DC927AB274700E9604B /* LoadingView.swift */,
+				77FF778527AC689700AD1AEE /* FlexibleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1338,6 +1352,7 @@
 			children = (
 				77C0785C2777BE87007CD533 /* GoPortApp.swift */,
 				771D3190277A2E67005BFCF3 /* GoPortMainView.swift */,
+				77E0891A27A8A65600430D55 /* Images */,
 				77C078912777C9E8007CD533 /* Settings */,
 				77C078A02777D506007CD533 /* Common */,
 				77C078602777BE89007CD533 /* Assets.xcassets */,
@@ -1399,6 +1414,24 @@
 				773E8EBF2792C85B00BFF140 /* Loadable.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		77E0891A27A8A65600430D55 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				77E0891B27A8A66300430D55 /* ImagesListView */,
+				77FF778227AC4A3900AD1AEE /* ImageDetailView */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		77E0891B27A8A66300430D55 /* ImagesListView */ = {
+			isa = PBXGroup;
+			children = (
+				77E0892627A9DD3800430D55 /* ImagesListView.swift */,
+				77E0892427A9DD2B00430D55 /* ImagesListViewModel.swift */,
+			);
+			path = ImagesListView;
 			sourceTree = "<group>";
 		};
 		77E49C86279C5245006032C3 /* Common */ = {
@@ -1718,6 +1751,15 @@
 				77F1927527974D3600D86ACD /* AddServerViewModel.swift */,
 			);
 			path = AddServerView;
+			sourceTree = "<group>";
+		};
+		77FF778227AC4A3900AD1AEE /* ImageDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				77FF778027AC4A3600AD1AEE /* ImageDetailView.swift */,
+				77FF778327AC4A7700AD1AEE /* ImageDetailViewModel.swift */,
+			);
+			path = ImageDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2064,7 +2106,7 @@
 				77E49D32279E15C2006032C3 /* PortBinding.swift in Sources */,
 				773E5B81277E65EB0048E205 /* RegistryServiceConfig.swift in Sources */,
 				77E49C93279C545E006032C3 /* ImageSearchResponseItem.swift in Sources */,
-				77E0890F27A8855F00430D55 /* Image.swift in Sources */,
+				77E0890F27A8855F00430D55 /* GoPortImage.swift in Sources */,
 				77E49D1A279E14E4006032C3 /* HostConfig.swift in Sources */,
 				773E8EDA279376E400BFF140 /* APIPathProtocol.swift in Sources */,
 				772AC32B27A3FB5200C1D348 /* ProjectPreference.swift in Sources */,
@@ -2261,17 +2303,23 @@
 				773E8EB827922F8400BFF140 /* ContextDetailViewModel.swift in Sources */,
 				773E8EA62791E44D00BFF140 /* ContextDetailView.swift in Sources */,
 				773E8EB5279221A400BFF140 /* ConnectionStatusView.swift in Sources */,
+				77FF778127AC4A3600AD1AEE /* ImageDetailView.swift in Sources */,
 				773E8EBE2792453F00BFF140 /* DetailRowView.swift in Sources */,
+				77E0892727A9DD3800430D55 /* ImagesListView.swift in Sources */,
+				77360DCA27AB274700E9604B /* LoadingView.swift in Sources */,
 				77C078A22777D52C007CD533 /* JsonDecodingHelper.swift in Sources */,
 				77C0789F2777D3D4007CD533 /* ServerService.swift in Sources */,
+				77E0892527A9DD2B00430D55 /* ImagesListViewModel.swift in Sources */,
 				77C078982777CB3A007CD533 /* SettingsView.swift in Sources */,
 				773E8EBC27923DE500BFF140 /* Utilities.swift in Sources */,
 				773E8EC02792C85B00BFF140 /* Loadable.swift in Sources */,
 				774DA9BD27975B4700E26572 /* RespondableTextField.swift in Sources */,
 				77F19273279748F500D86ACD /* AddServerView.swift in Sources */,
+				77FF778427AC4A7700AD1AEE /* ImageDetailViewModel.swift in Sources */,
 				771D3191277A2E67005BFCF3 /* GoPortMainView.swift in Sources */,
 				77E49C76279A32A4006032C3 /* ServerContextRowView.swift in Sources */,
 				773E8EA927920D0300BFF140 /* SettingsViewModel.swift in Sources */,
+				77FF778627AC689700AD1AEE /* FlexibleView.swift in Sources */,
 				77F1927627974D3600D86ACD /* AddServerViewModel.swift in Sources */,
 				773E8EC22792CD4E00BFF140 /* LoadableView.swift in Sources */,
 				77C0789C2777CBF3007CD533 /* ServerRowView.swift in Sources */,

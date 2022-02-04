@@ -14,7 +14,7 @@ public struct ImageResponse: Codable, Hashable {
     public var repoDigests: [String]? = nil
     public var parent: String
     public var comment: String
-    public var created: String
+    public var created: Date
     public var container: String
     public var containerConfig: ContainerConfig? = nil
     public var dockerVersion: String

@@ -8,13 +8,16 @@
 import SwiftUI
 import GoPortApi
 
-struct LoadableView<Element, ErrorView: View, ContentView: View>: View {
+struct LoadableView<Element, ErrorView: View, ContentView: View, LoadingView: View>: View {
     var loadable: Loadable<Element>
-    var errorView: (Error) -> ErrorView
     var contentView: (Element) -> ContentView
+    var errorView: (Error) -> ErrorView
+    var loadingView: () -> LoadingView
     
     var body: some View {
         switch loadable {
+        case .notStarted:
+            EmptyView()
         case .loading:
             ProgressView()
         case .error(let error):
@@ -23,29 +26,63 @@ struct LoadableView<Element, ErrorView: View, ContentView: View>: View {
             contentView(content)
         }
     }
+    
+    init(loadable: Loadable<Element>, _ contentView: @escaping (Element) -> ContentView, errorView: @escaping (Error) -> ErrorView, loadingView: @escaping () -> LoadingView) {
+        self.loadable = loadable
+        self.contentView = contentView
+        self.errorView = errorView
+        self.loadingView = loadingView
+    }
+}
+
+extension LoadableView where ErrorView == EmptyView {
+    init(loadable: Loadable<Element>, _ contentView: @escaping (Element) -> ContentView, loadingView: @escaping () -> LoadingView) {
+        self.loadable = loadable
+        self.contentView = contentView
+        self.errorView = { _ in EmptyView() }
+        self.loadingView = loadingView
+    }
+}
+
+extension LoadableView where LoadingView == EmptyView {
+    init(loadable: Loadable<Element>, _ contentView: @escaping (Element) -> ContentView, errorView: @escaping (Error) -> ErrorView) {
+        self.loadable = loadable
+        self.contentView = contentView
+        self.errorView = errorView
+        self.loadingView = { EmptyView() }
+    }
+}
+
+extension LoadableView where ErrorView == EmptyView, LoadingView == EmptyView {
+    init(loadable: Loadable<Element>, _ contentView: @escaping (Element) -> ContentView) {
+        self.loadable = loadable
+        self.contentView = contentView
+        self.errorView = { _ in EmptyView() }
+        self.loadingView = { EmptyView() }
+    }
 }
 
 #if DEBUG
 struct LoadableView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            LoadableView(loadable: .loaded("Test")) { error in
+            LoadableView(loadable: .loaded("Test")) { item in
+                Text(item)
+            } errorView: { error in
                 Text("Received: \(error.localizedDescription)")
                     .foregroundColor(.red)
-            } contentView: { item in
-                Text(item)
             }
-            LoadableView(loadable: Loadable<String>.loading) { error in
+            LoadableView(loadable: Loadable<String>.loading) { item in
+                Text(item)
+            } errorView: { error in
                 Text("Received: \(error.localizedDescription)")
                     .foregroundColor(.red)
-            } contentView: { item in
-                Text(item)
             }
-            LoadableView(loadable: Loadable<String>.error(APIResponseError.unknown(nil))) { error in
+            LoadableView(loadable: Loadable<String>.error(APIResponseError.unknown(nil))) { item in
+                Text(item)
+            } errorView: { error in
                 Text("\(error.localizedDescription)")
                     .foregroundColor(.red)
-            } contentView: { item in
-                Text(item)
             }
         }
     }

@@ -1,7 +1,7 @@
 {
     "Id": "sha256:0ed6cc16db71fe88a719ffa7c0dd4f255b3257d729c11b336e8a3063f5637444",
     "RepoTags": [
-        "goport:latest"
+        "maxmac/goport:latest"
     ],
     "RepoDigests": [],
     "Parent": "",
@@ -37,7 +37,8 @@
         "AttachStdout": false,
         "AttachStderr": false,
         "ExposedPorts": {
-            "9212/tcp": {}
+            "9212/tcp": {},
+            "9163/tcp": {}
         },
         "Tty": false,
         "OpenStdin": false,
@@ -49,6 +50,9 @@
         "Cmd": [
             "./main"
         ],
+        "Healthcheck": {
+            "Interval": 1000000
+        },
         "ArgsEscaped": true,
         "Image": "",
         "Volumes": null,

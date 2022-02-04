@@ -8,6 +8,7 @@
 import Foundation
 
 enum Loadable<Wrapped> {
+    case notStarted
     case loading
     case error(Error)
     case loaded(Wrapped)
@@ -31,6 +32,10 @@ enum Loadable<Wrapped> {
             print("Loadable<\(Wrapped.self)>.error: \(wrappedError)")
             self = .error(wrappedError)
         }
+    }
+    
+    init(_ content: Wrapped) {
+        self = .loaded(content)
     }
     
     var content: Wrapped? {

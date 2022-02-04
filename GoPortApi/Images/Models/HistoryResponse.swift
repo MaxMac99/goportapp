@@ -13,7 +13,7 @@ public typealias HistoryResponse = [HistoryResponseItem]
 public struct HistoryResponseItem: Codable, Hashable {
 
     public var id: String
-    public var created: Int64
+    public var created: Date
     public var createdBy: String
     public var tags: [String]
     public var size: Int64

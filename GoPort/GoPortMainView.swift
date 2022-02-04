@@ -12,6 +12,11 @@ struct GoPortMainView: View {
     
     var body: some View {
         TabView {
+            ImagesListView()
+                .tabItem {
+                    Image(systemName: "externaldrive")
+                    Text("Images")
+                }
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")

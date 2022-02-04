@@ -13,7 +13,7 @@ public struct ImageSummary: Codable, Hashable {
     public var parentId: String
     public var repoTags: [String]
     public var repoDigests: [String]? = nil
-    public var created: Int64
+    public var created: Date
     public var size: Int64
     public var sharedSize: Int64
     public var virtualSize: Int64
@@ -37,5 +37,9 @@ public struct ImageSummary: Codable, Hashable {
 #if DEBUG
 extension ImageSummary: FilePreviewableAsArray {
     public static var previewFilename: String { "ImageListResponse" }
+    
+    public static let preview = {
+        [String:[ImageSummary]].preview.first!.value.first!
+    }()
 }
 #endif
