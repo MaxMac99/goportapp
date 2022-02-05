@@ -34,7 +34,7 @@ struct ImageDetailView: View {
         if let tag = summary.repoTags.first {
             return Utilities.shortTag(tag: tag)
         }
-        return summary.shortId
+        return Utilities.shortId(id: summary.id)
     }
     
     var body: some View {
@@ -191,7 +191,7 @@ struct ImageDetailView: View {
                 ForEach(history, id: \.uniqueId) { item in
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(item.shortId)
+                            Text(Utilities.shortId(id: item.id, length: 8))
                                 .fontWeight(.semibold)
                             Spacer()
                             Text(byteCountFormatter.string(fromByteCount: item.size))
@@ -214,9 +214,6 @@ struct ImageDetailView: View {
 extension HistoryResponseItem {
     var uniqueId: String {
         "\(id)\(created)\(createdBy)"
-    }
-    var shortId: String {
-        Utilities.shortId(id: id)
     }
 }
 

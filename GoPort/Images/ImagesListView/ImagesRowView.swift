@@ -19,7 +19,7 @@ struct ImagesRowView: View {
                     if let name = image.repoTags.first {
                         Text(name)
                     } else {
-                        Text(image.shortId)
+                        Text(Utilities.shortId(id: image.id))
                     }
                     Spacer()
                     Text(byteCountFormatter.string(fromByteCount: image.size))
@@ -27,7 +27,7 @@ struct ImagesRowView: View {
                         .font(Font.callout)
                 }
                 HStack {
-                    Text(image.shortId)
+                    Text(Utilities.shortId(id: image.id))
                         .foregroundColor(Color.gray)
                         .font(Font.subheadline)
                     Spacer()

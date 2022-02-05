@@ -49,11 +49,10 @@ struct Utilities {
         return String(tag[beginOffset..<endOffset])
     }
     
-    static func shortId(id: String) -> String {
+    static func shortId(id: String, length: Int = 8) -> String {
         guard id.starts(with: "sha") else {
             return id
         }
-        let length = 8
         var startOffset = id.startIndex
         if let offset = id.firstIndex(of: ":") {
             startOffset = id.index(offset, offsetBy: 1)

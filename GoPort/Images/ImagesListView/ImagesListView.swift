@@ -54,12 +54,6 @@ struct ImagesListView: View {
     }
 }
 
-extension ImageSummary {
-    var shortId: String {
-        Utilities.shortId(id: id)
-    }
-}
-
 #if DEBUG
 struct ImagesListView_Previews: PreviewProvider {
     static var previews: some View {
