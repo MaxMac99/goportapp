@@ -16,8 +16,9 @@ extension Server {
      - parameter all: (query) Filter output based on conditions provided. (optional, default to false)
      - returns: [String: Stacks]
      */
-    public func projects(all: Bool = false) async throws -> [(context: GoPortContext, response: [ProjectSummary])] {
-        try stringToDockerContext(try await ProjectAPI.projectList(host: host, context: selectedContextsString, all: all, session: session))
+    public func projects(all: Bool = false, stored: Bool = true) async throws -> (stored: [ProjectSummary]?, remote: [(context: GoPortContext, response: [ProjectSummary])]) {
+        let response = try await ProjectAPI.projectList(host: host, context: selectedContextsString, all: all, stored: stored, session: session)
+        return (stored: response.stored, remote: try stringToDockerContext(response.remote))
     }
     
     /**
@@ -41,8 +42,9 @@ extension GoPortContext {
      - parameter all: (query) Filter output based on conditions provided. (optional, default to false)
      - returns: [String: Stacks]
      */
-    public func projects(all: Bool = false) async throws -> [ProjectSummary] {
-        try await ProjectAPI.projectList(host: host, context: [name], all: all, session: session).dockerContext(name)
+    public func projects(all: Bool = false, stored: Bool = true) async throws -> (stored: [ProjectSummary]?, remote: [ProjectSummary]) {
+        let response = try await ProjectAPI.projectList(host: host, context: [name], all: all, stored: stored, session: session)
+        return (stored: response.stored, remote: try response.remote.dockerContext(name))
     }
 }
 

@@ -218,6 +218,11 @@
 		77CAA08527AE82780099CF2D /* ImagesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08427AE82780099CF2D /* ImagesRowView.swift */; };
 		77CAA08A27AED1280099CF2D /* ContainerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08927AED1280099CF2D /* ContainerStateView.swift */; };
 		77CAA08C27AED1330099CF2D /* ContainerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08B27AED1330099CF2D /* ContainerState.swift */; };
+		77CAA09827AED7930099CF2D /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA09727AED7930099CF2D /* ProjectListView.swift */; };
+		77CAA09A27AED7A40099CF2D /* ProjectSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA09927AED7A40099CF2D /* ProjectSectionView.swift */; };
+		77CAA09C27AED7AD0099CF2D /* ProjectRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA09B27AED7AD0099CF2D /* ProjectRowView.swift */; };
+		77CAA09E27AED7B70099CF2D /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA09D27AED7B70099CF2D /* ProjectListViewModel.swift */; };
+		77CAA0A027AEE63D0099CF2D /* ProjectListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA09F27AEE63D0099CF2D /* ProjectListResponse.swift */; };
 		77E0890D27A8834200430D55 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890C27A8834200430D55 /* Helper.swift */; };
 		77E0890F27A8855F00430D55 /* GoPortImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890E27A8855F00430D55 /* GoPortImage.swift */; };
 		77E0891127A8868A00430D55 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0891027A8868A00430D55 /* Volume.swift */; };
@@ -628,6 +633,11 @@
 		77CAA08427AE82780099CF2D /* ImagesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRowView.swift; sourceTree = "<group>"; };
 		77CAA08927AED1280099CF2D /* ContainerStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStateView.swift; sourceTree = "<group>"; };
 		77CAA08B27AED1330099CF2D /* ContainerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerState.swift; sourceTree = "<group>"; };
+		77CAA09727AED7930099CF2D /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
+		77CAA09927AED7A40099CF2D /* ProjectSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSectionView.swift; sourceTree = "<group>"; };
+		77CAA09B27AED7AD0099CF2D /* ProjectRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRowView.swift; sourceTree = "<group>"; };
+		77CAA09D27AED7B70099CF2D /* ProjectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewModel.swift; sourceTree = "<group>"; };
+		77CAA09F27AEE63D0099CF2D /* ProjectListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListResponse.swift; sourceTree = "<group>"; };
 		77E0890C27A8834200430D55 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		77E0890E27A8855F00430D55 /* GoPortImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortImage.swift; sourceTree = "<group>"; };
 		77E0891027A8868A00430D55 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
@@ -887,6 +897,7 @@
 				772AC10D27A3557F00C1D348 /* ProjectEventsResponse.swift */,
 				772AC10F27A35F5D00C1D348 /* ProjectImagesResponse.swift */,
 				772AC11127A3ECA400C1D348 /* ProjectInspectResponse */,
+				77CAA09F27AEE63D0099CF2D /* ProjectListResponse.swift */,
 				772AC21B27A3EEE200C1D348 /* ProjectSummary.swift */,
 				772AC21F27A3F04600C1D348 /* ProjectLogResponse */,
 				772AC22627A3F0F100C1D348 /* ProjectContainerSummary.swift */,
@@ -1206,9 +1217,9 @@
 			isa = PBXGroup;
 			children = (
 				77C078972777CB3A007CD533 /* SettingsView.swift */,
-				773E8EA827920D0300BFF140 /* SettingsViewModel.swift */,
 				77C0789B2777CBF3007CD533 /* ServerRowView.swift */,
 				77E49C75279A32A4006032C3 /* ServerContextRowView.swift */,
+				773E8EA827920D0300BFF140 /* SettingsViewModel.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -1368,6 +1379,7 @@
 			children = (
 				77C0785C2777BE87007CD533 /* GoPortApp.swift */,
 				771D3190277A2E67005BFCF3 /* GoPortMainView.swift */,
+				77CAA08D27AED74C0099CF2D /* Compose */,
 				77CAA07827AE79A50099CF2D /* Containers */,
 				77E0891A27A8A65600430D55 /* Images */,
 				77C078912777C9E8007CD533 /* Settings */,
@@ -1460,6 +1472,25 @@
 				77CAA08927AED1280099CF2D /* ContainerStateView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		77CAA08D27AED74C0099CF2D /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				77CAA08E27AED7550099CF2D /* ProjectListView */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		77CAA08E27AED7550099CF2D /* ProjectListView */ = {
+			isa = PBXGroup;
+			children = (
+				77CAA09727AED7930099CF2D /* ProjectListView.swift */,
+				77CAA09927AED7A40099CF2D /* ProjectSectionView.swift */,
+				77CAA09B27AED7AD0099CF2D /* ProjectRowView.swift */,
+				77CAA09D27AED7B70099CF2D /* ProjectListViewModel.swift */,
+			);
+			path = ProjectListView;
 			sourceTree = "<group>";
 		};
 		77E0891A27A8A65600430D55 /* Images */ = {
@@ -2264,6 +2295,7 @@
 				772AC32D27A3FB5200C1D348 /* ProjectBuildUnion.swift in Sources */,
 				773E8EE3279484C300BFF140 /* Previewable.swift in Sources */,
 				773E5B95277E678A0048E205 /* GenericResourceDiscreteResourceSpec.swift in Sources */,
+				77CAA0A027AEE63D0099CF2D /* ProjectListResponse.swift in Sources */,
 				772AC33527A3FB5200C1D348 /* ProjectTentacledExternal.swift in Sources */,
 				775F67C6277D1921006BAF7A /* EndpointIPAMConfig.swift in Sources */,
 				77E49D15279E14AC006032C3 /* ContainerChangeResponse.swift in Sources */,
@@ -2352,8 +2384,10 @@
 				773E8EA62791E44D00BFF140 /* ContextDetailView.swift in Sources */,
 				77CAA07A27AE79DF0099CF2D /* ContainerListView.swift in Sources */,
 				773E8EB5279221A400BFF140 /* ConnectionStatusView.swift in Sources */,
+				77CAA09E27AED7B70099CF2D /* ProjectListViewModel.swift in Sources */,
 				77FF778127AC4A3600AD1AEE /* ImageDetailView.swift in Sources */,
 				773E8EBE2792453F00BFF140 /* DetailRowView.swift in Sources */,
+				77CAA09C27AED7AD0099CF2D /* ProjectRowView.swift in Sources */,
 				77CAA07D27AE79F80099CF2D /* ContainerListViewModel.swift in Sources */,
 				77E0892727A9DD3800430D55 /* ImagesListView.swift in Sources */,
 				77360DCA27AB274700E9604B /* LoadingView.swift in Sources */,
@@ -2364,6 +2398,8 @@
 				77C078982777CB3A007CD533 /* SettingsView.swift in Sources */,
 				77CAA07F27AE7EE20099CF2D /* ContainerSectionView.swift in Sources */,
 				773E8EBC27923DE500BFF140 /* Utilities.swift in Sources */,
+				77CAA09A27AED7A40099CF2D /* ProjectSectionView.swift in Sources */,
+				77CAA09827AED7930099CF2D /* ProjectListView.swift in Sources */,
 				773E8EC02792C85B00BFF140 /* Loadable.swift in Sources */,
 				774DA9BD27975B4700E26572 /* RespondableTextField.swift in Sources */,
 				77F19273279748F500D86ACD /* AddServerView.swift in Sources */,

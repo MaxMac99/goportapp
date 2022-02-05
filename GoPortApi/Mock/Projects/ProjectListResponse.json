@@ -1,5 +1,8 @@
 {
-    "goport": [
+    "Remote": {
+        "default": []
+    },
+    "Stored": [
         {
             "Id": "test",
             "Name": "test"

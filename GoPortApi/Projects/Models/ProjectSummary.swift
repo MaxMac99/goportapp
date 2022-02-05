@@ -7,8 +7,6 @@
 
 import Foundation
 
-public typealias ProjectListResponse = [String:[ProjectSummary]]
-
 public struct ProjectSummary: Identifiable, Codable {
     
     public var id: String
@@ -23,7 +21,9 @@ public struct ProjectSummary: Identifiable, Codable {
 }
 
 #if DEBUG
-extension ProjectSummary: FilePreviewableAsArray {
-    public static var previewFilename: String { "ProjectListResponse" }
+extension ProjectSummary {
+    public static let previews: [ProjectSummary] = {
+        ProjectListResponse.preview.remote.first!.value
+    }()
 }
 #endif

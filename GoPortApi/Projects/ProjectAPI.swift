@@ -285,10 +285,11 @@ public struct ProjectAPI {
      - parameter all: (query) Filter output based on conditions provided. (optional, default to false)
      - returns: [String: Stacks]
      */
-    public static func projectList(host: URL, context: [String]? = nil, all: Bool? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> ProjectListResponse {
+    public static func projectList(host: URL, context: [String]? = nil, all: Bool? = nil, stored: Bool? = nil, session: NetworkingSession = NetworkingSession.shared) async throws -> ProjectListResponse {
         try await session.load(APIRequest(method: .GET, host: host, path: ProjectAPIPath.projectList, query: [
             "context": context,
             "all": all,
+            "stored": stored,
         ]))
     }
     
