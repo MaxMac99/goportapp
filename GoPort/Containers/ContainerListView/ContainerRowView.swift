@@ -22,37 +22,20 @@ struct ContainerRowView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack(alignment: .center, spacing: 20) {
-                ContainerStateView(state: ContainerState(rawValue: container.state ?? "unknown") ?? .unknown)
-                VStack(alignment: .leading) {
-                    Text(title)
-                        .font(.headline)
-                    if let image = container.image {
-                        Text(image)
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
+        HStack(alignment: .center, spacing: 20) {
+            ContainerStateView(state: ContainerState(rawValue: container.state ?? "unknown") ?? .unknown)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.headline)
+                if let image = container.image {
+                    Text(image)
+                        .font(.subheadline)
+                        .lineSpacing(-2)
+                        .foregroundColor(.gray)
                 }
-                Spacer()
-            }
-            
-            if let ports = container.ports, !ports.isEmpty {
-                Spacer()
-                    .frame(height: 16)
-                VStack(alignment: .leading) {
-                    HStack(alignment: .top) {
-                        Image(systemName: "network")
-                        Text(ports
-                                .sorted(by: GoPortPort.sort)
-                                .map({ $0.displayName })
-                                .joined(separator: ", "))
-                        Spacer()
-                    }
-                }
-                .foregroundColor(.gray)
             }
         }
+        .padding(.vertical, 4)
     }
 }
 
@@ -105,8 +88,8 @@ extension GoPortPort {
 struct ContainerRowView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            List {
-                ContainerRowView(container: ContainerSummaryResponseItem.previews[2])
+            List(ContainerSummaryResponseItem.previews, id: \.id) { preview in
+                ContainerRowView(container: preview)
             }
         }
     }
