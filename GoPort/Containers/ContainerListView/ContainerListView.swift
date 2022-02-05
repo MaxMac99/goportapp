@@ -33,6 +33,9 @@ struct ContainerListView: View {
                 .navigationTitle("Containers")
             }
         }
+        .task {
+            await viewModel.load()
+        }
     }
 }
 
