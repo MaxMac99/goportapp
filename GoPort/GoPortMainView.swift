@@ -12,6 +12,11 @@ struct GoPortMainView: View {
     
     var body: some View {
         TabView {
+            ProjectListView()
+                .tabItem {
+                    Image(systemName: "books.vertical")
+                    Text("Compose")
+                }
             ContainerListView()
                 .tabItem {
                     Image(systemName: "shippingbox")

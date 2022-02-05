@@ -13,10 +13,17 @@ class ContainerListViewModel: ObservableObject {
     @Published fileprivate(set) var containersLoadable: Loadable<[(context: GoPortContext, response: [ContainerSummaryResponseItem])]> = .notStarted
     
     func load() async {
-        guard let server = ServerService.shared.selectedServer else {
+        guard case .notStarted = containersLoadable, ServerService.shared.selectedServer != nil else {
             return
         }
         containersLoadable = .loading
+        await reload()
+    }
+    
+    func reload() async {
+        guard let server = ServerService.shared.selectedServer else {
+            return
+        }
         containersLoadable = await Loadable({ try await server.containers(all: true) })
     }
 }

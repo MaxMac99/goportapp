@@ -28,11 +28,18 @@ class ImagesListViewModel: ObservableObject {
     }
     
     func load() async {
+        guard case .notStarted = imagesLoadable, ServerService.shared.selectedServer != nil else {
+            return
+        }
+        imagesLoadable = .loading
+        await reload()
+    }
+    
+    func reload() async {
         guard let server = ServerService.shared.selectedServer else {
             return
         }
         
-        imagesLoadable = .loading
         imagesLoadable = await Loadable({ try await server.images(all: true)
                 .map({ context, response in
                     (context, response.sorted(by: { self.sortImageSummary(left: $0, right: $1) }))

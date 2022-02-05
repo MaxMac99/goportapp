@@ -24,6 +24,9 @@ struct ImagesListView: View {
                         }
                     }
                 }
+                .refreshable {
+                    await viewModel.reload()
+                }
                 .alert(loadingError?.title ?? "", isPresented: Binding(get: { loadingError != nil }, set: { _ in loadingError = nil }), presenting: loadingError) { detail in
                     Button("OK", role: .cancel) {}
                 } message: { detail in
