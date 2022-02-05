@@ -43,6 +43,8 @@ class ImageDetailViewModel: ObservableObject {
         guard let imageContext = imageContext else {
             return
         }
+        
+        image = .loading
         image = await Loadable({ try await imageContext.inspect() })
     }
     
@@ -50,6 +52,8 @@ class ImageDetailViewModel: ObservableObject {
         guard let imageContext = imageContext else {
             return
         }
+        
+        history = .loading
         history = await Loadable({ try await imageContext.history() })
     }
 }

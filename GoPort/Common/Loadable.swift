@@ -14,7 +14,7 @@ enum Loadable<Wrapped> {
     case loaded(Wrapped)
     
     init() {
-        self = .loading
+        self = .notStarted
     }
     
     init(_ loadableResult: () throws -> Wrapped) {
@@ -27,6 +27,8 @@ enum Loadable<Wrapped> {
     
     init(_ loadableResult: () async throws -> Wrapped) async {
         do {
+            self = .loading
+            try await Task.sleep(nanoseconds: 3_000_000_000)
             self = .loaded(try await loadableResult())
         } catch (let wrappedError) {
             print("Loadable<\(Wrapped.self)>.error: \(wrappedError)")

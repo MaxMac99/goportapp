@@ -16,6 +16,7 @@ class ContainerListViewModel: ObservableObject {
         guard let server = ServerService.shared.selectedServer else {
             return
         }
+        containersLoadable = .loading
         containersLoadable = await Loadable({ try await server.containers(all: true) })
     }
 }

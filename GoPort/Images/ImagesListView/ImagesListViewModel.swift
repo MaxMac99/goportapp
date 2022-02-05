@@ -19,6 +19,7 @@ class ImagesListViewModel: ObservableObject {
     @Published var order = Order.byDate {
         didSet {
             guard let content = imagesLoadable.content else { return }
+            
             imagesLoadable = Loadable(content
                                         .map({ context, response in
                 (context, response.sorted(by: { self.sortImageSummary(left: $0, right: $1) }))
@@ -30,6 +31,8 @@ class ImagesListViewModel: ObservableObject {
         guard let server = ServerService.shared.selectedServer else {
             return
         }
+        
+        imagesLoadable = .loading
         imagesLoadable = await Loadable({ try await server.images(all: true)
                 .map({ context, response in
                     (context, response.sorted(by: { self.sortImageSummary(left: $0, right: $1) }))

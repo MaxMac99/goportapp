@@ -41,21 +41,29 @@ class ContextDetailViewModel: ObservableObject {
     
     func loadPingInformation() async {
         guard let context = context else { return }
+        
+        goportVersion = .loading
         goportVersion = await Loadable { try await context.ping().goportVersion }
     }
     
     func loadVersionInformation() async {
         guard let context = context else { return }
+        
+        versionInformation = .loading
         versionInformation = await Loadable { try await context.version() }
     }
     
     func loadInfo() async {
         guard let context = context else { return }
+        
+        systemInfo = .loading
         systemInfo = await Loadable { try await context.info() }
     }
     
     func loadContext() async {
         guard let context = context else { return }
+        
+        contextInfo = .loading
         contextInfo = await Loadable { try await context.inspect() }
     }
 }
