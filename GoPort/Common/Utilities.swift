@@ -50,11 +50,8 @@ struct Utilities {
     }
     
     static func shortId(id: String, length: Int = 8) -> String {
-        guard id.starts(with: "sha") else {
-            return id
-        }
         var startOffset = id.startIndex
-        if let offset = id.firstIndex(of: ":") {
+        if id.starts(with: "sha"), let offset = id.firstIndex(of: ":") {
             startOffset = id.index(offset, offsetBy: 1)
         }
         let end = id.index(startOffset, offsetBy: length)

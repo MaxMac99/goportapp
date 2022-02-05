@@ -182,7 +182,7 @@
 		775F678D277B68B5006BAF7A /* DockerCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F678C277B68B5006BAF7A /* DockerCoding.swift */; };
 		775F678F277B692E006BAF7A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F678E277B692E006BAF7A /* APIError.swift */; };
 		775F67B1277BA496006BAF7A /* NetworkingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F67B0277BA496006BAF7A /* NetworkingSession.swift */; };
-		775F67C1277D18D3006BAF7A /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F67C0277D18D3006BAF7A /* Port.swift */; };
+		775F67C1277D18D3006BAF7A /* GoPortPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F67C0277D18D3006BAF7A /* GoPortPort.swift */; };
 		775F67C3277D18E1006BAF7A /* MountPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F67C2277D18E1006BAF7A /* MountPoint.swift */; };
 		775F67C6277D1921006BAF7A /* EndpointIPAMConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F67C4277D1920006BAF7A /* EndpointIPAMConfig.swift */; };
 		775F67C7277D1921006BAF7A /* EndpointSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775F67C5277D1921006BAF7A /* EndpointSettings.swift */; };
@@ -216,6 +216,8 @@
 		77CAA08127AE80C90099CF2D /* ContainerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08027AE80C90099CF2D /* ContainerRowView.swift */; };
 		77CAA08327AE810C0099CF2D /* ImagesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08227AE810C0099CF2D /* ImagesSectionView.swift */; };
 		77CAA08527AE82780099CF2D /* ImagesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08427AE82780099CF2D /* ImagesRowView.swift */; };
+		77CAA08A27AED1280099CF2D /* ContainerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08927AED1280099CF2D /* ContainerStateView.swift */; };
+		77CAA08C27AED1330099CF2D /* ContainerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08B27AED1330099CF2D /* ContainerState.swift */; };
 		77E0890D27A8834200430D55 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890C27A8834200430D55 /* Helper.swift */; };
 		77E0890F27A8855F00430D55 /* GoPortImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890E27A8855F00430D55 /* GoPortImage.swift */; };
 		77E0891127A8868A00430D55 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0891027A8868A00430D55 /* Volume.swift */; };
@@ -588,7 +590,7 @@
 		775F678C277B68B5006BAF7A /* DockerCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerCoding.swift; sourceTree = "<group>"; };
 		775F678E277B692E006BAF7A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		775F67B0277BA496006BAF7A /* NetworkingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSession.swift; sourceTree = "<group>"; };
-		775F67C0277D18D3006BAF7A /* Port.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
+		775F67C0277D18D3006BAF7A /* GoPortPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoPortPort.swift; sourceTree = "<group>"; };
 		775F67C2277D18E1006BAF7A /* MountPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountPoint.swift; sourceTree = "<group>"; };
 		775F67C4277D1920006BAF7A /* EndpointIPAMConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointIPAMConfig.swift; sourceTree = "<group>"; };
 		775F67C5277D1921006BAF7A /* EndpointSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointSettings.swift; sourceTree = "<group>"; };
@@ -624,6 +626,8 @@
 		77CAA08027AE80C90099CF2D /* ContainerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRowView.swift; sourceTree = "<group>"; };
 		77CAA08227AE810C0099CF2D /* ImagesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesSectionView.swift; sourceTree = "<group>"; };
 		77CAA08427AE82780099CF2D /* ImagesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRowView.swift; sourceTree = "<group>"; };
+		77CAA08927AED1280099CF2D /* ContainerStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStateView.swift; sourceTree = "<group>"; };
+		77CAA08B27AED1330099CF2D /* ContainerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerState.swift; sourceTree = "<group>"; };
 		77E0890C27A8834200430D55 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		77E0890E27A8855F00430D55 /* GoPortImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortImage.swift; sourceTree = "<group>"; };
 		77E0891027A8868A00430D55 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
@@ -1327,7 +1331,7 @@
 				775F67C4277D1920006BAF7A /* EndpointIPAMConfig.swift */,
 				775F67C5277D1921006BAF7A /* EndpointSettings.swift */,
 				775F67C2277D18E1006BAF7A /* MountPoint.swift */,
-				775F67C0277D18D3006BAF7A /* Port.swift */,
+				775F67C0277D18D3006BAF7A /* GoPortPort.swift */,
 				772AC10A27A353AA00C1D348 /* ErrorMessage.swift */,
 				772AC22827A3F13600C1D348 /* PortPublisher.swift */,
 			);
@@ -1432,6 +1436,7 @@
 		77CAA07827AE79A50099CF2D /* Containers */ = {
 			isa = PBXGroup;
 			children = (
+				77CAA08627AED0C70099CF2D /* Common */,
 				77CAA07B27AE79E50099CF2D /* ContainerListView */,
 			);
 			path = Containers;
@@ -1446,6 +1451,15 @@
 				77CAA07C27AE79F80099CF2D /* ContainerListViewModel.swift */,
 			);
 			path = ContainerListView;
+			sourceTree = "<group>";
+		};
+		77CAA08627AED0C70099CF2D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				77CAA08B27AED1330099CF2D /* ContainerState.swift */,
+				77CAA08927AED1280099CF2D /* ContainerStateView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		77E0891A27A8A65600430D55 /* Images */ = {
@@ -2209,7 +2223,7 @@
 				772AC32627A3FB5200C1D348 /* ProjectInspectResponse.swift in Sources */,
 				77E49CD6279E0242006032C3 /* VolumePruneResponse.swift in Sources */,
 				77E49D7E279F4F2F006032C3 /* ContainerLogResponse.swift in Sources */,
-				775F67C1277D18D3006BAF7A /* Port.swift in Sources */,
+				775F67C1277D18D3006BAF7A /* GoPortPort.swift in Sources */,
 				775F67C3277D18E1006BAF7A /* MountPoint.swift in Sources */,
 				77E49D4D279E17F1006032C3 /* HealthcheckResult.swift in Sources */,
 				77E49D55279E1995006032C3 /* ContainerTopResponse.swift in Sources */,
@@ -2345,6 +2359,7 @@
 				77360DCA27AB274700E9604B /* LoadingView.swift in Sources */,
 				77C078A22777D52C007CD533 /* JsonDecodingHelper.swift in Sources */,
 				77C0789F2777D3D4007CD533 /* ServerService.swift in Sources */,
+				77CAA08A27AED1280099CF2D /* ContainerStateView.swift in Sources */,
 				77E0892527A9DD2B00430D55 /* ImagesListViewModel.swift in Sources */,
 				77C078982777CB3A007CD533 /* SettingsView.swift in Sources */,
 				77CAA07F27AE7EE20099CF2D /* ContainerSectionView.swift in Sources */,
@@ -2352,6 +2367,7 @@
 				773E8EC02792C85B00BFF140 /* Loadable.swift in Sources */,
 				774DA9BD27975B4700E26572 /* RespondableTextField.swift in Sources */,
 				77F19273279748F500D86ACD /* AddServerView.swift in Sources */,
+				77CAA08C27AED1330099CF2D /* ContainerState.swift in Sources */,
 				77FF778427AC4A7700AD1AEE /* ImageDetailViewModel.swift in Sources */,
 				77CAA08127AE80C90099CF2D /* ContainerRowView.swift in Sources */,
 				771D3191277A2E67005BFCF3 /* GoPortMainView.swift in Sources */,

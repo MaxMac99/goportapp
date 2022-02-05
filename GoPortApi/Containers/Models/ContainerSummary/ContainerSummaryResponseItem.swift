@@ -24,7 +24,7 @@ public struct ContainerSummaryResponseItem: Codable, Hashable {
     /** When the container was created */
     public var created: Int64? = nil
     /** The ports exposed by this container */
-    public var ports: [Port]? = nil
+    public var ports: [GoPortPort]? = nil
     /** The size of files that have been created or changed by this container */
     public var sizeRw: Int64? = nil
     /** The total size of all the files in this container */
@@ -61,5 +61,9 @@ public struct ContainerSummaryResponseItem: Codable, Hashable {
 #if DEBUG
 extension ContainerSummaryResponseItem: FilePreviewableAsArray {
     public static var previewFilename: String { "ContainerListResponse" }
+    
+    public static let previews = {
+        ContainerSummaryResponse.preview.first!.value
+    }()
 }
 #endif

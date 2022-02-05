@@ -12,9 +12,14 @@ struct GoPortMainView: View {
     
     var body: some View {
         TabView {
+            ContainerListView()
+                .tabItem {
+                    Image(systemName: "shippingbox")
+                    Text("Containers")
+                }
             ImagesListView()
                 .tabItem {
-                    Image(systemName: "externaldrive")
+                    Image(systemName: "internaldrive")
                     Text("Images")
                 }
             SettingsView()

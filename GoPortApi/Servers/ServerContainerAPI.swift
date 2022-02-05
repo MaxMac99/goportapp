@@ -67,7 +67,8 @@ extension GoPortContext {
      - parameter filters: (query) Filters to process on the prune list, encoded as JSON (a &#x60;map[string][]string&#x60;).  Available filters: - &#x60;until&#x3D;&lt;timestamp&gt;&#x60; Prune containers created before this timestamp. The &#x60;&lt;timestamp&gt;&#x60; can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. &#x60;10m&#x60;, &#x60;1h30m&#x60;) computed relative to the daemon machine’s time. - &#x60;label&#x60; (&#x60;label&#x3D;&lt;key&gt;&#x60;, &#x60;label&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;, &#x60;label!&#x3D;&lt;key&gt;&#x60;, or &#x60;label!&#x3D;&lt;key&gt;&#x3D;&lt;value&gt;&#x60;) Prune containers with (or without, in case &#x60;label!&#x3D;...&#x60; is used) the specified labels.  (optional)
      - returns: ContainerPruneResponse
      */
-    public func containerPrune(filters: String? = nil) async throws -> ContainerPruneResponseItem {
+    @discardableResult
+    public func pruneContainers(filters: String? = nil) async throws -> ContainerPruneResponseItem {
         try await ContainerAPI.containerPrune(host: host, context: [name], filters: filters, session: session).dockerContext(name)
     }
 }
