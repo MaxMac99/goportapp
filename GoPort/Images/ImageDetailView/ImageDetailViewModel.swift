@@ -58,7 +58,7 @@ class ImageDetailViewModel: ObservableObject {
 extension ImageDetailViewModel {
     static let preview: ImageDetailViewModel = {
         let viewModel = ImageDetailViewModel()
-        viewModel.setup(context: .preview.first!, summary: .preview)
+        viewModel.setup(context: .preview.first!, summary: ImageSummary.previews.first!)
         Task {
             await viewModel.load()
         }

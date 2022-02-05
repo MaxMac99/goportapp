@@ -67,3 +67,8 @@ enum ContextLoadingError: Error {
     case invalidResponse
     case noContext
 }
+
+struct LoadFailureDetails {
+    var title: String
+    var details: String?
+}

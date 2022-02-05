@@ -224,7 +224,7 @@ extension HistoryResponseItem {
 struct ImageDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ImageDetailView(context: .preview.first!, summary: .preview, viewModel: .preview)
+            ImageDetailView(context: .preview.first!, summary: ImageSummary.previews.first!, viewModel: .preview)
         }
     }
 }

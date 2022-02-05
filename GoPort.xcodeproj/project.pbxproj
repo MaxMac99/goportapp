@@ -210,6 +210,12 @@
 		77C0789C2777CBF3007CD533 /* ServerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0789B2777CBF3007CD533 /* ServerRowView.swift */; };
 		77C0789F2777D3D4007CD533 /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0789E2777D3D4007CD533 /* ServerService.swift */; };
 		77C078A22777D52C007CD533 /* JsonDecodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C078A12777D52C007CD533 /* JsonDecodingHelper.swift */; };
+		77CAA07A27AE79DF0099CF2D /* ContainerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA07927AE79DF0099CF2D /* ContainerListView.swift */; };
+		77CAA07D27AE79F80099CF2D /* ContainerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA07C27AE79F80099CF2D /* ContainerListViewModel.swift */; };
+		77CAA07F27AE7EE20099CF2D /* ContainerSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA07E27AE7EE20099CF2D /* ContainerSectionView.swift */; };
+		77CAA08127AE80C90099CF2D /* ContainerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08027AE80C90099CF2D /* ContainerRowView.swift */; };
+		77CAA08327AE810C0099CF2D /* ImagesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08227AE810C0099CF2D /* ImagesSectionView.swift */; };
+		77CAA08527AE82780099CF2D /* ImagesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CAA08427AE82780099CF2D /* ImagesRowView.swift */; };
 		77E0890D27A8834200430D55 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890C27A8834200430D55 /* Helper.swift */; };
 		77E0890F27A8855F00430D55 /* GoPortImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0890E27A8855F00430D55 /* GoPortImage.swift */; };
 		77E0891127A8868A00430D55 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0891027A8868A00430D55 /* Volume.swift */; };
@@ -612,6 +618,12 @@
 		77C0789B2777CBF3007CD533 /* ServerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRowView.swift; sourceTree = "<group>"; };
 		77C0789E2777D3D4007CD533 /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		77C078A12777D52C007CD533 /* JsonDecodingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodingHelper.swift; sourceTree = "<group>"; };
+		77CAA07927AE79DF0099CF2D /* ContainerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerListView.swift; sourceTree = "<group>"; };
+		77CAA07C27AE79F80099CF2D /* ContainerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerListViewModel.swift; sourceTree = "<group>"; };
+		77CAA07E27AE7EE20099CF2D /* ContainerSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerSectionView.swift; sourceTree = "<group>"; };
+		77CAA08027AE80C90099CF2D /* ContainerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRowView.swift; sourceTree = "<group>"; };
+		77CAA08227AE810C0099CF2D /* ImagesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesSectionView.swift; sourceTree = "<group>"; };
+		77CAA08427AE82780099CF2D /* ImagesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRowView.swift; sourceTree = "<group>"; };
 		77E0890C27A8834200430D55 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		77E0890E27A8855F00430D55 /* GoPortImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoPortImage.swift; sourceTree = "<group>"; };
 		77E0891027A8868A00430D55 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
@@ -1352,6 +1364,7 @@
 			children = (
 				77C0785C2777BE87007CD533 /* GoPortApp.swift */,
 				771D3190277A2E67005BFCF3 /* GoPortMainView.swift */,
+				77CAA07827AE79A50099CF2D /* Containers */,
 				77E0891A27A8A65600430D55 /* Images */,
 				77C078912777C9E8007CD533 /* Settings */,
 				77C078A02777D506007CD533 /* Common */,
@@ -1416,6 +1429,25 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		77CAA07827AE79A50099CF2D /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				77CAA07B27AE79E50099CF2D /* ContainerListView */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		77CAA07B27AE79E50099CF2D /* ContainerListView */ = {
+			isa = PBXGroup;
+			children = (
+				77CAA07927AE79DF0099CF2D /* ContainerListView.swift */,
+				77CAA07E27AE7EE20099CF2D /* ContainerSectionView.swift */,
+				77CAA08027AE80C90099CF2D /* ContainerRowView.swift */,
+				77CAA07C27AE79F80099CF2D /* ContainerListViewModel.swift */,
+			);
+			path = ContainerListView;
+			sourceTree = "<group>";
+		};
 		77E0891A27A8A65600430D55 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1429,6 +1461,8 @@
 			isa = PBXGroup;
 			children = (
 				77E0892627A9DD3800430D55 /* ImagesListView.swift */,
+				77CAA08227AE810C0099CF2D /* ImagesSectionView.swift */,
+				77CAA08427AE82780099CF2D /* ImagesRowView.swift */,
 				77E0892427A9DD2B00430D55 /* ImagesListViewModel.swift */,
 			);
 			path = ImagesListView;
@@ -2302,20 +2336,24 @@
 			files = (
 				773E8EB827922F8400BFF140 /* ContextDetailViewModel.swift in Sources */,
 				773E8EA62791E44D00BFF140 /* ContextDetailView.swift in Sources */,
+				77CAA07A27AE79DF0099CF2D /* ContainerListView.swift in Sources */,
 				773E8EB5279221A400BFF140 /* ConnectionStatusView.swift in Sources */,
 				77FF778127AC4A3600AD1AEE /* ImageDetailView.swift in Sources */,
 				773E8EBE2792453F00BFF140 /* DetailRowView.swift in Sources */,
+				77CAA07D27AE79F80099CF2D /* ContainerListViewModel.swift in Sources */,
 				77E0892727A9DD3800430D55 /* ImagesListView.swift in Sources */,
 				77360DCA27AB274700E9604B /* LoadingView.swift in Sources */,
 				77C078A22777D52C007CD533 /* JsonDecodingHelper.swift in Sources */,
 				77C0789F2777D3D4007CD533 /* ServerService.swift in Sources */,
 				77E0892527A9DD2B00430D55 /* ImagesListViewModel.swift in Sources */,
 				77C078982777CB3A007CD533 /* SettingsView.swift in Sources */,
+				77CAA07F27AE7EE20099CF2D /* ContainerSectionView.swift in Sources */,
 				773E8EBC27923DE500BFF140 /* Utilities.swift in Sources */,
 				773E8EC02792C85B00BFF140 /* Loadable.swift in Sources */,
 				774DA9BD27975B4700E26572 /* RespondableTextField.swift in Sources */,
 				77F19273279748F500D86ACD /* AddServerView.swift in Sources */,
 				77FF778427AC4A7700AD1AEE /* ImageDetailViewModel.swift in Sources */,
+				77CAA08127AE80C90099CF2D /* ContainerRowView.swift in Sources */,
 				771D3191277A2E67005BFCF3 /* GoPortMainView.swift in Sources */,
 				77E49C76279A32A4006032C3 /* ServerContextRowView.swift in Sources */,
 				773E8EA927920D0300BFF140 /* SettingsViewModel.swift in Sources */,
@@ -2324,6 +2362,8 @@
 				773E8EC22792CD4E00BFF140 /* LoadableView.swift in Sources */,
 				77C0789C2777CBF3007CD533 /* ServerRowView.swift in Sources */,
 				77C0785D2777BE87007CD533 /* GoPortApp.swift in Sources */,
+				77CAA08327AE810C0099CF2D /* ImagesSectionView.swift in Sources */,
+				77CAA08527AE82780099CF2D /* ImagesRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

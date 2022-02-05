@@ -38,8 +38,8 @@ public struct ImageSummary: Codable, Hashable {
 extension ImageSummary: FilePreviewableAsArray {
     public static var previewFilename: String { "ImageListResponse" }
     
-    public static let preview = {
-        [String:[ImageSummary]].preview.first!.value.first!
+    public static let previews = {
+        [String:[ImageSummary]].preview.first!.value
     }()
 }
 #endif
