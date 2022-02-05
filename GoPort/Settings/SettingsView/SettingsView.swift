@@ -27,9 +27,6 @@ struct SettingsView: View {
                     }
                     ForEach(serverService.servers) { server in
                         ServerRowView(server: server, status: viewModel.statusForServer(server))
-                            .task {
-                                await viewModel.pingServer(server)
-                            }
                         if let contexts = server.contexts, viewModel.statusForServer(server) != .disconnected {
                             ForEach(contexts) { context in
                                 ServerContextRowView(context: context, status: viewModel.statusForContext(context, in: server), isSelected: Binding(get: {
@@ -55,6 +52,9 @@ struct SettingsView: View {
                     }
                 }
             }
+            .refreshable {
+                await viewModel.pingServers()
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -68,6 +68,11 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+        }
+        .task {
+            if viewModel.serverStatus.isEmpty {
+                await viewModel.pingServers()
+            }
         }
         .sheet(isPresented: $showAddServer) {
             AddServerView()

@@ -18,30 +18,41 @@ class SettingsViewModel: ObservableObject {
     
     @Published private(set) var serverStatus = [Server:ServerStatus]()
     
+    func pingServers() async {
+        await withTaskGroup(of: Void.self) { group in
+            for server in ServerService.shared.servers {
+                group.addTask {
+                    await self.pingServer(server)
+                }
+            }
+            
+            await group.waitForAll()
+        }
+    }
+    
     func pingServer(_ server: Server) async {
-        guard serverStatus[server] == nil else { return }
         guard let index = ServerService.shared.servers.firstIndex(of: server) else { return }
         do {
             let response = try await ServerService.shared.servers[index].pingAll()
             serverStatus[server] = ServerStatus(status: .connected, contextStatus: Dictionary(uniqueKeysWithValues: response.contexts
-                .map({ key, value in
-                    return (context: key, connected: value.error == nil ? .connected : .disconnected)
-                })
-                .sorted(by: {
-                    if $0.0.id == "default" {
-                        return true
-                    }
-                    if $1.0.id == "default" {
-                        return false
-                    }
-                    return $0.0.id < $1.0.id
-                })))
+                                                                                                .map({ key, value in
+                return (context: key, connected: value.error == nil ? .connected : .disconnected)
+            })
+                                                                                                .sorted(by: {
+                if $0.0.id == "default" {
+                    return true
+                }
+                if $1.0.id == "default" {
+                    return false
+                }
+                return $0.0.id < $1.0.id
+            })))
         } catch {
             serverStatus[server] = ServerStatus(status: .disconnected, contextStatus: Dictionary(uniqueKeysWithValues: server.contexts
-            .map({ key in
+                                                                                                    .map({ key in
                 return (context: key, connected: .disconnected)
             })
-            .sorted(by: {
+                                                                                                    .sorted(by: {
                 if $0.0.id == "default" {
                     return true
                 }
