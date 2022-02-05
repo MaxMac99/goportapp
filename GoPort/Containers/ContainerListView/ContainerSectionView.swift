@@ -50,6 +50,7 @@ struct ContainerSectionView: View {
     }
 }
 
+#if DEBUG
 struct ContainerListSectionView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -59,3 +60,4 @@ struct ContainerListSectionView_Previews: PreviewProvider {
         }
     }
 }
+#endif

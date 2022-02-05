@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContainerListView: View {
-    @StateObject var viewModel = ContainerListViewModel.preview
+    @StateObject var viewModel = ContainerListViewModel()
     
     @State var isLoading = false
     @State var loadingError: LoadFailureDetails? = nil
@@ -36,8 +36,10 @@ struct ContainerListView: View {
     }
 }
 
+#if DEBUG
 struct ContainerListView_Previews: PreviewProvider {
     static var previews: some View {
         ContainerListView(viewModel: .preview)
     }
 }
+#endif
