@@ -9,10 +9,18 @@ import SwiftUI
 import GoPortApi
 
 struct ImagesListView: View {
-    @StateObject var viewModel = ImagesListViewModel()
+    @StateObject var viewModel: ImagesListViewModel
     
     @State var isLoading = false
     @State var loadingError: LoadFailureDetails? = nil
+    
+    init(viewModel: ImagesListViewModel? = nil) {
+        if let viewModel = viewModel {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        } else {
+            _viewModel = StateObject(wrappedValue: ImagesListViewModel())
+        }
+    }
     
     var body: some View {
         LoadingView(isLoading: isLoading) {

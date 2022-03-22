@@ -10,8 +10,17 @@ import GoPortApi
 
 struct ContextDetailView: View {
     var context: GoPortContext
-    @StateObject var viewModel = ContextDetailViewModel()
+    @StateObject var viewModel: ContextDetailViewModel
     @Environment(\.presentationMode) var presenationMode
+    
+    init(context: GoPortContext, viewModel: ContextDetailViewModel? = nil) {
+        self.context = context
+        if let viewModel = viewModel {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        } else {
+            _viewModel = StateObject(wrappedValue: ContextDetailViewModel())
+        }
+    }
     
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()

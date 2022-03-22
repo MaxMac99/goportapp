@@ -9,10 +9,18 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var serverService: ServerService
-    @StateObject var viewModel = SettingsViewModel()
+    @StateObject var viewModel: SettingsViewModel
     
     @State private var showAddServer = false
     @Environment(\.editMode) var editMode
+    
+    init(viewModel: SettingsViewModel? = nil) {
+        if let viewModel = viewModel {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        } else {
+            _viewModel = StateObject(wrappedValue: SettingsViewModel())
+        }
+    }
     
     var body: some View {
         NavigationView {

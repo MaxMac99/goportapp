@@ -11,7 +11,17 @@ import GoPortApi
 struct ImageDetailView: View {
     var context: GoPortContext
     var summary: ImageSummary
-    @StateObject var viewModel = ImageDetailViewModel()
+    @StateObject var viewModel: ImageDetailViewModel
+    
+    init(context: GoPortContext, summary: ImageSummary, viewModel: ImageDetailViewModel? = nil) {
+        self.context = context
+        self.summary = summary
+        if let viewModel = viewModel {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        } else {
+            _viewModel = StateObject(wrappedValue: ImageDetailViewModel())
+        }
+    }
     
     var image: ImageResponse? {
         viewModel.image.content

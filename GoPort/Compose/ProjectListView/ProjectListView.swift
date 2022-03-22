@@ -8,7 +8,15 @@
 import SwiftUI
 
 struct ProjectListView: View {
-    @StateObject var viewModel = ProjectListViewModel()
+    @StateObject var viewModel: ProjectListViewModel
+    
+    init(viewModel: ProjectListViewModel? = nil) {
+        if let viewModel = viewModel {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        } else {
+            _viewModel = StateObject(wrappedValue: ProjectListViewModel())
+        }
+    }
     
     var body: some View {
         NavigationView {

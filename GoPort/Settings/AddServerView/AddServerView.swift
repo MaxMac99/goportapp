@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddServerView: View {
-    @StateObject var viewModel = AddServerViewModel()
+    @StateObject var viewModel: AddServerViewModel
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -17,6 +17,14 @@ struct AddServerView: View {
     @State private var savingError: Error? = nil
     @State private var isConnecting = false
     @State private var showNext = false
+    
+    init(viewModel: AddServerViewModel? = nil) {
+        if let viewModel = viewModel {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        } else {
+            _viewModel = StateObject(wrappedValue: AddServerViewModel())
+        }
+    }
     
     var body: some View {
         NavigationView {

@@ -8,7 +8,15 @@
 import SwiftUI
 
 struct ContainerListView: View {
-    @StateObject var viewModel = ContainerListViewModel()
+    @StateObject var viewModel: ContainerListViewModel
+    
+    init(viewModel: ContainerListViewModel? = nil) {
+        if let viewModel = viewModel {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        } else {
+            _viewModel = StateObject(wrappedValue: ContainerListViewModel())
+        }
+    }
     
     @State var isLoading = false
     @State var loadingError: LoadFailureDetails? = nil

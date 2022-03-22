@@ -9,7 +9,11 @@ import SwiftUI
 
 @main
 struct GoPortApp: App {
-    @StateObject private var serverService = ServerService.shared
+    @StateObject private var serverService: ServerService
+    
+    init() {
+        _serverService = StateObject(wrappedValue: .shared)
+    }
 
     var body: some Scene {
         WindowGroup {
